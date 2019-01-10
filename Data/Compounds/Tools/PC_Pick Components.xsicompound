@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Pick Components" category="PC_Tools/Tools" tasks="PC_Tools/Tools" author="" url="" formatversion="1.4" compoundversion="1.0" versiontag="" constructionmode="Current" backgroundcolor="6732954">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="IntegerNode" index="0">
+				<param name="value" type="3" value="1"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-34</prop>
+					<prop name="posy">-81</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="StringToArray" index="1">
+				<param name="Value.Value_string" type="8" value="30"></param>
+				<param name="Value.Value_uimode" type="8" value=""></param>
+				<param name="Value.Value_filepathseq" type="8" value=""></param>
+				<param name="Value.Value_filename" type="8" value=""></param>
+				<portdef name="Value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">15</prop>
+					<prop name="posy">100</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="2">
+				<param name="value" type="3" value="1"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-32</prop>
+					<prop name="posy">-144</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BooleanNode" index="3">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-37</prop>
+					<prop name="posy">-112</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="value" username="Mode" basename="Mode" portlabel="Mode" exposetype="single"> </port>
+			<port index="1" portname="Result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+			<port index="1" portname="Value" username="Components" basename="Components" portlabel="Components" exposetype="single"> </port>
+			<port index="2" portname="value" username="Type" basename="Type" portlabel="Type" exposetype="single"> </port>
+			<port index="3" portname="value" username="Pick" basename="Pick" portlabel="Pick" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Type" min="0" max="0">
+				<enum value="0"><![CDATA[Point]]></enum>
+				<enum value="1"><![CDATA[Edge]]></enum>
+				<enum value="2"><![CDATA[Polygon]]></enum>
+				<enum value="3"><![CDATA[Node]]></enum>
+			</item>
+			<item type="input" name="Mode" min="0" max="0">
+				<enum value="1"><![CDATA[Rectangle]]></enum>
+				<enum value="2"><![CDATA[Raycast]]></enum>
+				<enum value="3"><![CDATA[Lasso]]></enum>
+				<enum value="4"><![CDATA[Freeform]]></enum>
+				<enum value="5"><![CDATA[Paint]]></enum>
+			</item>
+			<item type="input" name="Pick" min="0" max="0"> </item>
+			<item type="input" name="Components"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+		<ppglogic lang="Python"><![CDATA[si = Application
+lay = PPG.PPGLayout
+
+
+def Pick_OnChanged():   
+	type = PPG.Type.Value
+	mode = PPG.Mode.Value
+	filter = types(type)
+	
+	if PPG.Pick.Value == True:
+		PPG.Components_string.Value = ""
+		pcPick(filter,mode)
+		PPG.Pick.Value = False
+
+def types(type):
+	filter = "point"
+	if type == 0:
+		filter = "point"
+	elif type == 1:
+		filter = "edge"
+	elif type == 2:
+		filter = "polygon"
+	elif type == 3:
+		filter = "node"
+	return filter
+
+def pcPick(filter,mode):
+	listed = []
+	objs = XSIFactory.CreateObject("XSI.CollectionItem")
+	pick = True
+	while pick:
+		si.SetSelFilter(filter)
+		out = si.PickElement(filter, "", "",objs,mode,mode)
+		obj = out("PickedElement")
+		if out("ButtonPressed")!=0:
+			if out("ModifierPressed") != 1:
+				pick = False
+			for i in obj.SubComponent.ElementArray:
+					addComp(str(i))
+		else:
+			break
+	return listed
+def addComp(str):
+	PPG.Components_string.Value = PPG.Components_string.Value+str+',']]></ppglogic>
+	</definition>
+</xsi_file>

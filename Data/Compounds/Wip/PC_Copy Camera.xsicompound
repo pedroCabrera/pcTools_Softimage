@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Copy Camera" category="PC_Tools/Cameras" tasks="PC_Tools/Cameras" formatversion="1.4" compoundversion="1.0" constructionmode="Modeling" backgroundcolor="10131526">
+	<definition>
+		<nodes>
+			<node type="ExecuteNode" index="0">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">616</prop>
+					<prop name="posy">14</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="1">
+				<param name="Reference" type="31" value=""></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="Value" type="1044479" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">473</prop>
+					<prop name="posy">85</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PC_Get Camera Attributes" version="0.0" index="2">
+				<param name="Reference" type="31" value=""></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">14</prop>
+					<prop name="posy">20</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PC_Set Camera Attributes" version="0.0" index="3">
+				<param name="Reference" type="31" value=""></param>
+				<param name="Near_Plane" type="4" value="0.000000"></param>
+				<param name="Far_Plane" type="4" value="0.000000"></param>
+				<param name="Ortho_Height" type="4" value="0.000000"></param>
+				<param name="Angle" type="4" value="0.000000"></param>
+				<param name="_" type="3" value="0"></param>
+				<param name="_1" type="3" value="0"></param>
+				<param name="Focal" type="4" value="0.000000"></param>
+				<param name="PlaneWidth" type="4" value="0.000000"></param>
+				<param name="Distance" type="4" value="0.000000"></param>
+				<param name="Depth_Of_Field_automatic_calculation" type="11" value="false"></param>
+				<param name="Lookat_Distance" type="4" value="0.000000"></param>
+				<param name="Near_Far_Overriding" type="11" value="false"></param>
+				<param name="Near_Overriding_Value" type="4" value="0.000000"></param>
+				<param name="Far_Overriding_Value" type="4" value="0.000000"></param>
+				<param name="SubFrustum_Left" type="4" value="0.000000"></param>
+				<param name="SubFrustum_Right" type="4" value="0.000000"></param>
+				<param name="SubFrustum_Bottom" type="4" value="0.000000"></param>
+				<param name="SubFrustum_Top" type="4" value="0.000000"></param>
+				<param name="SubPixel_Zoom" type="11" value="false"></param>
+				<param name="Pixel_Ratio" type="4" value="0.000000"></param>
+				<param name="_2" type="4" value="0.000000"></param>
+				<param name="_3" type="4" value="0.000000"></param>
+				<param name="_4" type="4" value="0.000000"></param>
+				<param name="_5" type="4" value="0.000000"></param>
+				<param name="Enable" type="11" value="false"></param>
+				<param name="Focal_Length" type="4" value="0.000000"></param>
+				<param name="X" type="4" value="0.000000"></param>
+				<param name="Y" type="4" value="0.000000"></param>
+				<param name="X1" type="4" value="0.000000"></param>
+				<param name="Y1" type="4" value="0.000000"></param>
+				<param name="Lock_Aspect_Ratio" type="11" value="false"></param>
+				<param name="Interest_Constrained" type="11" value="false"></param>
+				<param name="Distance1" type="4" value="0.000000"></param>
+				<param name="Allow_AutoKey_during_Navigation" type="11" value="false"></param>
+				<param name="View_Volume" type="11" value="false"></param>
+				<param name="Stereo_Zero_Parallax_Plane" type="11" value="false"></param>
+				<param name="Sequencer_Camera" type="11" value="false"></param>
+				<param name="Auto_Update_Interest_Distance" type="11" value="false"></param>
+				<param name="Per_camera_Motion_Blur" type="11" value="false"></param>
+				<param name="Speed" type="4" value="0.000000"></param>
+				<param name="Offset" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="_2" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="SubPixel_Zoom" type="1" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Pixel_Ratio" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="_3" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="_4" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="PlaneWidth" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Near_Far_Overriding" type="1" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Far_Plane" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Near_Plane" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="_" type="2" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="SubFrustum_Bottom" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Focal" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="SubFrustum_Right" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Lookat_Distance" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="SubFrustum_Top" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Angle" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="SubFrustum_Left" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Depth_Of_Field_automatic_calculation" type="1" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Distance" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="_1" type="2" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Far_Overriding_Value" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Near_Overriding_Value" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Ortho_Height" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="_5" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Enable" type="1" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Focal_Length" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="X" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Y" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="X1" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Y1" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Lock_Aspect_Ratio" type="1" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Interest_Constrained" type="1" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Distance1" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Allow_AutoKey_during_Navigation" type="1" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="View_Volume" type="1" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Stereo_Zero_Parallax_Plane" type="1" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Sequencer_Camera" type="1" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Auto_Update_Interest_Distance" type="1" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Per_camera_Motion_Blur" type="1" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Speed" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="Offset" type="4" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">285</prop>
+					<prop name="posy">-17</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="4">
+				<param name="reference" type="31" value="kine.global"></param>
+				<param_ext name="reference" type="31" value="kine.global"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">67</prop>
+					<prop name="posy">68</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="5">
+				<param name="reference" type="31" value="kine.global"></param>
+				<param_ext name="reference" type="31" value="kine.global"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">283</prop>
+					<prop name="posy">165</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="6">
+				<param name="reference" type="31" value=""></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-122</prop>
+					<prop name="posy">42</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="3" portname="In_Name" username="Parameter_Collector" basename="Parameter Collector" portlabel="Parameter Collector" exposetype="single"> </port>
+			<port index="5" portname="inname" username="Transforms" basename="Transforms" portlabel="Transforms" exposetype="single"> </port>
+			<port index="6" portname="inname" username="Camera_to_Copy" basename="Camera to Copy" portlabel="Camera to Copy" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="3" from_port="Execute" to_node="0" to_port="port1"> </cnx>
+			<cnx from_node="1" from_port="Execute" to_node="0" to_port="port2"> </cnx>
+			<cnx from_node="2" from_port="_clipselectedbutton" to_node="3" to_port="_2"> </cnx>
+			<cnx from_node="2" from_port="_subpixelzoom" to_node="3" to_port="SubPixel_Zoom"> </cnx>
+			<cnx from_node="2" from_port="_pixelratio" to_node="3" to_port="Pixel_Ratio"> </cnx>
+			<cnx from_node="2" from_port="_clipscenebutton" to_node="3" to_port="_3"> </cnx>
+			<cnx from_node="2" from_port="_clipdefaultbutton" to_node="3" to_port="_4"> </cnx>
+			<cnx from_node="2" from_port="_planewidth" to_node="3" to_port="PlaneWidth"> </cnx>
+			<cnx from_node="2" from_port="_nearfarover" to_node="3" to_port="Near_Far_Overriding"> </cnx>
+			<cnx from_node="2" from_port="_far" to_node="3" to_port="Far_Plane"> </cnx>
+			<cnx from_node="2" from_port="_near" to_node="3" to_port="Near_Plane"> </cnx>
+			<cnx from_node="2" from_port="_proj" to_node="3" to_port="_"> </cnx>
+			<cnx from_node="2" from_port="_subfrustumbottom" to_node="3" to_port="SubFrustum_Bottom"> </cnx>
+			<cnx from_node="2" from_port="_focal" to_node="3" to_port="Focal"> </cnx>
+			<cnx from_node="2" from_port="_subfrustumright" to_node="3" to_port="SubFrustum_Right"> </cnx>
+			<cnx from_node="2" from_port="_lookatdist" to_node="3" to_port="Lookat_Distance"> </cnx>
+			<cnx from_node="2" from_port="_subfrustumtop" to_node="3" to_port="SubFrustum_Top"> </cnx>
+			<cnx from_node="2" from_port="_fov" to_node="3" to_port="Angle"> </cnx>
+			<cnx from_node="2" from_port="_subfrustumleft" to_node="3" to_port="SubFrustum_Left"> </cnx>
+			<cnx from_node="2" from_port="_dof" to_node="3" to_port="Depth_Of_Field_automatic_calculation"> </cnx>
+			<cnx from_node="2" from_port="_dist" to_node="3" to_port="Distance"> </cnx>
+			<cnx from_node="2" from_port="_fovtype" to_node="3" to_port="_1"> </cnx>
+			<cnx from_node="2" from_port="_farover" to_node="3" to_port="Far_Overriding_Value"> </cnx>
+			<cnx from_node="2" from_port="_nearover" to_node="3" to_port="Near_Overriding_Value"> </cnx>
+			<cnx from_node="2" from_port="_orthoheight" to_node="3" to_port="Ortho_Height"> </cnx>
+			<cnx from_node="2" from_port="_projplanereset" to_node="3" to_port="_5"> </cnx>
+			<cnx from_node="2" from_port="_projplane" to_node="3" to_port="Enable"> </cnx>
+			<cnx from_node="2" from_port="_projplanedist" to_node="3" to_port="Focal_Length"> </cnx>
+			<cnx from_node="2" from_port="_projplanewidth" to_node="3" to_port="X"> </cnx>
+			<cnx from_node="2" from_port="_projplaneheight" to_node="3" to_port="Y"> </cnx>
+			<cnx from_node="2" from_port="_projplaneoffx" to_node="3" to_port="X1"> </cnx>
+			<cnx from_node="2" from_port="_projplaneoffy" to_node="3" to_port="Y1"> </cnx>
+			<cnx from_node="2" from_port="_projplanelockaspect" to_node="3" to_port="Lock_Aspect_Ratio"> </cnx>
+			<cnx from_node="2" from_port="_interestconstr" to_node="3" to_port="Interest_Constrained"> </cnx>
+			<cnx from_node="2" from_port="_interestdist" to_node="3" to_port="Distance1"> </cnx>
+			<cnx from_node="2" from_port="_autokey" to_node="3" to_port="Allow_AutoKey_during_Navigation"> </cnx>
+			<cnx from_node="2" from_port="_viewvolume" to_node="3" to_port="View_Volume"> </cnx>
+			<cnx from_node="2" from_port="_zeroparallaxplane" to_node="3" to_port="Stereo_Zero_Parallax_Plane"> </cnx>
+			<cnx from_node="2" from_port="_sequencercam" to_node="3" to_port="Sequencer_Camera"> </cnx>
+			<cnx from_node="2" from_port="_autoupdatecoidist" to_node="3" to_port="Auto_Update_Interest_Distance"> </cnx>
+			<cnx from_node="2" from_port="_motionblurenable" to_node="3" to_port="Per_camera_Motion_Blur"> </cnx>
+			<cnx from_node="2" from_port="_motionblurspeed" to_node="3" to_port="Speed"> </cnx>
+			<cnx from_node="2" from_port="_motionbluroffset" to_node="3" to_port="Offset"> </cnx>
+			<cnx from_node="4" from_port="value" to_node="1" to_port="Value"> </cnx>
+			<cnx from_node="5" from_port="outname" to_node="1" to_port="In_Name"> </cnx>
+			<cnx from_node="6" from_port="outname" to_node="2" to_port="In_Name"> </cnx>
+			<cnx from_node="6" from_port="outname" to_node="4" to_port="inname"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Parameter_Collector"> </item>
+			<item type="input" name="Camera_to_Copy"> </item>
+			<item type="input" name="Transforms"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+	</definition>
+</xsi_file>

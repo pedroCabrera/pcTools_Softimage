@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Randomize with profile" category="PC_Tools/Modifiers-Deformation" tasks="PC_Tools/Modifiers-Deformation" author="" url="" formatversion="1.4" compoundversion="0.0" versiontag="" constructionmode="Current" backgroundcolor="2921916">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="PassThroughNode" index="0">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-252</prop>
+					<prop name="posy">-114</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FCurveNode" index="1">
+				<param name="profile" type="buffer">2 20 1 0 -1.79769E+308 1.79769E+308 3 0
+0 0.000000 0.000000 0.921933 0.062237 -0.001247 -0.000084 4 2
+0 1.000000 1.000000 0.650001 0.002920 -0.958582 -0.004307 4 2
+</param>
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">368</prop>
+					<prop name="posy">-8</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="2">
+				<param name="in" type="4" value="1.875000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-260</prop>
+					<prop name="posy">-39</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="RescaleNode" index="3">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="sourcestart" type="4" value="0.000000"></param>
+				<param name="sourceend" type="4" value="1.000000"></param>
+				<param name="targetstart" type="4" value="0.000000"></param>
+				<param name="targetend" type="4" value="1.000000"></param>
+				<param name="clamp" type="11" value="false"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="sourcestart" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="sourceend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="targetstart" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="targetend" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">553</prop>
+					<prop name="posy">-85</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="4">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-622</prop>
+					<prop name="posy">29</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_0]" index="5">
+				<param name="Seed" type="3" value="54321"></param>
+				<param name="Time_Varying" type="11" value="false"></param>
+				<param name="ID" type="3" value="0"></param>
+				<param name="Min" type="4" value="0.000000"></param>
+				<param name="Max" type="4" value="0.000000"></param>
+				<portdef name="Seed" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Time_Varying" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="ID" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Min" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Max" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-21</prop>
+					<prop name="posy">-84</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_1]" index="6">
+				<param name="Absolute_Values" type="11" value="true"></param>
+				<param name="Mean_Value" type="4" value="1.692000"></param>
+				<param name="Variance" type="4" value="2.846000"></param>
+				<param name="Seed" type="3" value="54321"></param>
+				<param name="Time_Varying" type="11" value="true"></param>
+				<param name="ID" type="3" value="0"></param>
+				<portdef name="Seed" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Time_Varying" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="ID" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mean_Value" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Variance" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Absolute_Values" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-49</prop>
+					<prop name="posy">38</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_2]" index="7">
+				<param name="Gradient.interp" type="3" value="1"></param>
+				<param name="Gradient.color1.r" type="5" value="0.732000"></param>
+				<param name="Gradient.color1.g" type="5" value="0.309000"></param>
+				<param name="Gradient.color1.b" type="5" value="0.518093"></param>
+				<param name="Gradient.color1.a" type="5" value="1.000000"></param>
+				<param name="Gradient.pos1" type="5" value="0.654155"></param>
+				<param name="Gradient.mid1" type="5" value="0.500000"></param>
+				<param name="Gradient.color2.r" type="5" value="1.000000"></param>
+				<param name="Gradient.color2.g" type="5" value="1.000000"></param>
+				<param name="Gradient.color2.b" type="5" value="1.000000"></param>
+				<param name="Gradient.color2.a" type="5" value="1.000000"></param>
+				<param name="Gradient.pos2" type="5" value="1.000000"></param>
+				<param name="Gradient.mid2" type="5" value="0.500000"></param>
+				<param name="Gradient.color3.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color3.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color3.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color3.a" type="5" value="1.000000"></param>
+				<param name="Gradient.pos3" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid3" type="5" value="0.500000"></param>
+				<param name="Gradient.color4.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color4.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color4.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color4.a" type="5" value="1.000000"></param>
+				<param name="Gradient.pos4" type="5" value="0.000000"></param>
+				<param name="Gradient.mid4" type="5" value="0.500000"></param>
+				<param name="Gradient.color5.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color5.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color5.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color5.a" type="5" value="1.000000"></param>
+				<param name="Gradient.pos5" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid5" type="5" value="0.500000"></param>
+				<param name="Gradient.color6.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color6.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color6.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color6.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos6" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid6" type="5" value="0.500000"></param>
+				<param name="Gradient.color7.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color7.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color7.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color7.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos7" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid7" type="5" value="0.500000"></param>
+				<param name="Gradient.color8.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color8.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color8.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color8.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos8" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid8" type="5" value="0.500000"></param>
+				<param name="Gradient.color9.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color9.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color9.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color9.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos9" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid9" type="5" value="0.500000"></param>
+				<param name="Gradient.color10.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color10.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color10.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color10.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos10" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid10" type="5" value="0.500000"></param>
+				<param name="Gradient.color11.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color11.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color11.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color11.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos11" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid11" type="5" value="0.500000"></param>
+				<param name="Gradient.color12.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color12.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color12.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color12.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos12" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid12" type="5" value="0.500000"></param>
+				<param name="Gradient.color13.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color13.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color13.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color13.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos13" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid13" type="5" value="0.500000"></param>
+				<param name="Gradient.color14.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color14.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color14.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color14.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos14" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid14" type="5" value="0.500000"></param>
+				<param name="Gradient.color15.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color15.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color15.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color15.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos15" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid15" type="5" value="0.500000"></param>
+				<param name="Gradient.color16.r" type="5" value="0.000000"></param>
+				<param name="Gradient.color16.g" type="5" value="0.000000"></param>
+				<param name="Gradient.color16.b" type="5" value="0.000000"></param>
+				<param name="Gradient.color16.a" type="5" value="0.000000"></param>
+				<param name="Gradient.pos16" type="5" value="-1.000000"></param>
+				<param name="Gradient.mid16" type="5" value="0.500000"></param>
+				<param name="Min_Value" type="4" value="0.792000"></param>
+				<param name="Max_Value" type="4" value="5.038000"></param>
+				<param name="Seed" type="3" value="175325"></param>
+				<param name="Time_Varying" type="11" value="true"></param>
+				<param name="ID" type="3" value="0"></param>
+				<portdef name="Seed" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Time_Varying" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="ID" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Min_Value" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Max_Value" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">524</prop>
+					<prop name="posy">159</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="8">
+				<param name="in" type="3" value="24690"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-619</prop>
+					<prop name="posy">-58</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="9">
+				<param name="in" type="11" value="false"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-621</prop>
+					<prop name="posy">-9</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="13">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0" type="4" value="0.000000"></param>
+				<param name="case1" type="4" value="0.000000"></param>
+				<param name="case2" type="4" value="0.000000"></param>
+				<param name="default" type="4" value="0.000000"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="4" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="4" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="case2" type="4" structure="1" group="1" instance="2" port="0"></portdef>
+				<portdef name="default" type="4" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">853</prop>
+					<prop name="posy">103</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="14">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0" type="4" value="0.000000"></param>
+				<param name="case1" type="4" value="0.000000"></param>
+				<param name="default" type="4" value="0.000000"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="4" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="4" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="default" type="4" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">184</prop>
+					<prop name="posy">-8</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="RescaleNode" index="19">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="sourcestart" type="4" value="0.000000"></param>
+				<param name="sourceend" type="4" value="1.000000"></param>
+				<param name="targetstart" type="4" value="0.000000"></param>
+				<param name="targetend" type="4" value="1.000000"></param>
+				<param name="clamp" type="11" value="false"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="sourcestart" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="sourceend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="targetstart" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="targetend" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">570</prop>
+					<prop name="posy">95</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="20">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">67</prop>
+					<prop name="posy">-399</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="in" username="Min_Value" basename="Min Value" portlabel="Min Value" exposetype="single"> </port>
+			<port index="1" portname="profile" username="Profile" basename="Profile" portlabel="Profile" exposetype="single"> </port>
+			<port index="2" portname="in" username="Max_Value" basename="Max Value" portlabel="Max Value" exposetype="single"> </port>
+			<port index="4" portname="in" username="ID" basename="ID" portlabel="ID" exposetype="single"> </port>
+			<port index="6" portname="Absolute_Values" username="Absolute_Values" basename="Absolute_Values" portlabel="Absolute_Values" exposetype="single"> </port>
+			<port index="6" portname="Variance" username="Variance" basename="Variance" portlabel="Variance" exposetype="single"> </port>
+			<port index="6" portname="Mean_Value" username="Base_Value" basename="Base_Value" portlabel="Base_Value" exposetype="single"> </port>
+			<port index="7" portname="Min_Value" username="Min_Value1" basename="Min_Value1" portlabel="Min_Value1" exposetype="single"> </port>
+			<port index="7" portname="Max_Value" username="Max_Value1" basename="Max_Value1" portlabel="Max_Value1" exposetype="single"> </port>
+			<port index="7" portname="Gradient" username="Gradient" basename="Gradient" portlabel="Gradient" exposetype="single"> </port>
+			<port index="8" portname="in" username="Seed" basename="Seed" portlabel="Seed" exposetype="single"> </port>
+			<port index="9" portname="in" username="Animated" basename="Animated" portlabel="Animated" exposetype="single"> </port>
+			<port index="13" portname="result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+			<port index="20" portname="value" username="Type" basename="Type" portlabel="Type" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="5" from_port="Min_Value" to_node="3" to_port="targetstart"> </cnx>
+			<cnx from_node="5" from_port="Max_Value" to_node="3" to_port="targetend"> </cnx>
+			<cnx from_node="5" from_port="Value" to_node="14" to_port="case0"> </cnx>
+			<cnx from_node="6" from_port="Min_Value" to_node="19" to_port="targetstart"> </cnx>
+			<cnx from_node="6" from_port="Value" to_node="14" to_port="case1"> </cnx>
+			<cnx from_node="6" from_port="Max_Value" to_node="19" to_port="targetend"> </cnx>
+			<cnx from_node="7" from_port="Value" to_node="13" to_port="case2"> </cnx>
+			<cnx from_node="14" from_port="result" to_node="1" to_port="in"> </cnx>
+			<cnx from_node="0" from_port="out" to_node="5" to_port="Min"> </cnx>
+			<cnx from_node="1" from_port="out" to_node="3" to_port="value"> </cnx>
+			<cnx from_node="1" from_port="out" to_node="19" to_port="value"> </cnx>
+			<cnx from_node="2" from_port="out" to_node="5" to_port="Max"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="5" to_port="ID"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="6" to_port="ID"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="7" to_port="ID"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="13" to_port="case0"> </cnx>
+			<cnx from_node="8" from_port="out" to_node="5" to_port="Seed"> </cnx>
+			<cnx from_node="8" from_port="out" to_node="6" to_port="Seed"> </cnx>
+			<cnx from_node="8" from_port="out" to_node="7" to_port="Seed"> </cnx>
+			<cnx from_node="9" from_port="out" to_node="5" to_port="Time_Varying"> </cnx>
+			<cnx from_node="9" from_port="out" to_node="6" to_port="Time_Varying"> </cnx>
+			<cnx from_node="9" from_port="out" to_node="7" to_port="Time_Varying"> </cnx>
+			<cnx from_node="20" from_port="result" to_node="13" to_port="condition"> </cnx>
+			<cnx from_node="20" from_port="result" to_node="14" to_port="condition"> </cnx>
+			<cnx from_node="19" from_port="result" to_node="13" to_port="case1"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Type" min="0" max="0">
+				<enum value="0"><![CDATA[Random By Range]]></enum>
+				<enum value="1"><![CDATA[Random Arround Value]]></enum>
+				<enum value="2"><![CDATA[Random By Gradient]]></enum>
+			</item>
+			<item type="input" name="Seed"> </item>
+			<item type="input" name="Animated"> </item>
+			<item type="input" name="ID"> </item>
+			<group type="input" name="Random By Range" collapsed="true">
+				<item type="input" name="Min_Value" min="0" max="0"> </item>
+				<item type="input" name="Max_Value" min="0" max="0"> </item>
+			</group>
+			<group type="input" name="Random Arround Value" collapsed="true">
+				<item type="input" name="Base_Value" min="0" max="0"> </item>
+				<item type="input" name="Variance" min="0" max="0"> </item>
+				<item type="input" name="Absolute_Values" min="0" max="0"> </item>
+			</group>
+			<item type="input" name="Profile"> </item>
+			<group type="input" name="Random By Gradient" collapsed="true">
+				<item type="input" name="Min_Value1" min="0" max="0"> </item>
+				<item type="input" name="Max_Value1" min="0" max="0"> </item>
+				<item type="input" name="Gradient" min="0" max="0"> </item>
+			</group>
+			<item type="output" name="Result"> </item>
+		</layout>
+		<ppglogic lang=""><![CDATA[]]></ppglogic>
+	</definition>
+	<embedded_0 name="Random By Range" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="6732954">
+		<nodes>
+			<node type="PassThroughNode" index="0">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1125</prop>
+					<prop name="posy">-377</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="LinearInterpolateNode" index="1">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<param name="blend" type="4" value="0.500000"></param>
+				<param name="clamp" type="11" value="false"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="blend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-963</prop>
+					<prop name="posy">-346</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="RandomValueNode" index="2">
+				<param name="distributiontype" type="3" value="0"></param>
+				<param name="seed" type="3" value="54321"></param>
+				<param name="timevarying" type="11" value="false"></param>
+				<param name="id" type="3" value="0"></param>
+				<param name="meanvalue" type="4" value="0.000000"></param>
+				<param name="variance" type="4" value="0.000000"></param>
+				<portdef name="seed" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="timevarying" type="1" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="id" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="meanvalue" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="variance" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-459</prop>
+					<prop name="posy">-366</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SubtractNode" index="3">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-755</prop>
+					<prop name="posy">-294</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="RescaleNode" index="4">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="sourcestart" type="4" value="0.000000"></param>
+				<param name="sourceend" type="4" value="1.000000"></param>
+				<param name="targetstart" type="4" value="0.000000"></param>
+				<param name="targetend" type="4" value="1.000000"></param>
+				<param name="clamp" type="11" value="false"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="sourcestart" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="sourceend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="targetstart" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="targetend" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-188</prop>
+					<prop name="posy">-317</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="5">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1119</prop>
+					<prop name="posy">-261</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="LengthNode" index="6">
+				<param name="vector" type="4" value="0.000000"></param>
+				<portdef name="vector" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-625</prop>
+					<prop name="posy">-258</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="in" username="Min" basename="Min" portlabel="Min" exposetype="single"> </port>
+			<port index="0" portname="out" username="Min_Value" basename="Min Value" portlabel="Min Value" exposetype="single"> </port>
+			<port index="2" portname="seed" username="Seed" basename="Seed" portlabel="Seed" exposetype="single"> </port>
+			<port index="2" portname="timevarying" username="Time_Varying" basename="Time Varying" portlabel="Time Varying" exposetype="single"> </port>
+			<port index="2" portname="id" username="ID" basename="ID" portlabel="ID" exposetype="single"> </port>
+			<port index="4" portname="result" username="Value" basename="Value" portlabel="Value" exposetype="single"> </port>
+			<port index="5" portname="in" username="Max" basename="Max" portlabel="Max" exposetype="single"> </port>
+			<port index="5" portname="out" username="Max_Value" basename="Max Value" portlabel="Max Value" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="2" from_port="value" to_node="4" to_port="value"> </cnx>
+			<cnx from_node="0" from_port="out" to_node="1" to_port="first"> </cnx>
+			<cnx from_node="0" from_port="out" to_node="4" to_port="sourcestart"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="1" to_port="second"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="3" to_port="first"> </cnx>
+			<cnx from_node="5" from_port="out" to_node="4" to_port="sourceend"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="2" to_port="meanvalue"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="3" to_port="second"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="6" to_port="vector"> </cnx>
+			<cnx from_node="6" from_port="result" to_node="2" to_port="variance"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Seed"> </item>
+			<item type="input" name="Time_Varying"> </item>
+			<item type="input" name="ID"> </item>
+			<item type="input" name="Min"> </item>
+			<item type="input" name="Max"> </item>
+			<item type="output" name="Value"> </item>
+			<item type="output" name="Min_Value"> </item>
+			<item type="output" name="Max_Value"> </item>
+		</layout>
+	</embedded_0>
+	<embedded_1 name="Random Arround Value" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="6732954">
+		<nodes>
+			<node type="RandomValueNode" index="2">
+				<param name="distributiontype" type="3" value="0"></param>
+				<param name="seed" type="3" value="54321"></param>
+				<param name="timevarying" type="11" value="true"></param>
+				<param name="id" type="3" value="0"></param>
+				<param name="meanvalue" type="4" value="0.000000"></param>
+				<param name="variance" type="4" value="0.000000"></param>
+				<portdef name="seed" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="timevarying" type="1" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="id" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="meanvalue" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="variance" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-612</prop>
+					<prop name="posy">75</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RescaleNode" index="7">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="sourcestart" type="4" value="0.000000"></param>
+				<param name="sourceend" type="4" value="1.000000"></param>
+				<param name="targetstart" type="4" value="0.000000"></param>
+				<param name="targetend" type="4" value="1.000000"></param>
+				<param name="clamp" type="11" value="false"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="sourcestart" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="sourceend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="targetstart" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="targetend" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">29</prop>
+					<prop name="posy">70</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="SubtractNode" index="10">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-371</prop>
+					<prop name="posy">231</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="11">
+				<param name="in" type="4" value="1.692000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-896</prop>
+					<prop name="posy">45</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="12">
+				<param name="in" type="4" value="2.846000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-923</prop>
+					<prop name="posy">211</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="15">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-156</prop>
+					<prop name="posy">2</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="16">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-173</prop>
+					<prop name="posy">150</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="18">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-248</prop>
+					<prop name="posy">308</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="AbsoluteValueNode" index="21">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-393</prop>
+					<prop name="posy">67</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BooleanNode" index="22">
+				<param name="value" type="11" value="true"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-370</prop>
+					<prop name="posy">-20</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="2" portname="seed" username="Seed" basename="Seed" portlabel="Seed" exposetype="single"> </port>
+			<port index="2" portname="timevarying" username="Time_Varying" basename="Time Varying" portlabel="Time Varying" exposetype="single"> </port>
+			<port index="2" portname="id" username="ID" basename="ID" portlabel="ID" exposetype="single"> </port>
+			<port index="7" portname="result" username="Value" basename="Value" portlabel="Value" exposetype="single"> </port>
+			<port index="11" portname="in" username="Mean_Value" basename="Mean Value" portlabel="Mean Value" exposetype="single"> </port>
+			<port index="12" portname="in" username="Variance" basename="Variance" portlabel="Variance" exposetype="single"> </port>
+			<port index="16" portname="result" username="Min_Value" basename="Min Value" portlabel="Min Value" exposetype="single"> </port>
+			<port index="18" portname="result" username="Max_Value" basename="Max Value" portlabel="Max Value" exposetype="single"> </port>
+			<port index="22" portname="value" username="Absolute_Values" basename="Absolute Values" portlabel="Absolute Values" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="10" from_port="result" to_node="16" to_port="iffalse"> </cnx>
+			<cnx from_node="2" from_port="value" to_node="21" to_port="value"> </cnx>
+			<cnx from_node="2" from_port="value" to_node="15" to_port="iffalse"> </cnx>
+			<cnx from_node="15" from_port="result" to_node="7" to_port="value"> </cnx>
+			<cnx from_node="16" from_port="result" to_node="7" to_port="sourcestart"> </cnx>
+			<cnx from_node="11" from_port="out" to_node="10" to_port="first"> </cnx>
+			<cnx from_node="11" from_port="out" to_node="2" to_port="meanvalue"> </cnx>
+			<cnx from_node="11" from_port="out" to_node="16" to_port="iftrue"> </cnx>
+			<cnx from_node="11" from_port="out" to_node="18" to_port="value1"> </cnx>
+			<cnx from_node="12" from_port="out" to_node="10" to_port="second"> </cnx>
+			<cnx from_node="12" from_port="out" to_node="2" to_port="variance"> </cnx>
+			<cnx from_node="12" from_port="out" to_node="18" to_port="value2"> </cnx>
+			<cnx from_node="22" from_port="result" to_node="15" to_port="condition"> </cnx>
+			<cnx from_node="22" from_port="result" to_node="16" to_port="condition"> </cnx>
+			<cnx from_node="18" from_port="result" to_node="7" to_port="sourceend"> </cnx>
+			<cnx from_node="21" from_port="result" to_node="15" to_port="iftrue"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Absolute_Values"> </item>
+			<item type="input" name="Mean_Value"> </item>
+			<item type="input" name="Variance"> </item>
+			<item type="input" name="Seed"> </item>
+			<item type="input" name="Time_Varying"> </item>
+			<item type="input" name="ID"> </item>
+			<item type="output" name="Value"> </item>
+			<item type="output" name="Min_Value"> </item>
+			<item type="output" name="Max_Value"> </item>
+		</layout>
+	</embedded_1>
+	<embedded_2 name="Random By Gradient" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="6732954">
+		<nodes>
+			<node type="GradientNode" index="0">
+				<param name="gradient.interp" type="3" value="1"></param>
+				<param name="gradient.color1.r" type="5" value="0.732000"></param>
+				<param name="gradient.color1.g" type="5" value="0.309000"></param>
+				<param name="gradient.color1.b" type="5" value="0.518093"></param>
+				<param name="gradient.color1.a" type="5" value="1.000000"></param>
+				<param name="gradient.pos1" type="5" value="0.654155"></param>
+				<param name="gradient.mid1" type="5" value="0.500000"></param>
+				<param name="gradient.color2.r" type="5" value="1.000000"></param>
+				<param name="gradient.color2.g" type="5" value="1.000000"></param>
+				<param name="gradient.color2.b" type="5" value="1.000000"></param>
+				<param name="gradient.color2.a" type="5" value="1.000000"></param>
+				<param name="gradient.pos2" type="5" value="1.000000"></param>
+				<param name="gradient.mid2" type="5" value="0.500000"></param>
+				<param name="gradient.color3.r" type="5" value="0.000000"></param>
+				<param name="gradient.color3.g" type="5" value="0.000000"></param>
+				<param name="gradient.color3.b" type="5" value="0.000000"></param>
+				<param name="gradient.color3.a" type="5" value="1.000000"></param>
+				<param name="gradient.pos3" type="5" value="-1.000000"></param>
+				<param name="gradient.mid3" type="5" value="0.500000"></param>
+				<param name="gradient.color4.r" type="5" value="0.000000"></param>
+				<param name="gradient.color4.g" type="5" value="0.000000"></param>
+				<param name="gradient.color4.b" type="5" value="0.000000"></param>
+				<param name="gradient.color4.a" type="5" value="1.000000"></param>
+				<param name="gradient.pos4" type="5" value="0.000000"></param>
+				<param name="gradient.mid4" type="5" value="0.500000"></param>
+				<param name="gradient.color5.r" type="5" value="0.000000"></param>
+				<param name="gradient.color5.g" type="5" value="0.000000"></param>
+				<param name="gradient.color5.b" type="5" value="0.000000"></param>
+				<param name="gradient.color5.a" type="5" value="1.000000"></param>
+				<param name="gradient.pos5" type="5" value="-1.000000"></param>
+				<param name="gradient.mid5" type="5" value="0.500000"></param>
+				<param name="gradient.color6.r" type="5" value="0.000000"></param>
+				<param name="gradient.color6.g" type="5" value="0.000000"></param>
+				<param name="gradient.color6.b" type="5" value="0.000000"></param>
+				<param name="gradient.color6.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos6" type="5" value="-1.000000"></param>
+				<param name="gradient.mid6" type="5" value="0.500000"></param>
+				<param name="gradient.color7.r" type="5" value="0.000000"></param>
+				<param name="gradient.color7.g" type="5" value="0.000000"></param>
+				<param name="gradient.color7.b" type="5" value="0.000000"></param>
+				<param name="gradient.color7.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos7" type="5" value="-1.000000"></param>
+				<param name="gradient.mid7" type="5" value="0.500000"></param>
+				<param name="gradient.color8.r" type="5" value="0.000000"></param>
+				<param name="gradient.color8.g" type="5" value="0.000000"></param>
+				<param name="gradient.color8.b" type="5" value="0.000000"></param>
+				<param name="gradient.color8.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos8" type="5" value="-1.000000"></param>
+				<param name="gradient.mid8" type="5" value="0.500000"></param>
+				<param name="gradient.color9.r" type="5" value="0.000000"></param>
+				<param name="gradient.color9.g" type="5" value="0.000000"></param>
+				<param name="gradient.color9.b" type="5" value="0.000000"></param>
+				<param name="gradient.color9.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos9" type="5" value="-1.000000"></param>
+				<param name="gradient.mid9" type="5" value="0.500000"></param>
+				<param name="gradient.color10.r" type="5" value="0.000000"></param>
+				<param name="gradient.color10.g" type="5" value="0.000000"></param>
+				<param name="gradient.color10.b" type="5" value="0.000000"></param>
+				<param name="gradient.color10.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos10" type="5" value="-1.000000"></param>
+				<param name="gradient.mid10" type="5" value="0.500000"></param>
+				<param name="gradient.color11.r" type="5" value="0.000000"></param>
+				<param name="gradient.color11.g" type="5" value="0.000000"></param>
+				<param name="gradient.color11.b" type="5" value="0.000000"></param>
+				<param name="gradient.color11.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos11" type="5" value="-1.000000"></param>
+				<param name="gradient.mid11" type="5" value="0.500000"></param>
+				<param name="gradient.color12.r" type="5" value="0.000000"></param>
+				<param name="gradient.color12.g" type="5" value="0.000000"></param>
+				<param name="gradient.color12.b" type="5" value="0.000000"></param>
+				<param name="gradient.color12.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos12" type="5" value="-1.000000"></param>
+				<param name="gradient.mid12" type="5" value="0.500000"></param>
+				<param name="gradient.color13.r" type="5" value="0.000000"></param>
+				<param name="gradient.color13.g" type="5" value="0.000000"></param>
+				<param name="gradient.color13.b" type="5" value="0.000000"></param>
+				<param name="gradient.color13.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos13" type="5" value="-1.000000"></param>
+				<param name="gradient.mid13" type="5" value="0.500000"></param>
+				<param name="gradient.color14.r" type="5" value="0.000000"></param>
+				<param name="gradient.color14.g" type="5" value="0.000000"></param>
+				<param name="gradient.color14.b" type="5" value="0.000000"></param>
+				<param name="gradient.color14.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos14" type="5" value="-1.000000"></param>
+				<param name="gradient.mid14" type="5" value="0.500000"></param>
+				<param name="gradient.color15.r" type="5" value="0.000000"></param>
+				<param name="gradient.color15.g" type="5" value="0.000000"></param>
+				<param name="gradient.color15.b" type="5" value="0.000000"></param>
+				<param name="gradient.color15.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos15" type="5" value="-1.000000"></param>
+				<param name="gradient.mid15" type="5" value="0.500000"></param>
+				<param name="gradient.color16.r" type="5" value="0.000000"></param>
+				<param name="gradient.color16.g" type="5" value="0.000000"></param>
+				<param name="gradient.color16.b" type="5" value="0.000000"></param>
+				<param name="gradient.color16.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos16" type="5" value="-1.000000"></param>
+				<param name="gradient.mid16" type="5" value="0.500000"></param>
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">21</prop>
+					<prop name="posy">673</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="LinearInterpolateNode" index="1">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="1.000000"></param>
+				<param name="blend" type="4" value="0.500000"></param>
+				<param name="clamp" type="11" value="false"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="blend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-617</prop>
+					<prop name="posy">746</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RandomValueNode" index="2">
+				<param name="distributiontype" type="3" value="0"></param>
+				<param name="seed" type="3" value="175325"></param>
+				<param name="timevarying" type="11" value="true"></param>
+				<param name="id" type="3" value="0"></param>
+				<param name="meanvalue" type="4" value="0.000000"></param>
+				<param name="variance" type="4" value="0.000000"></param>
+				<portdef name="seed" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="timevarying" type="1" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="id" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="meanvalue" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="variance" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-149</prop>
+					<prop name="posy">685</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SubtractNode" index="3">
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-435</prop>
+					<prop name="posy">797</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="LengthNode" index="6">
+				<param name="vector" type="4" value="0.000000"></param>
+				<portdef name="vector" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-264</prop>
+					<prop name="posy">798</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ColorToGrayscaleNode" index="17">
+				<param name="color.color_red" type="4" value="0.000000"></param>
+				<param name="color.color_green" type="4" value="0.000000"></param>
+				<param name="color.color_blue" type="4" value="0.000000"></param>
+				<param name="color.color_alpha" type="4" value="1.000000"></param>
+				<param name="redweight" type="4" value="0.300000"></param>
+				<param name="greenweight" type="4" value="0.590000"></param>
+				<param name="blueweight" type="4" value="0.110000"></param>
+				<portdef name="color" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="redweight" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="greenweight" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="blueweight" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">140</prop>
+					<prop name="posy">671</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="ColorToRGBANode" index="23">
+				<param name="color.color_red" type="4" value="0.000000"></param>
+				<param name="color.color_green" type="4" value="0.000000"></param>
+				<param name="color.color_blue" type="4" value="0.000000"></param>
+				<param name="color.color_alpha" type="4" value="1.000000"></param>
+				<portdef name="color" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">333</prop>
+					<prop name="posy">703</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="RescaleNode" index="24">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="sourcestart" type="4" value="0.000000"></param>
+				<param name="sourceend" type="4" value="1.000000"></param>
+				<param name="targetstart" type="4" value="0.792000"></param>
+				<param name="targetend" type="4" value="5.038000"></param>
+				<param name="clamp" type="11" value="false"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="sourcestart" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="sourceend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="targetstart" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="targetend" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">558</prop>
+					<prop name="posy">734</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="gradient" username="Gradient" basename="Gradient" portlabel="Gradient" exposetype="single"> </port>
+			<port index="2" portname="seed" username="Seed" basename="Seed" portlabel="Seed" exposetype="single"> </port>
+			<port index="2" portname="timevarying" username="Time_Varying" basename="Time Varying" portlabel="Time Varying" exposetype="single"> </port>
+			<port index="2" portname="id" username="ID" basename="ID" portlabel="ID" exposetype="single"> </port>
+			<port index="24" portname="targetstart" username="Min_Value" basename="Min Value" portlabel="Min Value" exposetype="single"> </port>
+			<port index="24" portname="targetend" username="Max_Value" basename="Max Value" portlabel="Max Value" exposetype="single"> </port>
+			<port index="24" portname="result" username="Value" basename="Value" portlabel="Value" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="out" to_node="17" to_port="color"> </cnx>
+			<cnx from_node="2" from_port="value" to_node="0" to_port="in"> </cnx>
+			<cnx from_node="23" from_port="green" to_node="24" to_port="value"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="2" to_port="meanvalue"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="3" to_port="second"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="6" to_port="vector"> </cnx>
+			<cnx from_node="6" from_port="result" to_node="2" to_port="variance"> </cnx>
+			<cnx from_node="17" from_port="grayscalecolor" to_node="23" to_port="color"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Min_Value"> </item>
+			<item type="input" name="Max_Value"> </item>
+			<item type="input" name="Seed"> </item>
+			<item type="input" name="Time_Varying"> </item>
+			<item type="input" name="ID"> </item>
+			<item type="input" name="Gradient"> </item>
+			<item type="output" name="Value"> </item>
+		</layout>
+	</embedded_2>
+</xsi_file>

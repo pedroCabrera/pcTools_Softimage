@@ -1,0 +1,95 @@
+import os,re,shutil
+
+Path = 'C:\Users\Pedrito\Desktop\TEST_IMAGES'
+
+
+MINIMUNKB = 8
+MOVE = False
+DELETE = False
+FLIPBOOK = False
+RATE = 25
+RESCALEONLOAD = 1
+PRELOAD = True
+
+preload = '-m' if PRELOAD else ''
+
+def PC_GetSequencesInDirectory(Path = '[Project Path]\Render_Pictures',MINIMUNKB=8):
+	Path = XSIUtils.ResolveTokenString( Path, '', False)
+	Sequences,SequencesDir,SequencesFrames,SequencesTypes,SequencesPadding=[],[],[],[],[]
+	for f in os.listdir(Path):
+		if len(f.split('.'))!=1:
+			segNum=re.findall(r'\d+',f)[-1]
+			baseName=f.split(segNum)[0]
+			if baseName not in Sequences:
+				Sequences.append(baseName)
+				SequencesDir.append(Path)
+				SequencesFrames.append(str(segNum))
+				SequencesTypes.append(f.split('.')[-1])
+				SequencesPadding.append(len(segNum))
+			else:
+				SequencesFrames[Sequences.index(baseName)] += ','+str(segNum)
+				if len(segNum) < SequencesPadding[Sequences.index(baseName)]:
+					SequencesPadding[Sequences.index(baseName)] = len(segNum)
+	SequencesFrames=[sorted(map(int,i.split(','))) for i in SequencesFrames]
+	#return[Sequences,SequencesDir,SequencesFrames,SequencesTypes,SequencesPadding]
+	SEQUENCES=[]
+	for i,seqFrs in enumerate(SequencesFrames):
+		SEQ,seqN=[],[]
+		padd = "%0"+str(SequencesPadding[i])+"d"
+		for e,fr in enumerate(seqFrs):
+			if e in [0,len(seqFrs)-1]:
+				if e != 0:
+					if seqN[-1]!= '....':
+						seqN.append('....')
+				seqN.append(padd%fr)
+			elif fr-1 in seqFrs and fr+1 in seqFrs:
+				if seqN[-1]!= '....':
+					seqN.append('....')
+			else:
+				seqN.append(padd%fr)
+		MissingFrames =[e for e in range(seqFrs[0],seqFrs[-1]) if e not in seqFrs]
+		##Final data with Correct Padding##
+		SEQName,SEQDir,SEQType,SEQPadding = Sequences[i],SequencesDir[i],SequencesTypes[i],''
+		for n in range(SequencesPadding[i]): SEQPadding += '#'
+		SEQFrames = [padd% e for e in seqFrs]
+		SEQFrameName =  str(seqN).replace(r"'",'').replace(' ','').replace(',.','').replace('.,','')
+		SEQMissingFrames = [padd% e for e in MissingFrames]
+		SEQSize = 0
+		for i in range(len(SEQFrames)): SEQSize += float(os.path.getsize(os.path.join(SEQDir,SEQName)+SEQFrames[i]+'.'+SEQType))
+		SEQWrongFrames = [wfr for wfr in SEQFrames if float(os.path.getsize(os.path.join(SEQDir,SEQName)+wfr+'.'+SEQType))/1024<MINIMUNKB]
+		
+		SEQ.append(SEQName+SEQFrameName+'.'+SEQType)
+		SEQ.append(SEQDir)
+		SEQ.append(SEQType)
+		SEQ.append(round(SEQSize/1048576,4))
+		SEQ.append(SEQPadding)
+		SEQ.append([SEQFrames[0],SEQFrames[-1]])
+		SEQ.append(len(SEQFrames))
+		SEQ.append(SEQMissingFrames)
+		SEQ.append(SEQWrongFrames)
+		
+		SEQUENCES.append(SEQ)
+		
+		
+		error = False
+		if len(SEQWrongFrames) > 0 and MOVE == True:
+			if not os.path.exists(os.path.join(SEQDir,SEQName+'_WrongFrames')):
+				os.makedirs(os.path.join(SEQDir,SEQName+'_WrongFrames'))
+			for i in range(len(SEQWrongFrames)):
+				cfrom= os.path.join(SEQDir,SEQName+SEQWrongFrames[i]+'.'+SEQType)
+				try	:
+					(os.rename(cfrom,os.path.join(os.path.join(SEQDir,SEQName+'_WrongFrames'),SEQName+SEQWrongFrames[i]+'.'+SEQType)))
+				except:
+					error = True
+		elif len(SEQWrongFrames) > 0 and DELETE == True:
+			for i in range(len(SEQWrongFrames)):
+				os.remove(os.path.join(SEQDir,SEQName+SEQWrongFrames[i]+'.'+SEQType))
+		if error:
+			print 'WrongFiles Cant be moved'
+		if FLIPBOOK:
+			Application.Flipbook('-s'+SEQDir+'\\'+SEQName+'.'+SEQType+' '+str(SEQFrames[0])+' '+str(SEQFrames[-1]+' 1 '+str(RATE))+' -p(fn)'+padding+'(ext)'+' '+preload +' -r '+str(RESCALEONLOAD))
+		
+	return SEQUENCES
+A = PC_GetSequencesInDirectory(Path)
+for a in A:
+	print a

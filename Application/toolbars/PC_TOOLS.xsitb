@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<xsi_file type="Shelf" xsi_version="13.1.140.0" syntax_version="1.0">
+   <shelf_view name="PC_TOOLS" clsid="{D17F7F19-76B5-4B43-B0EF-F0A9756CE715}">
+      <properties>
+         <showtabs>false</showtabs>
+      </properties>
+      <definition maxinstances="10000" acceptfocus="true" private="false" defaultsize="0,100,200,300" cmdmap="{00000000-0000-0000-0000-000000000000}" supportedtypes="6" category=""></definition>
+      <tabs layout="top" active="DS Toolbar">
+         <tab label="DS Toolbar" type="toolbar">
+            <properties id="{1FDFB497-085C-493D-A744-19DAFE647F14}" name="" display_preset_as_small="False" display_as_text_only="False"></properties>
+            <item type="separator" mode="group_header" group_name="ViewPort"></item>
+            <item type="scriptbutton" label="SPEC" userwidth="50" bitmap="SPEC_ON" scriptengine="XSI.SIPython.1" tooltip="Headlight Spec On/of">
+               <scripttext>&lt;![CDATA[Application.ToggleValue(&quot;headlight_specular&quot;, &quot;*.camdisp,Views.*.*.camdisp&quot;)
+]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="VIEWCUBE" bitmap="VIEWCUBE" scriptengine="XSI.SIPython.1" tooltip="viewcube on/of">
+               <scripttext>&lt;![CDATA[Application.ToggleValue(&quot;show&quot;, &quot;preferences.viewcube&quot;)
+]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="Wire Color" scriptengine="XSI.SIPython.1" tooltip="PC_Wire_Color">
+               <scripttext>&lt;![CDATA[sp= Application.ActiveProject.ActiveScene.Root.Properties
+SceneProp=[]
+for element in sp:
+	SceneProp.append(element.name)
+if 'PC_Wire_Color' in SceneProp :
+	Application.InspectObj('PC_Wire_Color','','',3)
+else:
+	Application.AddProp(&quot;PC_Wire_Color&quot;,'Scene_Root')
+]]&gt;</scripttext>
+            </item>
+            <item type="script" label="Play Control" name="PC_SetPlayControlFromPass" cmdid="{BA43CBEB-A205-E5FE-B01B-5D738CA8D999}"></item>
+            <item type="scriptbutton" label="Camera Rotoscopy" scriptengine="XSI.SIPython.1" tooltip="Grids as rotoscopy like in maya">
+               <scripttext>&lt;![CDATA[app = Application
+
+Cam = app.Selection(0)
+	
+if Cam.Type != 'camera':
+	print 'Selecciona al menos una camara'
+else:
+	camprops = app.EnumElements(app.EnumElements(app.EnumElements(Cam)(1)))
+	
+	Roto = app.CreatePrim(&quot;Grid&quot;, &quot;MeshSurface&quot;, str(Cam.Name)+&quot;Rotoscopy_1&quot;, Cam.Parent)
+	app.SetValue(str(Roto)+&quot;.grid.ulength&quot;, 1, &quot;&quot;)
+	app.SetValue(str(Roto)+&quot;.grid.vlength&quot;, 1, &quot;&quot;)
+	app.ApplyShader(&quot;$XSI_DSPRESETS\\Shaders\\Material\\Constant.Preset&quot;, Roto, &quot;&quot;, &quot;&quot;, &quot;siLetLocalMaterialsOverlap&quot;)
+	Mat = Roto.Material.Shaders('Constant')
+	Roto.Material.Name = 'Mat_Rotoscopy_1'
+	Mat.radiance.Parameters('green').Value = 0
+	Mat.radiance.Parameters('blue').Value = 0
+	Mat.radiance.Parameters('red').Value = 0
+	Mat.incand_inuse.Value = False
+	image = app.SIApplyShaderToCnxPoint(&quot;Image&quot;, Mat.color, &quot;&quot;, &quot;&quot;)
+	app.InspectObj(image,'','',3)
+	app.CreateProjection(Roto, &quot;siTxtPlanarXZ&quot;, &quot;siTxtDefaultPlanarXZ&quot;, &quot;&quot;, &quot;Texture_Projection&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;)
+	if 'Camera_Rotoscopies' in str(camprops):
+		index = str(camprops).split(',').index(str(Cam)+'.camera.Camera_Rotoscopies')
+		ICE = camprops(index)
+		for i in app.EnumElements(ICE):
+			if 'port' in str(i):
+				port = i
+		port = app.AddPortToICENode(port, &quot;siNodePortDataInsertionLocationAfter&quot;)
+	else:
+		ICE = app.ApplyOp(&quot;ICETree&quot;, str(Cam), &quot;siNode&quot;, &quot;&quot;, &quot;&quot;, 0)
+		ICE(0).parameters('Name').Value = 'Camera Rotoscopies'
+		port = str(ICE)+&quot;.port1&quot;
+		
+	Compound = app.AddICECompoundNode(&quot;PC_Camera_Rotoscopy&quot;, ICE)
+	app.SetValue(str(Compound)+&quot;.Reference&quot;, str(Roto), &quot;&quot;)
+	app.ConnectICENodes(port, str(Compound)+&quot;.Execute&quot;)
+	app.InspectObj(Compound)
+]]&gt;</scripttext>
+            </item>
+            <item type="separator" mode="group_header" group_name="WORKFLOW"></item>
+            <item type="script" label="Add To Partition" name="PC_Add_To_Partition_MultiPass" cmdid="{EC7B342A-3687-F39F-D757-945D29ECE956}"></item>
+            <item type="script" label="Set Camera" name="PC_Set_Camera_MultiPass" cmdid="{B3CAF9A0-596A-02C0-90CF-009D6EF07873}"></item>
+            <item type="script" label="Capture" name="PC_MultiPass_Capture" cmdid="{D4D15808-8021-DE88-C65F-A4CC46EEADCD}"></item>
+            <item type="scriptbutton" label="Renamer" scriptengine="XSI.SIPython.1" tooltip="">
+               <scripttext>&lt;![CDATA[SceneRoot = Application.ActiveSceneRoot
+SceneRoot.AddProperty(&quot;XTRM_Renamer&quot;)
+Application.InspectObj(&quot;XTRM_Renamer&quot;)
+]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="REPEATED UVWS" scriptengine="XSI.SIPython.1" tooltip="Delete Same Positions UVWS">
+               <scripttext>&lt;![CDATA[import win32com, sys
+from win32com.client import constants as c
+for o in Application.Selection:
+	TOTALPOSITIONS = []
+	VALIDUWVS=[]
+	INVALIDUWVS=[]
+	for cl in o.ActivePrimitive.Geometry.Clusters:
+		if cl.Type == 'sample':
+			for prop in cl.Properties:
+				if prop.Type == 'uvspace':
+					POSITIONS = []
+					for p in prop.Elements:
+						POSITIONS.append(p)
+					if POSITIONS not in TOTALPOSITIONS:
+						TOTALPOSITIONS.append(POSITIONS)
+						VALIDUWVS.append(prop.Name)
+					else:
+						INVALIDUWVS.append(prop.Name)
+						Application.DeleteObj(prop)
+	for M in  o.Materials:
+		for S in M.FindShaders(c.siShaderFilter):
+			if S.Name == 'Image':
+				if S.Parameters('tspace_id').Value in INVALIDUWVS:
+					Application.SetInstanceDataValue(o,S.Parameters('tspace_id'),VALIDUWVS[INVALIDUWVS.index(S.Parameters('tspace_id').Value)])
+]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="UNUSED CLUSTERS" scriptengine="XSI.SIPython.1" tooltip="Delete Unused Clusters">
+               <scripttext>&lt;![CDATA[for o in Application.Selection:
+	for cl in o.ActivePrimitive.Geometry.Clusters:
+		if cl.Type != 'sample':
+			PROPERTIES = []
+			for e in cl.LocalProperties:
+				PROPERTIES.append(e)
+			if len(PROPERTIES) == 0:
+				Application.DeleteObj(cl)
+			else:
+				cl.Name = e.Name]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="Log Groups" scriptengine="XSI.SIPython.1" tooltip="">
+               <scripttext>&lt;![CDATA[for o in Application.Selection:
+	for i in o.Owners:
+		if i.Type == '#Group':
+			print str(o)+' pertenece al grupo ' + str(i)]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="MAT2GRP" scriptengine="XSI.SIPython.1" tooltip="Select the materials you want to create a agroup for the using material objects">
+               <scripttext>&lt;![CDATA[MATS = []
+for mat in Application.Selection:
+	MATS.append(mat)
+for mat in MATS:
+	Application.SelectObjectsUsingMaterial(mat)
+	GRP = Application.CreateGroup(&quot;GRP_&quot;+mat.Name, &quot;&quot;,&quot;&quot;)
+	Application.CopyPaste(mat, &quot;&quot;, GRP, 1)
+]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="MAT_CAMERA_PROJ" userwidth="160" scriptengine="XSI.SIPython.1" tooltip="MAT_CAMERA_PROJ">
+               <scripttext>&lt;![CDATA[PART = Application.Selection[0]
+ROOT =  Application.ActiveProject.ActiveScene.Root
+
+PASS = Application.GetCurrentPass()
+
+CAM =  ROOT.FindChild(PASS.Camera.Value)
+for e in CAM.Properties:
+	if e.Name == 'Camera Rotoscopy':
+		ROTONAME = e.imagename.Value
+		
+Application.ApplyShader(&quot;&quot;, PART, '', &quot;&quot;, &quot;siLetLocalMaterialsOverlap&quot;)
+MAT = PART.Material
+UTI = Application.CreateShaderFromProgID(&quot;ArnoldCoreShaders.utility.1.0&quot;, MAT, &quot;utility&quot;)
+
+Application.DisconnectAndDeleteOrUnnestShaders(str(MAT)+&quot;.&quot;, MAT)
+Application.SIConnectShaderToCnxPoint(str(UTI)+&quot;.out&quot;,str(MAT)+&quot;.surface&quot;, False)
+
+CAMP = Application.CreateShaderFromProgID(&quot;ArnoldStaShaders.sta_camera_projection.1.0&quot;, MAT, &quot;sta_camera_projection&quot;)
+Application.SIConnectShaderToCnxPoint(ROTONAME, str(CAMP)+&quot;.map&quot;, &quot;&quot;)
+Application.SIConnectShaderToCnxPoint(str(CAMP)+&quot;.out&quot;, str(UTI)+&quot;.color&quot;, False)
+Application.SetValue(str(UTI)+&quot;.shade_mode&quot;, &quot;flat&quot;, &quot;&quot;)
+Application.SetExpr(str(CAMP)+&quot;.camera_aspect_ratio&quot;, str(CAM)+&quot;.camera.aspect&quot;, &quot;&quot;)
+Application.SetValue(str(MAT)+&quot;.Name&quot;, 'PROJ_'+PASS.Name, &quot;&quot;)
+]]&gt;</scripttext>
+            </item>
+            <item type="separator" mode="group_header" group_name="Others"></item>
+            <item type="scriptbutton" label="Apply Ice Compound" scriptengine="XSI.SIPython.1" tooltip="Add an ICE TREE and a Compound to multiple Objects">
+               <scripttext>&lt;![CDATA[si = Application
+from siutils import log     # LogMessage
+from siutils import C       # win32com.client.constants
+from siutils import disp    # win32com.client.Dispatch
+ 
+siut = disp('XSI.Utils')
+sifact = disp('XSI.Factory')
+siuitk = disp('XSI.UIToolkit')
+sisel = si.Selection
+ 
+ 
+#
+# Pop up a browser to select a compound
+#
+def getCompound():
+    initialDir = siut.BuildPath( si.InstallationPath( C.siUserPath ), &quot;Data&quot;, &quot;Compounds&quot; )
+ 
+    oFileBrowser = siuitk.FileBrowser
+    oFileBrowser.DialogTitle = &quot;Select compound to apply&quot;
+    oFileBrowser.InitialDirectory = initialDir
+    oFileBrowser.Filter = &quot;All Files (*.*)|*.*||&quot;
+    oFileBrowser.ShowOpen()
+ 
+    return oFileBrowser.FilePathName
+ 
+#
+# Apply op to 
+# - the selected objects
+# OR
+# - the members of a selected group
+#
+def getTargetObjects():
+    objects = disp( &quot;XSI.Collection&quot; )
+ 
+    if sisel.Count == 0:
+        log( &quot;Please select either some objects or a group&quot; )
+    elif sisel(0).IsClassOf( C.siGroupID ):
+        objects = sisel(0).Members
+    else:
+        objects = sisel
+ 
+    return objects
+ 
+#
+# Do it...
+#
+objects = getTargetObjects()    
+sCompound = getCompound()
+ 
+if sCompound != &quot;&quot; and objects.Count &gt; 0:
+    for o in objects:
+        si.ApplyICEOp( sCompound, o.FullName )
+]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="XSI2AFTER" scriptengine="XSI.SIPython.1" tooltip="Create a group With the cámera and nulls">
+               <scripttext>&lt;![CDATA[# Put the scene-Camera and the nulls that you want to export into a group. 
+# Select the group and run the script. 
+# A .jsx script is created that you can run inside AfterFX. It creates a new Comp with Camera and Nulls.
+# Loosely based on an old Script from Helge Mathee's Mindthink-tools
+# info@thomasvolkmann.com
+
+import math
+import os
+import win32com.client
+from win32com.client import constants as c
+import time
+null = None
+false = 0
+true = 1
+TRUE = True
+FALSE = False
+xsi = Application
+log = xsi.LogMessage
+StartTime = time.time()
+
+
+def gui(startFrame,endFrame,fps,width,height,pixelAspect,selection):
+    oPSet = xsi.ActiveSceneRoot.AddProperty(&quot;CustomProperty&quot;,False,&quot;AE-EXPORT&quot;) 
+    oLayout = oPSet.PPGLayout
+    
+    
+    oLayout.AddGroup( &quot;FRAMERANGE&quot; )
+    oLayout.AddRow()
+    IN = oPSet.AddParameter3(&quot;IN&quot;, c.siInt2,1,1,10000,0)
+    oLayout.AddItem(&quot;IN&quot;, &quot;IN&quot;, c.siControlNumber)
+    xsi.SetValue(IN, startFrame)
+    
+    OUT = oPSet.AddParameter3(&quot;OUT&quot;, c.siInt2,1,1,10000,0)
+    oLayout.AddItem(&quot;OUT&quot;, &quot;OUT&quot;, c.siControlNumber)
+    xsi.SetValue(OUT, endFrame)
+    
+    FPS = oPSet.AddParameter3(&quot;FPS&quot;, c.siInt2,1,1,1000,0)
+    oLayout.AddItem(&quot;FPS&quot;, &quot;FPS&quot;, c.siControlNumber)
+    xsi.SetValue(FPS, fps)
+
+    oLayout.EndRow()
+    oLayout.EndGroup()
+
+    oLayout.AddGroup( &quot;IMAGE&quot; )
+    oLayout.AddRow()
+    WIDTH = oPSet.AddParameter3(&quot;WIDTH&quot;, c.siInt2,1,1,10000,0)
+    oLayout.AddItem(&quot;WIDTH&quot;, &quot;WIDTH&quot;, c.siControlNumber)
+    xsi.SetValue(WIDTH, width)
+    
+    HEIGHT = oPSet.AddParameter3(&quot;HEIGHT&quot;, c.siInt2,1,1,10000,0)
+    oLayout.AddItem(&quot;HEIGHT&quot;, &quot;HEIGHT&quot;, c.siControlNumber)
+    xsi.SetValue(HEIGHT, height)
+    
+    PixAsp = oPSet.AddParameter3(&quot;PixAsp&quot;, c.siFloat,1,1,1000,0)
+    oLayout.AddItem(&quot;PixAsp&quot;, &quot;PixAsp&quot;, c.siControlNumber)
+    xsi.SetValue(PixAsp, pixelAspect)
+
+    oLayout.EndRow()
+    oLayout.EndGroup()
+
+    oLights = oPSet.AddParameter3(&quot;Lights&quot;, c.siBool)
+    oLayout.AddItem(&quot;Lights&quot;, &quot;Export as Lights&quot;, c.siControlCheck)
+    xsi.SetValue(oLights, 0)
+
+    oLayout.AddGroup( &quot;is it Moving?&quot; )
+    oIsAnimated = []
+    for i in selection:        
+        oParameter = oPSet.AddParameter3(i.Name, c.siBool)
+        oLayout.AddItem(i.Name, i.Name, c.siControlCheck)
+        oIsAnimated.append(oParameter)
+        xsi.SetValue(&quot;AE-EXPORT.&quot;+(str(i.Name)), 1)
+    oLayout.EndGroup()
+
+    buttonPressed = xsi.InspectObj(oPSet, &quot;&quot;, &quot;Check it out&quot;, c.siModal,FALSE)
+    
+    return oPSet,buttonPressed,IN.Value,OUT.Value,FPS.Value,oIsAnimated,oLights
+
+def get_RenderOptions():
+    renderOptions = xsi.ActiveProject.ActiveScene.PassContainer.Properties.Find(&quot;RenderOptions&quot;)
+    startFrame = renderOptions.Parameters(&quot;FrameStart&quot;).Value
+    endFrame = renderOptions.Parameters(&quot;FrameEnd&quot;).Value
+    fps = xsi.GetValue('PlayControl.Rate')
+    width = renderOptions.Parameters(&quot;ImageWidth&quot;).Value
+    height = renderOptions.Parameters(&quot;ImageHeight&quot;).Value
+    pixelAspect = renderOptions.Parameters(&quot;ImagePixelRatio&quot;).Value
+
+    return width, height, pixelAspect, endFrame, startFrame, fps
+
+def get_XSIData(startFrame,endFrame,selection,oIsAnimated):
+
+    camLocations = []
+    camRotations = []
+    xsiLens = []
+    interestLocations = []
+    interestRotations = []
+    objLocations = []
+    objRotations = []
+    objNames = []
+    helper = xsi.GetPrim(&quot;Null&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;)
+    
+    for i,obj in enumerate(selection):
+        animated = oIsAnimated[i].Value
+        #log(animated)
+        if obj.type=='camera':
+            interest = xsi.GetPrim(&quot;Null&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;)
+            xsi.CopyPaste(str(interest), &quot;&quot;, str(obj), 1)
+            interest.kinematics.local.posx.Value = 0
+            interest.kinematics.local.posy.Value = 0
+            interest.kinematics.local.posz.Value = -2
+
+            vWorldY = XSIMath.CreateVector3( 0, 1, 0)
+            vWorldYProj = XSIMath.CreateVector3()
+            vCamY = XSIMath.CreateVector3( 0, 1, 0)
+            camTransGlobal = XSIMath.CreateTransform()
+            camTransGlobalRot =XSIMath.CreateRotation()
+            camTransGlobalRotInv = XSIMath.CreateRotation()
+            for i in range(startFrame,endFrame+1):
+                posX = xsi.GetValue(str(obj)+'.kine.global.posx',i)
+                posY = (xsi.GetValue(str(obj)+'.kine.global.posy',i))
+                posZ = (xsi.GetValue(str(obj)+'.kine.global.posz',i))
+                xsi.SetValue(&quot;PlayControl.Current&quot;, i, &quot;&quot;)
+                #helper.kinematics.local.parameters('rotorder').Value = 5
+                helper.kinematics.Global.transform = obj.kinematics.Global.transform
+                rotX = helper.kinematics.local.rotx.Value
+                rotY = helper.kinematics.local.roty.Value
+
+                camTransGlobal = obj.kinematics.Global.transform
+                camTransGlobalRot = camTransGlobal.Rotation
+                camTransGlobalRotInv.Invert( camTransGlobalRot)
+
+                vWorldYProj.MulByRotation( vWorldY, camTransGlobalRotInv)
+                vWorldYProj.Z = 0
+                rotZ = XSIMath.RadiansToDegrees(vWorldYProj.Angle( vCamY))
+                #if rotX &lt;= 0:
+                #    rotZ = -rotZ
+                if abs(rotY) &lt;= 90:
+                    rotZ = -rotZ
+                if camTransGlobalRot.RotZ &gt;= 0:
+                    rotZ = -rotZ
+                #helper.kinematics.local.parameters('rotorder').Value = 0
+                fov = xsi.GetValue(str(obj)+'.fov',i)
+                intX = xsi.GetValue(str(interest)+'.kine.global.posx',i)
+                intY = xsi.GetValue(str(interest)+'.kine.global.posy',i)
+                intZ = xsi.GetValue(str(interest)+'.kine.global.posz',i)
+                intXr = xsi.GetValue(interest.parameters('rotx'),i)
+                intYr = xsi.GetValue(interest.parameters('roty'),i)
+                intZr = xsi.GetValue(interest.parameters('rotz'),i)
+                camLocations.append((posX,posY,posZ))
+                camRotations.append((rotX,rotY,rotZ))
+                interestLocations.append((intX,intY,intZ))
+                interestRotations.append((intXr,intYr,intZr))
+                xsiLens.append(fov)
+                if animated == FALSE:
+                    break    
+            xsi.DeleteObj(interest) 
+        else:
+            log(&quot;get Data:  &quot;)
+            log(obj.Name)
+            objNames.append(str(obj.Name))
+            objloctemp = []
+            objrottemp = []
+            for i in range(startFrame,endFrame+1):
+                posX = xsi.GetValue(str(obj)+'.kine.global.posx',i)
+                posY = xsi.GetValue(str(obj)+'.kine.global.posy',i)
+                posZ = xsi.GetValue(str(obj)+'.kine.global.posz',i)
+                xsi.SetValue(&quot;PlayControl.Current&quot;, i, &quot;&quot;)
+
+                helper.kinematics.local.parameters('rotorder').Value = 5
+                helper.kinematics.Global.transform = obj.kinematics.Global.transform
+                rotX = helper.kinematics.local.rotx.Value
+                rotY = helper.kinematics.local.roty.Value
+                rotZ = helper.kinematics.local.rotz.Value
+                helper.kinematics.local.parameters('rotorder').Value = 0
+                objloctemp.append((posX,posY,posZ))
+                objrottemp.append((rotX,rotY,rotZ))
+                if animated == FALSE:
+                    break
+            objLocations.append(objloctemp)
+            objRotations.append(objrottemp)
+                
+    xsi.DeleteObj(helper)            
+    return camLocations, camRotations, xsiLens, interestLocations, interestRotations, \
+        objLocations, objRotations, objNames
+                
+                
+def convert2AE(loc,rot,width,height,pixelAspect):
+    aeLoc,aeRot = [],[]
+    for i, xyz in enumerate(loc):
+        x = (float(xyz[0])*10) +(width*pixelAspect)/2
+        y = -1*(float(xyz[1])*10) +(height/2)
+        z = -float(xyz[2])*10
+        loc = ('%.3f' % x,'%.3f' % y,'%.3f' % z)
+        aeLoc.append(loc)
+    for i, xyz in enumerate(rot):
+        rx = float(xyz[0])
+        ry = -float(xyz[1])
+        rz = -float(xyz[2]) 
+        rot = ('%.3f' % rx, '%.3f' % ry, '%.3f' % rz)
+        aeRot.append(rot)
+    return aeLoc,aeRot
+
+def convertLens(lens, width, pixelAspect):
+    zoom = []
+    for i in lens:
+        #blenderFoV =(2*(math.tanh(24.0/(i*2))*180)/math.pi)   # Converts Lens Value to FoV
+        zoom.append(((width*pixelAspect)/2)/(math.tan((math.pi/180)*i/2)))  # Converts FoV to AE zoom-pixel
+    return zoom
+
+def write_importer(filename, width, height, pixelAspect, duration, fps, aeCamLoc, aeCamRot, \
+                aeInterestLoc, zoom, aeNullLoc, aeNullRot, objNames, lights):
+    filename = file(filename, 'wb')
+    scene = xsi.ActiveProject.ActiveScene
+    filename.write('var newComp = app.project.items.addComp(&quot;%s&quot;, %i, %i, %f, %f, %i);\n'
+    %(str(scene.Name), int(round(width*pixelAspect)), height, 1, duration/fps, fps))
+    filename.write('var newCamera = newComp.layers.addCamera(&quot;XSICamera&quot;,[0,0]);\n\n')
+    frame = float(0)
+    step = float(1/fps)
+    for i, value in enumerate(zoom):
+        filename.write ('newCamera.property(&quot;position&quot;).setValueAtTime(%f, [%f, %f, %f]);\n'
+            %(frame, float(aeCamLoc[i][0]), float(aeCamLoc[i][1]), float(aeCamLoc[i][2])))
+        filename.write ('newCamera.property(&quot;rotationX&quot;).setValueAtTime(%f, %i);\n'
+            %(frame, 0))
+        filename.write ('newCamera.property(&quot;rotationY&quot;).setValueAtTime(%f, %i);\n'
+            %(frame, 0))
+        filename.write ('newCamera.property(&quot;rotationZ&quot;).setValueAtTime(%f, %f);\n'
+            %(frame, float(aeCamRot[i][2])))
+        filename.write ('newCamera.property(&quot;pointOfInterest&quot;).setValueAtTime(%f, [%f, %f, %f]);\n'
+            %(frame, float(aeInterestLoc[i][0]), float(aeInterestLoc[i][1]), float(aeInterestLoc[i][2])))
+        filename.write ('newCamera.property(&quot;zoom&quot;).setValueAtTime(%f, %f);\n'
+            %(frame, float(zoom[i])))
+        frame += step
+        
+    if lights == False:
+        #### NULLS
+        for elem, bla in enumerate(aeNullLoc):
+            filename.write('var newNull = newComp.layers.addNull();\n'
+                        'newNull.threeDLayer = true;\n'
+                        'newNull.startTime = 0;\n'
+                        'newNull.inPoint = 0;\n'
+                        'newNull.name = &quot;%s&quot;;\n' % objNames[elem]) 
+            frame = float(0)
+            step = float(1/fps)
+            for i,value in enumerate(zoom):
+                try:
+                    filename.write ('newNull.property(&quot;position&quot;).setValueAtTime(%f, [%f, %f, %f]);\n'
+                        %(frame, float(aeNullLoc[elem][i][0]), float(aeNullLoc[elem][i][1]), float(aeNullLoc[elem][i][2])))
+                    filename.write ('newNull.property(&quot;rotationZ&quot;).setValueAtTime(%f, %f);\n'
+                        %(frame, float(aeNullRot[elem][i][2])))
+                    filename.write ('newNull.property(&quot;rotationY&quot;).setValueAtTime(%f, %f);\n'
+                        %(frame, float(aeNullRot[elem][i][1])))
+                    filename.write ('newNull.property(&quot;rotationX&quot;).setValueAtTime(%f, %f);\n'
+                        %(frame, float(aeNullRot[elem][i][0])))
+                    frame += step
+                except:
+                    break
+    else:
+        #### LIGHTS
+        for elem, bla in enumerate(aeNullLoc):
+            filename.write('var newLight = newComp.layers.addLight(&quot;%s&quot;, [0,0]);\n' 
+                        'newLight.startTime = 0;\n'
+                        'newLight.inPoint = 0;\n' % objNames[elem])
+                        
+            frame = float(0)
+            step = float(1/fps)
+            for i,value in enumerate(zoom):
+                try:
+                    filename.write ('newLight.property(&quot;position&quot;).setValueAtTime(%f, [%f, %f, %f]);\n'
+                        %(frame, float(aeNullLoc[elem][i][0]), float(aeNullLoc[elem][i][1]), float(aeNullLoc[elem][i][2])))
+                    filename.write ('newLight.property(&quot;rotationZ&quot;).setValueAtTime(%f, %f);\n'
+                        %(frame, float(aeNullRot[elem][i][2])))
+                    filename.write ('newLight.property(&quot;rotationY&quot;).setValueAtTime(%f, %f);\n'
+                        %(frame, float(aeNullRot[elem][i][1])))
+                    filename.write ('newLight.property(&quot;rotationX&quot;).setValueAtTime(%f, %f);\n'
+                        %(frame, float(aeNullRot[elem][i][0])))
+                    frame += step
+                except:
+                    break
+    filename.close()
+
+
+def main():
+    
+    selection = xsi.selection
+    if selection[0].Type==&quot;#Group&quot;:
+        selection = selection[0].Members
+    width, height, pixelAspect, endFrame, startFrame, fps = get_RenderOptions()
+    oPSet, buttonPressed,IN,OUT,FPS,oIsAnimated,lights = gui(startFrame,endFrame,fps,width,height,pixelAspect,selection)
+    if buttonPressed == FALSE:
+        xsi.LogMessage(&quot;OK&quot;)
+        camLocations, camRotations, xsiLens, interestLocations, interestRotations, \
+        objLocations, objRotations, objNames = get_XSIData(IN,OUT,selection,oIsAnimated)
+        # Convert to AE Data
+        aeCamLoc, aeCamRot = convert2AE(camLocations, camRotations, width, height, pixelAspect)    
+        aeInterestLoc, aeInterestRot = convert2AE(interestLocations, interestRotations, width, height, pixelAspect)
+        aeNullLoc = []
+        aeNullRot = []
+        for i, bla in enumerate(objLocations):
+            locs, rots = convert2AE(objLocations[i], objRotations[i], width, height, pixelAspect)
+            aeNullLoc.append(locs)
+            aeNullRot.append(rots)
+        zoom = convertLens(xsiLens, width, pixelAspect)
+        fileBrowser = XSIUIToolkit.FileBrowser
+        fileBrowser.Filter = &quot;JSX (*.jsx)|*.jsx||&quot;
+        fileBrowser.InitialDirectory = xsi.GetValue(&quot;Passes.RenderOptions.OutputDir&quot;) 
+        fileBrowser.ShowSave()
+        filename = fileBrowser.filepathname
+        duration = float((OUT-IN)+1/fps)
+        
+        write_importer(filename, width, height, pixelAspect, duration, fps, aeCamLoc, aeCamRot,aeInterestLoc, zoom, aeNullLoc, aeNullRot, objNames, lights.Value)
+
+
+    else:
+        xsi.LogMessage(&quot;Cancel&quot;) 
+
+    xsi.DeleteObj(oPSet)
+    for i in camRotations:
+        log(i)
+    EndTime = time.time()
+    log(EndTime-StartTime)
+    log(&quot;Version 100727&quot;)
+
+
+main()
+]]&gt;</scripttext>
+            </item>
+            <item type="script" label="Instances to Model" name="PC_Instances_To_Model" cmdid="{4B808606-1A1F-21EC-18FF-024F5BA37B81}"></item>
+            <item type="script" label="Compound Exporter" name="PC_Multi_Compound_Exporter" cmdid="{3906B35A-E719-3441-3223-FEFEC1B68031}"></item>
+            <item type="separator" mode="group_header" group_name="Render Tools"></item>
+            <item type="script" label="Custom FBuffers" name="PC_Custom_Framebuffer_Manager" cmdid="{2A082E76-E199-E37B-0A5F-D1DCD9BC6514}"></item>
+            <item type="script" label="Arnold FBuffers" name="PC_Arnold_Framebuffer_Manager" cmdid="{0E754EBC-D6D8-D20D-56EC-E33E21245EE7}"></item>
+            <item type="script" label="Custom Channels" name="PC_Store_Custom_Channel" cmdid="{E5D110A0-37E9-210E-F2CA-A744D5AF5D64}"></item>
+            <item type="script" label="MUSTER" name="PC_SendRendertoMuster" cmdid="{D9D3A96A-00F2-4D59-050D-4BD8A73D6431}"></item>
+            <item type="scriptbutton" label="StrechyBone" scriptengine="XSI.SIPython.1" tooltip="Select(bone,root,eff)">
+               <scripttext>&lt;![CDATA[objs=[]
+for o in Application.Selection:
+	objs.append(o)
+Application.SetExpr(objs[0].FullName+&quot;.bone.length&quot;, &quot;ctr_dist(&quot;+ objs[1].FullName +&quot;., &quot;+ objs[2].FullName +&quot;. )&quot;);
+Application.ApplyCns(&quot;Pose&quot;, objs[0].FullName, objs[1].FullName, False)
+Application.ApplyCns(&quot;Direction&quot;, objs[1].FullName, objs[2].FullName, False)
+]]&gt;</scripttext>
+            </item>
+            <item type="scriptbutton" label="SET_STATICK_KINESTATE" scriptengine="XSI.SIPython.1" tooltip="">
+               <scripttext>&lt;![CDATA[for o in Application.Selection:
+	KINELIST,kinenames = [],[]
+	for i in o.Properties:
+		if 'kine' in str(i):
+			for u in Application.EnumElements(i)[0].Parameters:
+				KINELIST.append(u)
+				kinenames.append(u.ScriptName)
+		if 'Static_KineState' in str(i):
+			for e in i.Parameters:
+				searchname = e.ScriptName.replace('ori','rot')
+				if searchname in kinenames:
+					KINELIST[kinenames.index(searchname)].Value = e.Value 
+		
+]]&gt;</scripttext>
+            </item>
+            <item type="script" name="MotionTrail" cmdid="{DEB2AE84-0AC3-EB65-BB8A-695BC007B18D}"></item>
+            <item type="scriptbutton" label="REPLACE_STANDARDS" scriptengine="XSI.SIPython.1" tooltip="">
+               <scripttext>&lt;![CDATA[import win32com
+app = Application
+
+selection = win32com.client.Dispatch( &quot;XSI.Collection&quot; )
+selection.AddItems (app.Selection)
+
+for obj in selection:
+	Material = obj
+	Shader = app.EnumElements(Material.surface)(0)
+	if app.EnumElements(Material.normal):
+		BumpMap=app.EnumElements(Material.normal)(0)
+		#BumpHeight= app.GetValue(str(BumpMap)+&quot;.scale&quot;)
+		BumpInput = app.EnumElements(BumpMap.input)(0)
+	else:
+		BumpMap,BumpInput = False,False
+	if &quot;standard&quot; in str(Shader):
+		ShaderColor = app.EnumElements(str(Shader)+&quot;.Kd_color&quot;)
+		kscolor = app.EnumElements(str(Shader)+&quot;.Ks_color&quot;)
+		r,g,b = ShaderColor[0].value,ShaderColor[1].value,ShaderColor[2].value
+		sr,sg,sb = kscolor[0].value,kscolor[1].value,kscolor[2].value
+		
+		kd = app.GetValue(str(Shader)+&quot;.Kd&quot;)
+		Shiny =app.GetValue(str(Shader)+&quot;.Ks&quot;)
+		kt = app.GetValue(str(Shader)+&quot;.Kt&quot;)
+		
+		NewShinyValue=Shiny
+		ShinyMap = app.EnumElements(str(Shader)+&quot;.Ks_color&quot;)
+		
+		IOR =app.GetValue(str(Shader)+&quot;.IOR&quot;)
+		OpacityColor = app.EnumElements(str(Shader)+&quot;.opacity&quot;)
+		
+		emcolor = app.EnumElements(str(Shader)+&quot;.emission_color&quot;)
+		emr,emg,emb, = emcolor[0].value,emcolor[1].value,emcolor[2].value
+		emision = app.GetValue(str(Shader)+&quot;.emission&quot;)
+		
+		
+		txtcolor,txtspec,txtspeccolor,txtopacity = False,False,False,False
+		
+		if len(ShaderColor) != 4:
+			txtcolor = True
+			ColorMap = app.RemoveShaderFromCnxPoint(str(Shader)+&quot;.*.out&quot;, str(Shader)+&quot;.Kd_color&quot;, False)
+		if len(kscolor) != 4:
+			txtspeccolor = True
+			SpeccolorMap = app.RemoveShaderFromCnxPoint(str(Shader)+&quot;.*.out&quot;, str(Shader)+&quot;.Ks_color&quot;, False)
+		if app.EnumElements(str(Shader)+&quot;.Ks&quot;) != None: 
+			if len(app.EnumElements(str(Shader)+&quot;.Ks&quot;))!= 4:
+				SpecMap = app.RemoveShaderFromCnxPoint(str(app.EnumElements(str(Shader)+&quot;.Ks&quot;))+&quot;.out&quot;, str(Shader)+&quot;.Ks&quot;, False)
+				txtspec = True
+		if len(OpacityColor) != 4:
+			txtopacity = True
+			OpacityMap = app.RemoveShaderFromCnxPoint(OpacityColor(4), str(Shader)+&quot;.opacity&quot;, False)
+			
+		Standard = app.CreateShaderFromProgID(&quot;ArnoldCoreShaders.standard.1.0&quot;, str(Material))
+		
+		if BumpMap and BumpInput != False:
+			try:Bump2d = app.CreateShaderFromProgID(&quot;Softimage.bump2d.1.0&quot;, str(Material))
+			except:Bump2d = app.CreateShaderFromProgID(&quot;ArnoldCoreShaders.bump2d.1.0&quot;, str(Material))
+			
+			app.SIConnectShaderToCnxPoint(str(Bump2d)+&quot;.out&quot;, str(Material)+&quot;.surface&quot;, False)
+			app.SIConnectShaderToCnxPoint(str(Standard)+&quot;.out&quot;, str(Bump2d)+&quot;.shader&quot;, False)
+			
+			try:
+				app.SIConnectShaderToCnxPoint(str(BumpInput.fullname), str(Bump2d)+&quot;.bump_map&quot;, False)
+				app.RemoveShaderFromCnxPoint(str(BumpMap)+&quot;.out&quot;, str(Material)+'.normal', False)
+			except:
+				continue
+
+		else:
+			app.SIConnectShaderToCnxPoint(str(Standard)+&quot;.out&quot;, str(Material)+&quot;.surface&quot;, False)
+			
+		Kdcolor = Standard.Kd_color
+		Kscolor = Standard.Ks_color
+		Emcolor = Standard.emission_color
+		
+		Kdcolor.red.value,Kdcolor.green.value,Kdcolor.blue.value = r,g,b
+		Kscolor.red.value,Kscolor.green.value,Kscolor.blue.value = sr,sg,sb
+		Emcolor.red.value,Emcolor.green.value,Emcolor.blue.value = emr,emg,emb
+		
+		Standard.emission.value = emision
+		Standard.Kd.value = kd
+		Standard.Kt.value = kt
+		Standard.Ks.value = NewShinyValue
+		Standard.IOR.value = IOR
+		
+		
+		if txtcolor == True:app.SIConnectShaderToCnxPoint(str(ColorMap)+&quot;.out&quot;, str(Standard)+&quot;.Kd_color&quot;, False)
+		if txtspec == True:	app.SIConnectShaderToCnxPoint(str(SpecMap)+&quot;.out&quot;, str(Standard)+&quot;.Ks&quot;, False)
+		if txtspeccolor == True:app.SIConnectShaderToCnxPoint(str(SpeccolorMap)+&quot;.out&quot;, str(Standard)+&quot;.Ks_color&quot;, False)
+		if txtopacity == True:app.SIConnectShaderToCnxPoint(str(OpacityMap)+&quot;.out&quot;, str(Standard)+&quot;.opacity&quot;, False)
+		
+
+]]&gt;</scripttext>
+            </item>
+         </tab>
+      </tabs>
+   </shelf_view>
+</xsi_file>

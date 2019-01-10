@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Instantiate By UV" category="PC_Tools/PCloud" tasks="PC_Tools/PCloud" author="" url="" formatversion="1.4" compoundversion="0.0" versiontag="" constructionmode="Current" backgroundcolor="11648037">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="ScalarTo2DVectorNode" index="0">
+				<param name="x" type="4" value="0.585000"></param>
+				<param name="y" type="4" value="0.761000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1286</prop>
+					<prop name="posy">72</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarTo2DVectorNode" index="1">
+				<param name="x" type="4" value="0.097000"></param>
+				<param name="y" type="4" value="0.761000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1286</prop>
+					<prop name="posy">-37</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="2">
+				<param name="reference" type="31" value="sphere1"></param>
+				<param_ext name="reference" type="31" value="sphere1"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-714</prop>
+					<prop name="posy">-172</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Build Linearly Interpolated Array" version="1.1" index="3">
+				<param name="Size" type="3" value="20"></param>
+				<param name="Start.Start_x" type="4" value="5.000000"></param>
+				<param name="Start.Start_y" type="4" value="0.000000"></param>
+				<param name="End.End_x" type="4" value="5.000000"></param>
+				<param name="End.End_y" type="4" value="6.000000"></param>
+				<portdef name="Start" type="8" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="End" type="8" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Size" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1066</prop>
+					<prop name="posy">12</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PC_Init Particle Data" version="0.0" index="4">
+				<param name="Mass" type="4" value="0.100000"></param>
+				<param name="Size" type="4" value="0.235000"></param>
+				<param name="Color.Color_red" type="4" value="1.000000"></param>
+				<param name="Color.Color_green" type="4" value="1.000000"></param>
+				<param name="Color.Color_blue" type="4" value="0.000000"></param>
+				<param name="Color.Color_alpha" type="4" value="1.000000"></param>
+				<param name="Orientation.Orientation_x" type="4" value="1.000000"></param>
+				<param name="Orientation.Orientation_y" type="4" value="0.000000"></param>
+				<param name="Orientation.Orientation_z" type="4" value="0.000000"></param>
+				<param name="Orientation.Orientation_angle" type="4" value="0.000000"></param>
+				<param name="Shape" type="3" value="4"></param>
+				<param name="Scale.Scale_x" type="4" value="1.000000"></param>
+				<param name="Scale.Scale_y" type="4" value="1.000000"></param>
+				<param name="Scale.Scale_z" type="4" value="1.000000"></param>
+				<param name="State" type="3" value="0"></param>
+				<portdef name="Shape" type="32768" structure="1" group="-1" instance="-1" port="-1" groupname="Value"></portdef>
+				<portdef name="State" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Size" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Orientation" type="16384" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Scale" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Color" type="512" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mass" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-611</prop>
+					<prop name="posy">145</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Get Particle Emit Location" version="1.0" index="5">
+				<param name="Reference" type="31" value="Self.EmitLocation"></param>
+				<param_ext name="Reference" type="31" value="Self.EmitLocation"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-1127</prop>
+					<prop name="posy">397</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Randomize Value by Range" version="1.0" index="6">
+				<param name="Object_Name_Reference" type="31" value="Self"></param>
+				<param name="Min_Value" type="3" value="0"></param>
+				<param name="Max_Value" type="3" value="3"></param>
+				<param name="Animated" type="11" value="false"></param>
+				<param name="Seed" type="3" value="487013"></param>
+				<param_ext name="Object_Name_Reference" type="31" value="Self"></param_ext>
+				<portdef name="Object_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Min_Value" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Max_Value" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Animated" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Seed" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1504</prop>
+					<prop name="posy">278</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="UVToLocationNode" index="7">
+				<param name="reference" type="31" value=""></param>
+				<param name="useprojection" type="11" value="false"></param>
+				<param name="uv.uv_x" type="4" value="-3.000000"></param>
+				<param name="uv.uv_y" type="4" value="0.000000"></param>
+				<param name="curveorfaceindex" type="3" value="0"></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="geometry" type="1024" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<portdef name="uv" type="8" structure="2" group="4" instance="0" port="0"></portdef>
+				<portdef name="curveorfaceindex" type="2" structure="1" group="5" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-403</prop>
+					<prop name="posy">-38</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AddPointNode" index="8">
+				<param name="reference" type="31" value="Self"></param>
+				<param_ext name="reference" type="31" value="Self"></param_ext>
+				<portdef name="positions1" type="2048" structure="2" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<portdef name="oncreation1" type="4096" structure="1" group="4" instance="0" port="0"></portdef>
+				<portdef name="oncreation2" type="4096" structure="1" group="4" instance="1" port="0"></portdef>
+				<portdef name="oncreation3" type="4096" structure="1" group="4" instance="2" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-82</prop>
+					<prop name="posy">76</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="InstanceShapeNode" index="9">
+				<param name="reference" type="31" value="Group"></param>
+				<param name="hierarchymode" type="3" value="0"></param>
+				<param name="outofrangegroupindex" type="3" value="0"></param>
+				<param name="rbdtype" type="3" value="0"></param>
+				<param name="index" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1010</prop>
+					<prop name="posy">254</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="10">
+				<param name="value" type="4" value="0.789000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1521</prop>
+					<prop name="posy">30</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Randomize Around Value" version="2.0" index="11">
+				<param name="Object_Name_Reference" type="31" value="Self"></param>
+				<param name="Base_Value" type="4" value="0.000000"></param>
+				<param name="Variance" type="4" value="0.000000"></param>
+				<param name="Seed" type="3" value="54321"></param>
+				<param name="Animated" type="11" value="false"></param>
+				<param_ext name="Object_Name_Reference" type="31" value="Self"></param_ext>
+				<portdef name="Object_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Base_Value" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Variance" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Animated" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Seed" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1456</prop>
+					<prop name="posy">515</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="DirectionToRotationNode" index="12">
+				<param name="pointat.pointat_x" type="4" value="0.000000"></param>
+				<param name="pointat.pointat_y" type="4" value="1.000000"></param>
+				<param name="pointat.pointat_z" type="4" value="0.000000"></param>
+				<param name="upvector.upvector_x" type="4" value="1.000000"></param>
+				<param name="upvector.upvector_y" type="4" value="0.000000"></param>
+				<param name="upvector.upvector_z" type="4" value="0.000000"></param>
+				<portdef name="pointat" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="upvector" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-894</prop>
+					<prop name="posy">422</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarTo3DVectorNode" index="13">
+				<param name="x" type="4" value="1.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<param name="z" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="z" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1100</prop>
+					<prop name="posy">589</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="x" username="X1" basename="X1" portlabel="X1" exposetype="single"> </port>
+			<port index="1" portname="x" username="X" basename="X" portlabel="X" exposetype="single"> </port>
+			<port index="2" portname="inname" username="In_Name" basename="In Name" portlabel="In Name" exposetype="single"> </port>
+			<port index="2" portname="reference" username="Reference1" basename="Reference1" portlabel="Reference1" exposetype="single"> </port>
+			<port index="3" portname="Size" username="Nb" basename="Nb" portlabel="Nb" exposetype="single"> </port>
+			<port index="4" portname="Size" username="Particle_Size" basename="Particle Size" portlabel="Particle Size" exposetype="single"> </port>
+			<port index="4" portname="Color" username="Color" basename="Color" portlabel="Color" exposetype="single"> </port>
+			<port index="4" portname="Scale" username="Scale" basename="Scale" portlabel="Scale" exposetype="single"> </port>
+			<port index="6" portname="Max_Value" username="Max_Obj_Index" basename="Max Obj Index" portlabel="Max Obj Index" exposetype="single"> </port>
+			<port index="6" portname="Seed" username="Obj_Seed" basename="Obj Seed" portlabel="Obj Seed" exposetype="single"> </port>
+			<port index="6" portname="Min_Value" username="Min_Obj_Index" basename="Min Obj Index" portlabel="Min Obj Index" exposetype="single"> </port>
+			<port index="8" portname="add" username="Add" basename="Add" portlabel="Add" exposetype="single"> </port>
+			<port index="9" portname="reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="single"> </port>
+			<port index="10" portname="value" username="Y" basename="Y" portlabel="Y" exposetype="single"> </port>
+			<port index="11" portname="Base_Value" username="Base_Rot" basename="Base Rot" portlabel="Base Rot" exposetype="single"> </port>
+			<port index="11" portname="Variance" username="Variance_Rot" basename="Variance Rot" portlabel="Variance Rot" exposetype="single"> </port>
+			<port index="11" portname="Seed" username="Rot_Seed" basename="Rot Seed" portlabel="Rot Seed" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="3" from_port="Result" to_node="7" to_port="uv"> </cnx>
+			<cnx from_node="4" from_port="Execute" to_node="8" to_port="oncreation1"> </cnx>
+			<cnx from_node="5" from_port="Normal" to_node="12" to_port="pointat"> </cnx>
+			<cnx from_node="6" from_port="Value" to_node="9" to_port="index"> </cnx>
+			<cnx from_node="11" from_port="Value" to_node="13" to_port="z"> </cnx>
+			<cnx from_node="7" from_port="result" to_node="8" to_port="positions1"> </cnx>
+			<cnx from_node="9" from_port="shape" to_node="4" to_port="Shape"> </cnx>
+			<cnx from_node="1" from_port="vector" to_node="3" to_port="Start"> </cnx>
+			<cnx from_node="12" from_port="rotation" to_node="4" to_port="Orientation"> </cnx>
+			<cnx from_node="13" from_port="vector" to_node="12" to_port="upvector"> </cnx>
+			<cnx from_node="0" from_port="vector" to_node="3" to_port="End"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="1" to_port="y"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="0" to_port="y"> </cnx>
+			<cnx from_node="2" from_port="value" to_node="7" to_port="geometry"> </cnx>
+		</connections>
+		<layout>
+			<group type="input" name="Nurbs" collapsed="true">
+				<item type="input" name="Reference1"> </item>
+				<item type="input" name="In_Name"> </item>
+			</group>
+			<group type="input" name="U_V" collapsed="true">
+				<item type="input" name="Nb"> </item>
+				<item type="input" name="X" min="0" max="1"> </item>
+				<item type="input" name="X1" min="0" max="1"> </item>
+				<item type="input" name="Y" min="0" max="1"> </item>
+			</group>
+			<group type="input" name="Instances" collapsed="true">
+				<item type="input" name="Reference"> </item>
+				<item type="input" name="Min_Obj_Index"> </item>
+				<item type="input" name="Max_Obj_Index"> </item>
+				<item type="input" name="Obj_Seed"> </item>
+			</group>
+			<group type="input" name="Random Rot" collapsed="true">
+				<item type="input" name="Variance_Rot"> </item>
+				<item type="input" name="Base_Rot"> </item>
+				<item type="input" name="Rot_Seed"> </item>
+			</group>
+			<group type="input" name="Particles Data" collapsed="true">
+				<item type="input" name="Particle_Size"> </item>
+				<item type="input" name="Color"> </item>
+				<item type="input" name="Scale"> </item>
+			</group>
+			<item type="output" name="Add"> </item>
+		</layout>
+		<ppglogic lang=""><![CDATA[]]></ppglogic>
+	</definition>
+</xsi_file>

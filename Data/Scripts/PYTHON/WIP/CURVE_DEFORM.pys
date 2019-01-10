@@ -1,0 +1,9 @@
+app = Application
+CV= 'CV'
+ICETree = app.ApplyOp("ICETree", CV, "siNode", "", "", 3)
+GLength = app.AddICENode("GetDataNode", ICETree)
+app.SetValue(str(GLength)+'.reference', "self.CurveLength", "")
+SLength = app.AddICECompoundNode("Set Data", ICETree)
+app.SetValue(str(SLength)+'.Reference', "self.Length", "")
+app.ConnectICENodes(str(GLength)+'.Value', str(SLength)+'.value')
+app.ConnectICENodes(str(ICETree)+'.port1', str(SLength)+'.Execute')

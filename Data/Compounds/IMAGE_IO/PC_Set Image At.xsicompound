@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Set Image At" category="PC_Image_IO" tasks="PC_Tools" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="14000776">
+	<definition>
+		<nodes>
+			<node type="PC_Set_Image_At" index="0">
+				<param name="EvaluationType" type="3" value="0"></param>
+				<param name="ImageOffset" type="3" value="0"></param>
+				<param name="NormalizedXY.NormalizedXY_x" type="4" value="0.000000"></param>
+				<param name="NormalizedXY.NormalizedXY_y" type="4" value="0.000000"></param>
+				<param name="color.color_red" type="4" value="0.000000"></param>
+				<param name="color.color_green" type="4" value="0.000000"></param>
+				<param name="color.color_blue" type="4" value="0.000000"></param>
+				<param name="color.color_alpha" type="4" value="1.000000"></param>
+				<portdef name="Image" type="65536" structure="1" group="0" instance="0" port="0" supportedblob="1"></portdef>
+				<portdef name="EvaluationType" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="ImageOffset" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="NormalizedXY" type="8" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="color" type="512" structure="1" group="0" instance="0" port="4"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">403</prop>
+					<prop name="posy">417</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Image" username="Image" basename="Image" portlabel="Image" exposetype="single"> </port>
+			<port index="0" portname="EvaluationType" username="GetBy" basename="GetBy" portlabel="GetBy" exposetype="single"> </port>
+			<port index="0" portname="ImageOffset" username="ImageOffset" basename="ImageOffset" portlabel="ImageOffset" exposetype="single"> </port>
+			<port index="0" portname="NormalizedXY" username="NormalizedXY" basename="NormalizedXY" portlabel="NormalizedXY" exposetype="single"> </port>
+			<port index="0" portname="color" username="color" basename="color" portlabel="color" exposetype="single"> </port>
+			<port index="0" portname="Colored Image" username="Colored_Image" basename="Colored Image" portlabel="Colored Image" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Image"> </item>
+			<item type="input" name="GetBy" min="0" max="0">
+				<enum value="0"><![CDATA[offset]]></enum>
+				<enum value="1"><![CDATA[XY rounded]]></enum>
+				<enum value="2"><![CDATA[XY linear Interpolation]]></enum>
+				<enum value="3"><![CDATA[XY cubic Interpolation]]></enum>
+			</item>
+			<item type="input" name="ImageOffset"> </item>
+			<item type="input" name="NormalizedXY"> </item>
+			<item type="input" name="color"> </item>
+			<item type="output" name="Colored_Image"> </item>
+		</layout>
+		<blob_dictionary>
+			<dict_entry index="1" color="15625002">
+				<typename><![CDATA[PCImage]]></typename>
+				<displayname><![CDATA[PCImage]]></displayname>
+				<description><![CDATA[PCImage]]></description>
+			</dict_entry>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

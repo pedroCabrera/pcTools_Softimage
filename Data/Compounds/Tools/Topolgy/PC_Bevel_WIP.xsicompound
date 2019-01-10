@@ -1,0 +1,1532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Bevel_WIP" category="PC_Tools/Topology" tasks="PC_Tools/Topology" author="" url="" formatversion="1.4" compoundversion="0.0" versiontag="" constructionmode="Current" backgroundcolor="9195398">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="[embedded_0]" index="0">
+				<datablob category="ui_infos">
+					<prop name="posx">831</prop>
+					<prop name="posy">-264</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_1]" index="1">
+				<param name="Edge" type="3" value="9"></param>
+				<portdef name="Edge" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">897</prop>
+					<prop name="posy">-402</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_2]" index="2">
+				<datablob category="ui_infos">
+					<prop name="posx">844</prop>
+					<prop name="posy">-325</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_4]" index="3">
+				<param name="Ratio" type="4" value="0.484000"></param>
+				<portdef name="Ratio" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">751</prop>
+					<prop name="posy">-198</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_5]" index="4">
+				<datablob category="ui_infos">
+					<prop name="posx">834</prop>
+					<prop name="posy">-113</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="5">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="port4" type="4096" structure="1" group="0" instance="3" port="0"></portdef>
+				<portdef name="port5" type="4096" structure="1" group="0" instance="4" port="0"></portdef>
+				<portdef name="port6" type="4096" structure="1" group="0" instance="5" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1123</prop>
+					<prop name="posy">-273</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="Edge" username="Edge" basename="Edge" portlabel="Edge" exposetype="single"> </port>
+			<port index="3" portname="Ratio" username="Ratio" basename="Ratio" portlabel="Ratio" exposetype="single"> </port>
+			<port index="5" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="Execute1" to_node="5" to_port="port4"> </cnx>
+			<cnx from_node="1" from_port="Execute" to_node="5" to_port="port1"> </cnx>
+			<cnx from_node="2" from_port="Execute" to_node="5" to_port="port3"> </cnx>
+			<cnx from_node="3" from_port="Execute" to_node="5" to_port="port5"> </cnx>
+			<cnx from_node="4" from_port="Execute" to_node="5" to_port="port6"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Edge"> </item>
+			<item type="input" name="Ratio" min="0" max="1"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<ppglogic lang=""><![CDATA[]]></ppglogic>
+	</definition>
+	<embedded_0 name="Set Vertex Arrays" formatversion="1.4" compoundversion="1.0" constructionmode="Modeling" backgroundcolor="6732954">
+		<nodes>
+			<node type="SelectInArrayNode" index="0">
+				<param name="index" type="3" value="1"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1834</prop>
+					<prop name="posy">481</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="1">
+				<param name="index" type="3" value="1"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2381</prop>
+					<prop name="posy">136</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="2">
+				<param name="index" type="3" value="0"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1834</prop>
+					<prop name="posy">424</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayNode" index="3">
+				<param name="value1" type="3" value="0"></param>
+				<param name="value2" type="3" value="0"></param>
+				<portdef name="value1" type="2" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="2" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1631</prop>
+					<prop name="posy">151</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSetNode" index="4">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2274</prop>
+					<prop name="posy">640</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSetNode" index="5">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1668</prop>
+					<prop name="posy">424</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="6">
+				<param name="Reference" type="31" value=""></param>
+				<param name="Value" type="3" value="0"></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="2" structure="2" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1455</prop>
+					<prop name="posy">151</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Repeat with Counter" version="1.0" index="7">
+				<param name="Reference" type="31" value=""></param>
+				<param name="Num_Iterations" type="3" value="0"></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="Num_Iterations" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute_Each_Iteration" type="4096" structure="1" group="2" instance="0" port="0" groupname="Execute Each Iteration"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1402</prop>
+					<prop name="posy">636</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Repeat with Counter" version="1.0" index="8">
+				<param name="Reference" type="31" value=""></param>
+				<param name="Num_Iterations" type="3" value="20"></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="Num_Iterations" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute_Each_Iteration" type="4096" structure="1" group="2" instance="0" port="0" groupname="Execute Each Iteration"></portdef>
+				<portdef name="Execute_Each_Iteration1" type="4096" structure="1" group="2" instance="1" port="0" groupname="Execute Each Iteration"></portdef>
+				<portdef name="Execute_Each_Iteration2" type="4096" structure="1" group="2" instance="2" port="0" groupname="Execute Each Iteration"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1239</prop>
+					<prop name="posy">258</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="9">
+				<param name="Reference" type="31" value="self.FirstvertexArray"></param>
+				<param name="Reference1" type="31" value="self.LasttvertexArray"></param>
+				<param name="Value" type="3" value="0"></param>
+				<param name="Value1" type="3" value="0"></param>
+				<param_ext name="Reference" type="31" value="self.FirstvertexArray"></param_ext>
+				<param_ext name="Reference1" type="31" value="self.LasttvertexArray"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="2" structure="2" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value1" type="2" structure="2" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1465</prop>
+					<prop name="posy">452</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="10">
+				<param name="Reference" type="31" value="self.MasterVertex"></param>
+				<param name="Value" type="3" value="0"></param>
+				<param_ext name="Reference" type="31" value="self.MasterVertex"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="2" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1558</prop>
+					<prop name="posy">723</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSetNode" index="12">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1689</prop>
+					<prop name="posy">-6</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSetNode" index="13">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2823</prop>
+					<prop name="posy">350</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSetNode" index="14">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1668</prop>
+					<prop name="posy">481</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSetNode" index="15">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2583</prop>
+					<prop name="posy">165</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="16">
+				<param name="reference" type="31" value="VertexIndex"></param>
+				<param_ext name="reference" type="31" value="VertexIndex"></param_ext>
+				<portdef name="source" type="2048" structure="2" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2060</prop>
+					<prop name="posy">781</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="17">
+				<param name="reference" type="31" value="self.initVertex"></param>
+				<param_ext name="reference" type="31" value="self.initVertex"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-3519</prop>
+					<prop name="posy">336</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="18">
+				<param name="reference" type="31" value="self.VertexIndex"></param>
+				<param_ext name="reference" type="31" value="self.VertexIndex"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-3534</prop>
+					<prop name="posy">279</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="19">
+				<param name="reference" type="31" value="self.CounterValue"></param>
+				<param_ext name="reference" type="31" value="self.CounterValue"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2285</prop>
+					<prop name="posy">679</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="20">
+				<param name="reference" type="31" value="self.VertexIsOnEdgeLoop2"></param>
+				<param_ext name="reference" type="31" value="self.VertexIsOnEdgeLoop2"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2667</prop>
+					<prop name="posy">609</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="21">
+				<param name="reference" type="31" value="self.PolygonToVertices"></param>
+				<param_ext name="reference" type="31" value="self.PolygonToVertices"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2621</prop>
+					<prop name="posy">450</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="22">
+				<param name="reference" type="31" value="self.VertexToPolygons"></param>
+				<param_ext name="reference" type="31" value="self.VertexToPolygons"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-3178</prop>
+					<prop name="posy">393</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="23">
+				<param name="reference" type="31" value="self.NewVertexPerPolygon"></param>
+				<param_ext name="reference" type="31" value="self.NewVertexPerPolygon"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2131</prop>
+					<prop name="posy">444</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="24">
+				<param name="reference" type="31" value="self.NewVertexPerPolygon"></param>
+				<param_ext name="reference" type="31" value="self.NewVertexPerPolygon"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1952</prop>
+					<prop name="posy">51</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="25">
+				<param name="reference" type="31" value="self.CounterValue"></param>
+				<param_ext name="reference" type="31" value="self.CounterValue"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2591</prop>
+					<prop name="posy">108</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="26">
+				<param name="reference" type="31" value="self.PolygonIndex"></param>
+				<param_ext name="reference" type="31" value="self.PolygonIndex"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2833</prop>
+					<prop name="posy">222</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="27">
+				<param name="reference" type="31" value="self.PointPosition"></param>
+				<param_ext name="reference" type="31" value="self.PointPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2459</prop>
+					<prop name="posy">801</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="28">
+				<param name="reference" type="31" value="self.VertexIndex"></param>
+				<param_ext name="reference" type="31" value="self.VertexIndex"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2620</prop>
+					<prop name="posy">665</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="29">
+				<param name="index" type="3" value="0"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2052</prop>
+					<prop name="posy">713</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="30">
+				<param name="index" type="3" value="0"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1749</prop>
+					<prop name="posy">770</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetClosestPointsNode" index="31">
+				<param name="position.position_x" type="4" value="0.000000"></param>
+				<param name="position.position_y" type="4" value="0.000000"></param>
+				<param name="position.position_z" type="4" value="0.000000"></param>
+				<param name="enablecutoffdistance" type="11" value="false"></param>
+				<param name="cutoffdistance" type="4" value="1.000000"></param>
+				<param name="enablemaxnumberpoints" type="11" value="true"></param>
+				<param name="maxnumberpoints" type="3" value="4"></param>
+				<portdef name="geometry" type="1024" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="position" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="enablecutoffdistance" type="1" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="cutoffdistance" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="enablemaxnumberpoints" type="1" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="maxnumberpoints" type="2" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2249</prop>
+					<prop name="posy">772</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FindInArrayNode" index="32">
+				<param name="value" type="3" value="0"></param>
+				<param name="array" type="3" value="0"></param>
+				<param name="epsilon" type="4" value="0.000000"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="epsilon" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1894</prop>
+					<prop name="posy">734</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetArraySizeNode" index="33">
+				<param name="array" type="3" value="0"></param>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1624</prop>
+					<prop name="posy">647</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="34">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-936</prop>
+					<prop name="posy">431</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="FilterNode" index="35">
+				<param name="keep" type="11" value="false"></param>
+				<param name="value" type="3" value="0"></param>
+				<portdef name="keep" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2400</prop>
+					<prop name="posy">639</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FindInArrayNode" index="36">
+				<param name="value" type="3" value="0"></param>
+				<param name="array" type="3" value="0"></param>
+				<param name="epsilon" type="4" value="0.000000"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="epsilon" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2106</prop>
+					<prop name="posy">252</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetArraySizeNode" index="37">
+				<param name="array" type="3" value="0"></param>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1487</prop>
+					<prop name="posy">-6</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FilterNode" index="38">
+				<param name="keep" type="11" value="false"></param>
+				<param name="value" type="3" value="0"></param>
+				<portdef name="keep" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2322</prop>
+					<prop name="posy">368</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FilterNode" index="39">
+				<param name="keep" type="11" value="false"></param>
+				<param name="value" type="3" value="0"></param>
+				<portdef name="keep" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1796</prop>
+					<prop name="posy">252</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FilterNode" index="40">
+				<param name="keep" type="11" value="false"></param>
+				<param name="value" type="3" value="0"></param>
+				<portdef name="keep" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2940</prop>
+					<prop name="posy">350</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FindInArrayNode" index="41">
+				<param name="value" type="3" value="0"></param>
+				<param name="array" type="3" value="0"></param>
+				<param name="epsilon" type="4" value="0.000000"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="epsilon" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2535</prop>
+					<prop name="posy">286</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FilterNode" index="42">
+				<param name="keep" type="11" value="false"></param>
+				<param name="value" type="3" value="0"></param>
+				<portdef name="keep" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2728</prop>
+					<prop name="posy">165</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="NotNode" index="43">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-3039</prop>
+					<prop name="posy">307</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FindInArrayNode" index="44">
+				<param name="value" type="3" value="0"></param>
+				<param name="array" type="3" value="0"></param>
+				<param name="epsilon" type="4" value="0.000000"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="epsilon" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-3332</prop>
+					<prop name="posy">307</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="34" portname="execute" username="Execute1" basename="Execute1" portlabel="Execute1" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="6" from_port="Execute" to_node="8" to_port="Execute_Each_Iteration"> </cnx>
+			<cnx from_node="7" from_port="Execute" to_node="34" to_port="port2"> </cnx>
+			<cnx from_node="8" from_port="Execute" to_node="34" to_port="port1"> </cnx>
+			<cnx from_node="9" from_port="Execute" to_node="8" to_port="Execute_Each_Iteration1"> </cnx>
+			<cnx from_node="10" from_port="Execute" to_node="7" to_port="Execute_Each_Iteration"> </cnx>
+			<cnx from_node="3" from_port="array" to_node="6" to_port="Value"> </cnx>
+			<cnx from_node="4" from_port="array" to_node="33" to_port="array"> </cnx>
+			<cnx from_node="4" from_port="array" to_node="29" to_port="array"> </cnx>
+			<cnx from_node="5" from_port="array" to_node="9" to_port="Value"> </cnx>
+			<cnx from_node="12" from_port="array" to_node="37" to_port="array"> </cnx>
+			<cnx from_node="13" from_port="array" to_node="41" to_port="array"> </cnx>
+			<cnx from_node="14" from_port="array" to_node="9" to_port="Value1"> </cnx>
+			<cnx from_node="15" from_port="array" to_node="1" to_port="array"> </cnx>
+			<cnx from_node="0" from_port="value" to_node="14" to_port="value"> </cnx>
+			<cnx from_node="1" from_port="value" to_node="36" to_port="value"> </cnx>
+			<cnx from_node="1" from_port="value" to_node="39" to_port="value"> </cnx>
+			<cnx from_node="2" from_port="value" to_node="5" to_port="value"> </cnx>
+			<cnx from_node="29" from_port="value" to_node="32" to_port="value"> </cnx>
+			<cnx from_node="30" from_port="value" to_node="10" to_port="Value"> </cnx>
+			<cnx from_node="31" from_port="points" to_node="16" to_port="source"> </cnx>
+			<cnx from_node="32" from_port="index" to_node="30" to_port="index"> </cnx>
+			<cnx from_node="33" from_port="size" to_node="7" to_port="Num_Iterations"> </cnx>
+			<cnx from_node="35" from_port="result" to_node="4" to_port="value"> </cnx>
+			<cnx from_node="36" from_port="found" to_node="39" to_port="keep"> </cnx>
+			<cnx from_node="37" from_port="size" to_node="8" to_port="Num_Iterations"> </cnx>
+			<cnx from_node="38" from_port="result" to_node="36" to_port="array"> </cnx>
+			<cnx from_node="38" from_port="result" to_node="12" to_port="value"> </cnx>
+			<cnx from_node="39" from_port="result" to_node="3" to_port="value2"> </cnx>
+			<cnx from_node="40" from_port="result" to_node="13" to_port="value"> </cnx>
+			<cnx from_node="41" from_port="found" to_node="38" to_port="keep"> </cnx>
+			<cnx from_node="42" from_port="result" to_node="15" to_port="value"> </cnx>
+			<cnx from_node="43" from_port="result" to_node="42" to_port="keep"> </cnx>
+			<cnx from_node="43" from_port="result" to_node="40" to_port="keep"> </cnx>
+			<cnx from_node="44" from_port="found" to_node="43" to_port="value"> </cnx>
+			<cnx from_node="16" from_port="value" to_node="32" to_port="array"> </cnx>
+			<cnx from_node="16" from_port="value" to_node="30" to_port="array"> </cnx>
+			<cnx from_node="17" from_port="value" to_node="44" to_port="array"> </cnx>
+			<cnx from_node="18" from_port="value" to_node="44" to_port="value"> </cnx>
+			<cnx from_node="18" from_port="value" to_node="42" to_port="value"> </cnx>
+			<cnx from_node="19" from_port="value" to_node="29" to_port="index"> </cnx>
+			<cnx from_node="19" from_port="outname" to_node="7" to_port="In_Name"> </cnx>
+			<cnx from_node="20" from_port="value" to_node="35" to_port="keep"> </cnx>
+			<cnx from_node="21" from_port="value" to_node="38" to_port="value"> </cnx>
+			<cnx from_node="22" from_port="value" to_node="40" to_port="value"> </cnx>
+			<cnx from_node="23" from_port="value" to_node="2" to_port="array"> </cnx>
+			<cnx from_node="23" from_port="value" to_node="0" to_port="array"> </cnx>
+			<cnx from_node="24" from_port="outname" to_node="6" to_port="In_Name"> </cnx>
+			<cnx from_node="24" from_port="value" to_node="3" to_port="value1"> </cnx>
+			<cnx from_node="25" from_port="value" to_node="1" to_port="index"> </cnx>
+			<cnx from_node="25" from_port="outname" to_node="8" to_port="In_Name"> </cnx>
+			<cnx from_node="26" from_port="value" to_node="41" to_port="value"> </cnx>
+			<cnx from_node="27" from_port="value" to_node="31" to_port="position"> </cnx>
+			<cnx from_node="28" from_port="value" to_node="35" to_port="value"> </cnx>
+		</connections>
+		<layout>
+			<item type="output" name="Execute1"> </item>
+		</layout>
+	</embedded_0>
+	<embedded_1 name="Initials" formatversion="1.4" compoundversion="1.0" constructionmode="Modeling" backgroundcolor="6732954">
+		<nodes>
+			<node type="BuildArrayFromSetNode" index="0">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">574</prop>
+					<prop name="posy">-459</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSetNode" index="1">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">574</prop>
+					<prop name="posy">-416</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="2">
+				<param name="Reference" type="31" value="self.BevelEdgeIndex"></param>
+				<param name="Reference1" type="31" value="self.initVertex"></param>
+				<param name="Reference2" type="31" value="self.initEdges"></param>
+				<param name="Value" type="3" value="0"></param>
+				<param name="Value1" type="3" value="0"></param>
+				<param name="Value2" type="3" value="0"></param>
+				<param_ext name="Reference" type="31" value="self.BevelEdgeIndex"></param_ext>
+				<param_ext name="Reference1" type="31" value="self.initVertex"></param_ext>
+				<param_ext name="Reference2" type="31" value="self.initEdges"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="2" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value1" type="2" structure="2" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<portdef name="Value2" type="2" structure="2" group="2" instance="2" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">802</prop>
+					<prop name="posy">-511</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="3">
+				<param name="reference" type="31" value="self.VertexIndex"></param>
+				<param_ext name="reference" type="31" value="self.VertexIndex"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">372</prop>
+					<prop name="posy">-459</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="4">
+				<param name="reference" type="31" value="self.EdgeIndex"></param>
+				<param_ext name="reference" type="31" value="self.EdgeIndex"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">382</prop>
+					<prop name="posy">-416</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="5">
+				<param name="value" type="3" value="9"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">673</prop>
+					<prop name="posy">-546</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[Edge Index]]></comment>
+			</node>
+			<node type="ExecuteNode" index="6">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">977</prop>
+					<prop name="posy">-530</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="5" portname="value" username="Edge" basename="Edge" portlabel="Edge" exposetype="single"> </port>
+			<port index="6" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="array" to_node="2" to_port="Value1"> </cnx>
+			<cnx from_node="1" from_port="array" to_node="2" to_port="Value2"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="2" to_port="Value"> </cnx>
+			<cnx from_node="3" from_port="value" to_node="0" to_port="value"> </cnx>
+			<cnx from_node="4" from_port="value" to_node="1" to_port="value"> </cnx>
+			<cnx from_node="2" from_port="Execute" to_node="6" to_port="port1"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Edge"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+	</embedded_1>
+	<embedded_3 name="Find Edges" formatversion="1.4" compoundversion="1.0" constructionmode="Modeling" backgroundcolor="6732954">
+		<nodes>
+			<node type="Get Polygon is on Edge Loop" version="1.0" index="0">
+				<param name="Reference" type="31" value="Self.CCWPolygonIsOnEdgeLoop"></param>
+				<param_ext name="Reference" type="31" value="Self.CCWPolygonIsOnEdgeLoop"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-923</prop>
+					<prop name="posy">-650</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="CombineLogicNode" index="1">
+				<param name="type" type="3" value="0"></param>
+				<param name="value1" type="11" value="true"></param>
+				<param name="value2" type="11" value="true"></param>
+				<param name="value3" type="11" value="true"></param>
+				<param name="value4" type="11" value="true"></param>
+				<portdef name="value1" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="1" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="value3" type="1" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="value4" type="1" structure="1" group="0" instance="3" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">20</prop>
+					<prop name="posy">-559</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSetNode" index="2">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-889</prop>
+					<prop name="posy">-486</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSetNode" index="3">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-361</prop>
+					<prop name="posy">-447</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSetNode" index="4">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-425</prop>
+					<prop name="posy">-618</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="5">
+				<param name="reference" type="31" value="self.EdgeIndex"></param>
+				<param_ext name="reference" type="31" value="self.EdgeIndex"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-400</prop>
+					<prop name="posy">-544</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="6">
+				<param name="reference" type="31" value="self.PolygonToEdges"></param>
+				<param_ext name="reference" type="31" value="self.PolygonToEdges"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-911</prop>
+					<prop name="posy">-602</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="7">
+				<param name="reference" type="31" value="self.EdgeToVertices"></param>
+				<param_ext name="reference" type="31" value="self.EdgeToVertices"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1225</prop>
+					<prop name="posy">-458</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="8">
+				<param name="reference" type="31" value="self.VertexIndex"></param>
+				<param_ext name="reference" type="31" value="self.VertexIndex"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-891</prop>
+					<prop name="posy">-547</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="9">
+				<param name="reference" type="31" value="self.VertexToEdges"></param>
+				<param_ext name="reference" type="31" value="self.VertexToEdges"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-712</prop>
+					<prop name="posy">-448</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="10">
+				<param name="reference" type="31" value="Self.EdgeIsOnEdgeLoop"></param>
+				<param_ext name="reference" type="31" value="Self.EdgeIsOnEdgeLoop"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1276</prop>
+					<prop name="posy">-564</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FindInArrayNode" index="11">
+				<param name="value" type="3" value="0"></param>
+				<param name="array" type="3" value="0"></param>
+				<param name="epsilon" type="4" value="0.000000"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="epsilon" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-144</prop>
+					<prop name="posy">-492</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FilterNode" index="12">
+				<param name="keep" type="11" value="false"></param>
+				<param name="value" type="3" value="0"></param>
+				<portdef name="keep" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-629</prop>
+					<prop name="posy">-619</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FindInArrayNode" index="13">
+				<param name="value" type="3" value="0"></param>
+				<param name="array" type="3" value="0"></param>
+				<param name="epsilon" type="4" value="0.000000"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="epsilon" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-144</prop>
+					<prop name="posy">-618</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FilterNode" index="14">
+				<param name="keep" type="11" value="false"></param>
+				<param name="value" type="3" value="0"></param>
+				<portdef name="keep" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-996</prop>
+					<prop name="posy">-486</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="NotNode" index="15">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-109</prop>
+					<prop name="posy">-558</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FilterNode" index="16">
+				<param name="keep" type="11" value="false"></param>
+				<param name="value" type="3" value="0"></param>
+				<portdef name="keep" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-481</prop>
+					<prop name="posy">-447</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FindInArrayNode" index="17">
+				<param name="value" type="3" value="0"></param>
+				<param name="array" type="3" value="0"></param>
+				<param name="epsilon" type="4" value="0.000000"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="epsilon" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-647</prop>
+					<prop name="posy">-511</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="2" from_port="array" to_node="17" to_port="array"> </cnx>
+			<cnx from_node="3" from_port="array" to_node="11" to_port="array"> </cnx>
+			<cnx from_node="4" from_port="array" to_node="13" to_port="array"> </cnx>
+			<cnx from_node="11" from_port="found" to_node="1" to_port="value3"> </cnx>
+			<cnx from_node="12" from_port="result" to_node="4" to_port="value"> </cnx>
+			<cnx from_node="13" from_port="found" to_node="1" to_port="value1"> </cnx>
+			<cnx from_node="14" from_port="result" to_node="2" to_port="value"> </cnx>
+			<cnx from_node="15" from_port="result" to_node="1" to_port="value2"> </cnx>
+			<cnx from_node="16" from_port="result" to_node="3" to_port="value"> </cnx>
+			<cnx from_node="17" from_port="found" to_node="16" to_port="keep"> </cnx>
+			<cnx from_node="5" from_port="value" to_node="13" to_port="value"> </cnx>
+			<cnx from_node="5" from_port="value" to_node="11" to_port="value"> </cnx>
+			<cnx from_node="6" from_port="value" to_node="12" to_port="value"> </cnx>
+			<cnx from_node="7" from_port="value" to_node="14" to_port="value"> </cnx>
+			<cnx from_node="8" from_port="value" to_node="17" to_port="value"> </cnx>
+			<cnx from_node="9" from_port="value" to_node="16" to_port="value"> </cnx>
+			<cnx from_node="10" from_port="value" to_node="14" to_port="keep"> </cnx>
+			<cnx from_node="10" from_port="value" to_node="15" to_port="value"> </cnx>
+			<cnx from_node="0" from_port="Both" to_node="12" to_port="keep"> </cnx>
+		</connections>
+		<layout>
+			<item type="output" name="Result"> </item>
+		</layout>
+	</embedded_3>
+	<embedded_2 name="Split Edge Loop" formatversion="1.4" compoundversion="1.0" constructionmode="Modeling" backgroundcolor="6732954">
+		<nodes>
+			<node type="Apply Split Edge" version="1.0" index="0">
+				<param name="Type" type="3" value="0"></param>
+				<param name="Mode" type="3" value="0"></param>
+				<param name="Is_Element" type="11" value="false"></param>
+				<param name="String_Array.String_Array_string" type="8" value=""></param>
+				<param name="String_Array.String_Array_uimode" type="8" value=""></param>
+				<param name="String_Array.String_Array_filepathseq" type="8" value=""></param>
+				<param name="String_Array.String_Array_filename" type="8" value=""></param>
+				<param name="Integer_Array" type="3" value="0"></param>
+				<param name="Edge_Index" type="3" value="0"></param>
+				<param name="Ratio" type="4" value="0.500000"></param>
+				<param name="Offset.Offset_x" type="4" value="0.000000"></param>
+				<param name="Offset.Offset_y" type="4" value="0.000000"></param>
+				<param name="Offset.Offset_z" type="4" value="0.000000"></param>
+				<portdef name="Topo" type="524288" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Ratio" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Offset" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cluster_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Is_Element" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="String_Array" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Integer_Array" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Edge_Index" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">517</prop>
+					<prop name="posy">-383</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_3]" index="1">
+				<datablob category="ui_infos">
+					<prop name="posx">109</prop>
+					<prop name="posy">-489</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="CombineLogicNode" index="2">
+				<param name="type" type="3" value="0"></param>
+				<param name="value1" type="11" value="true"></param>
+				<param name="value2" type="11" value="true"></param>
+				<portdef name="value1" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="1" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">377</prop>
+					<prop name="posy">-384</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="CombineLogicNode" index="3">
+				<param name="type" type="3" value="1"></param>
+				<param name="value1" type="11" value="false"></param>
+				<param name="value2" type="11" value="false"></param>
+				<portdef name="value1" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="1" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">442</prop>
+					<prop name="posy">-284</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Get Edge Loop" version="1.0" index="4">
+				<param name="Reference" type="31" value="self.BevelEdgeIndex"></param>
+				<param name="Edge_Start_Index" type="3" value="0"></param>
+				<param name="Mode" type="3" value="0"></param>
+				<param name="Nb_of_Next_Edges" type="3" value="2"></param>
+				<param name="Direction" type="3" value="0"></param>
+				<param name="Set_Vertex_Is_On_Edge_Loop" type="11" value="true"></param>
+				<param name="Display_Vertex" type="11" value="false"></param>
+				<param name="Set_Edge_Is_On_Edge_Loop" type="11" value="true"></param>
+				<param name="Set_Polygon_Is_On_Edge_Loop" type="11" value="true"></param>
+				<param name="Push_Factor" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="self.BevelEdgeIndex"></param_ext>
+				<portdef name="Push_Factor" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Edge_Index_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Edge_Start_Index" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Set_Vertex_Is_On_Edge_Loop" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Set_Edge_Is_On_Edge_Loop" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Set_Polygon_Is_On_Edge_Loop" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Display_Vertex" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Direction" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Nb_of_Next_Edges" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">505</prop>
+					<prop name="posy">-425</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="5">
+				<param name="Reference" type="31" value=""></param>
+				<param name="Value" type="11" value="false"></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="1" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">600</prop>
+					<prop name="posy">-254</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Apply Split Edge" version="1.0" index="6">
+				<param name="Type" type="3" value="0"></param>
+				<param name="Mode" type="3" value="0"></param>
+				<param name="Is_Element" type="11" value="false"></param>
+				<param name="String_Array.String_Array_string" type="8" value=""></param>
+				<param name="String_Array.String_Array_uimode" type="8" value=""></param>
+				<param name="String_Array.String_Array_filepathseq" type="8" value=""></param>
+				<param name="String_Array.String_Array_filename" type="8" value=""></param>
+				<param name="Integer_Array" type="3" value="0"></param>
+				<param name="Edge_Index" type="3" value="0"></param>
+				<param name="Ratio" type="4" value="0.500000"></param>
+				<param name="Offset.Offset_x" type="4" value="0.000000"></param>
+				<param name="Offset.Offset_y" type="4" value="0.000000"></param>
+				<param name="Offset.Offset_z" type="4" value="0.000000"></param>
+				<portdef name="Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Cluster_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Is_Element" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="String_Array" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Integer_Array" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Edge_Index" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Topo" type="524288" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Ratio" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Offset" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">512</prop>
+					<prop name="posy">-523</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Get Vertex is on Edge Loop" version="1.0" index="7">
+				<param name="Reference" type="31" value="Self.VertexIsOnEdgeLoop"></param>
+				<param_ext name="Reference" type="31" value="Self.VertexIsOnEdgeLoop"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">268</prop>
+					<prop name="posy">-495</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Get Edge Loop" version="1.0" index="8">
+				<param name="Reference" type="31" value="self.BevelEdgeIndex"></param>
+				<param name="Edge_Start_Index" type="3" value="0"></param>
+				<param name="Mode" type="3" value="0"></param>
+				<param name="Nb_of_Next_Edges" type="3" value="2"></param>
+				<param name="Direction" type="3" value="1"></param>
+				<param name="Set_Vertex_Is_On_Edge_Loop" type="11" value="true"></param>
+				<param name="Display_Vertex" type="11" value="false"></param>
+				<param name="Set_Edge_Is_On_Edge_Loop" type="11" value="true"></param>
+				<param name="Set_Polygon_Is_On_Edge_Loop" type="11" value="true"></param>
+				<param name="Push_Factor" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="self.BevelEdgeIndex"></param_ext>
+				<portdef name="Push_Factor" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Edge_Index_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Set_Vertex_Is_On_Edge_Loop" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Set_Edge_Is_On_Edge_Loop" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Set_Polygon_Is_On_Edge_Loop" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Display_Vertex" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Direction" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Nb_of_Next_Edges" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Edge_Start_Index" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">505</prop>
+					<prop name="posy">-575</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="9">
+				<param name="Reference" type="31" value="self.EdgeDivided"></param>
+				<param name="Reference1" type="31" value="self.VertexIsOnEdgeLoop2"></param>
+				<param name="Value" type="11" value="false"></param>
+				<param name="Value1" type="11" value="false"></param>
+				<param_ext name="Reference" type="31" value="self.EdgeDivided"></param_ext>
+				<param_ext name="Reference1" type="31" value="self.VertexIsOnEdgeLoop2"></param_ext>
+				<portdef name="Value" type="1" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value1" type="1" structure="1" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">512</prop>
+					<prop name="posy">-467</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Get Vertex is on Edge Loop" version="1.0" index="10">
+				<param name="Reference" type="31" value="Self.VertexIsOnEdgeLoop"></param>
+				<param_ext name="Reference" type="31" value="Self.VertexIsOnEdgeLoop"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">183</prop>
+					<prop name="posy">-304</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="11">
+				<param name="reference" type="31" value="self.EdgeDivided"></param>
+				<param_ext name="reference" type="31" value="self.EdgeDivided"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">84</prop>
+					<prop name="posy">-361</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="12">
+				<param name="reference" type="31" value="self.VertexIsOnEdgeLoop2"></param>
+				<param_ext name="reference" type="31" value="self.VertexIsOnEdgeLoop2"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">172</prop>
+					<prop name="posy">-253</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="13">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="port4" type="4096" structure="1" group="0" instance="3" port="0"></portdef>
+				<portdef name="port5" type="4096" structure="1" group="0" instance="4" port="0"></portdef>
+				<portdef name="port6" type="4096" structure="1" group="0" instance="5" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">807</prop>
+					<prop name="posy">-436</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="NotNode" index="14">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">286</prop>
+					<prop name="posy">-361</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="13" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="5" from_port="Execute" to_node="13" to_port="port6"> </cnx>
+			<cnx from_node="6" from_port="Execute" to_node="13" to_port="port2"> </cnx>
+			<cnx from_node="7" from_port="Value" to_node="9" to_port="Value1"> </cnx>
+			<cnx from_node="14" from_port="result" to_node="2" to_port="value2"> </cnx>
+			<cnx from_node="2" from_port="result" to_node="0" to_port="Is_Element"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="5" to_port="Value"> </cnx>
+			<cnx from_node="1" from_port="Result" to_node="6" to_port="Is_Element"> </cnx>
+			<cnx from_node="1" from_port="Result" to_node="9" to_port="Value"> </cnx>
+			<cnx from_node="1" from_port="Result" to_node="2" to_port="value1"> </cnx>
+			<cnx from_node="0" from_port="Execute" to_node="13" to_port="port5"> </cnx>
+			<cnx from_node="4" from_port="Execute" to_node="13" to_port="port4"> </cnx>
+			<cnx from_node="9" from_port="Execute" to_node="13" to_port="port3"> </cnx>
+			<cnx from_node="10" from_port="Value" to_node="3" to_port="value1"> </cnx>
+			<cnx from_node="8" from_port="Execute" to_node="13" to_port="port1"> </cnx>
+			<cnx from_node="11" from_port="value" to_node="14" to_port="value"> </cnx>
+			<cnx from_node="12" from_port="outname" to_node="5" to_port="In_Name"> </cnx>
+			<cnx from_node="12" from_port="value" to_node="3" to_port="value2"> </cnx>
+		</connections>
+		<layout>
+			<item type="output" name="Execute"> </item>
+		</layout>
+	</embedded_2>
+	<embedded_4 name="Move New Points Along Normals" formatversion="1.4" compoundversion="1.0" constructionmode="Modeling" backgroundcolor="6732954">
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="self.MasterVertex"></param>
+				<param_ext name="reference" type="31" value="self.MasterVertex"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-787</prop>
+					<prop name="posy">-54</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="1">
+				<param name="reference" type="31" value="self.initVertex"></param>
+				<param_ext name="reference" type="31" value="self.initVertex"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-12</prop>
+					<prop name="posy">-144</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="2">
+				<param name="index" type="3" value="0"></param>
+				<param name="array.array_x" type="4" value="0.000000"></param>
+				<param name="array.array_y" type="4" value="0.000000"></param>
+				<param name="array.array_z" type="4" value="0.000000"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="16" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-572</prop>
+					<prop name="posy">-42</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSetNode" index="3">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-780</prop>
+					<prop name="posy">7</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Get Point Position" version="1.0" index="4">
+				<param name="Reference" type="31" value="Self.PointPosition"></param>
+				<param_ext name="Reference" type="31" value="Self.PointPosition"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-1011</prop>
+					<prop name="posy">-100</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Resize Vector" version="1.0" index="5">
+				<param name="Vector.Vector_x" type="4" value="1.000000"></param>
+				<param name="Vector.Vector_y" type="4" value="0.000000"></param>
+				<param name="Vector.Vector_z" type="4" value="0.000000"></param>
+				<param name="New_Length" type="4" value="0.000000"></param>
+				<portdef name="New_Length" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Vector" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">104</prop>
+					<prop name="posy">-60</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Point Position" version="1.0" index="6">
+				<param name="Reference" type="31" value="Self.PointPosition"></param>
+				<param name="Position.Position_x" type="4" value="0.000000"></param>
+				<param name="Position.Position_y" type="4" value="0.000000"></param>
+				<param name="Position.Position_z" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.PointPosition"></param_ext>
+				<portdef name="Position" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">540</prop>
+					<prop name="posy">-198</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="7">
+				<param name="reference" type="31" value="self.VertexIndex"></param>
+				<param_ext name="reference" type="31" value="self.VertexIndex"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-27</prop>
+					<prop name="posy">-201</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FilterNode" index="8">
+				<param name="keep" type="11" value="false"></param>
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="keep" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">437</prop>
+					<prop name="posy">-182</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RescaleNode" index="9">
+				<param name="value" type="4" value="0.001000"></param>
+				<param name="sourcestart" type="4" value="0.000000"></param>
+				<param name="sourceend" type="4" value="1.000000"></param>
+				<param name="targetstart" type="4" value="0.000000"></param>
+				<param name="targetend" type="4" value="0.000000"></param>
+				<param name="clamp" type="11" value="true"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="sourcestart" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="sourceend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="targetstart" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="targetend" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-27</prop>
+					<prop name="posy">-51</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="NegateNode" index="10">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-161</prop>
+					<prop name="posy">-53</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="11">
+				<param name="value1.value1_x" type="4" value="0.000000"></param>
+				<param name="value1.value1_y" type="4" value="0.000000"></param>
+				<param name="value1.value1_z" type="4" value="0.000000"></param>
+				<param name="value2.value2_x" type="4" value="0.000000"></param>
+				<param name="value2.value2_y" type="4" value="0.000000"></param>
+				<param name="value2.value2_z" type="4" value="0.000000"></param>
+				<portdef name="value1" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="16" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">291</prop>
+					<prop name="posy">-126</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="NotNode" index="12">
+				<param name="value" type="11" value="false"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">329</prop>
+					<prop name="posy">-173</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SubtractNode" index="13">
+				<param name="first.first_x" type="4" value="0.000000"></param>
+				<param name="first.first_y" type="4" value="0.000000"></param>
+				<param name="first.first_z" type="4" value="0.000000"></param>
+				<param name="second.second_x" type="4" value="0.000000"></param>
+				<param name="second.second_y" type="4" value="0.000000"></param>
+				<param name="second.second_z" type="4" value="0.000000"></param>
+				<portdef name="first" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-425</prop>
+					<prop name="posy">-60</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FindInArrayNode" index="14">
+				<param name="value" type="3" value="0"></param>
+				<param name="array" type="3" value="0"></param>
+				<param name="epsilon" type="4" value="0.000000"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="epsilon" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">175</prop>
+					<prop name="posy">-173</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="LengthNode" index="15">
+				<param name="vector.vector_x" type="4" value="0.000000"></param>
+				<param name="vector.vector_y" type="4" value="0.000000"></param>
+				<param name="vector.vector_z" type="4" value="0.000000"></param>
+				<portdef name="vector" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-291</prop>
+					<prop name="posy">-32</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="ClampNode" index="16">
+				<param name="value" type="4" value="0.484000"></param>
+				<param name="limit1" type="4" value="0.999900"></param>
+				<param name="limit2" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="limit1" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="limit2" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-143</prop>
+					<prop name="posy">20</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="6" portname="Execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="16" portname="value" username="Ratio" basename="Ratio" portlabel="Ratio" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="3" from_port="array" to_node="2" to_port="array"> </cnx>
+			<cnx from_node="8" from_port="result" to_node="6" to_port="Position"> </cnx>
+			<cnx from_node="9" from_port="result" to_node="5" to_port="New_Length"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="9" to_port="targetend"> </cnx>
+			<cnx from_node="11" from_port="result" to_node="8" to_port="value"> </cnx>
+			<cnx from_node="12" from_port="result" to_node="8" to_port="keep"> </cnx>
+			<cnx from_node="13" from_port="result" to_node="5" to_port="Vector"> </cnx>
+			<cnx from_node="13" from_port="result" to_node="15" to_port="vector"> </cnx>
+			<cnx from_node="14" from_port="found" to_node="12" to_port="value"> </cnx>
+			<cnx from_node="15" from_port="result" to_node="9" to_port="targetstart"> </cnx>
+			<cnx from_node="15" from_port="result" to_node="10" to_port="value"> </cnx>
+			<cnx from_node="16" from_port="result" to_node="9" to_port="value"> </cnx>
+			<cnx from_node="4" from_port="Value" to_node="3" to_port="value"> </cnx>
+			<cnx from_node="4" from_port="Value" to_node="11" to_port="value1"> </cnx>
+			<cnx from_node="4" from_port="Value" to_node="13" to_port="second"> </cnx>
+			<cnx from_node="5" from_port="Result" to_node="11" to_port="value2"> </cnx>
+			<cnx from_node="0" from_port="value" to_node="2" to_port="index"> </cnx>
+			<cnx from_node="1" from_port="value" to_node="14" to_port="array"> </cnx>
+			<cnx from_node="7" from_port="value" to_node="14" to_port="value"> </cnx>
+			<cnx from_node="2" from_port="value" to_node="13" to_port="first"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Ratio"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+	</embedded_4>
+	<embedded_5 name="Create New Edges" formatversion="1.4" compoundversion="1.0" constructionmode="Modeling" backgroundcolor="6732954">
+		<nodes>
+			<node type="Set Topology" version="1.0" index="0">
+				<param name="Reference" type="31" value="Self"></param>
+				<param_ext name="Reference" type="31" value="Self"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Topology" type="524288" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">871</prop>
+					<prop name="posy">-94</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="1">
+				<param name="reference" type="31" value="self.LasttvertexArray"></param>
+				<param_ext name="reference" type="31" value="self.LasttvertexArray"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">492</prop>
+					<prop name="posy">-37</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="2">
+				<param name="reference" type="31" value="self.FirstvertexArray"></param>
+				<param_ext name="reference" type="31" value="self.FirstvertexArray"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">498</prop>
+					<prop name="posy">-94</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="AddEdgeNode" index="3">
+				<param name="startvertexindex" type="3" value="0"></param>
+				<param name="endvertexindex" type="3" value="3"></param>
+				<portdef name="topo" type="524288" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="startvertexindex" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="endvertexindex" type="2" structure="2" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">723</prop>
+					<prop name="posy">-94</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="value" to_node="3" to_port="endvertexindex"> </cnx>
+			<cnx from_node="2" from_port="value" to_node="3" to_port="startvertexindex"> </cnx>
+			<cnx from_node="3" from_port="result" to_node="0" to_port="Topology"> </cnx>
+		</connections>
+		<layout>
+			<item type="output" name="Execute"> </item>
+		</layout>
+	</embedded_5>
+</xsi_file>

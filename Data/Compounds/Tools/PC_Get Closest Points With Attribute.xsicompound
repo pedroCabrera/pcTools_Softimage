@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Get Closest Points With Attribute" category="PC_Tools/Data Acces" tasks="PC_Tools/Data Acces" formatversion="1.4" compoundversion="1.0" constructionmode="Modeling" backgroundcolor="6732954">
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value=""></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2565</prop>
+					<prop name="posy">1037</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetClosestPointsNode" index="1">
+				<param name="position.position_x" type="4" value="0.000000"></param>
+				<param name="position.position_y" type="4" value="0.000000"></param>
+				<param name="position.position_z" type="4" value="0.000000"></param>
+				<param name="enablecutoffdistance" type="11" value="false"></param>
+				<param name="cutoffdistance" type="4" value="2.000000"></param>
+				<param name="enablemaxnumberpoints" type="11" value="true"></param>
+				<param name="maxnumberpoints" type="3" value="10"></param>
+				<portdef name="geometry" type="1024" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="position" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="enablecutoffdistance" type="1" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="cutoffdistance" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="enablemaxnumberpoints" type="1" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="maxnumberpoints" type="2" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-3093</prop>
+					<prop name="posy">1037</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RemoveFromArrayNode" index="5">
+				<param name="index" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2048" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2904</prop>
+					<prop name="posy">1037</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="6">
+				<param name="index" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2048" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2121</prop>
+					<prop name="posy">1107</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="CompareNode" index="7">
+				<param name="type" type="3" value="0"></param>
+				<param name="epsilon" type="5" value="0.001000"></param>
+				<param name="first" type="3" value="0"></param>
+				<param name="second" type="3" value="0"></param>
+				<portdef name="first" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2317</prop>
+					<prop name="posy">1037</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="9">
+				<param name="reference" type="31" value="self"></param>
+				<param_ext name="reference" type="31" value="self"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-3405</prop>
+					<prop name="posy">1037</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetArraySubIndicesNode" index="12">
+				<portdef name="array" type="2048" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2434</prop>
+					<prop name="posy">1210</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="13">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="3" value="0"></param>
+				<param name="iffalse" type="3" value="-1"></param>
+				<portdef name="condition" type="1" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2224</prop>
+					<prop name="posy">1107</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="14">
+				<param name="reference" type="31" value="PointPosition"></param>
+				<param_ext name="reference" type="31" value="PointPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-3282</prop>
+					<prop name="posy">1037</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="18">
+				<param name="reference" type="31" value="cluster"></param>
+				<param_ext name="reference" type="31" value="cluster"></param_ext>
+				<portdef name="source" type="2048" structure="2" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2708</prop>
+					<prop name="posy">1037</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="cutoffdistance" username="cutoffdistance" basename="cutoffdistance" portlabel="cutoffdistance" exposetype="single"> </port>
+			<port index="1" portname="maxnumberpoints" username="maxnumberpoints" basename="maxnumberpoints" portlabel="maxnumberpoints" exposetype="single"> </port>
+			<port index="6" portname="value" username="Neis" basename="Neis" portlabel="Neis" exposetype="single"> </port>
+			<port index="7" portname="type" username="Type" basename="Type" portlabel="Type" exposetype="single"> </port>
+			<port index="18" portname="reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="5" from_port="value" to_node="0" to_port="source"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="18" to_port="source"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="12" to_port="array"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="6" to_port="array"> </cnx>
+			<cnx from_node="13" from_port="result" to_node="6" to_port="index"> </cnx>
+			<cnx from_node="12" from_port="indices" to_node="13" to_port="iftrue"> </cnx>
+			<cnx from_node="9" from_port="value" to_node="1" to_port="geometry"> </cnx>
+			<cnx from_node="9" from_port="outname" to_node="14" to_port="inname"> </cnx>
+			<cnx from_node="14" from_port="value" to_node="1" to_port="position"> </cnx>
+			<cnx from_node="18" from_port="value" to_node="7" to_port="second"> </cnx>
+			<cnx from_node="18" from_port="outname" to_node="0" to_port="inname"> </cnx>
+			<cnx from_node="1" from_port="points" to_node="5" to_port="array"> </cnx>
+			<cnx from_node="7" from_port="result" to_node="13" to_port="condition"> </cnx>
+			<cnx from_node="0" from_port="value" to_node="7" to_port="first"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="cutoffdistance"> </item>
+			<item type="input" name="maxnumberpoints"> </item>
+			<item type="input" name="Type"> </item>
+			<item type="input" name="Reference"> </item>
+			<item type="output" name="Neis"> </item>
+		</layout>
+	</definition>
+</xsi_file>

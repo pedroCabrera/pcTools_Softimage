@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Write Image" category="PC_Image_IO" tasks="PC_Tools" formatversion="1.4" compoundversion="1.0" backgroundcolor="14000776">
+	<definition>
+		<nodes>
+			<node type="Set Data" version="1.0" index="0">
+				<param name="Reference" type="31" value="self.__PCImage_Writer"></param>
+				<param name="Value.Value_string" type="8" value=""></param>
+				<param name="Value.Value_uimode" type="8" value=""></param>
+				<param name="Value.Value_filepathseq" type="8" value=""></param>
+				<param name="Value.Value_filename" type="8" value=""></param>
+				<param_ext name="Reference" type="31" value="self.__PCImage_Writer"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="131072" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">525</prop>
+					<prop name="posy">545</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<datablob category="vis_1">
+					<prop name="displaymode">0</prop>
+					<prop name="enable">1</prop>
+					<prop name="port">Value</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="1">
+				<param name="Reference" type="31" value="self.__PCImage_Writer"></param>
+				<param name="Value.Value_string" type="8" value=""></param>
+				<param name="Value.Value_uimode" type="8" value=""></param>
+				<param name="Value.Value_filepathseq" type="8" value=""></param>
+				<param name="Value.Value_filename" type="8" value=""></param>
+				<param_ext name="Reference" type="31" value="self.__PCImage_Writer"></param_ext>
+				<portdef name="Value" type="131072" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">535</prop>
+					<prop name="posy">696</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="2">
+				<param name="condition" type="11" value="false"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">756</prop>
+					<prop name="posy">471</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PC_Write_Image" index="3">
+				<param name="FilePath.FilePath_string" type="8" value="[Project Path]\PC_Pictures\PC_Picture.[Frame].jpeg"></param>
+				<param name="FilePath.FilePath_uimode" type="8" value=""></param>
+				<param name="FilePath.FilePath_filepathseq" type="8" value=""></param>
+				<param name="FilePath.FilePath_filename" type="8" value=""></param>
+				<portdef name="FilePath" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="Image" type="65536" structure="1" group="0" instance="0" port="1" supportedblob="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">293</prop>
+					<prop name="posy">577</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="2" portname="result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+			<port index="2" portname="condition" username="Write" basename="Write" portlabel="Write" exposetype="single"> </port>
+			<port index="3" portname="Image" username="Image" basename="Image" portlabel="Image" exposetype="single"> </port>
+			<port index="3" portname="FilePath" username="FilePath" basename="FilePath" portlabel="FilePath" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="Execute" to_node="2" to_port="iftrue"> </cnx>
+			<cnx from_node="1" from_port="Execute" to_node="2" to_port="iffalse"> </cnx>
+			<cnx from_node="3" from_port="evaluate" to_node="0" to_port="Value"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Write"> </item>
+			<item type="input" name="FilePath"> </item>
+			<item type="input" name="Image"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+		<blob_dictionary>
+			<dict_entry index="1" color="15625002">
+				<typename><![CDATA[PCImage]]></typename>
+				<displayname><![CDATA[PCImage]]></displayname>
+				<description><![CDATA[PCImage]]></description>
+			</dict_entry>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

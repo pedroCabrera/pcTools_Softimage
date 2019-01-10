@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Array Acumulate Op" category="PC_Tools/Arrays" tasks="PC_Tools/Arrays" formatversion="1.4" compoundversion="1.0" constructionmode="Modeling" backgroundcolor="1686324">
+	<definition>
+		<nodes>
+			<node type="PC_Array_Acumulate_Op" index="0">
+				<param name="Operation" type="3" value="0"></param>
+				<portdef name="Operation" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="Array" type="16510" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">48</prop>
+					<prop name="posy">-72</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Operation" username="Operation" basename="Operation" portlabel="Operation" exposetype="single"> </port>
+			<port index="0" portname="Array" username="Array" basename="Array" portlabel="Array" exposetype="single"> </port>
+			<port index="0" portname="Result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Operation" min="0" max="0">
+				<enum value="0"><![CDATA[Sum]]></enum>
+				<enum value="1"><![CDATA[Sub]]></enum>
+				<enum value="2"><![CDATA[Mul]]></enum>
+				<enum value="3"><![CDATA[Div]]></enum>
+			</item>
+			<item type="input" name="Array"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+	</definition>
+</xsi_file>

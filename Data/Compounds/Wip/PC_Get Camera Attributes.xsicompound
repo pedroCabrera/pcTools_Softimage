@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Get Camera Attributes" category="PC_Tools/Cameras" tasks="PC_Tools/Cameras" formatversion="1.4" compoundversion="0.0" constructionmode="Current" backgroundcolor="10131526">
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="Camera"></param>
+				<param_ext name="reference" type="31" value="Camera"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-270</prop>
+					<prop name="posy">-3405</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="1">
+				<param name="reference" type="31" value=".near"></param>
+				<param_ext name="reference" type="31" value=".near"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">362</prop>
+					<prop name="posy">-3722</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="2">
+				<param name="reference" type="31" value=".far"></param>
+				<param_ext name="reference" type="31" value=".far"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">372</prop>
+					<prop name="posy">-2878</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="3">
+				<param name="reference" type="31" value=".orthoheight"></param>
+				<param_ext name="reference" type="31" value=".orthoheight"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">314</prop>
+					<prop name="posy">-2245</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="4">
+				<param name="reference" type="31" value=".fov"></param>
+				<param_ext name="reference" type="31" value=".fov"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">369</prop>
+					<prop name="posy">-1612</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="5">
+				<param name="reference" type="31" value=".proj"></param>
+				<param_ext name="reference" type="31" value=".proj"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">364</prop>
+					<prop name="posy">920</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="6">
+				<param name="reference" type="31" value=".fovtype"></param>
+				<param_ext name="reference" type="31" value=".fovtype"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">341</prop>
+					<prop name="posy">-4355</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="7">
+				<param name="reference" type="31" value=".focal"></param>
+				<param_ext name="reference" type="31" value=".focal"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">360</prop>
+					<prop name="posy">-3511</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="8">
+				<param name="reference" type="31" value=".planewidth"></param>
+				<param_ext name="reference" type="31" value=".planewidth"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">320</prop>
+					<prop name="posy">-2667</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="9">
+				<param name="reference" type="31" value=".dist"></param>
+				<param_ext name="reference" type="31" value=".dist"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">366</prop>
+					<prop name="posy">-2034</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="10">
+				<param name="reference" type="31" value=".dof"></param>
+				<param_ext name="reference" type="31" value=".dof"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">368</prop>
+					<prop name="posy">-4144</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="11">
+				<param name="reference" type="31" value=".lookatdist"></param>
+				<param_ext name="reference" type="31" value=".lookatdist"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">327</prop>
+					<prop name="posy">-3300</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="12">
+				<param name="reference" type="31" value=".nearfarover"></param>
+				<param_ext name="reference" type="31" value=".nearfarover"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">318</prop>
+					<prop name="posy">-2456</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="13">
+				<param name="reference" type="31" value=".nearover"></param>
+				<param_ext name="reference" type="31" value=".nearover"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">335</prop>
+					<prop name="posy">-1823</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="14">
+				<param name="reference" type="31" value=".farover"></param>
+				<param_ext name="reference" type="31" value=".farover"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">345</prop>
+					<prop name="posy">-3933</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="15">
+				<param name="reference" type="31" value=".subfrustumleft"></param>
+				<param_ext name="reference" type="31" value=".subfrustumleft"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">297</prop>
+					<prop name="posy">-3089</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="16">
+				<param name="reference" type="31" value=".subfrustumright"></param>
+				<param_ext name="reference" type="31" value=".subfrustumright"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">288</prop>
+					<prop name="posy">-1401</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="17">
+				<param name="reference" type="31" value=".subfrustumbottom"></param>
+				<param_ext name="reference" type="31" value=".subfrustumbottom"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">271</prop>
+					<prop name="posy">-768</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="18">
+				<param name="reference" type="31" value=".subfrustumtop"></param>
+				<param_ext name="reference" type="31" value=".subfrustumtop"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">296</prop>
+					<prop name="posy">-135</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="19">
+				<param name="reference" type="31" value=".subpixelzoom"></param>
+				<param_ext name="reference" type="31" value=".subpixelzoom"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">306</prop>
+					<prop name="posy">498</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="20">
+				<param name="reference" type="31" value=".pixelratio"></param>
+				<param_ext name="reference" type="31" value=".pixelratio"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">332</prop>
+					<prop name="posy">-1190</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="21">
+				<param name="reference" type="31" value=".clipselectedbutton"></param>
+				<param_ext name="reference" type="31" value=".clipselectedbutton"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">275</prop>
+					<prop name="posy">-557</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="22">
+				<param name="reference" type="31" value=".clipscenebutton"></param>
+				<param_ext name="reference" type="31" value=".clipscenebutton"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">291</prop>
+					<prop name="posy">76</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="23">
+				<param name="reference" type="31" value=".clipdefaultbutton"></param>
+				<param_ext name="reference" type="31" value=".clipdefaultbutton"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">281</prop>
+					<prop name="posy">709</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="24">
+				<param name="reference" type="31" value=".projplanereset"></param>
+				<param_ext name="reference" type="31" value=".projplanereset"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">300</prop>
+					<prop name="posy">-979</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="25">
+				<param name="reference" type="31" value=".projplane"></param>
+				<param_ext name="reference" type="31" value=".projplane"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">331</prop>
+					<prop name="posy">-346</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="26">
+				<param name="reference" type="31" value=".projplanedist"></param>
+				<param_ext name="reference" type="31" value=".projplanedist"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">308</prop>
+					<prop name="posy">287</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="27">
+				<param name="reference" type="31" value=".projplanewidth"></param>
+				<param_ext name="reference" type="31" value=".projplanewidth"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">295</prop>
+					<prop name="posy">1131</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="28">
+				<param name="reference" type="31" value=".projplaneheight"></param>
+				<param_ext name="reference" type="31" value=".projplaneheight"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">291</prop>
+					<prop name="posy">1553</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="29">
+				<param name="reference" type="31" value=".projplaneoffx"></param>
+				<param_ext name="reference" type="31" value=".projplaneoffx"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">306</prop>
+					<prop name="posy">1764</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="30">
+				<param name="reference" type="31" value=".projplaneoffy"></param>
+				<param_ext name="reference" type="31" value=".projplaneoffy"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">306</prop>
+					<prop name="posy">1975</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="31">
+				<param name="reference" type="31" value=".projplanelockaspect"></param>
+				<param_ext name="reference" type="31" value=".projplanelockaspect"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">267</prop>
+					<prop name="posy">1342</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="32">
+				<param name="reference" type="31" value=".interestconstr"></param>
+				<param_ext name="reference" type="31" value=".interestconstr"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">302</prop>
+					<prop name="posy">2186</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="33">
+				<param name="reference" type="31" value=".interestdist"></param>
+				<param_ext name="reference" type="31" value=".interestdist"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">318</prop>
+					<prop name="posy">2819</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="34">
+				<param name="reference" type="31" value=".autokey"></param>
+				<param_ext name="reference" type="31" value=".autokey"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">339</prop>
+					<prop name="posy">3452</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="35">
+				<param name="reference" type="31" value=".viewvolume"></param>
+				<param_ext name="reference" type="31" value=".viewvolume"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">317</prop>
+					<prop name="posy">3874</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="36">
+				<param name="reference" type="31" value=".zeroparallaxplane"></param>
+				<param_ext name="reference" type="31" value=".zeroparallaxplane"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">283</prop>
+					<prop name="posy">2397</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="37">
+				<param name="reference" type="31" value=".sequencercam"></param>
+				<param_ext name="reference" type="31" value=".sequencercam"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">303</prop>
+					<prop name="posy">3030</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="38">
+				<param name="reference" type="31" value=".autoupdatecoidist"></param>
+				<param_ext name="reference" type="31" value=".autoupdatecoidist"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">276</prop>
+					<prop name="posy">3663</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="39">
+				<param name="reference" type="31" value=".motionblurenable"></param>
+				<param_ext name="reference" type="31" value=".motionblurenable"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">281</prop>
+					<prop name="posy">4085</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="40">
+				<param name="reference" type="31" value=".motionblurspeed"></param>
+				<param_ext name="reference" type="31" value=".motionblurspeed"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">285</prop>
+					<prop name="posy">2608</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="41">
+				<param name="reference" type="31" value=".motionbluroffset"></param>
+				<param_ext name="reference" type="31" value=".motionbluroffset"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">284</prop>
+					<prop name="posy">3241</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="inname" username="In_Name" basename="In Name" portlabel="In Name" exposetype="single"> </port>
+			<port index="0" portname="reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="single"> </port>
+			<port index="1" portname="value" username="_near" basename=".near" portlabel=".near" exposetype="single"> </port>
+			<port index="2" portname="value" username="_far" basename=".far" portlabel=".far" exposetype="single"> </port>
+			<port index="3" portname="value" username="_orthoheight" basename=".orthoheight" portlabel=".orthoheight" exposetype="single"> </port>
+			<port index="4" portname="value" username="_fov" basename=".fov" portlabel=".fov" exposetype="single"> </port>
+			<port index="5" portname="value" username="_proj" basename=".proj" portlabel=".proj" exposetype="single"> </port>
+			<port index="6" portname="value" username="_fovtype" basename=".fovtype" portlabel=".fovtype" exposetype="single"> </port>
+			<port index="7" portname="value" username="_focal" basename=".focal" portlabel=".focal" exposetype="single"> </port>
+			<port index="8" portname="value" username="_planewidth" basename=".planewidth" portlabel=".planewidth" exposetype="single"> </port>
+			<port index="9" portname="value" username="_dist" basename=".dist" portlabel=".dist" exposetype="single"> </port>
+			<port index="10" portname="value" username="_dof" basename=".dof" portlabel=".dof" exposetype="single"> </port>
+			<port index="11" portname="value" username="_lookatdist" basename=".lookatdist" portlabel=".lookatdist" exposetype="single"> </port>
+			<port index="12" portname="value" username="_nearfarover" basename=".nearfarover" portlabel=".nearfarover" exposetype="single"> </port>
+			<port index="13" portname="value" username="_nearover" basename=".nearover" portlabel=".nearover" exposetype="single"> </port>
+			<port index="14" portname="value" username="_farover" basename=".farover" portlabel=".farover" exposetype="single"> </port>
+			<port index="15" portname="value" username="_subfrustumleft" basename=".subfrustumleft" portlabel=".subfrustumleft" exposetype="single"> </port>
+			<port index="16" portname="value" username="_subfrustumright" basename=".subfrustumright" portlabel=".subfrustumright" exposetype="single"> </port>
+			<port index="17" portname="value" username="_subfrustumbottom" basename=".subfrustumbottom" portlabel=".subfrustumbottom" exposetype="single"> </port>
+			<port index="18" portname="value" username="_subfrustumtop" basename=".subfrustumtop" portlabel=".subfrustumtop" exposetype="single"> </port>
+			<port index="19" portname="value" username="_subpixelzoom" basename=".subpixelzoom" portlabel=".subpixelzoom" exposetype="single"> </port>
+			<port index="20" portname="value" username="_pixelratio" basename=".pixelratio" portlabel=".pixelratio" exposetype="single"> </port>
+			<port index="21" portname="value" username="_clipselectedbutton" basename=".clipselectedbutton" portlabel=".clipselectedbutton" exposetype="single"> </port>
+			<port index="22" portname="value" username="_clipscenebutton" basename=".clipscenebutton" portlabel=".clipscenebutton" exposetype="single"> </port>
+			<port index="23" portname="value" username="_clipdefaultbutton" basename=".clipdefaultbutton" portlabel=".clipdefaultbutton" exposetype="single"> </port>
+			<port index="24" portname="value" username="_projplanereset" basename=".projplanereset" portlabel=".projplanereset" exposetype="single"> </port>
+			<port index="25" portname="value" username="_projplane" basename=".projplane" portlabel=".projplane" exposetype="single"> </port>
+			<port index="26" portname="value" username="_projplanedist" basename=".projplanedist" portlabel=".projplanedist" exposetype="single"> </port>
+			<port index="27" portname="value" username="_projplanewidth" basename=".projplanewidth" portlabel=".projplanewidth" exposetype="single"> </port>
+			<port index="28" portname="value" username="_projplaneheight" basename=".projplaneheight" portlabel=".projplaneheight" exposetype="single"> </port>
+			<port index="29" portname="value" username="_projplaneoffx" basename=".projplaneoffx" portlabel=".projplaneoffx" exposetype="single"> </port>
+			<port index="30" portname="value" username="_projplaneoffy" basename=".projplaneoffy" portlabel=".projplaneoffy" exposetype="single"> </port>
+			<port index="31" portname="value" username="_projplanelockaspect" basename=".projplanelockaspect" portlabel=".projplanelockaspect" exposetype="single"> </port>
+			<port index="32" portname="value" username="_interestconstr" basename=".interestconstr" portlabel=".interestconstr" exposetype="single"> </port>
+			<port index="33" portname="value" username="_interestdist" basename=".interestdist" portlabel=".interestdist" exposetype="single"> </port>
+			<port index="34" portname="value" username="_autokey" basename=".autokey" portlabel=".autokey" exposetype="single"> </port>
+			<port index="35" portname="value" username="_viewvolume" basename=".viewvolume" portlabel=".viewvolume" exposetype="single"> </port>
+			<port index="36" portname="value" username="_zeroparallaxplane" basename=".zeroparallaxplane" portlabel=".zeroparallaxplane" exposetype="single"> </port>
+			<port index="37" portname="value" username="_sequencercam" basename=".sequencercam" portlabel=".sequencercam" exposetype="single"> </port>
+			<port index="38" portname="value" username="_autoupdatecoidist" basename=".autoupdatecoidist" portlabel=".autoupdatecoidist" exposetype="single"> </port>
+			<port index="39" portname="value" username="_motionblurenable" basename=".motionblurenable" portlabel=".motionblurenable" exposetype="single"> </port>
+			<port index="40" portname="value" username="_motionblurspeed" basename=".motionblurspeed" portlabel=".motionblurspeed" exposetype="single"> </port>
+			<port index="41" portname="value" username="_motionbluroffset" basename=".motionbluroffset" portlabel=".motionbluroffset" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="outname" to_node="4" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="22" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="23" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="24" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="25" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="26" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="27" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="28" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="29" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="30" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="31" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="32" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="1" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="2" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="3" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="5" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="6" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="7" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="8" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="9" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="10" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="11" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="12" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="13" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="14" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="15" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="16" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="17" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="18" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="19" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="20" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="21" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="33" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="34" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="35" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="36" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="37" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="38" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="39" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="40" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="outname" to_node="41" to_port="inname"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="In_Name"> </item>
+			<item type="input" name="Reference"> </item>
+			<item type="output" name="_near"> </item>
+			<item type="output" name="_far"> </item>
+			<item type="output" name="_orthoheight"> </item>
+			<item type="output" name="_fov"> </item>
+			<item type="output" name="_proj"> </item>
+			<item type="output" name="_fovtype"> </item>
+			<item type="output" name="_focal"> </item>
+			<item type="output" name="_planewidth"> </item>
+			<item type="output" name="_dist"> </item>
+			<item type="output" name="_dof"> </item>
+			<item type="output" name="_lookatdist"> </item>
+			<item type="output" name="_nearfarover"> </item>
+			<item type="output" name="_nearover"> </item>
+			<item type="output" name="_farover"> </item>
+			<item type="output" name="_subfrustumleft"> </item>
+			<item type="output" name="_subfrustumright"> </item>
+			<item type="output" name="_subfrustumbottom"> </item>
+			<item type="output" name="_subfrustumtop"> </item>
+			<item type="output" name="_subpixelzoom"> </item>
+			<item type="output" name="_pixelratio"> </item>
+			<item type="output" name="_clipselectedbutton"> </item>
+			<item type="output" name="_clipscenebutton"> </item>
+			<item type="output" name="_clipdefaultbutton"> </item>
+			<item type="output" name="_projplanereset"> </item>
+			<item type="output" name="_projplane"> </item>
+			<item type="output" name="_projplanedist"> </item>
+			<item type="output" name="_projplanewidth"> </item>
+			<item type="output" name="_projplaneheight"> </item>
+			<item type="output" name="_projplaneoffx"> </item>
+			<item type="output" name="_projplaneoffy"> </item>
+			<item type="output" name="_projplanelockaspect"> </item>
+			<item type="output" name="_interestconstr"> </item>
+			<item type="output" name="_interestdist"> </item>
+			<item type="output" name="_autokey"> </item>
+			<item type="output" name="_viewvolume"> </item>
+			<item type="output" name="_zeroparallaxplane"> </item>
+			<item type="output" name="_sequencercam"> </item>
+			<item type="output" name="_autoupdatecoidist"> </item>
+			<item type="output" name="_motionblurenable"> </item>
+			<item type="output" name="_motionblurspeed"> </item>
+			<item type="output" name="_motionbluroffset"> </item>
+		</layout>
+	</definition>
+</xsi_file>

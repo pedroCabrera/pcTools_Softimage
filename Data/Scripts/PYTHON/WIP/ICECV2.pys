@@ -1,0 +1,76 @@
+from win32com.client import constants as c
+
+def main():
+
+	oRoot = Application.ActiveSceneRoot
+	cv = oRoot.AddNurbsCurve(None, None, 0, 1)
+	Application.AddStaticICEAttribute(str(cv)+'.crvlist', "__PCVPositions", "siComponentDataTypeFloat", "siComponentDataContextSingleton", "siComponentDataStructureDynamicArray")
+	Application.AddStaticICEAttribute(str(cv)+'.crvlist', "__PCVpcvNB", "siComponentDataTypeLong", "siComponentDataContextSingleton", "siComponentDataStructureDynamicArray")
+	
+	cv.Name = 'PC_ICE_CV'
+
+	Scop = XSIFactory.CreateScriptedOp("PC_ICE_CV", "", "Python")
+	Scop.AddOutputPort(cv.ActivePrimitive)
+	
+	Scop.AddInputPort(cv.ActivePrimitive)
+	
+	PDef = XSIFactory.CreateParamDef2( "Degree", 2, 1, 1, 3)
+	Scop.AddParameter(PDef)
+	Scop.AlwaysEvaluate = 1
+
+	Scop.Code = PC_ICE_CV_LOGIC
+	Scop.Connect(None,2)
+	Application.InspectObj(Scop,'','',3)
+	Application.SelectObj(cv)
+	ICETree = Application.ApplyICEop("PC_Set PC CV Data",cv,cv,"siUnspecified")
+	LINARRAY = Application.AddICECompoundNode("Build Linearly Interpolated Array", ICETree)
+	Application.SetPortType(str(LINARRAY)+".End", "siComponentDataTypeVector3")
+	Application.SetValue(str(ICETree)+'.PC_Set_PC_CV_Data.Reference', "self", "")
+	Application.ConnectICENodes(str(ICETree)+'.PC_Set_PC_CV_Data.ControlPoints', str(LINARRAY)+".Result")
+	Application.SetValue(str(LINARRAY)+".End_x", 20, "")
+	Application.SetValue(str(LINARRAY)+".End_y", 20, "")
+	Application.InspectObj(LINARRAY)
+	return
+codeStr = """
+def GetIceControlPoints (object,attrname,degree):
+	lista = []
+	for i in object.IceAttributes.Filter( '', '', attrname ):
+		dataType = i.DataType
+		data2D = i.DataArray2D
+		templist = list(data2D[0])
+		if len(templist)<3*(degree+1):
+			return lista
+		for a in range(3):
+			temp = []
+			for i in range(len(templist)/3):
+				temp.append(templist[i+a*(len(templist)/3)])
+			lista.append(temp)
+	return lista
+	
+def GetIcenbpoints (object,attrname):
+	lista = []
+	for i in object.IceAttributes.Filter( '', '', attrname ):
+		data2D = i.DataArray2D
+		templist = list(data2D[0])
+		lista.append(len(templist))
+		lista.append(templist)
+	return lista
+	
+def PC_ICE_CV_Update(ctx, Out, In):
+	degree = ctx.Operator.Parameters("Degree").Value
+	
+	l_data = GetIceControlPoints(In.Value.Geometry,'__PCVPositions',degree)
+	if len(l_data)!=0:
+		w = [1.0] * len(l_data[0])
+		l_data.append(w)
+		icenb = GetIcenbpoints(In.Value.Geometry,'__PCVpcvNB')
+		if  icenb[0] >0:
+			nbscvs,nbsubpoints = icenb[0],icenb[1] 
+		else:
+			nbscvs,nbsubpoints = 1,None
+		dg = [degree]* nbscvs
+		Out.Value.Geometry.Set(nbscvs, l_data, nbsubpoints, None,None,None,dg)
+	else:
+		Application.LogMessage('No Valid Ice Data Found',4)
+"""	
+main()

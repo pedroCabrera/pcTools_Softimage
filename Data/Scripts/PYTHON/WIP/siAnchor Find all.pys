@@ -1,0 +1,18 @@
+import win32com.client
+import os
+from win32com.client import constants as c
+from inspect import getmembers
+
+SHAREOPTIONS = []
+sianchor = 'siImportShareOptions'
+for i in getmembers(c)[0]:
+	if sianchor in str(i):
+		if type(i) is list:
+			x = [x for x in i if sianchor in str(x)]
+			for z in x[0]:
+				if sianchor in str(z):
+					print z
+#SHAREOPTIONS.append(e)
+for i in SHAREOPTIONS :
+	print i
+#Application.ImportModel( 'C:\Users\Pedrito\Dropbox\TESTS_PEDRO\BSE.emdl', '', '', '', '', c.siImportShareOptionsAll, '' )

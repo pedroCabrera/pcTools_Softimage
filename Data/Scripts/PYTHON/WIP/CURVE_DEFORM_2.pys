@@ -1,0 +1,19 @@
+app = Application
+CV = 'CV'
+PRIM = app.CreatePrim("Cylinder", "MeshSurface")
+app.SetValue(str(PRIM)+'.cylinder.height', 1)
+CVDeform = app.ApplyOp("CrvDeform", str(PRIM)+';'+ str(CV), 3, "siPersistentOperation", "", 0)
+ICETree = app.ApplyOp("ICETree", PRIM, "siNode", "", "", 1)
+
+GLength = app.AddICENode("GetDataNode", ICETree)
+app.SetValue(str(GLength)+'reference', str(CV)+'.CurveLength')
+GCVScale = app.AddICENode("GetDataNode", ICETree)
+app.SetValue(str(GCVScale)+'.reference', str(CVDeform)+'.sclcurve', "")
+SCVScale = app.AddICECompoundNode("Set Data", ICETree)
+
+app.ConnectICENodes("cylinder.polymsh.ICETree.Set_Data.In_Name", "cylinder.polymsh.ICETree.SceneReferenceNode[1].outname")
+app.ConnectICENodes("cylinder.polymsh.ICETree.Set_Data.Value", "cylinder.polymsh.ICETree.SceneReferenceNode.value")
+app.ConnectICENodes("cylinder.polymsh.ICETree.port1", "cylinder.polymsh.ICETree.Set_Data.Execute")
+
+
+app.SetExpr("cylinder.polymsh.crvdeform.poscurve", "this.polymsh.crvdeform.sclcurve/2", "")

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Xbox 360 Get Data" category="PC_Tools/PC_Cpp" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="49151">
+	<definition>
+		<nodes>
+			<node type="SelectInArrayNode" index="0">
+				<param name="index" type="3" value="17"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-301</prop>
+					<prop name="posy">867</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="1">
+				<param name="index" type="3" value="12"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-290</prop>
+					<prop name="posy">641</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="2">
+				<param name="index" type="3" value="7"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-286</prop>
+					<prop name="posy">465</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="3">
+				<param name="index" type="3" value="10"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-290</prop>
+					<prop name="posy">568</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="4">
+				<param name="index" type="3" value="1"></param>
+				<param name="array" type="4" value="0.000000"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="4" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-600</prop>
+					<prop name="posy">20</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="5">
+				<param name="index" type="3" value="14"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-291</prop>
+					<prop name="posy">739</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PC_X360C_GetData" index="6">
+				<portdef name="Controller" type="65536" structure="1" group="0" instance="0" port="0" supportedblob="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1343</prop>
+					<prop name="posy">303</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="8">
+				<param name="index" type="3" value="6"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-284</prop>
+					<prop name="posy">417</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="9">
+				<param name="index" type="3" value="18"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-300</prop>
+					<prop name="posy">900</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="10">
+				<param name="index" type="3" value="3"></param>
+				<param name="array" type="4" value="0.000000"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="4" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-601</prop>
+					<prop name="posy">97</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="11">
+				<param name="index" type="3" value="13"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-288</prop>
+					<prop name="posy">689</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="15">
+				<param name="index" type="3" value="19"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-301</prop>
+					<prop name="posy">936</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="16">
+				<param name="index" type="3" value="16"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-298</prop>
+					<prop name="posy">829</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="17">
+				<param name="index" type="3" value="5"></param>
+				<param name="array" type="4" value="0.000000"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="4" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-603</prop>
+					<prop name="posy">176</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="18">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1129</prop>
+					<prop name="posy">285</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="19">
+				<param name="index" type="3" value="11"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-295</prop>
+					<prop name="posy">601</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="20">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-794</prop>
+					<prop name="posy">57</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="21">
+				<param name="index" type="3" value="4"></param>
+				<param name="array" type="4" value="0.000000"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="4" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-602</prop>
+					<prop name="posy">137</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="22">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-641</prop>
+					<prop name="posy">613</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="23">
+				<param name="index" type="3" value="15"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-291</prop>
+					<prop name="posy">781</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="25">
+				<param name="index" type="3" value="9"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-284</prop>
+					<prop name="posy">534</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="26">
+				<param name="index" type="3" value="8"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-283</prop>
+					<prop name="posy">505</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ScalarTo2DVectorNode" index="28">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-416</prop>
+					<prop name="posy">76</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ScalarTo2DVectorNode" index="29">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-421</prop>
+					<prop name="posy">-9</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="RoundNode" index="30">
+				<param name="function" type="3" value="0"></param>
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-854</prop>
+					<prop name="posy">644</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="31">
+				<param name="index" type="3" value="0"></param>
+				<param name="array" type="4" value="0.000000"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="4" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-601</prop>
+					<prop name="posy">-24</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="32">
+				<param name="index" type="3" value="2"></param>
+				<param name="array" type="4" value="0.000000"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="4" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-599</prop>
+					<prop name="posy">60</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="value" username="RIGHT" basename="RIGHT" portlabel="RIGHT" exposetype="single"> </port>
+			<port index="1" portname="value" username="Stick_L_Click" basename="Stick L Click" portlabel="Stick L Click" exposetype="single"> </port>
+			<port index="2" portname="value" username="B" basename="B" portlabel="B" exposetype="single"> </port>
+			<port index="3" portname="value" username="LB" basename="LB" portlabel="LB" exposetype="single"> </port>
+			<port index="5" portname="value" username="Back" basename="Back" portlabel="Back" exposetype="single"> </port>
+			<port index="6" portname="Controller" username="Controller" basename="Controller" portlabel="Controller" exposetype="single"> </port>
+			<port index="8" portname="value" username="A" basename="A" portlabel="A" exposetype="single"> </port>
+			<port index="9" portname="value" username="UP" basename="UP" portlabel="UP" exposetype="single"> </port>
+			<port index="11" portname="value" username="Stick_R_Click" basename="Stick R Click" portlabel="Stick R Click" exposetype="single"> </port>
+			<port index="15" portname="value" username="DOWN" basename="DOWN" portlabel="DOWN" exposetype="single"> </port>
+			<port index="16" portname="value" username="LEFT" basename="LEFT" portlabel="LEFT" exposetype="single"> </port>
+			<port index="17" portname="value" username="RT" basename="RT" portlabel="RT" exposetype="single"> </port>
+			<port index="19" portname="value" username="RB" basename="RB" portlabel="RB" exposetype="single"> </port>
+			<port index="21" portname="value" username="LT" basename="LT" portlabel="LT" exposetype="single"> </port>
+			<port index="23" portname="value" username="Start" basename="Start" portlabel="Start" exposetype="single"> </port>
+			<port index="25" portname="value" username="Y" basename="Y" portlabel="Y" exposetype="single"> </port>
+			<port index="26" portname="value" username="X" basename="X" portlabel="X" exposetype="single"> </port>
+			<port index="28" portname="vector" username="Stick_R" basename="Stick R" portlabel="Stick R" exposetype="single"> </port>
+			<port index="29" portname="vector" username="Stick_L" basename="Stick L" portlabel="Stick L" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="22" from_port="out" to_node="0" to_port="array"> </cnx>
+			<cnx from_node="22" from_port="out" to_node="1" to_port="array"> </cnx>
+			<cnx from_node="22" from_port="out" to_node="2" to_port="array"> </cnx>
+			<cnx from_node="22" from_port="out" to_node="3" to_port="array"> </cnx>
+			<cnx from_node="22" from_port="out" to_node="5" to_port="array"> </cnx>
+			<cnx from_node="22" from_port="out" to_node="8" to_port="array"> </cnx>
+			<cnx from_node="22" from_port="out" to_node="9" to_port="array"> </cnx>
+			<cnx from_node="22" from_port="out" to_node="11" to_port="array"> </cnx>
+			<cnx from_node="22" from_port="out" to_node="15" to_port="array"> </cnx>
+			<cnx from_node="22" from_port="out" to_node="26" to_port="array"> </cnx>
+			<cnx from_node="22" from_port="out" to_node="16" to_port="array"> </cnx>
+			<cnx from_node="22" from_port="out" to_node="25" to_port="array"> </cnx>
+			<cnx from_node="22" from_port="out" to_node="19" to_port="array"> </cnx>
+			<cnx from_node="22" from_port="out" to_node="23" to_port="array"> </cnx>
+			<cnx from_node="6" from_port="Triggers" to_node="18" to_port="in"> </cnx>
+			<cnx from_node="30" from_port="integer" to_node="22" to_port="in"> </cnx>
+			<cnx from_node="4" from_port="value" to_node="29" to_port="y"> </cnx>
+			<cnx from_node="10" from_port="value" to_node="28" to_port="y"> </cnx>
+			<cnx from_node="20" from_port="out" to_node="21" to_port="array"> </cnx>
+			<cnx from_node="20" from_port="out" to_node="10" to_port="array"> </cnx>
+			<cnx from_node="20" from_port="out" to_node="17" to_port="array"> </cnx>
+			<cnx from_node="20" from_port="out" to_node="32" to_port="array"> </cnx>
+			<cnx from_node="20" from_port="out" to_node="4" to_port="array"> </cnx>
+			<cnx from_node="20" from_port="out" to_node="31" to_port="array"> </cnx>
+			<cnx from_node="18" from_port="out" to_node="20" to_port="in"> </cnx>
+			<cnx from_node="18" from_port="out" to_node="30" to_port="value"> </cnx>
+			<cnx from_node="31" from_port="value" to_node="29" to_port="x"> </cnx>
+			<cnx from_node="32" from_port="value" to_node="28" to_port="x"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Controller"> </item>
+			<group type="output" name="Joysticks" collapsed="false">
+				<item type="output" name="Stick_L"> </item>
+				<item type="output" name="Stick_L_Click"> </item>
+				<item type="output" name="Stick_R"> </item>
+				<item type="output" name="Stick_R_Click"> </item>
+			</group>
+			<group type="output" name="BackPart" collapsed="false">
+				<item type="output" name="LB"> </item>
+				<item type="output" name="LT"> </item>
+				<item type="output" name="RB"> </item>
+				<item type="output" name="RT"> </item>
+			</group>
+			<group type="output" name="Buttons" collapsed="false">
+				<item type="output" name="A"> </item>
+				<item type="output" name="B"> </item>
+				<item type="output" name="X"> </item>
+				<item type="output" name="Y"> </item>
+			</group>
+			<group type="output" name="Pads" collapsed="false">
+				<item type="output" name="LEFT"> </item>
+				<item type="output" name="RIGHT"> </item>
+				<item type="output" name="UP"> </item>
+				<item type="output" name="DOWN"> </item>
+			</group>
+			<group type="output" name="Centrals" collapsed="false">
+				<item type="output" name="Back"> </item>
+				<item type="output" name="Start"> </item>
+			</group>
+		</layout>
+		<blob_dictionary>
+			<dict_entry index="5" color="15625002">
+				<typename><![CDATA[X360_Controller]]></typename>
+				<displayname><![CDATA[X360_Controller]]></displayname>
+				<description><![CDATA[X360_Controller]]></description>
+			</dict_entry>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

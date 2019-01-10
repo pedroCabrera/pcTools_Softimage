@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Read Image" category="PC_Image_IO" tasks="PC_Tools" formatversion="1.4" compoundversion="1.0" backgroundcolor="14000776">
+	<definition>
+		<nodes>
+			<node type="PC_Read_Image" index="0">
+				<param name="FilePath.FilePath_string" type="8" value=""></param>
+				<param name="FilePath.FilePath_uimode" type="8" value=""></param>
+				<param name="FilePath.FilePath_filepathseq" type="8" value=""></param>
+				<param name="FilePath.FilePath_filename" type="8" value=""></param>
+				<portdef name="FilePath" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-399</prop>
+					<prop name="posy">-308</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PC_Compose File Name" version="1.0" index="1">
+				<param name="Tokenized_Path.Tokenized_Path_string" type="8" value="[Project Path]\Pictures\"></param>
+				<param name="Tokenized_Path.Tokenized_Path_uimode" type="8" value=""></param>
+				<param name="Tokenized_Path.Tokenized_Path_filepathseq" type="8" value=""></param>
+				<param name="Tokenized_Path.Tokenized_Path_filename" type="8" value=""></param>
+				<param name="File_Name.File_Name_string" type="8" value="TEST_MINE_2"></param>
+				<param name="File_Name.File_Name_uimode" type="8" value="0"></param>
+				<param name="File_Name.File_Name_filepathseq" type="8" value=""></param>
+				<param name="File_Name.File_Name_filename" type="8" value=""></param>
+				<param name="Format.Format_string" type="8" value="jpeg"></param>
+				<param name="Format.Format_uimode" type="8" value="0"></param>
+				<param name="Format.Format_filepathseq" type="8" value=""></param>
+				<param name="Format.Format_filename" type="8" value=""></param>
+				<param name="Sequence" type="11" value="true"></param>
+				<param name="Separator.Separator_string" type="8" value="."></param>
+				<param name="Separator.Separator_uimode" type="8" value="0"></param>
+				<param name="Separator.Separator_filepathseq" type="8" value=""></param>
+				<param name="Separator.Separator_filename" type="8" value=""></param>
+				<param name="Frame" type="3" value="0"></param>
+				<param name="Padding" type="3" value="1"></param>
+				<portdef name="Separator" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="File_Name" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Sequence" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Padding" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Frame" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Tokenized_Path" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Format" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-636</prop>
+					<prop name="posy">-301</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Image" username="Image" basename="Image" portlabel="Image" exposetype="single"> </port>
+			<port index="1" portname="Tokenized_Path" username="Tokenized_Path" basename="Tokenized Path" portlabel="Tokenized Path" exposetype="single"> </port>
+			<port index="1" portname="File_Name" username="File_Name" basename="File Name" portlabel="File Name" exposetype="single"> </port>
+			<port index="1" portname="Format" username="Format" basename="Format" portlabel="Format" exposetype="single"> </port>
+			<port index="1" portname="Sequence" username="Sequence" basename="Sequence" portlabel="Sequence" exposetype="single"> </port>
+			<port index="1" portname="Separator" username="Separator" basename="Separator" portlabel="Separator" exposetype="single"> </port>
+			<port index="1" portname="Frame" username="Frame" basename="Frame" portlabel="Frame" exposetype="single"> </port>
+			<port index="1" portname="Padding" username="Padding" basename="Padding" portlabel="Padding" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="Result" to_node="0" to_port="FilePath"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Tokenized_Path"> </item>
+			<item type="input" name="File_Name"> </item>
+			<item type="input" name="Format"> </item>
+			<group type="input" name="Sequencer" collapsed="false">
+				<item type="input" name="Sequence"> </item>
+				<item type="input" name="Separator"> </item>
+				<item type="input" name="Frame"> </item>
+				<item type="input" name="Padding"> </item>
+			</group>
+			<item type="output" name="Image"> </item>
+		</layout>
+	</definition>
+</xsi_file>

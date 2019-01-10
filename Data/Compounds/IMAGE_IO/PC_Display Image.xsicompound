@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Display Image" category="PC_Image_IO" tasks="PC_Tools" author="" url="" formatversion="1.4" compoundversion="1.0" versiontag="" constructionmode="Current" backgroundcolor="14000776">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="PC_Display_Image" index="0">
+				<portdef name="Image" type="65536" structure="1" group="0" instance="0" port="0" supportedblob="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">283</prop>
+					<prop name="posy">568</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="1">
+				<param name="Reference" type="31" value="self.__PCImage_Display"></param>
+				<param name="Value.Value_string" type="8" value=""></param>
+				<param name="Value.Value_uimode" type="8" value=""></param>
+				<param name="Value.Value_filepathseq" type="8" value=""></param>
+				<param name="Value.Value_filename" type="8" value=""></param>
+				<param_ext name="Reference" type="31" value="self.__PCImage_Display"></param_ext>
+				<portdef name="Value" type="131072" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">535</prop>
+					<prop name="posy">696</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="2">
+				<param name="condition" type="11" value="false"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">756</prop>
+					<prop name="posy">471</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="3">
+				<param name="Reference" type="31" value="self.__PCImage_Display"></param>
+				<param name="Value.Value_string" type="8" value=""></param>
+				<param name="Value.Value_uimode" type="8" value=""></param>
+				<param name="Value.Value_filepathseq" type="8" value=""></param>
+				<param name="Value.Value_filename" type="8" value=""></param>
+				<param_ext name="Reference" type="31" value="self.__PCImage_Display"></param_ext>
+				<portdef name="Value" type="131072" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">525</prop>
+					<prop name="posy">545</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<datablob category="vis_1">
+					<prop name="displaymode">0</prop>
+					<prop name="enable">1</prop>
+					<prop name="port">Value</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Image" username="Image" basename="Image" portlabel="Image" exposetype="single"> </port>
+			<port index="2" portname="result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+			<port index="2" portname="condition" username="Display" basename="Display" portlabel="Display" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="Execute" to_node="2" to_port="iffalse"> </cnx>
+			<cnx from_node="3" from_port="Execute" to_node="2" to_port="iftrue"> </cnx>
+			<cnx from_node="0" from_port="evaluate" to_node="3" to_port="Value"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Display"> </item>
+			<item type="input" name="Image"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+		<blob_dictionary>
+			<dict_entry index="1" color="15625002">
+				<typename><![CDATA[PCImage]]></typename>
+				<displayname><![CDATA[PCImage]]></displayname>
+				<description><![CDATA[PCImage]]></description>
+			</dict_entry>
+		</blob_dictionary>
+		<ppglogic lang="Python"><![CDATA[
+def Display_OnChanged():
+	PPG.Display.Value=False
+	print "t"]]></ppglogic>
+	</definition>
+</xsi_file>

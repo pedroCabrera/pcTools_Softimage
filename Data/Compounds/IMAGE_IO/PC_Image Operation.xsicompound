@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Image Operation" category="PC_Image_IO" tasks="PC_Image_Tools" formatversion="1.4" compoundversion="1.0" backgroundcolor="14000776">
+	<definition>
+		<nodes>
+			<node type="PC_Image_Operation" index="0">
+				<param name="mathOp" type="3" value="3"></param>
+				<param name="Input" type="3" value="0"></param>
+				<param name="Op Color.Op Color_red" type="4" value="0.000000"></param>
+				<param name="Op Color.Op Color_green" type="4" value="0.000000"></param>
+				<param name="Op Color.Op Color_blue" type="4" value="0.000000"></param>
+				<param name="Op Color.Op Color_alpha" type="4" value="1.000000"></param>
+				<param name="Op Value" type="4" value="0.000000"></param>
+				<param name="Op Expresion.Op Expresion_string" type="8" value=""></param>
+				<param name="Op Expresion.Op Expresion_uimode" type="8" value=""></param>
+				<param name="Op Expresion.Op Expresion_filepathseq" type="8" value=""></param>
+				<param name="Op Expresion.Op Expresion_filename" type="8" value=""></param>
+				<portdef name="Image" type="65536" structure="1" group="0" instance="0" port="0" supportedblob="0"></portdef>
+				<portdef name="mathOp" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="Input" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="Op Image" type="65536" structure="1" group="0" instance="0" port="3" supportedblob="0"></portdef>
+				<portdef name="Op Color" type="512" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="Op Value" type="4" structure="1" group="0" instance="0" port="5"></portdef>
+				<portdef name="Op Expresion" type="131072" structure="1" group="0" instance="0" port="6"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">47</prop>
+					<prop name="posy">27</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Image" username="Image" basename="Image" portlabel="Image" exposetype="single"> </port>
+			<port index="0" portname="Changed Image" username="Changed_Image" basename="Changed Image" portlabel="Changed Image" exposetype="single"> </port>
+			<port index="0" portname="mathOp" username="Operation" basename="Operation" portlabel="Operation" exposetype="single"> </port>
+			<port index="0" portname="Input" username="opBy" basename="opBy" portlabel="opBy" exposetype="single"> </port>
+			<port index="0" portname="Op Value" username="Op_Value" basename="Op Value" portlabel="Op Value" exposetype="single"> </port>
+			<port index="0" portname="Op Expresion" username="Op_Expresion" basename="Op Expresion" portlabel="Op Expresion" exposetype="single"> </port>
+			<port index="0" portname="Op Image" username="Op_Image" basename="Op Image" portlabel="Op Image" exposetype="single"> </port>			
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Image"> </item>
+			<item type="input" name="Operation" min="0" max="0">
+				<enum value="-1"><![CDATA[Asignation]]></enum>
+				<enum value="-2"><![CDATA[Increment]]></enum>
+				<enum value="-3"><![CDATA[Decrement]]></enum>
+				<enum value="0"><![CDATA[Addition]]></enum>
+				<enum value="1"><![CDATA[Substraction]]></enum>
+				<enum value="2"><![CDATA[Multiplication]]></enum>
+				<enum value="3"><![CDATA[Pointwise Multiplication]]></enum>
+				<enum value="4"><![CDATA[Division operator]]></enum>
+				<enum value="5"><![CDATA[Pointwise Division]]></enum>
+				<enum value="6"><![CDATA[Modulo]]></enum>
+				<enum value="7"><![CDATA[AND]]></enum>
+				<enum value="8"><![CDATA[OR]]></enum>
+				<enum value="9"><![CDATA[XOR]]></enum>
+				<enum value="10"><![CDATA[Bitwise left shift ]]></enum>
+				<enum value="11"><![CDATA[Bitwise right shift ]]></enum>
+				<enum value="12"><![CDATA[Power]]></enum>
+				<enum value="13"><![CDATA[Bitwise left rotation]]></enum>
+				<enum value="14"><![CDATA[Bitwise right  rotation]]></enum>
+				<enum value="15"><![CDATA[Pointwise min operator]]></enum>				
+				<enum value="16"><![CDATA[Pointwise max operator]]></enum>				
+				<enum value="20"><![CDATA[watersheed]]></enum>					
+			</item>
+			<item type="input" name="opBy" min="0" max="0">
+				<enum value="0"><![CDATA[value]]></enum>
+				<enum value="1"><![CDATA[expresion]]></enum>
+				<enum value="2"><![CDATA[image]]></enum>	
+			 </item>		
+			<item type="input" name="Op_Value"> </item>
+			<item type="input" name="Op_Expresion"> </item>
+			<item type="input" name="Op_Image"> </item>			
+			<item type="output" name="Changed_Image"> </item>
+		</layout>
+		<blob_dictionary>
+			<dict_entry index="0" color="15625002">
+				<typename><![CDATA[PCImage]]></typename>
+				<displayname><![CDATA[PCImage]]></displayname>
+				<description><![CDATA[PCImage]]></description>
+			</dict_entry>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

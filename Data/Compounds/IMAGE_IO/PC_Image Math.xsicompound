@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Image Math" category="PC_Image_IO" tasks="PC_Tools" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="14000776">
+	<definition>
+		<nodes>
+			<node type="PC_Image_Math" index="0">
+				<param name="mathOp" type="3" value="0"></param>
+				<portdef name="Image" type="65536" structure="1" group="0" instance="0" port="0" supportedblob="1"></portdef>
+				<portdef name="mathOp" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">248</prop>
+					<prop name="posy">427</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Changed Image" username="Changed_Image" basename="Changed Image" portlabel="Changed Image" exposetype="single"> </port>
+			<port index="0" portname="Image" username="Image" basename="Image" portlabel="Image" exposetype="single"> </port>
+			<port index="0" portname="mathOp" username="mathOp" basename="mathOp" portlabel="mathOp" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Image"> </item>
+			<item type="input" name="mathOp" min="0" max="0">
+				<enum value="0"><![CDATA[square]]></enum>
+				<enum value="1"><![CDATA[square root]]></enum>
+				<enum value="2"><![CDATA[exponential]]></enum>
+				<enum value="3"><![CDATA[logarithm]]></enum>
+				<enum value="4"><![CDATA[base-2 logarithm]]></enum>
+				<enum value="5"><![CDATA[base-10 logarithm]]></enum>
+				<enum value="6"><![CDATA[absolute]]></enum>
+				<enum value="7"><![CDATA[sign]]></enum>
+				<enum value="8"><![CDATA[cosine]]></enum>
+				<enum value="9"><![CDATA[sine]]></enum>
+				<enum value="10"><![CDATA[sinc]]></enum>
+				<enum value="11"><![CDATA[tangent]]></enum>
+				<enum value="12"><![CDATA[hyperbolic cosine]]></enum>
+				<enum value="13"><![CDATA[hyperbolic sine]]></enum>
+				<enum value="14"><![CDATA[hyperbolic tangent]]></enum>
+				<enum value="15"><![CDATA[arccosine]]></enum>
+				<enum value="16"><![CDATA[arcsine]]></enum>
+				<enum value="17"><![CDATA[arctangent]]></enum>
+			</item>
+			<item type="output" name="Changed_Image"> </item>
+		</layout>
+		<blob_dictionary>
+			<dict_entry index="1" color="15625002">
+				<typename><![CDATA[PCImage]]></typename>
+				<displayname><![CDATA[PCImage]]></displayname>
+				<description><![CDATA[PCImage]]></description>
+			</dict_entry>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

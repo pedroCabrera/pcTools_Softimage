@@ -1,0 +1,12 @@
+app = Application
+for obj in app.Selection:
+	create = True
+	for prim in app.EnumElements(obj.ActivePrimitive):
+		if str(prim.Type) == 'ICETree':
+			if create:
+				Application.SIAddCustomParameter(obj, "Mute", "siBool", False, 0, 1, "", 2053, 0, 1, "", "")
+				create = False
+			for p in prim.Parameters:
+				if 'mute' in str(p):
+					Application.CopyPaste(str(obj)+".CustomPSet.Mute", "", p, 1)
+

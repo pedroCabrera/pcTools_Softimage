@@ -1,0 +1,1198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Cacheador" category="PC_Tools" tasks="PC_Tools" formatversion="1.4" compoundversion="0.0" constructionmode="Current" backgroundcolor="5941948">
+	<definition>
+		<nodes>
+			<node type="[embedded_0]" index="0">
+				<param name="Mode" type="3" value="0"></param>
+				<param name="Path.Path_string" type="8" value=""></param>
+				<param name="Path.Path_uimode" type="8" value=""></param>
+				<param name="Path.Path_filepathseq" type="8" value=""></param>
+				<param name="Path.Path_filename" type="8" value=""></param>
+				<param name="Global_Time" type="11" value="true"></param>
+				<param name="Start_Caching" type="4" value="0.000000"></param>
+				<portdef name="Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Start_Caching" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute1" type="4096" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Global_Time" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Path" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">178</prop>
+					<prop name="posy">-59</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_3]" index="1">
+				<param name="Folder.Folder_string" type="8" value="[project path]/Simulation/CACHES/[object]/"></param>
+				<param name="Folder.Folder_uimode" type="8" value="0"></param>
+				<param name="Folder.Folder_filepathseq" type="8" value=""></param>
+				<param name="Folder.Folder_filename" type="8" value=""></param>
+				<param name="Name1.Name1_string" type="8" value="[object]"></param>
+				<param name="Name1.Name1_uimode" type="8" value="0"></param>
+				<param name="Name1.Name1_filepathseq" type="8" value=""></param>
+				<param name="Name1.Name1_filename" type="8" value=""></param>
+				<param name="Version.Version_string" type="8" value="_v01"></param>
+				<param name="Version.Version_uimode" type="8" value="0"></param>
+				<param name="Version.Version_filepathseq" type="8" value=""></param>
+				<param name="Version.Version_filename" type="8" value=""></param>
+				<param name="Frame.Frame_string" type="8" value="_f[frame]"></param>
+				<param name="Frame.Frame_uimode" type="8" value="0"></param>
+				<param name="Frame.Frame_filepathseq" type="8" value=""></param>
+				<param name="Frame.Frame_filename" type="8" value=""></param>
+				<param name="Format.Format_string" type="8" value=".icecache"></param>
+				<param name="Format.Format_uimode" type="8" value="0"></param>
+				<param name="Format.Format_filepathseq" type="8" value=""></param>
+				<param name="Format.Format_filename" type="8" value=""></param>
+				<portdef name="Name1" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Version" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Folder" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Frame" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Format" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">8</prop>
+					<prop name="posy">67</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_4]" index="2">
+				<param name="Path.Path_string" type="8" value=""></param>
+				<param name="Path.Path_uimode" type="8" value=""></param>
+				<param name="Path.Path_filepathseq" type="8" value=""></param>
+				<param name="Path.Path_filename" type="8" value=""></param>
+				<param name="Global_Time" type="11" value="true"></param>
+				<param name="Cache_Frame_Offset" type="4" value="0.000000"></param>
+				<param name="Speed" type="4" value="1.000000"></param>
+				<portdef name="Cache_Frame_Offset" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Global_Time" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Path" type="131072" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Speed" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">178</prop>
+					<prop name="posy">90</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="3">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">688</prop>
+					<prop name="posy">-161</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="4">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">42</prop>
+					<prop name="posy">-87</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="5">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">380</prop>
+					<prop name="posy">-246</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="6">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">378</prop>
+					<prop name="posy">196</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BooleanNode" index="7">
+				<param name="value" type="11" value="true"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">0</prop>
+					<prop name="posy">4</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="8">
+				<param name="condition" type="11" value="true"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">376</prop>
+					<prop name="posy">-12</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="9">
+				<param name="condition" type="3" value="0"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="4096" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="4096" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="case2" type="4096" structure="1" group="1" instance="2" port="0"></portdef>
+				<portdef name="default" type="4096" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">367</prop>
+					<prop name="posy">-139</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="10">
+				<param name="value" type="3" value="2"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-50</prop>
+					<prop name="posy">-130</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Start_Caching" username="Start_Caching" basename="Start_Caching" portlabel="Start_Caching" exposetype="single"> </port>
+			<port index="1" portname="Version" username="Version" basename="Version" portlabel="Version" exposetype="single"> </port>
+			<port index="1" portname="Folder" username="Folder" basename="Folder" portlabel="Folder" exposetype="single"> </port>
+			<port index="1" portname="Name1" username="File_Name" basename="File Name" portlabel="File Name" exposetype="single"> </port>
+			<port index="1" portname="Frame" username="Frame" basename="Frame" portlabel="Frame" exposetype="single"> </port>
+			<port index="1" portname="Format" username="Format" basename="Format" portlabel="Format" exposetype="single"> </port>
+			<port index="2" portname="Speed" username="Speed" basename="Speed" portlabel="Speed" exposetype="single"> </port>
+			<port index="2" portname="Cache_Frame_Offset" username="Cache_Frame_Offset" basename="Cache_Frame_Offset" portlabel="Cache_Frame_Offset" exposetype="single"> </port>
+			<port index="3" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="4" portname="port1" username="Execute1" basename="Execute" portlabel="Execute1" exposetype="all_instances"> </port>
+			<port index="5" portname="port1" username="PreCache1" basename="PreCache" portlabel="PreCache1" exposetype="all_instances"> </port>
+			<port index="6" portname="port1" username="PostCache1" basename="PostCache1" portlabel="PostCache1" exposetype="all_instances"> </port>
+			<port index="7" portname="value" username="Global_Time" basename="Global Time" portlabel="Global Time" exposetype="single"> </port>
+			<port index="8" portname="condition" username="Enable_Retime" basename="Enable Retime" portlabel="Enable Retime" exposetype="single"> </port>
+			<port index="10" portname="value" username="Mode" basename="Mode" portlabel="Mode" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="execute" to_node="9" to_port="case1"> </cnx>
+			<cnx from_node="0" from_port="execute" to_node="8" to_port="iffalse"> </cnx>
+			<cnx from_node="2" from_port="Execute" to_node="8" to_port="iftrue"> </cnx>
+			<cnx from_node="1" from_port="Result" to_node="0" to_port="Path"> </cnx>
+			<cnx from_node="1" from_port="Result" to_node="2" to_port="Path"> </cnx>
+			<cnx from_node="4" from_port="execute" to_node="0" to_port="Execute1"> </cnx>
+			<cnx from_node="4" from_port="execute" to_node="9" to_port="case0"> </cnx>
+			<cnx from_node="5" from_port="execute" to_node="3" to_port="port1"> </cnx>
+			<cnx from_node="6" from_port="execute" to_node="3" to_port="port3"> </cnx>
+			<cnx from_node="9" from_port="result" to_node="3" to_port="port2"> </cnx>
+			<cnx from_node="8" from_port="result" to_node="9" to_port="case2"> </cnx>
+			<cnx from_node="7" from_port="result" to_node="0" to_port="Global_Time"> </cnx>
+			<cnx from_node="7" from_port="result" to_node="2" to_port="Global_Time"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="0" to_port="Mode"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="9" to_port="condition"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Mode" min="0" max="0">
+				<enum value="0"><![CDATA[No Cache]]></enum>
+				<enum value="1"><![CDATA[Write Cache]]></enum>
+				<enum value="2"><![CDATA[Read Cache]]></enum>
+			</item>
+			<item type="input" name="Global_Time"> </item>
+			<group type="input" name="PreCache" collapsed="true">
+				<item type="input" name="PreCache1" min="0" max="0"> </item>
+			</group>
+			<group type="input" name="File Path" collapsed="true">
+				<item type="input" name="Folder"> </item>
+				<item type="input" name="File_Name"> </item>
+				<item type="input" name="Version"> </item>
+				<item type="input" name="Frame"> </item>
+				<item type="input" name="Format"> </item>
+			</group>
+			<group type="input" name="Write" collapsed="true">
+				<item type="input" name="Execute1" min="0" max="0"> </item>
+				<item type="input" name="Start_Caching"> </item>
+			</group>
+			<group type="input" name="Read" collapsed="true">
+				<item type="input" name="Enable_Retime"> </item>
+				<item type="input" name="Cache_Frame_Offset"> </item>
+				<item type="input" name="Speed"> </item>
+			</group>
+			<group type="input" name="PostCache" collapsed="true">
+				<item type="input" name="PostCache1" min="0" max="0"> </item>
+			</group>
+			<item type="output" name="Execute"> </item>
+		</layout>
+	</definition>
+	<embedded_1 name="Start Cache" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="6732954">
+		<nodes>
+			<node type="CurrentFrameNode" index="0">
+				<param name="globaltime" type="11" value="true"></param>
+				<portdef name="globaltime" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-251</prop>
+					<prop name="posy">-70</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="1">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-231</prop>
+					<prop name="posy">40</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[Start Caching]]></comment>
+			</node>
+			<node type="CompareNode" index="2">
+				<param name="type" type="3" value="5"></param>
+				<param name="epsilon" type="5" value="0.000000"></param>
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="0.000000"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-91</prop>
+					<prop name="posy">-40</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="globaltime" username="Global_Time" basename="Global Time" portlabel="Global Time" exposetype="single"> </port>
+			<port index="1" portname="value" username="Start_Caching" basename="Start Caching" portlabel="Start Caching" exposetype="single"> </port>
+			<port index="2" portname="result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="frame" to_node="2" to_port="first"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="2" to_port="second"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Global_Time"> </item>
+			<item type="input" name="Start_Caching"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+	</embedded_1>
+	<embedded_2 name="Caching Mode" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="6732954">
+		<nodes>
+			<node type="IntegerNode" index="0">
+				<param name="value" type="3" value="2"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-321</prop>
+					<prop name="posy">374</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[Read Cache]]></comment>
+			</node>
+			<node type="IntegerNode" index="1">
+				<param name="value" type="3" value="0"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-324</prop>
+					<prop name="posy">246</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[No Cache]]></comment>
+			</node>
+			<node type="IntegerNode" index="2">
+				<param name="value" type="3" value="1"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-322</prop>
+					<prop name="posy">312</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[Write Cache]]></comment>
+			</node>
+			<node type="SelectCaseNode" index="3">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0" type="3" value="0"></param>
+				<param name="case1" type="3" value="0"></param>
+				<param name="case2" type="3" value="0"></param>
+				<param name="default" type="3" value="0"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="2" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="2" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="case2" type="2" structure="1" group="1" instance="2" port="0"></portdef>
+				<portdef name="default" type="2" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-160</prop>
+					<prop name="posy">281</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="3" portname="result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+			<port index="3" portname="condition" username="Mode" basename="Mode" portlabel="Mode" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="result" to_node="3" to_port="case0"> </cnx>
+			<cnx from_node="0" from_port="result" to_node="3" to_port="case2"> </cnx>
+			<cnx from_node="2" from_port="result" to_node="3" to_port="case1"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Mode"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+	</embedded_2>
+	<embedded_0 name="Write Cache" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="6732954">
+		<nodes>
+			<node type="[embedded_1]" index="0">
+				<param name="Global_Time" type="11" value="true"></param>
+				<param name="Start_Caching" type="4" value="0.000000"></param>
+				<portdef name="Global_Time" type="1" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Start_Caching" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-169</prop>
+					<prop name="posy">-74</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_2]" index="1">
+				<param name="Mode" type="3" value="0"></param>
+				<portdef name="Mode" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-179</prop>
+					<prop name="posy">57</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="2">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">294</prop>
+					<prop name="posy">-66</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="CurrentFrameNode" index="3">
+				<param name="globaltime" type="11" value="true"></param>
+				<portdef name="globaltime" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-182</prop>
+					<prop name="posy">18</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="BooleanNode" index="4">
+				<param name="value" type="11" value="true"></param>
+				<portdef name="value" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-301</prop>
+					<prop name="posy">-1</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="CacheOnFileNode" index="5">
+				<param name="templatepath" type="3" value="0"></param>
+				<param name="alternativepath" type="31" value="[project path]/Simulation/CACHES/[object]/[object]_v01_f[frame].icecache"></param>
+				<param name="filemode" type="3" value="2"></param>
+				<param name="secondpath" type="3" value="0"></param>
+				<param name="VersionString" type="31" value="Take1"></param>
+				<param name="attributelist" type="31" value=""></param>
+				<param name="FilePath" type="8" value="[project path]/Simulation/CACHES/[object]/[object]_v01_f[frame].icecache"></param>
+				<param name="ResolvedFilePath" type="8" value="Z:\LA_3D_DEPARTMENT\CALATAYUD_XSI\Simulation\CACHES\hojas_geo1\hojas_geo1_v01_f#.icecache"></param>
+				<param name="FileName" type="8" value="[object]_[version]_[frame]"></param>
+				<param name="FileType" type="3" value="0"></param>
+				<param name="ResolvedSecondFilePath" type="8" value="Z:\LA_3D_DEPARTMENT\CALATAYUD_XSI\Simulation\cached_geo\hojas_geo1\hojas_geo1_Take1_#.icecache"></param>
+				<param name="FileTypeString" type="8" value=".icecache"></param>
+				<param name="SourceCachedObject" type="8" value=""></param>
+				<param name="mute" type="11" value="false"></param>
+				<param name="frame" type="4" value="1.000000"></param>
+				<param name="normalize" type="11" value="true"></param>
+				<param name="blend" type="4" value="1.000000"></param>
+				<param name="overlay" type="11" value="false"></param>
+				<param name="append" type="11" value="false"></param>
+				<param name="filefullname.filefullname_string" type="8" value=""></param>
+				<param name="filefullname.filefullname_uimode" type="8" value=""></param>
+				<param name="filefullname.filefullname_filepathseq" type="8" value=""></param>
+				<param name="filefullname.filefullname_filename" type="8" value=""></param>
+				<param name="cachingmode" type="3" value="0"></param>
+				<param name="subframemode" type="11" value="true"></param>
+				<param_ext name="templatepath" type="3" value="0"></param_ext>
+				<portdef name="mute" type="1" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<portdef name="frame" type="4" structure="1" group="4" instance="0" port="0"></portdef>
+				<portdef name="normalize" type="1" structure="1" group="4" instance="0" port="1"></portdef>
+				<portdef name="blend" type="4" structure="1" group="4" instance="0" port="2"></portdef>
+				<portdef name="overlay" type="1" structure="1" group="4" instance="0" port="3"></portdef>
+				<portdef name="append" type="1" structure="1" group="4" instance="0" port="4"></portdef>
+				<portdef name="filefullname" type="131072" structure="1" group="4" instance="0" port="5"></portdef>
+				<portdef name="cachingmode" type="2" structure="1" group="4" instance="0" port="6"></portdef>
+				<portdef name="subframemode" type="1" structure="1" group="4" instance="0" port="7"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">0</prop>
+					<prop name="posy">77</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="6">
+				<param name="condition" type="11" value="false"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">196</prop>
+					<prop name="posy">-25</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Start_Caching" username="Start_Caching" basename="Start Caching" portlabel="Start Caching" exposetype="single"> </port>
+			<port index="1" portname="Mode" username="Mode" basename="Mode" portlabel="Mode" exposetype="single"> </port>
+			<port index="2" portname="execute" username="execute" basename="execute" portlabel="execute" exposetype="single"> </port>
+			<port index="2" portname="port1" username="Execute1" basename="Execute" portlabel="Execute1" exposetype="single"> </port>
+			<port index="4" portname="value" username="Global_Time" basename="Global Time" portlabel="Global Time" exposetype="single"> </port>
+			<port index="5" portname="filefullname" username="Path" basename="Path" portlabel="Path" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="Result" to_node="5" to_port="cachingmode"> </cnx>
+			<cnx from_node="0" from_port="Result" to_node="6" to_port="condition"> </cnx>
+			<cnx from_node="3" from_port="frame" to_node="5" to_port="frame"> </cnx>
+			<cnx from_node="6" from_port="result" to_node="2" to_port="port2"> </cnx>
+			<cnx from_node="4" from_port="result" to_node="0" to_port="Global_Time"> </cnx>
+			<cnx from_node="4" from_port="result" to_node="3" to_port="globaltime"> </cnx>
+			<cnx from_node="5" from_port="execute" to_node="6" to_port="iftrue"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Execute1"> </item>
+			<item type="input" name="Mode"> </item>
+			<item type="input" name="Path"> </item>
+			<item type="input" name="Global_Time"> </item>
+			<item type="input" name="Start_Caching"> </item>
+			<item type="output" name="execute"> </item>
+		</layout>
+	</embedded_0>
+	<embedded_3 name="Path" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="6732954">
+		<nodes>
+			<node type="Concatenate" index="0">
+				<param name="Value1.Value1_string" type="8" value=""></param>
+				<param name="Value1.Value1_uimode" type="8" value=""></param>
+				<param name="Value1.Value1_filepathseq" type="8" value=""></param>
+				<param name="Value1.Value1_filename" type="8" value=""></param>
+				<param name="Value2.Value2_string" type="8" value=""></param>
+				<param name="Value2.Value2_uimode" type="8" value=""></param>
+				<param name="Value2.Value2_filepathseq" type="8" value=""></param>
+				<param name="Value2.Value2_filename" type="8" value=""></param>
+				<param name="Value3.Value3_string" type="8" value=""></param>
+				<param name="Value3.Value3_uimode" type="8" value=""></param>
+				<param name="Value3.Value3_filepathseq" type="8" value=""></param>
+				<param name="Value3.Value3_filename" type="8" value=""></param>
+				<param name="Value4.Value4_string" type="8" value=""></param>
+				<param name="Value4.Value4_uimode" type="8" value=""></param>
+				<param name="Value4.Value4_filepathseq" type="8" value=""></param>
+				<param name="Value4.Value4_filename" type="8" value=""></param>
+				<param name="Value5.Value5_string" type="8" value=""></param>
+				<param name="Value5.Value5_uimode" type="8" value=""></param>
+				<param name="Value5.Value5_filepathseq" type="8" value=""></param>
+				<param name="Value5.Value5_filename" type="8" value=""></param>
+				<portdef name="Value1" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="Value2" type="131072" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="Value3" type="131072" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="Value4" type="131072" structure="1" group="0" instance="3" port="0"></portdef>
+				<portdef name="Value5" type="131072" structure="1" group="0" instance="4" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-159</prop>
+					<prop name="posy">398</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="1">
+				<param name="value.value_string" type="8" value=".icecache"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-395</prop>
+					<prop name="posy">561</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="2">
+				<param name="value.value_string" type="8" value="[project path]/Simulation/CACHES/[object]/"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-562</prop>
+					<prop name="posy">259</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="3">
+				<param name="value.value_string" type="8" value="[object]"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-407</prop>
+					<prop name="posy">339</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="4">
+				<param name="value.value_string" type="8" value="_v01"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-381</prop>
+					<prop name="posy">407</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="5">
+				<param name="value.value_string" type="8" value="_f[frame]"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-399</prop>
+					<prop name="posy">488</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+			<port index="1" portname="value" username="Format" basename="Format" portlabel="Format" exposetype="single"> </port>
+			<port index="2" portname="value" username="Folder" basename="Folder" portlabel="Folder" exposetype="single"> </port>
+			<port index="3" portname="value" username="Name1" basename="Name1" portlabel="Name1" exposetype="single"> </port>
+			<port index="4" portname="value" username="Version" basename="Version" portlabel="Version" exposetype="single"> </port>
+			<port index="5" portname="value" username="Frame" basename="Frame" portlabel="Frame" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="3" from_port="result" to_node="0" to_port="Value2"> </cnx>
+			<cnx from_node="4" from_port="result" to_node="0" to_port="Value3"> </cnx>
+			<cnx from_node="2" from_port="result" to_node="0" to_port="Value1"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="0" to_port="Value4"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="0" to_port="Value5"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Folder"> </item>
+			<item type="input" name="Name1"> </item>
+			<item type="input" name="Version"> </item>
+			<item type="input" name="Frame"> </item>
+			<item type="input" name="Format"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+	</embedded_3>
+	<embedded_5 name="Set Point Position" tasks="Deformation/Setters" formatversion="1.4" compoundversion="1.0" constructionmode="Modeling" backgroundcolor="12228200">
+	<description><![CDATA[Sets the point positions on the ""self' object.]]></description>
+		<nodes>
+			<node type="SetOneDataNode" index="0">
+				<param name="reference" type="31" value="Self.PointPosition"></param>
+				<param name="source.source_x" type="4" value="0.000000"></param>
+				<param name="source.source_y" type="4" value="0.000000"></param>
+				<param name="source.source_z" type="4" value="0.000000"></param>
+				<param_ext name="reference" type="31" value="Self.PointPosition"></param_ext>
+				<portdef name="source" type="16" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">187</prop>
+					<prop name="posy">211</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="source" username="Position" basename="Position" portlabel="Position" exposetype="single">
+				<description><![CDATA[Connect a data set containing the new point positions to this port.]]></description>
+			</port>
+			<port index="0" portname="reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="single">
+				<description><![CDATA[The attribute to set, in this case ""Self.PointPosition"".]]></description>
+			</port>
+			<port index="0" portname="value" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Position" min="0" max="0"> </item>
+			<item type="input" name="Reference"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+	</embedded_5>
+	<embedded_6 name="Get Point Position" tasks="Deformation/Getters" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12228200">
+	<description><![CDATA[Returns the position of each point on the ""self"" object.]]></description>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="Self.PointPosition"></param>
+				<param_ext name="reference" type="31" value="Self.PointPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">559</prop>
+					<prop name="posy">-368</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="value" username="Value" basename="Value" portlabel="Value" exposetype="single"> </port>
+			<port index="0" portname="reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="single">
+				<description><![CDATA[The attribute to get, in this case ""Self.PointPosition"".]]></description>
+			</port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Reference"> </item>
+			<item type="output" name="Value"> </item>
+		</layout>
+	</embedded_6>
+	<embedded_7 name="Set Data" category="Data Access" author="Softimage" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12693621">
+	<description><![CDATA[Sets the specified attributes to the supplied values.]]></description>
+		<nodes>
+			<node type="SetOneDataNode" index="0">
+				<param name="reference" type="31" value="self.pointposA"></param>
+				<param name="source.source_x" type="4" value="0.000000"></param>
+				<param name="source.source_y" type="4" value="0.000000"></param>
+				<param name="source.source_z" type="4" value="0.000000"></param>
+				<param_ext name="reference" type="31" value="self.pointposA"></param_ext>
+				<portdef name="source" type="16" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">209</prop>
+					<prop name="posy">114</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="1">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">368</prop>
+					<prop name="posy">114</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="2">
+				<portdef name="in" type="8192" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">49</prop>
+					<prop name="posy">114</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="source" username="Value" basename="Value" overridelabel="Reference" portlabel="Value" exposetype="use_node_import">
+				<description><![CDATA[The value to set.]]></description>
+			</port>
+			<port index="0" portname="reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="use_node_import">
+				<description><![CDATA[The name of the attribute to set.]]></description>
+			</port>
+			<port index="1" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="2" portname="in" username="In_Name" basename="In Name" portlabel="In Name" exposetype="single">
+				<description><![CDATA[Name prefixed to each attribute to be set. Use this to specify the object name, and then specify each attribute in the Reference ports.]]></description>
+			</port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="2" from_port="out" to_node="0" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="value" to_node="1" to_port="port1"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="In_Name"> </item>
+			<item type="input" name="Value" min="0" max="0"> </item>
+			<item type="input" name="Reference"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+	</embedded_7>
+	<embedded_8 name="Get Point Position" tasks="Deformation/Getters" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12228200">
+	<description><![CDATA[Returns the position of each point on the ""self"" object.]]></description>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="Self.PointPosition"></param>
+				<param_ext name="reference" type="31" value="Self.PointPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">559</prop>
+					<prop name="posy">-368</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="value" username="Value" basename="Value" portlabel="Value" exposetype="single"> </port>
+			<port index="0" portname="reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="single">
+				<description><![CDATA[The attribute to get, in this case ""Self.PointPosition"".]]></description>
+			</port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Reference"> </item>
+			<item type="output" name="Value"> </item>
+		</layout>
+	</embedded_8>
+	<embedded_9 name="Set Data" category="Data Access" author="Softimage" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="12693621">
+	<description><![CDATA[Sets the specified attributes to the supplied values.]]></description>
+		<nodes>
+			<node type="SetOneDataNode" index="0">
+				<param name="reference" type="31" value="self.pointposB"></param>
+				<param name="source.source_x" type="4" value="0.000000"></param>
+				<param name="source.source_y" type="4" value="0.000000"></param>
+				<param name="source.source_z" type="4" value="0.000000"></param>
+				<param_ext name="reference" type="31" value="self.pointposB"></param_ext>
+				<portdef name="source" type="16" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">209</prop>
+					<prop name="posy">114</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="1">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">368</prop>
+					<prop name="posy">114</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="2">
+				<portdef name="in" type="8192" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">49</prop>
+					<prop name="posy">114</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="source" username="Value" basename="Value" overridelabel="Reference" portlabel="Value" exposetype="use_node_import">
+				<description><![CDATA[The value to set.]]></description>
+			</port>
+			<port index="0" portname="reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="use_node_import">
+				<description><![CDATA[The name of the attribute to set.]]></description>
+			</port>
+			<port index="1" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="2" portname="in" username="In_Name" basename="In Name" portlabel="In Name" exposetype="single">
+				<description><![CDATA[Name prefixed to each attribute to be set. Use this to specify the object name, and then specify each attribute in the Reference ports.]]></description>
+			</port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="2" from_port="out" to_node="0" to_port="inname"> </cnx>
+			<cnx from_node="0" from_port="value" to_node="1" to_port="port1"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="In_Name"> </item>
+			<item type="input" name="Value" min="0" max="0"> </item>
+			<item type="input" name="Reference"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+	</embedded_9>
+	<embedded_4 name="Read Cache" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="6732954">
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="self.pointposA"></param>
+				<param_ext name="reference" type="31" value="self.pointposA"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">141</prop>
+					<prop name="posy">382</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="1">
+				<param name="reference" type="31" value="self.pointposB"></param>
+				<param_ext name="reference" type="31" value="self.pointposB"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">146</prop>
+					<prop name="posy">427</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_5]" index="2">
+				<param name="Reference" type="31" value="Self.PointPosition"></param>
+				<param name="Position.Position_x" type="4" value="0.000000"></param>
+				<param name="Position.Position_y" type="4" value="0.000000"></param>
+				<param name="Position.Position_z" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="Self.PointPosition"></param_ext>
+				<portdef name="Position" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">608</prop>
+					<prop name="posy">375</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_6]" index="3">
+				<param name="Reference" type="31" value="Self.PointPosition"></param>
+				<param_ext name="Reference" type="31" value="Self.PointPosition"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">110</prop>
+					<prop name="posy">248</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_7]" index="4">
+				<param name="Reference" type="31" value="self.pointposA"></param>
+				<param name="Value.Value_x" type="4" value="0.000000"></param>
+				<param name="Value.Value_y" type="4" value="0.000000"></param>
+				<param name="Value.Value_z" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="self.pointposA"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="16" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">299</prop>
+					<prop name="posy">248</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_8]" index="5">
+				<param name="Reference" type="31" value="Self.PointPosition"></param>
+				<param_ext name="Reference" type="31" value="Self.PointPosition"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">119</prop>
+					<prop name="posy">330</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_9]" index="6">
+				<param name="Reference" type="31" value="self.pointposB"></param>
+				<param name="Value.Value_x" type="4" value="0.000000"></param>
+				<param name="Value.Value_y" type="4" value="0.000000"></param>
+				<param name="Value.Value_z" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="self.pointposB"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="16" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">308</prop>
+					<prop name="posy">330</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="LinearInterpolateNode" index="7">
+				<param name="first.first_x" type="4" value="0.000000"></param>
+				<param name="first.first_y" type="4" value="0.000000"></param>
+				<param name="first.first_z" type="4" value="0.000000"></param>
+				<param name="second.second_x" type="4" value="0.000000"></param>
+				<param name="second.second_y" type="4" value="0.000000"></param>
+				<param name="second.second_z" type="4" value="0.000000"></param>
+				<param name="blend" type="4" value="0.000000"></param>
+				<param name="clamp" type="11" value="true"></param>
+				<portdef name="first" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="blend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">358</prop>
+					<prop name="posy">372</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="8">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-411</prop>
+					<prop name="posy">227</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ModuloNode" index="9">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="moduloby" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="moduloby" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">35</prop>
+					<prop name="posy">490</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="10">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="1.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-97</prop>
+					<prop name="posy">293</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="RescaleNode" index="11">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="sourcestart" type="4" value="0.000000"></param>
+				<param name="sourceend" type="4" value="2.000000"></param>
+				<param name="targetstart" type="4" value="0.000000"></param>
+				<param name="targetend" type="4" value="1.000000"></param>
+				<param name="clamp" type="11" value="false"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="sourcestart" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="sourceend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="targetstart" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="targetend" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">190</prop>
+					<prop name="posy">466</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="12">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-650</prop>
+					<prop name="posy">228</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="DivideByScalarNode" index="13">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="divideby" type="4" value="2.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="divideby" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-294</prop>
+					<prop name="posy">557</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="CurrentFrameNode" index="14">
+				<param name="globaltime" type="11" value="true"></param>
+				<portdef name="globaltime" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-856</prop>
+					<prop name="posy">513</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="15">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="port4" type="4096" structure="1" group="0" instance="3" port="0"></portdef>
+				<portdef name="port5" type="4096" structure="1" group="0" instance="4" port="0"></portdef>
+				<portdef name="port6" type="4096" structure="1" group="0" instance="5" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">955</prop>
+					<prop name="posy">229</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="InvertNode" index="16">
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-720</prop>
+					<prop name="posy">366</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="17">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="22.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-124</prop>
+					<prop name="posy">535</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="18">
+				<param name="in.in_string" type="8" value=""></param>
+				<param name="in.in_uimode" type="8" value=""></param>
+				<param name="in.in_filepathseq" type="8" value=""></param>
+				<param name="in.in_filename" type="8" value=""></param>
+				<portdef name="in" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">84</prop>
+					<prop name="posy">91</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="19">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="4" value="0.000000"></param>
+				<param name="iffalse" type="4" value="0.000000"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-586</prop>
+					<prop name="posy">337</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="20">
+				<param name="value" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-875</prop>
+					<prop name="posy">374</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[Slow Down amount]]></comment>
+			</node>
+			<node type="PassThroughNode" index="21">
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-466</prop>
+					<prop name="posy">489</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="CompareNode" index="22">
+				<param name="type" type="3" value="2"></param>
+				<param name="epsilon" type="5" value="0.001000"></param>
+				<param name="first" type="4" value="0.000000"></param>
+				<param name="second" type="4" value="1.000000"></param>
+				<portdef name="first" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-692</prop>
+					<prop name="posy">332</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="CacheOnFileNode" index="23">
+				<param name="templatepath" type="3" value="0"></param>
+				<param name="alternativepath" type="31" value="[project path]/Simulation/CACHES/[object]/[object]_v01_f[frame].icecache"></param>
+				<param name="filemode" type="3" value="2"></param>
+				<param name="secondpath" type="3" value="0"></param>
+				<param name="VersionString" type="31" value="Take1"></param>
+				<param name="attributelist" type="31" value=""></param>
+				<param name="FilePath" type="8" value="[project path]/Simulation/CACHES/[object]/[object]_v01_f[frame].icecache"></param>
+				<param name="ResolvedFilePath" type="8" value="Z:\LA_3D_DEPARTMENT\CALATAYUD_XSI\Simulation\CACHES\hojas_geo1\hojas_geo1_v01_f#.icecache"></param>
+				<param name="FileName" type="8" value="[object]_[version]_[frame]"></param>
+				<param name="FileType" type="3" value="0"></param>
+				<param name="ResolvedSecondFilePath" type="8" value="Z:\LA_3D_DEPARTMENT\CALATAYUD_XSI\Simulation\cached_geo\hojas_geo1\hojas_geo1_Take1_#.icecache"></param>
+				<param name="FileTypeString" type="8" value=".icecache"></param>
+				<param name="SourceCachedObject" type="8" value=""></param>
+				<param name="mute" type="11" value="false"></param>
+				<param name="frame" type="4" value="1.000000"></param>
+				<param name="normalize" type="11" value="true"></param>
+				<param name="blend" type="4" value="1.000000"></param>
+				<param name="overlay" type="11" value="false"></param>
+				<param name="append" type="11" value="false"></param>
+				<param name="filefullname.filefullname_string" type="8" value=""></param>
+				<param name="filefullname.filefullname_uimode" type="8" value=""></param>
+				<param name="filefullname.filefullname_filepathseq" type="8" value=""></param>
+				<param name="filefullname.filefullname_filename" type="8" value=""></param>
+				<param name="cachingmode" type="3" value="0"></param>
+				<param name="subframemode" type="11" value="false"></param>
+				<param_ext name="templatepath" type="3" value="0"></param_ext>
+				<portdef name="mute" type="1" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<portdef name="frame" type="4" structure="1" group="4" instance="0" port="0"></portdef>
+				<portdef name="normalize" type="1" structure="1" group="4" instance="0" port="1"></portdef>
+				<portdef name="blend" type="4" structure="1" group="4" instance="0" port="2"></portdef>
+				<portdef name="overlay" type="1" structure="1" group="4" instance="0" port="3"></portdef>
+				<portdef name="append" type="1" structure="1" group="4" instance="0" port="4"></portdef>
+				<portdef name="filefullname" type="131072" structure="1" group="4" instance="0" port="5"></portdef>
+				<portdef name="cachingmode" type="2" structure="1" group="4" instance="0" port="6"></portdef>
+				<portdef name="subframemode" type="1" structure="1" group="4" instance="0" port="7"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">217</prop>
+					<prop name="posy">210</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="minimized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[Change this node to point to you cache]]></comment>
+			</node>
+			<node type="CacheOnFileNode" index="24">
+				<param name="templatepath" type="3" value="0"></param>
+				<param name="alternativepath" type="31" value="[project path]/Simulation/CACHES/[object]/[object]_v01_f[frame].icecache"></param>
+				<param name="filemode" type="3" value="2"></param>
+				<param name="secondpath" type="3" value="0"></param>
+				<param name="VersionString" type="31" value="Take1"></param>
+				<param name="attributelist" type="31" value=""></param>
+				<param name="FilePath" type="8" value="[project path]/Simulation/CACHES/[object]/[object]_v01_f[frame].icecache"></param>
+				<param name="ResolvedFilePath" type="8" value="Z:\LA_3D_DEPARTMENT\CALATAYUD_XSI\Simulation\CACHES\hojas_geo1\hojas_geo1_v01_f#.icecache"></param>
+				<param name="FileName" type="8" value="[object]_[version]_[frame]"></param>
+				<param name="FileType" type="3" value="0"></param>
+				<param name="ResolvedSecondFilePath" type="8" value="Z:\LA_3D_DEPARTMENT\CALATAYUD_XSI\Simulation\cached_geo\hojas_geo1\hojas_geo1_Take1_#.icecache"></param>
+				<param name="FileTypeString" type="8" value=".icecache"></param>
+				<param name="SourceCachedObject" type="8" value=""></param>
+				<param name="mute" type="11" value="false"></param>
+				<param name="frame" type="4" value="1.000000"></param>
+				<param name="normalize" type="11" value="true"></param>
+				<param name="blend" type="4" value="1.000000"></param>
+				<param name="overlay" type="11" value="false"></param>
+				<param name="append" type="11" value="false"></param>
+				<param name="filefullname.filefullname_string" type="8" value=""></param>
+				<param name="filefullname.filefullname_uimode" type="8" value=""></param>
+				<param name="filefullname.filefullname_filepathseq" type="8" value=""></param>
+				<param name="filefullname.filefullname_filename" type="8" value=""></param>
+				<param name="cachingmode" type="3" value="0"></param>
+				<param name="subframemode" type="11" value="false"></param>
+				<param_ext name="templatepath" type="3" value="0"></param_ext>
+				<portdef name="mute" type="1" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<portdef name="frame" type="4" structure="1" group="4" instance="0" port="0"></portdef>
+				<portdef name="normalize" type="1" structure="1" group="4" instance="0" port="1"></portdef>
+				<portdef name="blend" type="4" structure="1" group="4" instance="0" port="2"></portdef>
+				<portdef name="overlay" type="1" structure="1" group="4" instance="0" port="3"></portdef>
+				<portdef name="append" type="1" structure="1" group="4" instance="0" port="4"></portdef>
+				<portdef name="filefullname" type="131072" structure="1" group="4" instance="0" port="5"></portdef>
+				<portdef name="cachingmode" type="2" structure="1" group="4" instance="0" port="6"></portdef>
+				<portdef name="subframemode" type="1" structure="1" group="4" instance="0" port="7"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">220</prop>
+					<prop name="posy">295</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+				<comment type="node" state="minimized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-4" offsety="56" sizex="201" sizey="19"><![CDATA[Change this node to point to you cache]]></comment>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="12" portname="value2" username="Cache_Frame_Offset" basename="Cache Frame Offset" portlabel="Cache Frame Offset" exposetype="single"> </port>
+			<port index="14" portname="globaltime" username="Global_Time" basename="Global Time" portlabel="Global Time" exposetype="single"> </port>
+			<port index="15" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="18" portname="in" username="Path" basename="Path" portlabel="Path" exposetype="single"> </port>
+			<port index="20" portname="value" username="Speed" basename="Speed" portlabel="Speed" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="12" from_port="result" to_node="8" to_port="value"> </cnx>
+			<cnx from_node="13" from_port="result" to_node="17" to_port="value2"> </cnx>
+			<cnx from_node="11" from_port="result" to_node="7" to_port="blend"> </cnx>
+			<cnx from_node="0" from_port="value" to_node="7" to_port="first"> </cnx>
+			<cnx from_node="1" from_port="value" to_node="7" to_port="second"> </cnx>
+			<cnx from_node="2" from_port="Execute" to_node="15" to_port="port5"> </cnx>
+			<cnx from_node="4" from_port="Execute" to_node="15" to_port="port2"> </cnx>
+			<cnx from_node="6" from_port="Execute" to_node="15" to_port="port4"> </cnx>
+			<cnx from_node="3" from_port="Value" to_node="4" to_port="Value"> </cnx>
+			<cnx from_node="5" from_port="Value" to_node="6" to_port="Value"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="24" to_port="frame"> </cnx>
+			<cnx from_node="9" from_port="result" to_node="11" to_port="value"> </cnx>
+			<cnx from_node="8" from_port="result" to_node="10" to_port="value1"> </cnx>
+			<cnx from_node="8" from_port="result" to_node="23" to_port="frame"> </cnx>
+			<cnx from_node="7" from_port="result" to_node="2" to_port="Position"> </cnx>
+			<cnx from_node="16" from_port="result" to_node="19" to_port="iftrue"> </cnx>
+			<cnx from_node="14" from_port="frame" to_node="12" to_port="value1"> </cnx>
+			<cnx from_node="14" from_port="frame" to_node="17" to_port="value1"> </cnx>
+			<cnx from_node="17" from_port="result" to_node="9" to_port="value"> </cnx>
+			<cnx from_node="19" from_port="result" to_node="21" to_port="in"> </cnx>
+			<cnx from_node="23" from_port="execute" to_node="15" to_port="port1"> </cnx>
+			<cnx from_node="24" from_port="execute" to_node="15" to_port="port3"> </cnx>
+			<cnx from_node="18" from_port="out" to_node="23" to_port="filefullname"> </cnx>
+			<cnx from_node="18" from_port="out" to_node="24" to_port="filefullname"> </cnx>
+			<cnx from_node="20" from_port="result" to_node="22" to_port="first"> </cnx>
+			<cnx from_node="20" from_port="result" to_node="16" to_port="value"> </cnx>
+			<cnx from_node="20" from_port="result" to_node="19" to_port="iffalse"> </cnx>
+			<cnx from_node="20" from_port="result" to_node="8" to_port="factor"> </cnx>
+			<cnx from_node="21" from_port="out" to_node="13" to_port="value"> </cnx>
+			<cnx from_node="21" from_port="out" to_node="9" to_port="moduloby"> </cnx>
+			<cnx from_node="21" from_port="out" to_node="11" to_port="sourceend"> </cnx>
+			<cnx from_node="22" from_port="result" to_node="19" to_port="condition"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Path"> </item>
+			<item type="input" name="Global_Time"> </item>
+			<item type="input" name="Cache_Frame_Offset"> </item>
+			<item type="input" name="Speed"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+	</embedded_4>
+</xsi_file>

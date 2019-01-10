@@ -1,0 +1,18 @@
+def SelectSimilar()
+	app = Application
+	SceneRoot = app.ActiveProject.ActiveScene.Root
+	Objs = SceneRoot.Children
+	Color = app.PickElement()[2]
+	Select = []
+	C = Color.Properties('Display')
+	CR = C.Parameters('wirecolorr')
+	CG = C.Parameters('wirecolorg')
+	CB = C.Parameters('wirecolorb')
+	for o in Objs:
+		D= o.Properties('Display')
+		R = D.Parameters('wirecolorr')
+		G = D.Parameters('wirecolorg')
+		B = D.Parameters('wirecolorb')
+		if R.Value == CR.Value and G.Value == CG.Value and B.Value == CB.Value:
+			Select.append(o)
+	app.SelectObj(Select)

@@ -1,0 +1,17 @@
+error = False
+if len(SEQWrongFrames) > 0 and MOVE == True:
+	if not os.path.exists(os.path.join(SEQDir,SEQName+'_WrongFrames')):
+		os.makedirs(os.path.join(SEQDir,SEQName+'_WrongFrames'))
+	for i in range(len(SEQWrongFrames)):
+		cfrom= os.path.join(SEQDir,SEQName+SEQWrongFrames[i]+'.'+SEQType)
+		try	:
+			(os.rename(cfrom,os.path.join(os.path.join(SEQDir,SEQName+'_WrongFrames'),SEQName+SEQWrongFrames[i]+'.'+SEQType)))
+		except:
+			error = True
+elif len(SEQWrongFrames) > 0 and DELETE == True:
+	for i in range(len(SEQWrongFrames)):
+		os.remove(os.path.join(SEQDir,SEQName+SEQWrongFrames[i]+'.'+SEQType))
+if error:
+	print 'WrongFiles Cant be moved'
+if FLIPBOOK:
+	Application.Flipbook('-s'+SEQDir+'\\'+SEQName+'.'+SEQType+' '+str(SEQFrames[0])+' '+str(SEQFrames[-1]+' 1 '+str(RATE))+' -p(fn)'+SEQPadding+'(ext)'+' '+preload +' -r '+str(RESCALEONLOAD))

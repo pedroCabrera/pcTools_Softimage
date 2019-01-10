@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Select_axys" category="PC_Tools" formatversion="1.4" compoundversion="0.0" constructionmode="Current" backgroundcolor="6732954">
+	<definition>
+		<nodes>
+			<node type="SelectCaseNode" index="0">
+				<param name="condition" type="3" value="1"></param>
+				<param name="case0.case0_x" type="4" value="1.000000"></param>
+				<param name="case0.case0_y" type="4" value="0.000000"></param>
+				<param name="case0.case0_z" type="4" value="0.000000"></param>
+				<param name="case1.case1_x" type="4" value="0.000000"></param>
+				<param name="case1.case1_y" type="4" value="1.000000"></param>
+				<param name="case1.case1_z" type="4" value="0.000000"></param>
+				<param name="case2.case2_x" type="4" value="0.000000"></param>
+				<param name="case2.case2_y" type="4" value="0.000000"></param>
+				<param name="case2.case2_z" type="4" value="1.000000"></param>
+				<param name="case3.case3_x" type="4" value="0.000000"></param>
+				<param name="case3.case3_y" type="4" value="0.000000"></param>
+				<param name="case3.case3_z" type="4" value="1.000000"></param>
+				<param name="default.default_x" type="4" value="0.000000"></param>
+				<param name="default.default_y" type="4" value="0.000000"></param>
+				<param name="default.default_z" type="4" value="0.000000"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="16" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="16" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="case2" type="16" structure="1" group="1" instance="2" port="0"></portdef>
+				<portdef name="case3" type="16" structure="1" group="1" instance="3" port="0"></portdef>
+				<portdef name="default" type="16" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-116</prop>
+					<prop name="posy">146</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="1">
+				<param name="in" type="3" value="2"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-445</prop>
+					<prop name="posy">68</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="result" username="Vector_Axis" basename="Vector Axis" portlabel="Vector Axis" exposetype="single"> </port>
+			<port index="0" portname="case3" username="Custom" basename="Custom" portlabel="Custom" exposetype="single"> </port>
+			<port index="1" portname="in" username="Axis" basename="Axis" portlabel="Axis" exposetype="single"> </port>
+			<port index="1" portname="out" username="Condition_Axis" basename="Condition Axis" portlabel="Condition Axis" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="1" from_port="out" to_node="0" to_port="condition"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Axis" min="0" max="0">
+				<enum value="0"><![CDATA[X]]></enum>
+				<enum value="1"><![CDATA[Y]]></enum>
+				<enum value="2"><![CDATA[Z]]></enum>
+				<enum value="3"><![CDATA[Custom]]></enum>
+			</item>
+			<item type="input" name="Custom"> </item>
+			<item type="output" name="Condition_Axis"> </item>
+			<item type="output" name="Vector_Axis"> </item>
+		</layout>
+	</definition>
+</xsi_file>

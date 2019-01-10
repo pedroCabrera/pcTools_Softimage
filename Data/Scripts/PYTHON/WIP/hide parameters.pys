@@ -1,0 +1,10 @@
+###hide parameters
+
+var oCustomProperty = Selection(0).AddCustomProperty("whatever");
+ 
+// add parameters
+oCustomProperty.AddParameter( "number", siFloat, siClassifUnknown, siPersistable, "", "", "", 0.5, 0, 1, 0, 1 );
+ 
+// hide Name
+p = oCustomProperty.Parameters("Name")
+p.SetCapabilityFlag( siNotInspectable, true );

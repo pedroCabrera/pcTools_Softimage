@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Set Island Positions" category="PC_Tools/Topology" tasks="PC_Tools/Topology" author="" url="" formatversion="1.4" compoundversion="0.0" versiontag="" constructionmode="Current" backgroundcolor="9195398">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="IslandPerPointArray"></param>
+				<param_ext name="reference" type="31" value="IslandPerPointArray"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1024</prop>
+					<prop name="posy">2327</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="1">
+				<param name="reference" type="31" value="PointPosition"></param>
+				<param_ext name="reference" type="31" value="PointPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1030</prop>
+					<prop name="posy">2397</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="2">
+				<param name="reference" type="31" value="self.IslandPerPoint"></param>
+				<param_ext name="reference" type="31" value="self.IslandPerPoint"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-565</prop>
+					<prop name="posy">2471</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="3">
+				<param name="reference" type="31" value="IslandPerPointPositionArray"></param>
+				<param_ext name="reference" type="31" value="IslandPerPointPositionArray"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-596</prop>
+					<prop name="posy">2411</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="4">
+				<param name="reference" type="31" value="NbPolygonIslands"></param>
+				<param_ext name="reference" type="31" value="NbPolygonIslands"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1021</prop>
+					<prop name="posy">2220</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="5">
+				<param name="index" type="3" value="0"></param>
+				<param name="array.array_x" type="4" value="0.000000"></param>
+				<param name="array.array_y" type="4" value="0.000000"></param>
+				<param name="array.array_z" type="4" value="0.000000"></param>
+				<portdef name="index" type="2" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="16" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-617</prop>
+					<prop name="posy">2354</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="6">
+				<param name="index" type="3" value="0"></param>
+				<param name="array.array_x" type="4" value="0.000000"></param>
+				<param name="array.array_y" type="4" value="0.000000"></param>
+				<param name="array.array_z" type="4" value="0.000000"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="16" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-251</prop>
+					<prop name="posy">2543</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetArrayAverageNode" index="7">
+				<param name="array.array_x" type="4" value="0.000000"></param>
+				<param name="array.array_y" type="4" value="0.000000"></param>
+				<param name="array.array_z" type="4" value="0.000000"></param>
+				<portdef name="array" type="16" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-470</prop>
+					<prop name="posy">2353</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FindInArrayNode" index="8">
+				<param name="value" type="3" value="0"></param>
+				<param name="array" type="3" value="0"></param>
+				<param name="epsilon" type="4" value="0.000000"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="epsilon" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-807</prop>
+					<prop name="posy">2294</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PushOnArrayNode" index="9">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<param name="array.array_x" type="4" value="0.000000"></param>
+				<param name="array.array_y" type="4" value="0.000000"></param>
+				<param name="array.array_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="16" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-282</prop>
+					<prop name="posy">2385</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SetInArrayNode" index="10">
+				<param name="index" type="3" value="0"></param>
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<param name="array.array_x" type="4" value="0.000000"></param>
+				<param name="array.array_y" type="4" value="0.000000"></param>
+				<param name="array.array_z" type="4" value="0.000000"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="array" type="16" structure="2" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-176</prop>
+					<prop name="posy">2352</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="11">
+				<param name="Reference" type="31" value=""></param>
+				<param name="Value.Value_x" type="4" value="0.000000"></param>
+				<param name="Value.Value_y" type="4" value="0.000000"></param>
+				<param name="Value.Value_z" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="Value" type="16" structure="2" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-51</prop>
+					<prop name="posy">2406</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Repeat with Counter" version="1.0" index="12">
+				<param name="Reference" type="31" value=""></param>
+				<param name="Num_Iterations" type="3" value="0"></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="Num_Iterations" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute_Each_Iteration" type="4096" structure="1" group="2" instance="0" port="0" groupname="Execute Each Iteration"></portdef>
+				<portdef name="Execute_Each_Iteration1" type="4096" structure="1" group="2" instance="1" port="0" groupname="Execute Each Iteration"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">106</prop>
+					<prop name="posy">2206</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="13">
+				<param name="Reference" type="31" value="IslandPerPointposition"></param>
+				<param name="Value.Value_x" type="4" value="0.000000"></param>
+				<param name="Value.Value_y" type="4" value="0.000000"></param>
+				<param name="Value.Value_z" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="IslandPerPointposition"></param_ext>
+				<portdef name="Value" type="16" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">21</prop>
+					<prop name="posy">2480</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromSetNode" index="14">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-817</prop>
+					<prop name="posy">2396</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="15">
+				<param name="reference" type="31" value="self"></param>
+				<param_ext name="reference" type="31" value="self"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1229</prop>
+					<prop name="posy">2509</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="16">
+				<param name="reference" type="31" value="Iterator_3"></param>
+				<param_ext name="reference" type="31" value="Iterator_3"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-967</prop>
+					<prop name="posy">2259</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="17">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">416</prop>
+					<prop name="posy">2361</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="18">
+				<param name="reference" type="31" value=""></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-512</prop>
+					<prop name="posy">2551</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="reference" username="Island_Array" basename="Island Array" portlabel="Island Array" exposetype="single"> </port>
+			<port index="2" portname="reference" username="Island_Per_Point" basename="Island Per Point" portlabel="Island Per Point" exposetype="single"> </port>
+			<port index="3" portname="reference" username="Positions_Array" basename="Positions Array" portlabel="Positions Array" exposetype="single"> </port>
+			<port index="4" portname="reference" username="Nb_Islands" basename="Nb Islands" portlabel="Nb Islands" exposetype="single"> </port>
+			<port index="13" portname="Reference" username="Position_Per_Point" basename="Position Per Point" portlabel="Position Per Point" exposetype="single"> </port>
+			<port index="15" portname="inname" username="In_Name" basename="In Name" portlabel="In Name" exposetype="single"> </port>
+			<port index="15" portname="reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="single"> </port>
+			<port index="17" portname="execute" username="Execute1" basename="Execute1" portlabel="Execute1" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="5" from_port="value" to_node="7" to_port="array"> </cnx>
+			<cnx from_node="14" from_port="array" to_node="5" to_port="array"> </cnx>
+			<cnx from_node="11" from_port="Execute" to_node="12" to_port="Execute_Each_Iteration"> </cnx>
+			<cnx from_node="12" from_port="Execute" to_node="17" to_port="port1"> </cnx>
+			<cnx from_node="13" from_port="Execute" to_node="17" to_port="port2"> </cnx>
+			<cnx from_node="9" from_port="result" to_node="10" to_port="array"> </cnx>
+			<cnx from_node="10" from_port="result" to_node="11" to_port="Value"> </cnx>
+			<cnx from_node="8" from_port="indexarray" to_node="5" to_port="index"> </cnx>
+			<cnx from_node="3" from_port="value" to_node="9" to_port="array"> </cnx>
+			<cnx from_node="3" from_port="outname" to_node="11" to_port="In_Name"> </cnx>
+			<cnx from_node="3" from_port="outname" to_node="18" to_port="inname"> </cnx>
+			<cnx from_node="4" from_port="value" to_node="12" to_port="Num_Iterations"> </cnx>
+			<cnx from_node="7" from_port="result" to_node="10" to_port="value"> </cnx>
+			<cnx from_node="7" from_port="result" to_node="9" to_port="value"> </cnx>
+			<cnx from_node="6" from_port="value" to_node="13" to_port="Value"> </cnx>
+			<cnx from_node="0" from_port="value" to_node="8" to_port="array"> </cnx>
+			<cnx from_node="1" from_port="value" to_node="14" to_port="value"> </cnx>
+			<cnx from_node="2" from_port="value" to_node="6" to_port="index"> </cnx>
+			<cnx from_node="15" from_port="outname" to_node="16" to_port="inname"> </cnx>
+			<cnx from_node="15" from_port="outname" to_node="0" to_port="inname"> </cnx>
+			<cnx from_node="15" from_port="outname" to_node="1" to_port="inname"> </cnx>
+			<cnx from_node="15" from_port="outname" to_node="3" to_port="inname"> </cnx>
+			<cnx from_node="15" from_port="outname" to_node="4" to_port="inname"> </cnx>
+			<cnx from_node="15" from_port="outname" to_node="13" to_port="In_Name"> </cnx>
+			<cnx from_node="16" from_port="value" to_node="8" to_port="value"> </cnx>
+			<cnx from_node="16" from_port="value" to_node="10" to_port="index"> </cnx>
+			<cnx from_node="16" from_port="outname" to_node="12" to_port="In_Name"> </cnx>
+			<cnx from_node="18" from_port="value" to_node="6" to_port="array"> </cnx>
+		</connections>
+		<layout>
+			<group type="input" name="Object" collapsed="false">
+				<item type="input" name="In_Name"> </item>
+				<item type="input" name="Reference"> </item>
+			</group>
+			<group type="input" name="Index Data" collapsed="false">
+				<item type="input" name="Island_Per_Point"> </item>
+				<item type="input" name="Island_Array"> </item>
+				<item type="input" name="Nb_Islands"> </item>
+			</group>
+			<group type="input" name="Positions Data" collapsed="false">
+				<item type="input" name="Position_Per_Point"> </item>
+				<item type="input" name="Positions_Array"> </item>
+			</group>
+			<item type="output" name="Execute1"> </item>
+		</layout>
+		<ppglogic lang=""><![CDATA[]]></ppglogic>
+	</definition>
+</xsi_file>

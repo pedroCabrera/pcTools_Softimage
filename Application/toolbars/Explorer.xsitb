@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<xsi_file type="Shelf" xsi_version="13.0.114.0" syntax_version="1.0">
+   <shelf_view name="Explorer" clsid="{0FF352C4-1B5F-408E-A330-BF81D30C7719}">
+      <definition maxinstances="10000" acceptfocus="true" private="false" defaultsize="0,100,200,300" cmdmap="{00000000-0000-0000-0000-000000000000}" supportedtypes="6" category=""></definition>
+      <tabs layout="top" active="Tab 91">
+         <tab label="Tab 91" type="folder" path="C:\Users\Pedrito\Dropbox\TESTS_PEDRO\Models" ext="*.*" mode="logview" navigation="True" scrollbar="1"></tab>
+      </tabs>
+   </shelf_view>
+</xsi_file>

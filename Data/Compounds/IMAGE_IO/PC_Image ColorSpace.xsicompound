@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Image ColorSpace" category="PC_Image_IO" tasks="PC_Tools" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="14000776">
+	<definition>
+		<nodes>
+			<node type="PC_Image_ColorSpace" index="1">
+				<param name="ConversionType" type="3" value="0"></param>
+				<portdef name="Image" type="65536" structure="1" group="0" instance="0" port="0" supportedblob="1"></portdef>
+				<portdef name="ConversionType" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">547</prop>
+					<prop name="posy">376</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="Image" username="Image" basename="Image" portlabel="Image" exposetype="single"> </port>
+			<port index="1" portname="Changed Image" username="Changed_Image" basename="Changed Image" portlabel="Changed Image" exposetype="single"> </port>
+			<port index="1" portname="ConversionType" username="ColoSpaceConversion" basename="ColoSpaceConversion" portlabel="ColoSpaceConversion" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Image"> </item>
+			<item type="input" name="ColoSpaceConversion" min="0" max="0">
+				<enum value="0"><![CDATA[sRGBtoRGB]]></enum>
+				<enum value="1"><![CDATA[RGBtosRGB]]></enum>
+				<enum value="2"><![CDATA[RGBtoHSV]]></enum>
+				<enum value="3"><![CDATA[HSVtoRGB]]></enum>
+				<enum value="4"><![CDATA[RGBtoHSL]]></enum>
+				<enum value="5"><![CDATA[HSLtoRGB]]></enum>
+				<enum value="6"><![CDATA[RGBtoHSI]]></enum>
+				<enum value="7"><![CDATA[HSItoRGB]]></enum>
+				<enum value="8"><![CDATA[RGBtoYCbCr]]></enum>
+				<enum value="9"><![CDATA[YCbCrtoRGB]]></enum>
+				<enum value="10"><![CDATA[RGBtoYUV]]></enum>
+				<enum value="11"><![CDATA[YUVtoRGB]]></enum>
+				<enum value="12"><![CDATA[RGBtoCMY]]></enum>
+				<enum value="13"><![CDATA[CMYtoRGB]]></enum>
+				<enum value="14"><![CDATA[CMYtoCMYK]]></enum>
+				<enum value="15"><![CDATA[CMYKtoCMY]]></enum>
+				<enum value="16"><![CDATA[RGBtoXYZ]]></enum>
+				<enum value="17"><![CDATA[XYZtoRGB]]></enum>
+				<enum value="18"><![CDATA[XYZtoLab]]></enum>
+				<enum value="19"><![CDATA[LabtoXYZ]]></enum>
+				<enum value="20"><![CDATA[XYZtoxyY]]></enum>
+				<enum value="21"><![CDATA[xyYtoXYZ]]></enum>
+				<enum value="22"><![CDATA[RGBtoLab]]></enum>
+				<enum value="23"><![CDATA[LabtoRGB]]></enum>
+				<enum value="24"><![CDATA[RGBtoxyY]]></enum>
+				<enum value="25"><![CDATA[xyYtoRGB]]></enum>
+				<enum value="26"><![CDATA[RGBtoCMYK]]></enum>
+				<enum value="27"><![CDATA[CMYKtoRGB]]></enum>
+			</item>
+			<item type="output" name="Changed_Image"> </item>
+		</layout>
+		<blob_dictionary>
+			<dict_entry index="1" color="15625002">
+				<typename><![CDATA[PCImage]]></typename>
+				<displayname><![CDATA[PCImage]]></displayname>
+				<description><![CDATA[PCImage]]></description>
+			</dict_entry>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

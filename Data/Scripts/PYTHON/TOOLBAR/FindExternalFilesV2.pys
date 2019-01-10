@@ -1,0 +1,94 @@
+import win32com, sys, os,shutil
+from win32com.client import constants as c
+app = Application
+OS= os.path
+Desktop = os.getenv("HOMEDRIVE") + os.getenv("HOMEPATH") + "\\Desktop"
+ARCHIVOS,RUTAS = [],[]
+CLIPS = app.ActiveProject.ActiveScene.ImageClips
+prop = app.ActiveProject.ActiveScene.Root.AddProperty('CustomProperty',0,'PC_ExternalFileSearch')
+prop.AddParameter3('PickFolder',8)
+prop.AddParameter3('SearchFolders',8)
+COPY=prop.AddParameter3('Copy',11,True)
+COPYTO=prop.AddParameter3('CopyTo',8,'[Project Path]\Pictures')
+PPG = prop.PPGLayout
+PPG.Clear()
+PPG.Language = 'Python'
+PPG.AddItem('PickFolder','',c.siControlFolder)
+Folders = PPG.AddItem('SearchFolders','',c.siControlListBox)
+Folders.SetAttribute( c.siUICY, 100 )
+Folders.SetAttribute(c.siUIMultiSelectionListBox,True)
+PPG.AddButton('Remove','Remove')
+PPG.AddItem('Copy')
+PPG.AddItem('CopyTo')
+PPG.Logic ='''
+app = Application   
+o = PPG.InspectedObjects
+prop = app.ActiveSceneRoot.GetPropertyFromName2(o)
+Layout = prop.PPGLayout
+def PickFolder_OnChanged():
+	Items = list(Layout.Item('SearchFolders').UIItems)
+	Items.append(prop.Parameters('PickFolder').Value)
+	Items.append(prop.Parameters('PickFolder').Value)
+	Layout.Item('SearchFolders').UIItems = Items
+	prop.Parameters('PickFolder').Value = ''
+	PPG.Refresh()
+def Remove_OnClicked():
+	Items=[]
+	for ui in Layout.Item('SearchFolders').UIItems:
+		Items.append(ui)
+	for p in prop.Parameters('SearchFolders').Value.split(';'):
+		try:
+			Items.remove(p)
+			Items.remove(p)
+		except:
+			continue
+	Layout.Item('SearchFolders').UIItems = Items
+	Items=[]
+	PPG.Refresh()
+	
+'''
+Cancel = app.InspectObj(prop, "", 'PC_External File Searcher', 4, False )
+if not Cancel:
+	copy = COPY.Value
+	List =[]
+	n=0
+	for p in PPG.Item('SearchFolders').UIItems:
+		if p not in List:
+			List.append(p)
+	for FOLDER in List:
+		print FOLDER
+		for subdir, dirs, files in os.walk(FOLDER):
+			for file in files:
+				ARCHIVOS.append(file)
+				RUTAS.append(subdir)
+				
+		for clip in CLIPS:
+			StartFrame,EndFrame = int(app.GetValue(str(clip)+'.timectrl.clipin')),int(app.GetValue(str(clip)+'.timectrl.clipout'))
+			Filepath = clip.Source.Parameters('Path')
+			Filename = OS.basename(Filepath.Value)
+			if EndFrame != StartFrame:
+				fileName, fileExtension = OS.splitext(Filepath.Value)
+				Exist = OS.exists(Filepath.Value.split('['+ str(StartFrame))[0] + str(StartFrame)+ fileExtension)
+				SearchFile = OS.basename(fileName).split('['+ str(StartFrame))[0] + str(StartFrame)+ fileExtension
+				sequence = True
+			else :
+				Exist = OS.exists(clip.Source.Parameters('Path').Value)
+				SearchFile = Filename
+				sequence = False
+			if not Exist :
+				if SearchFile in ARCHIVOS:
+					if copy:
+						copyto = XSIUtils.ResolveTokenString(COPYTO.Value,0,False)
+						if not os.path.isdir(copyto):
+							os.makedirs(copyto)
+						if not sequence:
+							shutil.copy(OS.join(RUTAS[ARCHIVOS.index(SearchFile)],SearchFile),copyto+'\\'+SearchFile)
+						else:
+							for i in range(EndFrame+1-StartFrame):
+								shutil.copy(OS.join(RUTAS[ARCHIVOS.index(SearchFile)],SearchFile.replace(str(StartFrame)+fileExtension,str(i+StartFrame)+ fileExtension)),copyto+'\\'+SearchFile.replace(str(StartFrame)+fileExtension,str(i+StartFrame)+ fileExtension))
+						Filepath.Value = OS.join(copyto,OS.basename(Filepath.Value))
+					else:
+						Filepath.Value = OS.join(RUTAS[ARCHIVOS.index(SearchFile)],OS.basename(Filepath.Value))
+				else:
+					print 'El archivo "'+ SearchFile + '" no se ha encontrado'
+app.DeleteObj(prop)

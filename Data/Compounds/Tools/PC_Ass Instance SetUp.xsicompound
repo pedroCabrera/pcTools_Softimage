@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Ass Instance SetUp" category="PC_Tools/Tools" tasks="PC_Tools/Tools" formatversion="1.4" compoundversion="1.0">
+	<definition>
+		<nodes>
+			<node type="LogValuesNode" index="0">
+				<param name="debugprinttag" type="31" value=""></param>
+				<param name="in.in_string" type="8" value=""></param>
+				<param name="in.in_uimode" type="8" value=""></param>
+				<param name="in.in_filepathseq" type="8" value=""></param>
+				<param name="in.in_filename" type="8" value=""></param>
+				<param name="log" type="11" value="false"></param>
+				<param name="allelements" type="11" value="false"></param>
+				<param name="firstelement" type="3" value="0"></param>
+				<param name="lastelement" type="3" value="0"></param>
+				<portdef name="in" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="log" type="1" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="allelements" type="1" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="firstelement" type="2" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="lastelement" type="2" structure="1" group="0" instance="0" port="4"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-252</prop>
+					<prop name="posy">607</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="1">
+				<param name="Reference" type="31" value=".Arnold_Standin.path"></param>
+				<param name="Reference1" type="31" value=".Arnold_Standin.deferredLoading"></param>
+				<param name="Value.Value_string" type="8" value="ArnoldProcedural"></param>
+				<param name="Value.Value_uimode" type="8" value=""></param>
+				<param name="Value.Value_filepathseq" type="8" value=""></param>
+				<param name="Value.Value_filename" type="8" value=""></param>
+				<param name="Value1" type="11" value="false"></param>
+				<param_ext name="Reference" type="31" value=".Arnold_Standin.path"></param_ext>
+				<param_ext name="Reference1" type="31" value=".Arnold_Standin.deferredLoading"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="131072" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value1" type="1" structure="1" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-211</prop>
+					<prop name="posy">266</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="2">
+				<param name="Reference" type="31" value="self.Shape"></param>
+				<param name="Value" type="3" value="0"></param>
+				<param_ext name="Reference" type="31" value="self.Shape"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="32768" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2</prop>
+					<prop name="posy">459</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="3">
+				<param name="Reference1" type="31" value="self.ArnoldProceduralData"></param>
+				<param name="Reference" type="31" value="self.ArnoldProceduralDso"></param>
+				<param name="Value.Value_string" type="8" value=""></param>
+				<param name="Value.Value_uimode" type="8" value=""></param>
+				<param name="Value.Value_filepathseq" type="8" value=""></param>
+				<param name="Value.Value_filename" type="8" value=""></param>
+				<param name="Value1.Value1_string" type="8" value=""></param>
+				<param name="Value1.Value1_uimode" type="8" value=""></param>
+				<param name="Value1.Value1_filepathseq" type="8" value=""></param>
+				<param name="Value1.Value1_filename" type="8" value=""></param>
+				<param_ext name="Reference1" type="31" value="self.ArnoldProceduralData"></param_ext>
+				<param_ext name="Reference" type="31" value="self.ArnoldProceduralDso"></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value1" type="131072" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value" type="131072" structure="1" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-41</prop>
+					<prop name="posy">607</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PC_Instance_Shape" index="4">
+				<param name="Name.Name_string" type="8" value=""></param>
+				<param name="Name.Name_uimode" type="8" value=""></param>
+				<param name="Name.Name_filepathseq" type="8" value=""></param>
+				<param name="Name.Name_filename" type="8" value=""></param>
+				<param name="Branch" type="11" value="true"></param>
+				<portdef name="Name" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="Branch" type="1" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-224</prop>
+					<prop name="posy">459</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="5">
+				<param name="reference" type="31" value=""></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-659</prop>
+					<prop name="posy">298</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ReferenceToStringNode" index="6">
+				<param name="reference" type="31" value=""></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-423</prop>
+					<prop name="posy">459</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="7">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">133</prop>
+					<prop name="posy">396</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="StringNode" index="18">
+				<param name="value.value_string" type="8" value="void"></param>
+				<param name="value.value_uimode" type="8" value="0"></param>
+				<param name="value.value_filepathseq" type="8" value=""></param>
+				<param name="value.value_filename" type="8" value=""></param>
+				<portdef name="value" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-395</prop>
+					<prop name="posy">706</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="LogValuesNode" index="19">
+				<param name="debugprinttag" type="31" value=""></param>
+				<param name="in.in_string" type="8" value=""></param>
+				<param name="in.in_uimode" type="8" value=""></param>
+				<param name="in.in_filepathseq" type="8" value=""></param>
+				<param name="in.in_filename" type="8" value=""></param>
+				<param name="log" type="11" value="false"></param>
+				<param name="allelements" type="11" value="false"></param>
+				<param name="firstelement" type="3" value="0"></param>
+				<param name="lastelement" type="3" value="0"></param>
+				<portdef name="in" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="log" type="1" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="allelements" type="1" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="firstelement" type="2" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="lastelement" type="2" structure="1" group="0" instance="0" port="4"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-246</prop>
+					<prop name="posy">706</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="in" username="Ass_Path" basename="Ass Path" portlabel="Ass Path" exposetype="single"> </port>
+			<port index="1" portname="Value" username="Path" basename="Path" portlabel="Path" exposetype="single"> </port>
+			<port index="1" portname="Value1" username="Defered_Loading" basename="Defered Loading" portlabel="Defered Loading" exposetype="single"> </port>
+			<port index="5" portname="inname" username="Ass_Object" basename="Ass Object" portlabel="Ass Object" exposetype="single"> </port>
+			<port index="7" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="3" from_port="Execute" to_node="7" to_port="port3"> </cnx>
+			<cnx from_node="2" from_port="Execute" to_node="7" to_port="port2"> </cnx>
+			<cnx from_node="0" from_port="out" to_node="3" to_port="Value"> </cnx>
+			<cnx from_node="1" from_port="Execute" to_node="7" to_port="port1"> </cnx>
+			<cnx from_node="18" from_port="result" to_node="19" to_port="in"> </cnx>
+			<cnx from_node="19" from_port="out" to_node="3" to_port="Value1"> </cnx>
+			<cnx from_node="4" from_port="Shape" to_node="2" to_port="Value"> </cnx>
+			<cnx from_node="5" from_port="outname" to_node="6" to_port="inname"> </cnx>
+			<cnx from_node="5" from_port="outname" to_node="1" to_port="In_Name"> </cnx>
+			<cnx from_node="6" from_port="outstringname" to_node="4" to_port="Name"> </cnx>
+		</connections>
+		<layout>
+			<group type="input" name="Ass PPG" collapsed="false">
+				<item type="input" name="Ass_Object"> </item>
+				<item type="input" name="Path"> </item>
+				<item type="input" name="Defered_Loading"> </item>
+			</group>
+			<group type="input" name="Per Point" collapsed="false">
+				<item type="input" name="Ass_Path"> </item>
+			</group>
+			<item type="output" name="Execute"> </item>
+		</layout>
+	</definition>
+</xsi_file>

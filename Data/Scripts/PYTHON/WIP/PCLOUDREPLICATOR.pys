@@ -1,0 +1,84 @@
+import win32com
+from win32com.client import constants as c
+import Tools as T
+app = Application
+Types = ['3D Grid','Curve By Nulls','Clone on Curve','Circle','Spiral','Position Array','Geometry','PointCloud']
+Options=[]
+for i, t in enumerate(Types):
+	Options.append(t)
+	Options.append(str(i))
+prop = Application.ActiveSceneRoot.AddProperty('CustomProperty')
+Type = prop.AddParameter3('Type',c.siString)
+Custom= prop.AddParameter3('Custom',c.siBool)
+Reference=prop.AddParameter3('Shape',c.siString)
+Layout = prop.PPGLayout
+Layout.Clear()
+Layout.Language= "Python"
+Layout.AddEnumControl('Type',Options,'Type',c.siControlCombo)
+Layout.AddItem('Custom')
+Layout.AddRow()
+Layout.AddItem('Shape')
+Layout.AddButton('Explore','Explore')
+Layout.EndRow()
+sLogic = '''
+def Explore_OnClicked():
+	A = Application.OpenTransientExplorer()
+	prop=PPG.Inspected(0)
+	print A
+	Application.SetValue(str(prop)+'.Shape',str(A))
+	#PPG.Refresh()
+'''
+Layout.Logic = sLogic
+
+Cancelado = app.InspectObj(prop,'','PC_PointCloud_Replicator',4)
+if not Cancelado:
+	Type = app.GetValue(str(Type))
+	shape = app.GetValue(str(Reference))
+	Nulls = []
+
+	if Type == '1':
+		Msg= T.MsgBox('Start Picking Nulls','Pick The Nulls')
+		if Msg == 1:
+			Pick = True
+			while Pick == True:
+				N = Application.PickElement('Null')
+				if N.Value('ButtonPressed')== 1:
+					Nulls.append(N.Value('PickedElement'))
+				if N.Value('ButtonPressed')== 0:
+					Pick = False
+	PCloud = app.GetPrim('PointCloud','PC_PointCloud_Replicator')
+	IceOp = app.ApplyIceOp('PC_PointCloud Replicator',PCloud)
+	app.SetValue(str(IceOp)+'.PC_PointCloud_Replicator.Type',Type)
+	app.SetValue(str(IceOp)+'.PC_pointCloud_replicator.Reference',str(shape))
+	nulls = 0
+	port = 0
+	for null in Nulls:
+		if len(Nulls)>1:
+			if nulls>2:
+				app.AddPortToIceNode(str(IceOp)+'.PC_PointCloud_Replicator.kine_Null'+str(port))
+				nulls = nulls+1
+				port = port +1
+			elif nulls == 1:
+				app.AddPortToIceNode(str(IceOp)+'.PC_PointCloud_Replicator.kine_Null')
+				nulls = nulls + 1
+				port = port + 1
+		nulls = nulls + 1
+	nulls = 0
+	port = 0
+	for null in Nulls:
+		G=app.AddICENode('GetDataNode',IceOp)
+		app.SetValue(str(G)+'.reference',str(null)+'.kine.global')
+		if nulls>=1:
+			app.ConnectICENodes(str(IceOp)+'.PC_PointCloud_Replicator.kine_Null'+str(port), str(G)+'.value')
+			nulls = nulls+1
+			port = port +1
+		else:
+			app.ConnectICENodes(str(IceOp)+'.PC_PointCloud_Replicator.kine_Null', str(G)+'.value')
+			nulls = nulls + 1
+			port = port + 1
+		nulls = nulls + 1
+
+				
+
+app.DeleteObj(prop)
+

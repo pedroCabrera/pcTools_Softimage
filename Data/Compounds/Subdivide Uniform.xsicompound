@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="Subdivide Uniform" formatversion="1.4" compoundversion="1.0">
+	<definition>
+		<nodes>
+			<node type="PC_Get Bounding Box" version="0.0" index="0">
+				<portdef name="Object" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1654</prop>
+					<prop name="posy">-19</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Build Linearly Interpolated Array" version="1.1" index="1">
+				<param name="Size" type="3" value="30"></param>
+				<param name="Start.Start_x" type="4" value="0.000000"></param>
+				<param name="Start.Start_y" type="4" value="0.000000"></param>
+				<param name="Start.Start_z" type="4" value="0.000000"></param>
+				<param name="End.End_x" type="4" value="0.000000"></param>
+				<param name="End.End_y" type="4" value="0.000000"></param>
+				<param name="End.End_z" type="4" value="0.000000"></param>
+				<portdef name="Size" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Start" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="End" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-902</prop>
+					<prop name="posy">-28</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="3DVectorToScalarNode" index="2">
+				<param name="vector.vector_x" type="4" value="0.000000"></param>
+				<param name="vector.vector_y" type="4" value="0.000000"></param>
+				<param name="vector.vector_z" type="4" value="0.000000"></param>
+				<portdef name="vector" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-992</prop>
+					<prop name="posy">214</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="3DVectorToScalarNode" index="3">
+				<param name="vector.vector_x" type="4" value="0.000000"></param>
+				<param name="vector.vector_y" type="4" value="0.000000"></param>
+				<param name="vector.vector_z" type="4" value="0.000000"></param>
+				<portdef name="vector" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-992</prop>
+					<prop name="posy">387</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarTo3DVectorNode" index="4">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<param name="z" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="z" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1098</prop>
+					<prop name="posy">-106</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarTo3DVectorNode" index="5">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<param name="z" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="z" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-796</prop>
+					<prop name="posy">387</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PC_Get Bounding Box" version="0.0" index="6">
+				<portdef name="Object" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1836</prop>
+					<prop name="posy">-321</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Build Linearly Interpolated Array" version="1.1" index="7">
+				<param name="Size" type="3" value="30"></param>
+				<param name="Start.Start_x" type="4" value="0.000000"></param>
+				<param name="Start.Start_y" type="4" value="0.000000"></param>
+				<param name="Start.Start_z" type="4" value="0.000000"></param>
+				<param name="End.End_x" type="4" value="0.000000"></param>
+				<param name="End.End_y" type="4" value="0.000000"></param>
+				<param name="End.End_z" type="4" value="0.000000"></param>
+				<portdef name="Size" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Start" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="End" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1137</prop>
+					<prop name="posy">-332</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Build Linearly Interpolated Array" version="1.1" index="8">
+				<param name="Size" type="3" value="30"></param>
+				<param name="Start.Start_x" type="4" value="0.000000"></param>
+				<param name="Start.Start_y" type="4" value="0.000000"></param>
+				<param name="Start.Start_z" type="4" value="0.000000"></param>
+				<param name="End.End_x" type="4" value="0.000000"></param>
+				<param name="End.End_y" type="4" value="0.000000"></param>
+				<param name="End.End_z" type="4" value="0.000000"></param>
+				<portdef name="Size" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Start" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="End" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-600</prop>
+					<prop name="posy">292</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PC_Get Bounding Box" version="0.0" index="9">
+				<portdef name="Object" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1499</prop>
+					<prop name="posy">295</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SlicePolygonNode" index="10">
+				<param name="delete_above_plane_mode" type="3" value="0"></param>
+				<param name="tolerance" type="5" value="0.001000"></param>
+				<param name="planeorigin.planeorigin_x" type="4" value="0.000000"></param>
+				<param name="planeorigin.planeorigin_y" type="4" value="0.000000"></param>
+				<param name="planeorigin.planeorigin_z" type="4" value="0.000000"></param>
+				<param name="planenormal.planenormal_x" type="4" value="0.000000"></param>
+				<param name="planenormal.planenormal_y" type="4" value="0.000000"></param>
+				<param name="planenormal.planenormal_z" type="4" value="1.000000"></param>
+				<portdef name="topo" type="524288" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="planeorigin" type="16" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="planenormal" type="16" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-243</prop>
+					<prop name="posy">125</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="3DVectorToScalarNode" index="11">
+				<param name="vector.vector_x" type="4" value="0.000000"></param>
+				<param name="vector.vector_y" type="4" value="0.000000"></param>
+				<param name="vector.vector_z" type="4" value="0.000000"></param>
+				<portdef name="vector" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1294</prop>
+					<prop name="posy">-106</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="3DVectorToScalarNode" index="12">
+				<param name="vector.vector_x" type="4" value="0.000000"></param>
+				<param name="vector.vector_y" type="4" value="0.000000"></param>
+				<param name="vector.vector_z" type="4" value="0.000000"></param>
+				<portdef name="vector" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1294</prop>
+					<prop name="posy">67</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SlicePolygonNode" index="13">
+				<param name="delete_above_plane_mode" type="3" value="0"></param>
+				<param name="tolerance" type="5" value="0.001000"></param>
+				<param name="planeorigin.planeorigin_x" type="4" value="0.000000"></param>
+				<param name="planeorigin.planeorigin_y" type="4" value="0.000000"></param>
+				<param name="planeorigin.planeorigin_z" type="4" value="0.000000"></param>
+				<param name="planenormal.planenormal_x" type="4" value="0.000000"></param>
+				<param name="planenormal.planenormal_y" type="4" value="1.000000"></param>
+				<param name="planenormal.planenormal_z" type="4" value="0.000000"></param>
+				<portdef name="topo" type="524288" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="planeorigin" type="16" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="planenormal" type="16" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-590</prop>
+					<prop name="posy">-146</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="14">
+				<param name="reference" type="31" value="self"></param>
+				<param_ext name="reference" type="31" value="self"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1993</prop>
+					<prop name="posy">385</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="15">
+				<param name="reference" type="31" value="Topology"></param>
+				<param_ext name="reference" type="31" value="Topology"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1015</prop>
+					<prop name="posy">-537</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SlicePolygonNode" index="16">
+				<param name="delete_above_plane_mode" type="3" value="0"></param>
+				<param name="tolerance" type="5" value="0.001000"></param>
+				<param name="planeorigin.planeorigin_x" type="4" value="0.000000"></param>
+				<param name="planeorigin.planeorigin_y" type="4" value="0.000000"></param>
+				<param name="planeorigin.planeorigin_z" type="4" value="0.000000"></param>
+				<param name="planenormal.planenormal_x" type="4" value="1.000000"></param>
+				<param name="planenormal.planenormal_y" type="4" value="0.000000"></param>
+				<param name="planenormal.planenormal_z" type="4" value="0.000000"></param>
+				<portdef name="topo" type="524288" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="planeorigin" type="16" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="planenormal" type="16" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-860</prop>
+					<prop name="posy">-332</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="3DVectorToScalarNode" index="17">
+				<param name="vector.vector_x" type="4" value="0.000000"></param>
+				<param name="vector.vector_y" type="4" value="0.000000"></param>
+				<param name="vector.vector_z" type="4" value="0.000000"></param>
+				<portdef name="vector" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1529</prop>
+					<prop name="posy">-410</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="3DVectorToScalarNode" index="18">
+				<param name="vector.vector_x" type="4" value="0.000000"></param>
+				<param name="vector.vector_y" type="4" value="0.000000"></param>
+				<param name="vector.vector_z" type="4" value="0.000000"></param>
+				<portdef name="vector" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1529</prop>
+					<prop name="posy">-237</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarTo3DVectorNode" index="19">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<param name="z" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="z" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1333</prop>
+					<prop name="posy">-410</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarTo3DVectorNode" index="20">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<param name="z" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="z" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1333</prop>
+					<prop name="posy">-237</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="DivideByScalarNode" index="21">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="divideby" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="divideby" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1432</prop>
+					<prop name="posy">0</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="RoundNode" index="22">
+				<param name="function" type="3" value="0"></param>
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1377</prop>
+					<prop name="posy">31</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="RoundNode" index="23">
+				<param name="function" type="3" value="0"></param>
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1536</prop>
+					<prop name="posy">-275</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="DivideByScalarNode" index="24">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="divideby" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="divideby" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1194</prop>
+					<prop name="posy">330</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ScalarTo3DVectorNode" index="25">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<param name="z" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="z" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1098</prop>
+					<prop name="posy">67</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarTo3DVectorNode" index="26">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<param name="z" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="z" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-796</prop>
+					<prop name="posy">214</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="DivideByScalarNode" index="27">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="divideby" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="divideby" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1576</prop>
+					<prop name="posy">-304</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="RoundNode" index="28">
+				<param name="function" type="3" value="0"></param>
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1156</prop>
+					<prop name="posy">362</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ScalarNode" index="29">
+				<param name="value" type="4" value="0.188000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1856</prop>
+					<prop name="posy">60</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="10" portname="result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+			<port index="14" portname="inname" username="In_Name" basename="In Name" portlabel="In Name" exposetype="single"> </port>
+			<port index="14" portname="reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="single"> </port>
+			<port index="29" portname="value" username="Space" basename="Space" portlabel="Space" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="6" from_port="MAX_POS" to_node="17" to_port="vector"> </cnx>
+			<cnx from_node="6" from_port="SCALE_X" to_node="27" to_port="value"> </cnx>
+			<cnx from_node="6" from_port="MIN_POS" to_node="18" to_port="vector"> </cnx>
+			<cnx from_node="7" from_port="Result" to_node="16" to_port="planeorigin"> </cnx>
+			<cnx from_node="1" from_port="Result" to_node="13" to_port="planeorigin"> </cnx>
+			<cnx from_node="0" from_port="SCALE_Y" to_node="21" to_port="value"> </cnx>
+			<cnx from_node="0" from_port="MAX_POS" to_node="11" to_port="vector"> </cnx>
+			<cnx from_node="0" from_port="MIN_POS" to_node="12" to_port="vector"> </cnx>
+			<cnx from_node="8" from_port="Result" to_node="10" to_port="planeorigin"> </cnx>
+			<cnx from_node="9" from_port="SCALE_Z" to_node="24" to_port="value"> </cnx>
+			<cnx from_node="9" from_port="MAX_POS" to_node="2" to_port="vector"> </cnx>
+			<cnx from_node="9" from_port="MIN_POS" to_node="3" to_port="vector"> </cnx>
+			<cnx from_node="2" from_port="y" to_node="26" to_port="y"> </cnx>
+			<cnx from_node="3" from_port="y" to_node="5" to_port="y"> </cnx>
+			<cnx from_node="11" from_port="y" to_node="4" to_port="y"> </cnx>
+			<cnx from_node="12" from_port="y" to_node="25" to_port="y"> </cnx>
+			<cnx from_node="13" from_port="result" to_node="10" to_port="topo"> </cnx>
+			<cnx from_node="14" from_port="outname" to_node="6" to_port="Object"> </cnx>
+			<cnx from_node="14" from_port="outname" to_node="0" to_port="Object"> </cnx>
+			<cnx from_node="14" from_port="outname" to_node="9" to_port="Object"> </cnx>
+			<cnx from_node="14" from_port="outname" to_node="15" to_port="inname"> </cnx>
+			<cnx from_node="15" from_port="value" to_node="16" to_port="topo"> </cnx>
+			<cnx from_node="16" from_port="result" to_node="13" to_port="topo"> </cnx>
+			<cnx from_node="17" from_port="x" to_node="19" to_port="x"> </cnx>
+			<cnx from_node="18" from_port="x" to_node="20" to_port="x"> </cnx>
+			<cnx from_node="19" from_port="vector" to_node="7" to_port="Start"> </cnx>
+			<cnx from_node="5" from_port="vector" to_node="8" to_port="End"> </cnx>
+			<cnx from_node="20" from_port="vector" to_node="7" to_port="End"> </cnx>
+			<cnx from_node="21" from_port="result" to_node="22" to_port="value"> </cnx>
+			<cnx from_node="22" from_port="integer" to_node="1" to_port="Size"> </cnx>
+			<cnx from_node="23" from_port="integer" to_node="7" to_port="Size"> </cnx>
+			<cnx from_node="24" from_port="result" to_node="28" to_port="value"> </cnx>
+			<cnx from_node="4" from_port="vector" to_node="1" to_port="Start"> </cnx>
+			<cnx from_node="25" from_port="vector" to_node="1" to_port="End"> </cnx>
+			<cnx from_node="26" from_port="vector" to_node="8" to_port="Start"> </cnx>
+			<cnx from_node="27" from_port="result" to_node="23" to_port="value"> </cnx>
+			<cnx from_node="28" from_port="integer" to_node="8" to_port="Size"> </cnx>
+			<cnx from_node="29" from_port="result" to_node="27" to_port="divideby"> </cnx>
+			<cnx from_node="29" from_port="result" to_node="21" to_port="divideby"> </cnx>
+			<cnx from_node="29" from_port="result" to_node="24" to_port="divideby"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="In_Name"> </item>
+			<item type="input" name="Reference"> </item>
+			<item type="input" name="Space"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+	</definition>
+</xsi_file>

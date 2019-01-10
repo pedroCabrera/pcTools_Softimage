@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_RGB Mask" category="PC_Tools" tasks="" author="" url="" formatversion="1.4" compoundversion="0.0" versiontag="" constructionmode="Current" backgroundcolor="6732954">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="RandomValueNode" index="0">
+				<param name="distributiontype" type="3" value="0"></param>
+				<param name="seed" type="3" value="333333"></param>
+				<param name="timevarying" type="11" value="false"></param>
+				<param name="id" type="3" value="0"></param>
+				<param name="meanvalue" type="3" value="1"></param>
+				<param name="variance" type="4" value="1.000000"></param>
+				<portdef name="seed" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="timevarying" type="1" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="id" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="meanvalue" type="2" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="variance" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-648</prop>
+					<prop name="posy">556</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RoundNode" index="1">
+				<param name="function" type="3" value="0"></param>
+				<param name="value" type="4" value="0.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">6</prop>
+					<prop name="posy">512</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RescaleNode" index="2">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="sourcestart" type="4" value="0.000000"></param>
+				<param name="sourceend" type="4" value="2.000000"></param>
+				<param name="targetstart" type="4" value="0.000000"></param>
+				<param name="targetend" type="4" value="1.000000"></param>
+				<param name="clamp" type="11" value="true"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="sourcestart" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="sourceend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="targetstart" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="targetend" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-338</prop>
+					<prop name="posy">580</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="FCurveNode" index="3">
+				<param name="profile" type="buffer">2 20 1 0 -1.79769E+308 1.79769E+308 3 0
+0 0.000000 0.000000 0.333333 0.000000 -0.333333 0.000000 4 3
+0 1.000000 1.000000 0.333333 0.000000 -0.333333 0.000000 4 3
+</param>
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-233</prop>
+					<prop name="posy">534</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IntegerToScalarNode" index="4">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-502</prop>
+					<prop name="posy">521</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RescaleNode" index="5">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="sourcestart" type="4" value="0.000000"></param>
+				<param name="sourceend" type="4" value="1.000000"></param>
+				<param name="targetstart" type="4" value="0.000000"></param>
+				<param name="targetend" type="4" value="2.000000"></param>
+				<param name="clamp" type="11" value="true"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="sourcestart" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="sourceend" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="targetstart" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="targetend" type="4" structure="1" group="0" instance="0" port="4"></portdef>
+				<portdef name="clamp" type="1" structure="1" group="0" instance="0" port="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-117</prop>
+					<prop name="posy">571</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="6">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0.case0_red" type="4" value="1.000000"></param>
+				<param name="case0.case0_green" type="4" value="0.000000"></param>
+				<param name="case0.case0_blue" type="4" value="0.000000"></param>
+				<param name="case0.case0_alpha" type="4" value="1.000000"></param>
+				<param name="case1.case1_red" type="4" value="0.000000"></param>
+				<param name="case1.case1_green" type="4" value="1.000000"></param>
+				<param name="case1.case1_blue" type="4" value="0.000000"></param>
+				<param name="case1.case1_alpha" type="4" value="1.000000"></param>
+				<param name="case2.case2_red" type="4" value="0.000000"></param>
+				<param name="case2.case2_green" type="4" value="0.000000"></param>
+				<param name="case2.case2_blue" type="4" value="1.000000"></param>
+				<param name="case2.case2_alpha" type="4" value="1.000000"></param>
+				<param name="default.default_red" type="4" value="0.000000"></param>
+				<param name="default.default_green" type="4" value="0.000000"></param>
+				<param name="default.default_blue" type="4" value="0.000000"></param>
+				<param name="default.default_alpha" type="4" value="1.000000"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="512" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="512" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="case2" type="512" structure="1" group="1" instance="2" port="0"></portdef>
+				<portdef name="default" type="512" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">154</prop>
+					<prop name="posy">517</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="7">
+				<param name="condition" type="3" value="3"></param>
+				<param name="case0.case0_red" type="4" value="1.000000"></param>
+				<param name="case0.case0_green" type="4" value="0.000000"></param>
+				<param name="case0.case0_blue" type="4" value="0.000000"></param>
+				<param name="case0.case0_alpha" type="4" value="1.000000"></param>
+				<param name="case1.case1_red" type="4" value="0.000000"></param>
+				<param name="case1.case1_green" type="4" value="1.000000"></param>
+				<param name="case1.case1_blue" type="4" value="0.000000"></param>
+				<param name="case1.case1_alpha" type="4" value="1.000000"></param>
+				<param name="case2.case2_red" type="4" value="0.000000"></param>
+				<param name="case2.case2_green" type="4" value="0.000000"></param>
+				<param name="case2.case2_blue" type="4" value="1.000000"></param>
+				<param name="case2.case2_alpha" type="4" value="1.000000"></param>
+				<param name="case3.case3_red" type="4" value="0.000000"></param>
+				<param name="case3.case3_green" type="4" value="0.000000"></param>
+				<param name="case3.case3_blue" type="4" value="0.000000"></param>
+				<param name="case3.case3_alpha" type="4" value="1.000000"></param>
+				<param name="default.default_red" type="4" value="0.000000"></param>
+				<param name="default.default_green" type="4" value="0.000000"></param>
+				<param name="default.default_blue" type="4" value="0.000000"></param>
+				<param name="default.default_alpha" type="4" value="1.000000"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="512" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="512" structure="1" group="1" instance="1" port="0"></portdef>
+				<portdef name="case2" type="512" structure="1" group="1" instance="2" port="0"></portdef>
+				<portdef name="case3" type="512" structure="1" group="1" instance="3" port="0"></portdef>
+				<portdef name="default" type="512" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">331</prop>
+					<prop name="posy">372</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="id" username="ID" basename="ID" portlabel="ID" exposetype="single"> </port>
+			<port index="0" portname="seed" username="Seed" basename="Seed" portlabel="Seed" exposetype="single"> </port>
+			<port index="3" portname="profile" username="Profile" basename="Profile" portlabel="Profile" exposetype="single"> </port>
+			<port index="7" portname="condition" username="Mode" basename="Mode" portlabel="Mode" exposetype="single"> </port>
+			<port index="7" portname="result" username="RGB" basename="RGB" portlabel="RGB" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="6" from_port="result" to_node="7" to_port="case3"> </cnx>
+			<cnx from_node="0" from_port="value" to_node="4" to_port="integer"> </cnx>
+			<cnx from_node="3" from_port="out" to_node="5" to_port="value"> </cnx>
+			<cnx from_node="4" from_port="scalar" to_node="2" to_port="value"> </cnx>
+			<cnx from_node="2" from_port="result" to_node="3" to_port="in"> </cnx>
+			<cnx from_node="5" from_port="result" to_node="1" to_port="value"> </cnx>
+			<cnx from_node="1" from_port="integer" to_node="6" to_port="condition"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Mode" min="0" max="0">
+				<enum value="0"><![CDATA[R]]></enum>
+				<enum value="1"><![CDATA[G]]></enum>
+				<enum value="2"><![CDATA[B]]></enum>
+				<enum value="3"><![CDATA[Randomize]]></enum>
+			</item>
+			<item type="input" name="ID"> </item>
+			<item type="input" name="Profile"> </item>
+			<item type="input" name="Seed"> </item>
+			<item type="output" name="RGB"> </item>
+		</layout>
+		<ppglogic lang=""><![CDATA[]]></ppglogic>
+	</definition>
+</xsi_file>

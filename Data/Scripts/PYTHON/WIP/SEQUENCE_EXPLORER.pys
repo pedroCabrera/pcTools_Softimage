@@ -1,0 +1,240 @@
+app = Application
+import win32com, sys,os,Tools
+reload( Tools )
+from win32com.client import constants as c
+
+TempPath = app.Commands( "PC_SendRendertoMuster" ).OriginPath+'Temp'
+#############USER DATA###################################################
+MRTOOL,enciendegranja,encienderack1,encienderack2,encienderack3 = "C:\Program Files\Virtual Vertex\Muster\Mrtool.exe",'Z:\INFORMATICA_DEPARTMENT\scripts_granja\enciende_Granja.bat','Z:\INFORMATICA_DEPARTMENT\scripts_granja\ENCIENDE_RACK_I_01_12.BAT','Z:\INFORMATICA_DEPARTMENT\scripts_granja\ENCIENDE_RACK_II_20_29.BAT','Z:\INFORMATICA_DEPARTMENT\scripts_granja\ENCIENDE_RACK_III_31_42.BAT'
+tempfolderpath = TempPath
+Server,User,Password,Engine,Pool ='storage','admin','','76','arnold'
+DEFAULT = [enciendegranja,encienderack1,encienderack2,encienderack3,tempfolderpath,Server,User,Engine,Pool,MRTOOL,Password]
+path =  os.path.dirname (Application.Commands( "PC_SendRendertoMuster" ).OriginPath)
+USERPREFS = os.path.dirname(path)+'\Modules\Deffaults\PC_SendToMuster_UserPrefs.txt'
+if os.path.isfile(USERPREFS):
+	script_locals = dict()
+	execfile(USERPREFS, dict(), script_locals)
+	a = (script_locals["PC_MusterUserPrefs"])
+	NEWDEFAULT = a()
+else:
+	NEWDEFAULT = DEFAULT
+if os.path.isdir(NEWDEFAULT[4]):
+	NEWDEFAULT = NEWDEFAULT
+else:
+	NEWDEFAULT.pop(4)
+	NEWDEFAULT.append(DEFAULT[4])
+	print 'La ruta temporal especificada en las preferencias de usuario no existe, se ha tomado la ruta por defecto'
+
+prop = app.ActiveProject.ActiveScene.Root.Addproperty('CustomProperty', False , 'Ruta')
+for i in ['Path','Folders','Files','MinKb']:
+	prop.addParameter3(i,8)
+	
+n=['Granja_AllEnable','Rack1Enable','Rack2Enable','Rack3Enable','Granja_All','Rack1','Rack2','Rack3','TempFolder','Server','User','EngineID','Pool','MRTool','Password']
+v=[False,True,False,False,NEWDEFAULT[0],NEWDEFAULT[1],NEWDEFAULT[2],NEWDEFAULT[3],NEWDEFAULT[4],NEWDEFAULT[5],NEWDEFAULT[6],NEWDEFAULT[7],NEWDEFAULT[8],NEWDEFAULT[9],NEWDEFAULT[10]]
+t=[11,11,11,11,8,8,8,8,8,8,8,8,8,8,8]
+for i,p in enumerate(n):
+	param = prop.AddParameter3(p,t[i],v[i])
+	param.Enable(False)
+	
+EditModeProp = prop.AddParameter3('EditMode',11,0)
+	
+SeqProp=prop.AddGridParameter('Properties')
+seqGrid = SeqProp.Value
+seqGrid.BeginEdit()
+list = ['Sequence Name','Sequence Path','Type','Size(Mb)','Padding','StartFrame','EndFrame','NbFrames','MissingFrames','WrongFrames','Rate','FlipBook']
+seqGrid.RowCount = 0
+seqGrid.ColumnCount = len(list)
+for i,l in enumerate(list):
+	seqGrid.SetColumnLabel(i,l)
+seqGrid.SetColumnType(11,c.siColumnButton)
+seqGrid.EndEdit()
+
+#Tools.PC_EncenderGranja(GRANJAPropEnable.Value,RACK1PropEnable.Value,RACK2PropEnable.Value,RACK3PropEnable.Value,GRANJAProp.Value,RACK1Prop.Value,RACK2Prop.Value,RACK3Prop.Value)
+
+Layout = prop.PPGLayout
+P=Layout.addItem('Path','Path',c.siControlFolder)
+P.SetAttribute(c.siUINoLabel,True)
+Layout.AddGroup('Files')
+Layout.AddRow()
+FOG=Layout.AddGroup('Folders')
+FO=Layout.addItem('Folders','Folders',c.siControlListBox)
+FOG.SetAttribute(c.siUIWidthPercentage, 15)
+Layout.EndGroup()
+Layout.AddGroup('Files')
+FI=Layout.addItem('Files','Files',c.siControlListBox)
+Layout.EndGroup()
+for i in [FO,FI]:
+	i.SetAttribute(c.siUICY,200)   
+	i.SetAttribute(c.siUIMultiSelectionListBox,True)
+	i.SetAttribute(c.siUINoLabel,True)  
+Layout.EndRow()
+Layout.EndGroup()
+Layout.AddRow()
+Layout.AddSpacer(2,0)
+Layout.AddButton('AddToList')
+Layout.EndRow()
+Layout.AddGroup('Sequence Properties')
+SELECTED=Layout.addItem('Properties','',c.siControlGrid )
+SELECTED.SetAttribute(c.siUIGridColumnWidths,"1:230:230:50:80:60:80:80:70:100:100:60:100") 
+SELECTED.SetAttribute(c.siUINoLabel,True) 
+Layout.EndGroup()
+Layout.AddTab('Farm Settings')
+Layout.AddItem('EditMode')
+Layout.AddGroup('Encender Granja')
+for param in ['Granja_AllEnable','Rack1Enable','Rack2Enable','Rack3Enable']:
+	Layout.AddItem(param,param.replace('Enable',''))
+Layout.EndGroup()
+Layout.AddGroup('MusterTags')
+for param in ['MRTool','Server','User','Password','EngineID','Pool']:
+	Layout.AddItem(param,param)
+Layout.EndGroup()
+Layout.AddGroup('Temp')
+Layout.AddItem('TempFolder')
+Layout.EndGroup()
+Layout.AddGroup('RenderFarm')
+for pr in ['Granja_All','Rack1','Rack2','Rack3']:
+	Layout.AddItem(pr,pr)
+Layout.EndGroup()
+Layout.AddRow()
+Layout.AddButton('SaveDeffaults')
+Layout.AddButton('RestoreDeffaults')
+Layout.EndRow()
+
+Layout.Language = 'Python'
+Layout.Logic = '''
+import os,sys,fileinput,shutil,Tools
+reload (Tools)
+app = Application 
+o = PPG.InspectedObjects
+prop = app.ActiveSceneRoot.GetPropertyFromName2(o)
+Layout = prop.PPGLayout
+
+selfpath = os.path.dirname(app.Commands( "PC_SendRendertoMuster" ).OriginPath)
+DEFAULTPREFS = os.path.dirname(selfpath)+'\Modules\Deffaults\PC_SendToMuster_DeffaultPrefs.txt'
+USERPREFS = os.path.dirname(selfpath)+'\Modules\Deffaults\PC_SendToMuster_UserPrefs.txt'
+
+PATH,FOLDERS,FILES,SELECTED = prop.Parameters('Path'),prop.Parameters('Folders'),prop.Parameters('Files'),prop.Parameters('Selected')
+MINIMUNKB = prop.Parameters('MinKb').Value
+seqGrid = prop.Parameters('Properties').Value
+
+def Path_OnChanged():
+	DIRS = ['...',os.path.dirname(PATH.Value)]
+	FILES =[]
+	for Path in PATH.Value.split(';'):
+		Path = XSIUtils.ResolveTokenString( Path, '', False)
+		SEQUENCES = Tools.PC_GetSequencesInDirectory(Path,10)
+		for SEQ in SEQUENCES:
+			STRseq = ''
+			for i in SEQ:
+				if SEQ.index(i) != 0:
+					STRseq += ', '+ str(i)
+				else:
+					STRseq +=str(i)
+			FILES.append(STRseq.split(', ')[0])
+			FILES.append(STRseq)
+		for dir in os.listdir(Path):
+			if os.path.isdir(os.path.join(Path,dir)):
+				DIRS.append(dir)
+				DIRS.append(os.path.join(Path,dir))
+	Layout.Item('Folders').UIItems = DIRS
+	Layout.Item('Files').UIItems = FILES
+	PPG.Refresh()
+def Folders_OnChanged():
+	PATH.Value = FOLDERS.Value
+	DIRS = ['...',os.path.dirname(PATH.Value)]
+	FILES =[]
+	for Path in FOLDERS.Value.split(';'):
+		Path = XSIUtils.ResolveTokenString( Path, '', False)
+		SEQUENCES = Tools.PC_GetSequencesInDirectory(Path,10)
+		for SEQ in SEQUENCES:
+			STRseq = ''
+			for i in SEQ:
+				if SEQ.index(i) != 0:
+					STRseq += ', '+ str(i)
+				else:
+					STRseq +=str(i)
+			FILES.append(STRseq.split(', ')[0])
+			FILES.append(STRseq)
+		for dir in os.listdir(Path):
+			if os.path.isdir(os.path.join(Path,dir)):
+				DIRS.append(dir)
+				DIRS.append(os.path.join(Path,dir))
+	Layout.Item('Folders').UIItems = DIRS
+	Layout.Item('Files').UIItems = FILES
+	FOLDERS.Value = ''
+	PPG.Refresh()
+def AddToList_OnClicked():
+	seqGrid.BeginEdit()
+	for i,p in enumerate(FILES.Value.split(';')):
+		if p.split(', ')[0] not in seqGrid.GetColumnValues(0):
+			seqGrid.InsertRow(i+seqGrid.RowCount)
+			list = p.split(', ')
+			list.append('25')
+			list.append('SendToFlipBook')
+			seqGrid.SetRowValues(seqGrid.RowCount-1,list)
+	seqGrid.EndEdit()
+	PPG.Refresh()
+def Properties_OnButtonClicked(in_ExtraParams):
+	for i in range(0,len(in_ExtraParams[0]),2):
+		preload,RESCALEONLOAD = '',1
+		SEQINFO = seqGrid.GetRowValues(in_ExtraParams[0][i+1])
+		SEQName = SEQINFO[0].replace('['+SEQINFO[0].split('[')[-1],'')
+		SEQFrames = [SEQINFO[5],SEQINFO[6]]
+		Tools.PC_FLIPBOOK(SEQINFO[1],SEQName,SEQINFO[2],SEQFrames[0],SEQFrames[1],SEQINFO[10],SEQINFO[4],preload,RESCALEONLOAD)
+
+
+		
+def Granja_AllEnable_OnChanged():
+		for param in [prop.Parameters('Rack1Enable'),prop.Parameters('Rack2Enable'),prop.Parameters('Rack3Enable')]:
+			if prop.Parameters('Granja_AllEnable').Value:
+				param.Enable(False)
+				param.Value = False
+			else:
+				param.Enable(True)
+				if param.Name == 'Rack1Enable':
+					param.Value = True
+def EditMode_OnChanged():
+	for param in [prop.Parameters('Password'),prop.Parameters('MRTool'),prop.Parameters('TempFolder'),prop.Parameters('Granja_All'),prop.Parameters('Rack1'),prop.Parameters('Rack2'),prop.Parameters('Rack3'),prop.Parameters('Server'),prop.Parameters('User'),prop.Parameters('EngineID'),prop.Parameters('Pool')]:
+		if prop.Parameters('EditMode').Value:
+			param.Enable(True)
+		else:
+			param.Enable(False)
+			
+def SaveDeffaults_OnClicked():
+	shutil.copy(DEFAULTPREFS,USERPREFS)
+	GranjaAll = prop.Parameters('Granja_All').Value
+	Rack1 = prop.Parameters('Rack1').Value
+	Rack2 = prop.Parameters('Rack2').Value
+	Rack3 = prop.Parameters('Rack3').Value
+	MRTOOL = prop.Parameters('MRTool').Value
+	SERVER = prop.Parameters('Server').Value
+	MUSER = prop.Parameters('User').Value
+	PASSWORD = prop.Parameters('Password').Value
+	ENGINE = prop.Parameters('EngineID').Value
+	POOL = prop.Parameters('Pool').Value
+	TempPath = prop.Parameters('TempFolder').Value
+	fileinput.FileInput(USERPREFS).close()
+	FILEINPUT =fileinput.FileInput(USERPREFS, inplace=1)
+	for i, line in enumerate(FILEINPUT):
+		sys.stdout.write(line.replace('[GranjaAll]', GranjaAll).replace('[Rack1]', Rack1).replace('[Rack2]', Rack2).replace('[Rack3]', Rack3).replace('[TempPath]', TempPath).replace('[SERVER]', SERVER).replace('[MUSER]', MUSER).replace('[PASSWORD]',PASSWORD).replace('[ENGINE]', ENGINE).replace('[POOL]', POOL).replace('[MRTOOL]',MRTOOL))
+	FILEINPUT.close()	
+	print 'User Preferences saved to Disk at: ' + USERPREFS
+def RestoreDeffaults_OnClicked():
+	if os.path.isfile(USERPREFS):
+		os.remove(USERPREFS)
+		prop.Parameters('Granja_All').Value='Z:\INFORMATICA_DEPARTMENT\scripts_granja\enciende_Granja.bat'
+		prop.Parameters('Rack1').Value='Z:\INFORMATICA_DEPARTMENT\scripts_granja\ENCIENDE_RACK_I_01_12.BAT'
+		prop.Parameters('Rack2').Value='Z:\INFORMATICA_DEPARTMENT\scripts_granja\ENCIENDE_RACK_II_20_29.BAT'
+		prop.Parameters('Rack3').Value='Z:\INFORMATICA_DEPARTMENT\scripts_granja\ENCIENDE_RACK_III_31_42.BAT'
+		prop.Parameters('TempFolder').Value=path
+		prop.Parameters('MRTool').Value = 'C:\Program Files\Virtual Vertex\Muster\Mrtool.exe'
+		prop.Parameters('Server').Value='storage'
+		prop.Parameters('User').Value='admin'
+		prop.Parameters('Password').Value = ''
+		prop.Parameters('EngineID').Value='76'
+		prop.Parameters('Pool').Value='arnold'
+		print 'User Preferences removed from: ' + USERPREFS
+	else:
+		print 'No avaliabre User Preferences To delete'
+'''
+app.InspectObj(prop)

@@ -1,0 +1,54 @@
+import win32com, sys, os
+from win32com.client import constants as c
+app = Application
+OS= os.path
+Desktop = os.getenv("HOMEDRIVE") + os.getenv("HOMEPATH") + "\\Desktop"
+ARCHIVOS,RUTAS = [],[]
+CLIPS = app.ActiveProject.ActiveScene.ImageClips
+
+prop = app.ActiveProject.ActiveScene.Root.AddProperty('CustomProperty',0,'PC_ExternalFileSearch')
+prop.AddParameter3('PickFolder',8)
+prop.AddParameter3('SearchFolders',8)
+PPG = prop.PPGLayout
+PPG.Clear()
+PPG.Language = 'Python'
+PPG.AddItem('PickFolder','',c.siControlFolder)
+PPG.AddButton('Add','Add')
+PPG.AddItem('SearchFolders','',c.siControlListBox)
+PPG.Logic ='''
+app = Application   
+o = PPG.InspectedObjects
+prop = app.ActiveSceneRoot.GetPropertyFromName2(o)
+Layout = prop.PPGLayout
+
+def Add_OnClicked():
+	Layout.Item('SearchFolders').UIItems = ['1','2']
+	PPG.Refresh()
+
+'''
+
+SEARCH = XSIUIToolkit.PickFolder(app.ActiveProject.Path,'Select Base Folder')
+print SEARCH
+for subdir, dirs, files in os.walk(SEARCH):
+	for file in files:
+		ARCHIVOS.append(file)
+		RUTAS.append(subdir)
+		
+for clip in CLIPS:
+	StartFrame,EndFrame = int(app.GetValue(str(clip)+'.timectrl.clipin')),int(app.GetValue(str(clip)+'.timectrl.clipout'))
+	Filepath = clip.Source.Parameters('Path')
+	Filename = OS.basename(Filepath.Value)
+	if EndFrame != StartFrame:
+		fileName, fileExtension = OS.splitext(Filepath.Value)
+		Exist = OS.exists(Filepath.Value.split('['+ str(StartFrame))[0] + str(StartFrame)+ fileExtension)
+		SearchFile = OS.basename(fileName).split('['+ str(StartFrame))[0] + str(StartFrame)+ fileExtension
+	else :
+		Exist = OS.exists(clip.Source.Parameters('Path').Value)
+		SearchFile = Filename
+	if not Exist :
+		if SearchFile in ARCHIVOS:
+			print  'El archivo "'+ Filename + '" se encuentra en ' + OS.dirname(RUTAS[ARCHIVOS.index(SearchFile)])
+			Filepath.Value = OS.join(RUTAS[ARCHIVOS.index(SearchFile)],OS.basename(Filepath.Value))
+		else:
+			print 'El archivo "'+ SearchFile + '" no se ha encontrado'
+

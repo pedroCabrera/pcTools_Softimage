@@ -1,0 +1,35 @@
+import os,shutil
+OS= os.path
+Desktop = os.getenv("HOMEDRIVE") + os.getenv("HOMEPATH") + "\\Desktop"
+ARCHIVOS,RUTAS = [],[]
+CLIPS = Application.ActiveProject.ActiveScene.ImageClips
+copy = True
+SEARCH = XSIUIToolkit.PickFolder(Application.ActiveProject.Path,'Select Base Folder')
+for subdir, dirs, files in os.walk(SEARCH):
+	for file in files:
+		ARCHIVOS.append(file)
+		RUTAS.append(subdir)
+		
+for clip in CLIPS:
+	StartFrame,EndFrame = int(Application.GetValue(str(clip)+'.timectrl.clipin')),int(Application.GetValue(str(clip)+'.timectrl.clipout'))
+	Filepath = clip.Source.Parameters('Path')
+	Filename = OS.basename(Filepath.Value)
+	seqfiles = []
+	if EndFrame != StartFrame:
+		fileName, fileExtension = OS.splitext(Filepath.Value)
+		Exist = OS.exists(Filepath.Value.split('['+ str(StartFrame))[0] + str(StartFrame)+ fileExtension)
+		SearchFile = OS.basename(fileName).split('['+ str(StartFrame))[0] + str(StartFrame)+ fileExtension
+		for i in range(EndFrame-StartFrame):
+			seqfiles.append(OS.basename(fileName).split('['+ str(StartFrame))[0] + str(i+StartFrame)+ fileExtension)
+	else :
+		Exist = OS.exists(clip.Source.Parameters('Path').Value)
+		SearchFile = Filename
+		seqfiles.append(SearchFile)
+	if not Exist :
+		if SearchFile in ARCHIVOS:
+			print  'El archivo "'+ Filename + '" se encuentra en ' + OS.dirname(RUTAS[ARCHIVOS.index(SearchFile)])
+			if not copy:
+				Filepath.Value = OS.join(RUTAS[ARCHIVOS.index(SearchFile)],OS.basename(Filepath.Value))
+		else:
+			print 'El archivo "'+ SearchFile + '" no se ha encontrado'
+

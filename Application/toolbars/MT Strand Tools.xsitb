@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<xsi_file type="Shelf" xsi_version="7.5.2009.0204" syntax_version="1.0">
+   <shelf_view name="MT Strand Tools" clsid="{F2D22C9A-0548-411B-A725-B0CE36C81286}">
+      <properties>
+         <showtabs>false</showtabs>
+      </properties>
+      <definition maxinstances="10000" acceptfocus="true" private="false" defaultsize="0,100,200,300" cmdmap="{00000000-0000-0000-0000-000000000000}" supportedtypes="6" category=""></definition>
+      <tabs layout="top" active="DS Toolbar">
+         <tab label="DS Toolbar" type="toolbar">
+            <properties id="{47BDC210-82DD-4DF1-9D77-789FDF85BFC5}" name="" display_preset_as_small="False" display_as_text_only="False"></properties>
+            <item type="scriptbutton" label="Hair 2 ICE Setup" userwidth="200" scriptengine="JScript" tooltip="">
+               <scripttext>&lt;![CDATA[setup_ICE_Hair();
+
+function setup_ICE_Hair()
+{
+	if(selection.count==0 || selection(0).type != &quot;hair&quot;)
+	{
+		logmessage(&quot;Please select one hair object!&quot;,siError);
+		return false;
+	}
+	
+	var hair = selection(0);
+	apply_mt_hair2curves();
+	
+	var curves = false;
+	try{
+		curves = Dictionary.GetObject(hair.name+&quot;_curves&quot;);
+	}catch(e){}
+	
+	if(!curves)
+	{
+		logmessage(&quot;Fatal: Curves object couldn't be found!&quot;);
+		return false;
+	}
+	
+	if(curves.model.name != hair.model.name)
+		ParentObj(hair.model,curves);
+	ToggleVisibility(curves);
+		
+	var cloud = GetPrim(&quot;PointCloud&quot;);
+	cloud.name = hair.name+&quot;_strands&quot;;
+
+	if(cloud.model.name != hair.model.name)
+		ParentObj(hair.model,cloud);
+
+	var tree = ApplyOp(&quot;ICETree&quot;, cloud, siNode, null, null, 0);
+	AddICECompoundNode(&quot;Create GuideHair Strands&quot;, tree);
+	AddICENode(&quot;GetDataNode&quot;, tree);
+	AddICENode(&quot;GetDataNode&quot;, tree);
+	ConnectICENodes(tree+&quot;.Create_GuideHair_Strands.emitter_name&quot;, tree+&quot;.SceneReferenceNode.outname&quot;);
+	ConnectICENodes(tree+&quot;.Create_GuideHair_Strands.curves_name&quot;, tree+&quot;.SceneReferenceNode[1].outname&quot;);
+
+	var emitter = Dictionary.GetObject(hair+&quot;.hair.hairGenOp&quot;).inputports.item(0).target2.parent;
+	SetValue(tree+&quot;.SceneReferenceNode.reference&quot;, emitter.fullname);
+	SetValue(tree+&quot;.SceneReferenceNode[1].reference&quot;, curves.fullname);
+	ConnectICENodes(tree+&quot;.port1&quot;, tree+&quot;.Create_GuideHair_Strands.add&quot;);
+
+	var hair2 = Duplicate(hair)(0);
+	ToggleVisibility(hair);
+	if(hair2.parent.fullname != hair.parent.fullname)
+		ParentObj(hair.parent,hair2);
+		
+	hair2.name = hair.name+&quot;_ICE_Driven&quot;;
+	SelectObj(hair2+&quot;,&quot;+cloud);
+	apply_strands2hair();
+	SelectObj(cloud);
+}]]&gt;</scripttext>
+            </item>
+         </tab>
+      </tabs>
+   </shelf_view>
+</xsi_file>

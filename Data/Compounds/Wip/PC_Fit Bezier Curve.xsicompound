@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Fit Bezier Curve" category="PC_Tools/Vectors" tasks="PC_Tools/Vectors" formatversion="1.4" compoundversion="1.0">
+	<definition>
+		<nodes>
+			<node type="PC_Bezier_Curve" index="0">
+				<param name="Pos.Pos_x" type="4" value="1.000000"></param>
+				<param name="Pos.Pos_y" type="4" value="1.000000"></param>
+				<param name="Pos.Pos_z" type="4" value="1.000000"></param>
+				<param name="U" type="4" value="0.000000"></param>
+				<portdef name="Pos" type="16" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="U" type="4" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-268</prop>
+					<prop name="posy">-30</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Pos" username="Pos" basename="Pos" portlabel="Pos" exposetype="single"> </port>
+			<port index="0" portname="U" username="U" basename="U" portlabel="U" exposetype="single"> </port>
+			<port index="0" portname="Result" username="Result" basename="Result" portlabel="Result" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Pos"> </item>
+			<item type="input" name="U"> </item>
+			<item type="output" name="Result"> </item>
+		</layout>
+	</definition>
+</xsi_file>

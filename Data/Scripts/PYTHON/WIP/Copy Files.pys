@@ -1,0 +1,21 @@
+import shutil, string, os
+
+def CopyFiles(FromDir,ToDir,ListDir):
+	for file in ListDir:
+		exist = False
+		for existingFile in os.listdir(ToDir):
+			if existingFile == file:
+				exist = True
+				print file ,' alrready exist in ', ToDir
+		if exist == False:
+			extension = os.path.splitext(file)[1]
+			if extension == '':
+				shutil.copytree(os.path.join(FromDir,file), os.path.join(ToDir,file))
+			else:
+				shutil.copy(os.path.join(FromDir,file),  os.path.join(ToDir,file))
+
+FromDir = 'Z:\TEST_COPI\FROM'	
+ToDir = 'Z:\TEST_COPI\TO'
+ListDir = os.listdir(FromDir)
+ListDir = ['Copy']
+CopyFiles(FromDir,ToDir,ListDir)

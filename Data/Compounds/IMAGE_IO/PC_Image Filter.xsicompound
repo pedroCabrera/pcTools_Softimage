@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Image Filter" category="PC_Image_IO" tasks="PC_Tools" formatversion="1.4" compoundversion="1.0" backgroundcolor="14000776">
+	<definition>
+		<nodes>
+			<node type="ScalarTo2DVectorNode" index="0">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-136</prop>
+					<prop name="posy">-374</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PC_Image_Filter" index="1">
+				<param name="Filter" type="3" value="0"></param>
+				<param name="XY Sigma.XY Sigma_x" type="4" value="0.000000"></param>
+				<param name="XY Sigma.XY Sigma_y" type="4" value="0.000000"></param>
+				<portdef name="Image" type="65536" structure="1" group="0" instance="0" port="0" supportedblob="1"></portdef>
+				<portdef name="Filter" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="Mask" type="65536" structure="1" group="0" instance="0" port="2" supportedblob="1"></portdef>
+				<portdef name="XY Sigma" type="8" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">65</prop>
+					<prop name="posy">-513</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="y" username="Sigma_Y" basename="Sigma Y" portlabel="Sigma Y" exposetype="single"> </port>
+			<port index="0" portname="x" username="Sigma_X" basename="Sigma X" portlabel="Sigma X" exposetype="single"> </port>
+			<port index="1" portname="Image" username="Image" basename="Image" portlabel="Image" exposetype="single"> </port>
+			<port index="1" portname="Filter" username="Filter" basename="Filter" portlabel="Filter" exposetype="single"> </port>
+			<port index="1" portname="Mask" username="Structuring_Element" basename="Structuring Element" portlabel="Structuring Element" exposetype="single"> </port>
+			<port index="1" portname="Changed Image" username="Changed_Image" basename="Changed Image" portlabel="Changed Image" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="vector" to_node="1" to_port="XY Sigma"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Image"> </item>
+			<item type="input" name="Structuring_Element"> </item>
+			<item type="input" name="Filter" min="0" max="0">
+				<enum value="-1"><![CDATA[correlate]]></enum>		
+				<enum value="-2"><![CDATA[Convolve]]></enum>						
+				<enum value="0"><![CDATA[erode]]></enum>
+				<enum value="1"><![CDATA[dilate]]></enum>
+				<enum value="2"><![CDATA[blur]]></enum>
+				<enum value="3"><![CDATA[blur gausian]]></enum>
+				<enum value="4"><![CDATA[blur guided]]></enum>
+				<enum value="5"><![CDATA[sharpen inverse diffusion]]></enum>
+				<enum value="6"><![CDATA[sharpen shock filters]]></enum>
+				<enum value="7"><![CDATA[laplacian]]></enum>
+				<enum value="8"><![CDATA[structure tensors centered]]></enum>
+				<enum value="9"><![CDATA[structure tensors forward-backward]]></enum>
+				<enum value="10"><![CDATA[difusion tensors]]></enum>				
+			</item>
+			<item type="input" name="Sigma_X"> </item>
+			<item type="input" name="Sigma_Y"> </item>
+			<item type="output" name="Changed_Image"> </item>
+		</layout>
+		<blob_dictionary>
+			<dict_entry index="1" color="15625002">
+				<typename><![CDATA[PCImage]]></typename>
+				<displayname><![CDATA[PCImage]]></displayname>
+				<description><![CDATA[PCImage]]></description>
+			</dict_entry>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

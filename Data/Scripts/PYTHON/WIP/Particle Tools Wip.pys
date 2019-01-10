@@ -1,0 +1,24 @@
+import win32com
+from win32com.client import constants as c
+
+app = Application
+
+def PC_Set_Particle_Colored_Shape():
+	P = app.PickElement(c.siPointFilter)[2]
+	app.SelectObj(P)
+	O = app.Selection
+	for o in O:
+		if o.Type == 'pntSubComponent':
+			subComponent = o.SubComponent
+			Object = subComponent.Parent3DObject
+			selectedPointIndex = subComponent.ElementArray
+			print selectedPointIndex
+			
+	ICETree = Application.ApplyICEOp("PC_Set Particle Colored Shape", Object)
+	PointIndex = str(selectedPointIndex).replace('(','').replace(')','').replace('[','').replace(']','')
+	Compound= app.AddICECompoundNode("PC_Test Particle Index In String Array",ICETree)
+	app.SetValue(str(Compound)+'.Value_string', str(PointIndex))
+	app.ConnectICENodes(str(ICETree)+'.PC_Set_Particle_Colored_Shape.Filter', str(Compound)+'.Result')
+	app.InspectObj(ICETree)
+	return ICETree
+A = PC_Set_Particle_Colored_Shape()

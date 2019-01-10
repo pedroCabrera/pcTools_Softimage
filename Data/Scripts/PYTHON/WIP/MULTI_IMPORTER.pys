@@ -1,0 +1,178 @@
+import win32com.client
+import os,Tools
+reload ( Tools )
+from Tools import *
+from win32com.client import constants as c
+app = Application
+
+XSIToolkit = win32com.client.Dispatch( 'XSI.UIToolkit' )
+
+prop = app.ActiveProject.ActiveScene.Root.Addproperty('CustomProperty', False , 'Ruta')
+for i in ['Path','Folders','Files','Import']:
+	prop.addParameter3(i,8)
+
+
+Mimporter =  Application.GetCommandByScriptingName('ImportModel')
+for i in Mimporter.Arguments:
+	TEST = [True for match in ['Parent','Reference','ShareOptions']  if match in str(i)]
+	if TEST:
+		if type(i.Value) is bool:
+			prop.addParameter3('M'+str(i),11,0,0,1,False,False)
+		elif type(i.Value) is int:
+			prop.addParameter3('M'+str(i),8,'65535')
+			prop.addParameter3('M'+str(i)+'info',8,'Share all objects: Image sources/clips, materials and material libraries, layers and partitions')
+		else:
+			prop.addParameter3('M'+str(i),8)
+Oimporter =  Application.GetCommandByScriptingName('OBJImport')
+for i in Oimporter.Arguments:
+	TEST = [True for match in ['FileName']  if match in str(i)]
+	if not TEST:
+		print i.Value
+		if type(i.Value) is bool:
+			v = 1
+			if str(i.Name) == 'UserNormal':
+				v = 0
+			prop.addParameter3('O'+str(i),11,v,0,1,False,False)
+		elif type(i.Value) is int:
+			if str(i) == 'Group':
+				prop.addParameter3('O'+str(i),8,'1')
+			if str(i) == 'hrc':
+				prop.addParameter3('O'+str(i),8,'0')
+		else:
+			prop.addParameter3(str(i),8)
+dotImporter = Application.GetValue('dotXSIImportOptions')
+prop.addParameter3('dotParent',8)
+for dot in Application.EnumElements(dotImporter):
+	if 'Path' not in dot.Name:
+		prop.addParameter3('dot'+str(dot.Name),11,dot.Value,0,1,False,False)
+
+Layout = prop.PPGLayout
+
+P=Layout.addItem('Path','Path',c.siControlFolder)
+P.SetAttribute(c.siUINoLabel,True)
+
+Layout.AddGroup('Files')
+Layout.AddRow()
+Layout.AddGroup('Folders')
+FO=Layout.addItem('Folders','Folders',c.siControlListBox)
+Layout.EndGroup()
+Layout.AddGroup('Files')
+FI=Layout.addItem('Files','Files',c.siControlListBox)
+Layout.EndGroup()
+for i in [FO,FI]:
+	i.SetAttribute(c.siUICY,200)   
+	i.SetAttribute(c.siUIMultiSelectionListBox,True)
+	i.SetAttribute(c.siUINoLabel,True)  
+Layout.EndRow()
+Layout.EndGroup()
+
+Layout.AddRow()
+Layout.AddSpacer(2,0)
+Layout.AddButton('AddToList')
+Layout.AddButton('RemoveFromList')
+Layout.EndRow()
+
+Layout.AddGroup('Import Paths')
+IMPORT=Layout.addItem('Import','',c.siControlListBox)
+IMPORT.SetAttribute(c.siUICY,100) 
+IMPORT.SetAttribute(c.siUINoLabel,True)  
+IMPORT.SetAttribute(c.siUIMultiSelectionListBox,True)
+Layout.EndGroup()
+
+Layout.AddTab('Models')
+for i in Mimporter.Arguments:
+	TEST = [True for match in ['Parent','Reference','ShareOptions']  if match in str(i)]
+	if TEST:
+		if type(i.Value) is bool:
+			Layout.addItem('M'+str(i),str(i),c.siControlCheck)
+		elif type(i.Value) is int:
+			I=Layout.addItem('M'+str(i),str(i),c.siControlCombo)
+			I.UIItems = ['None','0','Images','1','Materials','2','Layers','4','Partitions','8','All','65535']
+			II = Layout.addItem('M'+str(i)+'info','info',c.siControlStatic)
+			II.SetAttribute(c.siUICX,350)
+			II.SetAttribute(c.siUICY,200)
+
+		else:
+			Layout.AddRow()
+			Layout.addItem('M'+str(i),str(i),c.siControlString)
+			Layout.AddButton('MPickParent','PickParent')
+			Layout.EndRow()
+Layout.AddTab('Objs')
+for i in Oimporter.Arguments:
+	TEST = [True for match in ['FileName']  if match in str(i)]
+	if not TEST:
+		if type(i.Value) is int:
+			if str(i) == 'Group':
+				Layout.AddGroup('Group')
+				I=Layout.addItem('O'+str(i),str(i),c.siControlRadio)
+				I.UIItems = ['Import as clusters','0','Import as objects','1']
+				I.SetAttribute(c.siUINoLabel,True)  
+				Layout.EndGroup()
+			if str(i) == 'hrc':
+				Layout.AddGroup('Hierachy')
+				I=Layout.addItem('O'+str(i),str(i),c.siControlRadio)
+				I.UIItems =  ['No Hierachy','0','Null as Parent','1','Model as Parent','2']
+				I.SetAttribute(c.siUINoLabel,True)  
+				Layout.EndGroup()
+		elif str(i.Name) == 'UserNormal':
+			Layout.addItem('O'+str(i),'Import Normals as UserNormal',c.siControlCheck)
+for i in Oimporter.Arguments:
+	if type(i.Value) is bool and str(i) != 'UserNormal':
+		if 'Material' in str(i):
+			Layout.AddGroup('Material')
+		Layout.addItem('O'+str(i),str(i),c.siControlCheck)
+		if 'UVwrapping' in str(i):
+			Layout.EndGroup()
+Layout.AddTab('dotXsi')
+Layout.AddRow()
+Layout.addItem('dotParent','Parent',c.siControlString)
+Layout.AddButton('dotPickParent','PickParent')
+Layout.EndRow()
+for dot in Application.EnumElements(dotImporter):
+	if 'Path' not in dot.Name:
+		Layout.addItem('dot'+dot.Name.replace(' ','_').replace('(','_').replace(')','_'),dot.Name,c.siControlCheck)
+
+Layout.Language = 'Python'
+Layout.Logic = MultiImporterLogic
+
+def Multi_Model_Importer_Inspect ():
+	cancelado = app.InspectObj(prop,'','RUTA',4,False)
+	if not cancelado:
+		Index = [i*2 for i in range (len(IMPORT.UIItems)/2)]
+		IMPORTOBJS = [list(IMPORT.UIItems)[a] for a in Index]
+		if len(IMPORTOBJS) > 0:
+			Margs= []
+			for i in Mimporter.Arguments:
+				try:
+					Margs.append(prop.Parameters('M'+str(i)).Value)
+				except:
+					continue
+			Oargs= []
+			for i in Oimporter.Arguments:
+				try:
+					Oargs.append(prop.Parameters('O'+str(i)).Value)
+				except:
+					continue
+			dotargs = []		
+			for dot in Application.EnumElements(dotImporter):
+				if 'Path' not in dot.Name:
+					dot.Value = prop.Parameters('dot'+dot.Name.replace(' ','_').replace('(','_').replace(')','_')).Value
+			for obj in IMPORTOBJS:
+				fileName, fileExtension = os.path.splitext(obj)
+				if fileExtension == '.emdl':
+					objs = app.ImportModel(obj, Margs[0], Margs[1],'', '', Margs[2], '' )
+				if fileExtension == '.obj':
+					objs = app.ObjImport(obj, int(Oargs[0]), int(Oargs[1]), Oargs[2],  Oargs[3], Oargs[4], Oargs[5])
+				if fileExtension ==  '.xsi' :
+					objs = app.ImportDotXSI(obj,prop.Parameters('dotParent').Value)
+				if fileExtension == '.fbx':
+					objs = app.FBXImport(obj)
+		else:
+			Message = XSIToolkit.MsgBox('No item added to import list',5 ,'Error')
+			if Message == 4:
+				Multi_Model_Importer_Inspect()
+	return 
+
+Multi_Model_Importer_Inspect()
+
+app.DeleteObj(prop)	

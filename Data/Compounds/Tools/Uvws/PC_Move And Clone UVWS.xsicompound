@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Move And Clone UVWS" category="PC_Tools/Uvws" tasks="PC_Tools/Uvws" formatversion="1.4" compoundversion="0.0" constructionmode="Current" backgroundcolor="9603616">
+	<definition>
+		<nodes>
+			<node type="ExecuteNode" index="1">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">900</prop>
+					<prop name="posy">46</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="[embedded_0]" index="2">
+				<param name="Reference" type="31" value=""></param>
+				<param name="X" type="4" value="0.000000"></param>
+				<param name="Y" type="4" value="0.000000"></param>
+				<param name="Z" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="X" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Y" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Z" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">585</prop>
+					<prop name="posy">29</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="1" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="2" portname="In_Name" username="In_Name" basename="In Name" portlabel="In Name" exposetype="use_node"> </port>
+			<port index="2" portname="X" username="X" basename="X" portlabel="X" exposetype="use_node"> </port>
+			<port index="2" portname="Y" username="Y" basename="Y" portlabel="Y" exposetype="use_node"> </port>
+			<port index="2" portname="Z" username="Z" basename="Z" portlabel="Z" exposetype="use_node"> </port>
+			<port index="2" portname="Reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="use_node"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="2" from_port="Execute" to_node="1" to_port="port1"> </cnx>
+		</connections>
+		<layout>
+			<group type="input" name="Uvws Movement" collapsed="false">
+				<item type="input" name="In_Name" min="0" max="0"> </item>
+				<item type="input" name="X" min="0" max="0"> </item>
+				<item type="input" name="Y" min="0" max="0"> </item>
+				<item type="input" name="Z" min="0" max="0"> </item>
+				<item type="input" name="Reference" min="0" max="0"> </item>
+			</group>
+			<item type="output" name="Execute"> </item>
+		</layout>
+	</definition>
+	<embedded_0 name="CompoundNode" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="6732954">
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value=".UVWs"></param>
+				<param_ext name="reference" type="31" value=".UVWs"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">386</prop>
+					<prop name="posy">-64</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="1">
+				<param name="Reference" type="31" value=""></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value" type="0" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">679</prop>
+					<prop name="posy">42</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="2">
+				<portdef name="value1" type="0" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="0" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">542</prop>
+					<prop name="posy">42</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarTo3DVectorNode" index="3">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<param name="z" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="z" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">318</prop>
+					<prop name="posy">99</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="inname" username="In_Name" basename="In Name" portlabel="In Name" exposetype="single"> </port>
+			<port index="1" portname="Execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="1" portname="Reference" username="Reference" basename="Reference" portlabel="Reference" exposetype="single"> </port>
+			<port index="3" portname="x" username="X" basename="X" portlabel="X" exposetype="single"> </port>
+			<port index="3" portname="y" username="Y" basename="Y" portlabel="Y" exposetype="single"> </port>
+			<port index="3" portname="z" username="Z" basename="Z" portlabel="Z" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="0" from_port="value" to_node="2" to_port="value1"> </cnx>
+			<cnx from_node="2" from_port="result" to_node="1" to_port="Value"> </cnx>
+			<cnx from_node="3" from_port="vector" to_node="2" to_port="value2"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="In_Name"> </item>
+			<item type="input" name="X"> </item>
+			<item type="input" name="Y"> </item>
+			<item type="input" name="Z"> </item>
+			<item type="input" name="Reference"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+	</embedded_0>
+</xsi_file>

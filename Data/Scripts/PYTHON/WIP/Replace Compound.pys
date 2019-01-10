@@ -1,0 +1,39 @@
+app= Application
+V= app.Desktop.ActiveLayout.Views( "ICE Tree" )
+ICESelection= V.GetAttributeValue('selection')
+ICESelection=ICESelection.split(',')
+app.DeselectAll()
+for n in ICESelection:
+	app.AddToSelection(n)
+
+FROM,TO =app.Selection[0],app.Selection[1]
+FROMiports,TOiportsname,TOiports=[],[],[]
+FROMoports,TOoportsname,TOoports=[],[],[]
+
+for port in FROM.InputPorts:
+	FROMiports.append(port)
+for port in TO.InputPorts:
+	TOiportsname.append(port.name)
+	TOiports.append(port)
+	
+for port in FROM.OutputPorts:
+	FROMoports.append(port)
+for port in TO.OutputPorts:
+	TOoportsname.append(port.name)
+	TOoports.append(port)
+	
+for port in FROMiports:
+	TOindex=TOiportsname.index(str(port.name))
+	if port.IsConnected :
+		app.ConnectICENodes(TOiports[TOindex], port.ConnectedPorts[0])
+	elif port.DataType == 8192 :
+		print 'reference'
+	else:
+		pvalue = port.value
+		TOiports[TOindex].value = pvalue
+		
+for port in FROMoports:
+	TOindex=TOoportsname.index(str(port.name))
+	if port.IsConnected :
+		app.ConnectICENodes(TOoports[TOindex], port.ConnectedPorts[0])
+	

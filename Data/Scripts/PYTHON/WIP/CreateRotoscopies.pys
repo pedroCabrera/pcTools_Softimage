@@ -1,0 +1,38 @@
+app = Application
+
+Cam = app.Selection(0)
+	
+if Cam.Type != 'camera':
+	print 'Selecciona al menos una camara'
+else:
+	camprops = app.EnumElements(app.EnumElements(app.EnumElements(Cam)(1)))
+	
+	Roto = app.CreatePrim("Grid", "MeshSurface", str(Cam.Name)+"Rotoscopy_1", Cam.Parent)
+	app.SetValue(str(Roto)+".grid.ulength", 1, "")
+	app.SetValue(str(Roto)+".grid.vlength", 1, "")
+	app.ApplyShader("$XSI_DSPRESETS\\Shaders\\Material\\Constant.Preset", Roto, "", "", "siLetLocalMaterialsOverlap")
+	Mat = Roto.Material.Shaders('Constant')
+	Roto.Material.Name = 'Mat_Rotoscopy_1'
+	Mat.radiance.Parameters('green').Value = 0
+	Mat.radiance.Parameters('blue').Value = 0
+	Mat.radiance.Parameters('red').Value = 0
+	Mat.incand_inuse.Value = False
+	image = app.SIApplyShaderToCnxPoint("Image", Mat.color, "", "")
+	app.InspectObj(image,'','',3)
+	app.CreateProjection(Roto, "siTxtPlanarXZ", "siTxtDefaultPlanarXZ", "", "Texture_Projection", "", "", "")
+	if 'Camera_Rotoscopies' in str(camprops):
+		index = str(camprops).split(',').index(str(Cam)+'.camera.Camera_Rotoscopies')
+		ICE = camprops(index)
+		for i in app.EnumElements(ICE):
+			if 'port' in str(i):
+				port = i
+		port = app.AddPortToICENode(port, "siNodePortDataInsertionLocationAfter")
+	else:
+		ICE = app.ApplyOp("ICETree", str(Cam), "siNode", "", "", 0)
+		ICE(0).parameters('Name').Value = 'Camera Rotoscopies'
+		port = str(ICE)+".port1"
+		
+	Compound = app.AddICECompoundNode("PC_Camera_Rotoscopy", ICE)
+	app.SetValue(str(Compound)+".Reference", str(Roto), "")
+	app.ConnectICENodes(port, str(Compound)+".Execute")
+	app.InspectObj(Compound)

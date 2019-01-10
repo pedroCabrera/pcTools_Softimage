@@ -1,0 +1,24 @@
+##############[,GranjaAll,Rack1,Rack2,Rack3,TempPath,Server,User,Engine,Pool]
+
+
+
+def PC_MusterUserPrefs():
+
+	import win32com
+	from win32com.client import constants as c
+	app = win32com.client.Dispatch( 'XSI.Application' ).Application
+	MRTOOL = '[MRTOOL]'
+	Server ='[SERVER]'
+	User = '[MUSER]'
+	PassWord = '[PASSWORD]'
+	Engine = '[ENGINE]'
+	Pool = '[POOL]'
+	enciendegranja= '[GranjaAll]'
+	encienderack1 = '[Rack1]'
+	encienderack2 = '[Rack2]'
+	encienderack3 = '[Rack3]'
+	tempfolderpath= app.Commands( "PC_SendRendertoMuster" ).OriginPath+'Temp'
+	DEFAULT = [enciendegranja,encienderack1,encienderack2,encienderack3,tempfolderpath,Server,User,Engine,Pool,MRTOOL,PassWord]
+	
+	return DEFAULT 
+	

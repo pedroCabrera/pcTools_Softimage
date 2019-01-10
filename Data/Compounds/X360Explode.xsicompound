@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="X360Explode" formatversion="1.4" compoundversion="1.0">
+	<definition>
+		<nodes>
+			<node type="MultiplyByScalarNode" index="0">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="8" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-555</prop>
+					<prop name="posy">754</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="2DVectorToScalarNode" index="1">
+				<param name="vector.vector_x" type="4" value="0.000000"></param>
+				<param name="vector.vector_y" type="4" value="0.000000"></param>
+				<portdef name="vector" type="8" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-348</prop>
+					<prop name="posy">767</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PC_X360C" index="2">
+				<param name="Port" type="fcurve">1 20 1 0 -1.79769E+308 1.79769E+308 3 0
+0 0.033333 0.000000 0.000000 0.000000 0.000000 0.000000 8196 3
+</param>
+				<portdef name="Port" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2838</prop>
+					<prop name="posy">326</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="3">
+				<param name="reference" type="31" value="self.rotY"></param>
+				<param_ext name="reference" type="31" value="self.rotY"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1059</prop>
+					<prop name="posy">370</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="4">
+				<param name="reference" type="31" value="self.pos"></param>
+				<param_ext name="reference" type="31" value="self.pos"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-657</prop>
+					<prop name="posy">82</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PC_X360C_SetDeadZone" index="5">
+				<param name="L.L_x" type="4" value="0.289000"></param>
+				<param name="L.L_y" type="4" value="0.043000"></param>
+				<param name="R.R_x" type="4" value="0.333000"></param>
+				<param name="R.R_y" type="4" value="0.200000"></param>
+				<portdef name="Controller" type="65536" structure="1" group="0" instance="0" port="0" supportedblob="5"></portdef>
+				<portdef name="L" type="8" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="R" type="8" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2697</prop>
+					<prop name="posy">326</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="2DVectorToScalarNode" index="6">
+				<param name="vector.vector_x" type="4" value="0.000000"></param>
+				<param name="vector.vector_y" type="4" value="0.000000"></param>
+				<portdef name="vector" type="8" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1086</prop>
+					<prop name="posy">-32</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PC_Xbox 360 Get Data" version="1.0" index="7">
+				<portdef name="Controller" type="65536" structure="1" group="-1" instance="-1" port="-1" supportedblob="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1794</prop>
+					<prop name="posy">160</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Increment Rotation with 2 Vectors" version="1.1" index="9">
+				<param name="Rotation.Rotation_x" type="4" value="0.000000"></param>
+				<param name="Rotation.Rotation_y" type="4" value="0.000000"></param>
+				<param name="Rotation.Rotation_z" type="4" value="0.000000"></param>
+				<param name="Rotation.Rotation_angle" type="4" value="0.000000"></param>
+				<param name="Local_Vector.Local_Vector_x" type="4" value="1.000000"></param>
+				<param name="Local_Vector.Local_Vector_y" type="4" value="0.000000"></param>
+				<param name="Local_Vector.Local_Vector_z" type="4" value="0.000000"></param>
+				<param name="To_Vector.To_Vector_x" type="4" value="1.000000"></param>
+				<param name="To_Vector.To_Vector_y" type="4" value="0.000000"></param>
+				<param name="To_Vector.To_Vector_z" type="4" value="0.000000"></param>
+				<param name="Weight" type="4" value="1.000000"></param>
+				<portdef name="Weight" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Local_Vector" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Rotation" type="16384" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="To_Vector" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">59</prop>
+					<prop name="posy">179</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="10">
+				<param name="Reference" type="31" value="self.rotY"></param>
+				<param name="Reference2" type="31" value="self.pos"></param>
+				<param name="Reference1" type="31" value="self.ori"></param>
+				<param name="Value" type="4" value="0.000000"></param>
+				<param name="Value1.Value1_x" type="4" value="1.000000"></param>
+				<param name="Value1.Value1_y" type="4" value="0.000000"></param>
+				<param name="Value1.Value1_z" type="4" value="0.000000"></param>
+				<param name="Value1.Value1_angle" type="4" value="0.000000"></param>
+				<param name="Value2.Value2_x" type="4" value="0.000000"></param>
+				<param name="Value2.Value2_y" type="4" value="0.000000"></param>
+				<param name="Value2.Value2_z" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="self.rotY"></param_ext>
+				<param_ext name="Reference2" type="31" value="self.pos"></param_ext>
+				<param_ext name="Reference1" type="31" value="self.ori"></param_ext>
+				<portdef name="Value" type="4" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value2" type="16" structure="1" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Value1" type="16384" structure="1" group="2" instance="2" port="0" groupname="Value"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1008</prop>
+					<prop name="posy">-117</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PC_Xbox 360 Get Data" version="1.0" index="11">
+				<portdef name="Controller" type="65536" structure="1" group="-1" instance="-1" port="-1" supportedblob="5"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2466</prop>
+					<prop name="posy">326</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AxisAndAngleToRotationNode" index="12">
+				<param name="axis.axis_x" type="4" value="0.000000"></param>
+				<param name="axis.axis_y" type="4" value="1.000000"></param>
+				<param name="axis.axis_z" type="4" value="0.000000"></param>
+				<param name="angle" type="4" value="0.000000"></param>
+				<portdef name="axis" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="angle" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-885</prop>
+					<prop name="posy">340</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="13">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="-10.000000"></param>
+				<portdef name="value" type="8" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1293</prop>
+					<prop name="posy">-45</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="15">
+				<param name="value1.value1_x" type="4" value="0.000000"></param>
+				<param name="value1.value1_y" type="4" value="0.000000"></param>
+				<param name="value1.value1_z" type="4" value="0.000000"></param>
+				<param name="value2.value2_x" type="4" value="4.138000"></param>
+				<param name="value2.value2_y" type="4" value="0.000000"></param>
+				<param name="value2.value2_z" type="4" value="0.000000"></param>
+				<portdef name="value1" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="16" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-457</prop>
+					<prop name="posy">125</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="16">
+				<param name="value1.value1_x" type="4" value="0.690000"></param>
+				<param name="value1.value1_y" type="4" value="0.000000"></param>
+				<param name="value1.value1_z" type="4" value="0.000000"></param>
+				<param name="value2.value2_x" type="4" value="0.000000"></param>
+				<param name="value2.value2_y" type="4" value="0.000000"></param>
+				<param name="value2.value2_z" type="4" value="0.000000"></param>
+				<portdef name="value1" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="16" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">582</prop>
+					<prop name="posy">239</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="17">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-535</prop>
+					<prop name="posy">-68</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ScalarTo3DVectorNode" index="18">
+				<param name="x" type="4" value="0.000000"></param>
+				<param name="y" type="4" value="0.000000"></param>
+				<param name="z" type="4" value="0.000000"></param>
+				<portdef name="x" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="y" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="z" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">2</prop>
+					<prop name="posy">497</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="19">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="4.192000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1079</prop>
+					<prop name="posy">470</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RotateVectorNode" index="20">
+				<param name="vector.vector_x" type="4" value="3.070000"></param>
+				<param name="vector.vector_y" type="4" value="0.000000"></param>
+				<param name="vector.vector_z" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_x" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_y" type="4" value="1.000000"></param>
+				<param name="rotation.rotation_z" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_angle" type="4" value="0.000000"></param>
+				<portdef name="vector" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="rotation" type="16384" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-612</prop>
+					<prop name="posy">216</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="21">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="-1.019000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1089</prop>
+					<prop name="posy">594</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="AddNode" index="22">
+				<param name="value1" type="4" value="0.000000"></param>
+				<param name="value2" type="4" value="0.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-558</prop>
+					<prop name="posy">581</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="23">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="0.503000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2248</prop>
+					<prop name="posy">326</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="24">
+				<param name="reference" type="31" value="self.rotY"></param>
+				<param_ext name="reference" type="31" value="self.rotY"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-751</prop>
+					<prop name="posy">-141</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="27">
+				<param name="reference" type="31" value="self.pos"></param>
+				<param_ext name="reference" type="31" value="self.pos"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">415</prop>
+					<prop name="posy">400</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PC_X360C_Vibrate" index="29">
+				<param name="L" type="4" value="0.000000"></param>
+				<param name="R" type="4" value="0.000000"></param>
+				<portdef name="Controller" type="65536" structure="1" group="0" instance="0" port="0" supportedblob="5"></portdef>
+				<portdef name="L" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="R" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2063</prop>
+					<prop name="posy">326</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RotateVectorNode" index="30">
+				<param name="vector.vector_x" type="4" value="0.000000"></param>
+				<param name="vector.vector_y" type="4" value="3.103000"></param>
+				<param name="vector.vector_z" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_x" type="4" value="1.000000"></param>
+				<param name="rotation.rotation_y" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_z" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_angle" type="4" value="0.000000"></param>
+				<portdef name="vector" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="rotation" type="16384" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">368</prop>
+					<prop name="posy">256</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyNode" index="31">
+				<param name="value1" type="4" value="1.000000"></param>
+				<param name="value2" type="4" value="1.000000"></param>
+				<portdef name="value1" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-2201</prop>
+					<prop name="posy">487</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SubtractNode" index="32">
+				<param name="first.first_x" type="4" value="0.000000"></param>
+				<param name="first.first_y" type="4" value="0.000000"></param>
+				<param name="first.first_z" type="4" value="0.000000"></param>
+				<param name="second.second_x" type="4" value="0.000000"></param>
+				<param name="second.second_y" type="4" value="0.000000"></param>
+				<param name="second.second_z" type="4" value="0.000000"></param>
+				<portdef name="first" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-164</prop>
+					<prop name="posy">45</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="10" portname="Execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="9" from_port="Result" to_node="30" to_port="rotation"> </cnx>
+			<cnx from_node="9" from_port="Result" to_node="10" to_port="Value1"> </cnx>
+			<cnx from_node="11" from_port="RT" to_node="31" to_port="value1"> </cnx>
+			<cnx from_node="11" from_port="LT" to_node="31" to_port="value2"> </cnx>
+			<cnx from_node="7" from_port="Stick_L" to_node="13" to_port="value"> </cnx>
+			<cnx from_node="7" from_port="RT" to_node="19" to_port="value"> </cnx>
+			<cnx from_node="7" from_port="LT" to_node="21" to_port="value"> </cnx>
+			<cnx from_node="7" from_port="Stick_R" to_node="0" to_port="value"> </cnx>
+			<cnx from_node="1" from_port="y" to_node="18" to_port="y"> </cnx>
+			<cnx from_node="12" from_port="rotation" to_node="20" to_port="rotation"> </cnx>
+			<cnx from_node="13" from_port="result" to_node="6" to_port="vector"> </cnx>
+			<cnx from_node="15" from_port="result" to_node="32" to_port="first"> </cnx>
+			<cnx from_node="16" from_port="result" to_node="10" to_port="Value2"> </cnx>
+			<cnx from_node="17" from_port="result" to_node="10" to_port="Value"> </cnx>
+			<cnx from_node="18" from_port="vector" to_node="30" to_port="vector"> </cnx>
+			<cnx from_node="19" from_port="result" to_node="22" to_port="value1"> </cnx>
+			<cnx from_node="20" from_port="result" to_node="15" to_port="value2"> </cnx>
+			<cnx from_node="21" from_port="result" to_node="22" to_port="value2"> </cnx>
+			<cnx from_node="22" from_port="result" to_node="18" to_port="x"> </cnx>
+			<cnx from_node="23" from_port="result" to_node="29" to_port="L"> </cnx>
+			<cnx from_node="23" from_port="result" to_node="29" to_port="R"> </cnx>
+			<cnx from_node="30" from_port="result" to_node="16" to_port="value1"> </cnx>
+			<cnx from_node="31" from_port="result" to_node="23" to_port="value"> </cnx>
+			<cnx from_node="32" from_port="result" to_node="9" to_port="To_Vector"> </cnx>
+			<cnx from_node="4" from_port="value" to_node="15" to_port="value1"> </cnx>
+			<cnx from_node="4" from_port="value" to_node="32" to_port="second"> </cnx>
+			<cnx from_node="3" from_port="value" to_node="12" to_port="angle"> </cnx>
+			<cnx from_node="5" from_port="Controller" to_node="29" to_port="Controller"> </cnx>
+			<cnx from_node="5" from_port="Controller" to_node="11" to_port="Controller"> </cnx>
+			<cnx from_node="2" from_port="Controller" to_node="5" to_port="Controller"> </cnx>
+			<cnx from_node="24" from_port="value" to_node="17" to_port="value2"> </cnx>
+			<cnx from_node="27" from_port="value" to_node="16" to_port="value2"> </cnx>
+			<cnx from_node="29" from_port="Controller" to_node="7" to_port="Controller"> </cnx>
+			<cnx from_node="6" from_port="x" to_node="17" to_port="value1"> </cnx>
+			<cnx from_node="0" from_port="result" to_node="1" to_port="vector"> </cnx>
+		</connections>
+		<layout>
+			<item type="output" name="Execute"> </item>
+		</layout>
+		<blob_dictionary>
+			<dict_entry index="5" color="15625002">
+				<typename><![CDATA[X360_Controller]]></typename>
+				<displayname><![CDATA[X360_Controller]]></displayname>
+				<description><![CDATA[X360_Controller]]></description>
+			</dict_entry>
+		</blob_dictionary>
+	</definition>
+</xsi_file>

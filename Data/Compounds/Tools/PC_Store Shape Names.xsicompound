@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Store Shape Names" category="PC_Tools/Tools" tasks="PC_Tools/Tools" formatversion="1.4" compoundversion="1.0" backgroundcolor="12693621">
+	<definition>
+		<nodes>
+			<node type="ReferenceToStringNode" index="0">
+				<param name="reference" type="31" value=""></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1895</prop>
+					<prop name="posy">-248</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Repeat with Counter" version="1.0" index="1">
+				<param name="Reference" type="31" value="Self.CounterValue"></param>
+				<param name="Num_Iterations" type="3" value="0"></param>
+				<param_ext name="Reference" type="31" value="Self.CounterValue"></param_ext>
+				<portdef name="Num_Iterations" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Execute_Each_Iteration" type="4096" structure="1" group="2" instance="0" port="0" groupname="Execute Each Iteration"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-791</prop>
+					<prop name="posy">-267</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="2">
+				<param name="Reference" type="31" value="self.__pcEval"></param>
+				<param name="Value" type="11" value="false"></param>
+				<param_ext name="Reference" type="31" value="self.__pcEval"></param_ext>
+				<portdef name="Value" type="1" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-932</prop>
+					<prop name="posy">-176</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="LogValuesNode" index="3">
+				<param name="debugprinttag" type="31" value=""></param>
+				<param name="in" type="11" value="false"></param>
+				<param name="log" type="11" value="false"></param>
+				<param name="allelements" type="11" value="false"></param>
+				<param name="firstelement" type="3" value="0"></param>
+				<param name="lastelement" type="3" value="0"></param>
+				<portdef name="in" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="log" type="1" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="allelements" type="1" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="firstelement" type="2" structure="1" group="0" instance="0" port="3"></portdef>
+				<portdef name="lastelement" type="2" structure="1" group="0" instance="0" port="4"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1101</prop>
+					<prop name="posy">-148</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetArraySizeNode" index="4">
+				<param name="array.array_string" type="8" value=""></param>
+				<param name="array.array_uimode" type="8" value=""></param>
+				<param name="array.array_filepathseq" type="8" value=""></param>
+				<param name="array.array_filename" type="8" value=""></param>
+				<portdef name="array" type="131072" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1287</prop>
+					<prop name="posy">-260</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PC_Set_Attribute" index="5">
+				<param name="Object.Object_string" type="8" value=""></param>
+				<param name="Object.Object_uimode" type="8" value=""></param>
+				<param name="Object.Object_filepathseq" type="8" value=""></param>
+				<param name="Object.Object_filename" type="8" value=""></param>
+				<param name="Attribute.Attribute_string" type="8" value="myStrName"></param>
+				<param name="Attribute.Attribute_uimode" type="8" value=""></param>
+				<param name="Attribute.Attribute_filepathseq" type="8" value=""></param>
+				<param name="Attribute.Attribute_filename" type="8" value=""></param>
+				<param name="Data.Data_string" type="8" value=""></param>
+				<param name="Data.Data_uimode" type="8" value=""></param>
+				<param name="Data.Data_filepathseq" type="8" value=""></param>
+				<param name="Data.Data_filename" type="8" value=""></param>
+				<portdef name="Object" type="131072" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="Attribute" type="131072" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="Data" type="131072" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1297</prop>
+					<prop name="posy">-168</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="6">
+				<param name="reference" type="31" value="self.CounterValue"></param>
+				<param_ext name="reference" type="31" value="self.CounterValue"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1786</prop>
+					<prop name="posy">-117</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="7">
+				<param name="index" type="3" value="0"></param>
+				<param name="array.array_string" type="8" value=""></param>
+				<param name="array.array_uimode" type="8" value=""></param>
+				<param name="array.array_filepathseq" type="8" value=""></param>
+				<param name="array.array_filename" type="8" value=""></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="131072" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1506</prop>
+					<prop name="posy">-134</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="8">
+				<param name="in.in_string" type="8" value=""></param>
+				<param name="in.in_uimode" type="8" value=""></param>
+				<param name="in.in_filepathseq" type="8" value=""></param>
+				<param name="in.in_filename" type="8" value=""></param>
+				<portdef name="in" type="131072" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1696</prop>
+					<prop name="posy">-248</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="inname" username="In_Name" basename="In Name" portlabel="In Name" exposetype="single"> </port>
+			<port index="1" portname="Execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="5" portname="Attribute" username="Attribute" basename="Attribute" portlabel="Attribute" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="2" from_port="Execute" to_node="1" to_port="Execute_Each_Iteration"> </cnx>
+			<cnx from_node="3" from_port="out" to_node="2" to_port="Value"> </cnx>
+			<cnx from_node="4" from_port="size" to_node="1" to_port="Num_Iterations"> </cnx>
+			<cnx from_node="5" from_port="Success" to_node="3" to_port="in"> </cnx>
+			<cnx from_node="6" from_port="value" to_node="7" to_port="index"> </cnx>
+			<cnx from_node="0" from_port="outstringname" to_node="8" to_port="in"> </cnx>
+			<cnx from_node="7" from_port="value" to_node="5" to_port="Object"> </cnx>
+			<cnx from_node="7" from_port="value" to_node="5" to_port="Data"> </cnx>
+			<cnx from_node="8" from_port="out" to_node="4" to_port="array"> </cnx>
+			<cnx from_node="8" from_port="out" to_node="7" to_port="array"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="In_Name"> </item>
+			<item type="input" name="Attribute"> </item>
+			<item type="output" name="Execute"> </item>
+		</layout>
+	</definition>
+</xsi_file>

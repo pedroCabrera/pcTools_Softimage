@@ -1,0 +1,76 @@
+import win32com
+app = Application
+
+selection = win32com.client.Dispatch( "XSI.Collection" )
+selection.AddItems (app.Selection)
+	
+for obj in selection:
+	Material = obj
+	Shader = app.EnumElements(Material.surface)(0)
+	if app.EnumElements(Material.normal):
+		BumpMap=app.EnumElements(Material.normal)(0)
+		#BumpHeight= app.GetValue(str(BumpMap)+".scale")
+		BumpInput = app.EnumElements(BumpMap.input)(0)
+	else:
+		BumpMap,BumpInput = False,False
+	#print BumpInput.fullname
+	if "Phong" in str(Shader):
+		ShaderColor = app.EnumElements(str(Shader)+".diffuse")
+		r,g,b = ShaderColor[0].value,ShaderColor[1].value,ShaderColor[2].value
+		Shiny =app.GetValue(str(Shader)+".shiny")
+		NewShinyValue=(1-((Shiny-0)*(1-0))/(100-0))
+		ShinyMap = app.EnumElements(str(Shader)+".shiny")
+		IOR =app.GetValue(str(Shader)+".index_of_refraction")
+		OpacityColor = app.EnumElements(str(Shader)+".transparency")
+		
+		txtcolor,txtspec,txtspeccolor,txtopacity = False,False,False,False
+		
+		if len(ShaderColor) != 4:
+			txtcolor = True
+			ColorMap = app.RemoveShaderFromCnxPoint(str(Shader)+".*.out", str(Shader)+".diffuse", False)
+		if len(app.EnumElements(str(Shader)+".specular")) != 4:
+			txtspeccolor = True
+			SpeccolorMap = app.RemoveShaderFromCnxPoint(str(Shader)+".*.out", str(Shader)+".specular", False)
+		if not "None" in str(ShinyMap):
+			txtspec = True
+			SpecMap = app.RemoveShaderFromCnxPoint(ShinyMap, str(Shader)+".shiny", False)
+		if len(OpacityColor) != 4:
+			txtopacity = True
+			OpacityMap = app.RemoveShaderFromCnxPoint(OpacityColor(4), str(Shader)+".transparency", False)
+			
+			
+		try:Standard = app.CreateShaderFromProgID("Softimage.standard.1.0", str(Material))
+		except:Standard = app.CreateShaderFromProgID("ArnoldCoreShaders.standard.1.0", str(Material))
+		
+		if BumpMap and BumpInput != False:
+			try:Bump2d = app.CreateShaderFromProgID("Softimage.bump2d.1.0", str(Material))
+			except:Bump2d = app.CreateShaderFromProgID("ArnoldCoreShaders.bump2d.1.0", str(Material))
+			#Bump2d.bump_height.value = BumpHeight
+			app.SIConnectShaderToCnxPoint(str(Bump2d)+".out", str(Material)+".surface", False)
+			app.SIConnectShaderToCnxPoint(str(Standard)+".out", str(Bump2d)+".shader", False)
+			
+			try:
+				app.SIConnectShaderToCnxPoint(str(BumpInput.fullname), str(Bump2d)+".bump_map", False)
+				app.RemoveShaderFromCnxPoint(str(BumpMap)+".out", str(Material)+'.normal', False)
+			except:
+				continue
+
+		else:
+			app.SIConnectShaderToCnxPoint(str(Standard)+".out", str(Material)+".surface", False)
+			
+		Kdcolor = Standard.Kd_color
+		Kdcolor.red.value,Kdcolor.green.value,Kdcolor.blue.value = r,g,b
+		Standard.Ks.value = NewShinyValue
+		Standard.IOR.value = IOR
+		
+		if txtcolor == True:app.SIConnectShaderToCnxPoint(str(ColorMap)+".out", str(Standard)+".Kd_color", False)
+		if txtspec == True:	app.SIConnectShaderToCnxPoint(str(SpecMap)+".out", str(Standard)+".Ks", False)
+		if txtspeccolor == True:app.SIConnectShaderToCnxPoint(str(SpeccolorMap)+".out", str(Standard)+".Ks_color", False)
+		if txtopacity == True:app.SIConnectShaderToCnxPoint(str(OpacityMap)+".out", str(Standard)+".opacity", False)
+			
+		print obj.Name + " Tenia un Phong y se ha cambiado por un Standard"
+		
+	elif "standard" in str(Shader):
+		print obj.Name + " Tiene un Standard"
+		
+

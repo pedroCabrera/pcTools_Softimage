@@ -1,0 +1,187 @@
+import os,sys,subprocess,win32com 
+from win32com.client import constants as c
+app = Application
+######SCENE DATA###################################################################
+scene = app.ActiveProject.ActiveScene
+scenename = scene.Parameters('Name').Value
+SceneStart=app.GetValue("Passes.RenderOptions.FrameStart")
+SceneEnd= app.GetValue("Passes.RenderOptions.FrameEnd")
+######PASS DATA############################################################################
+CurrentPass = app.GetCurrentPass()
+SelecteddPasses=[o for o in app.Selection if o.Type == 'Pass']
+if len(SelecteddPasses) > 0:
+	PASSES=['All Passes','0','Current Pass','1','Selected Passes','2']
+else :
+	PASSES=['All Passes','0','Current Pass','1']
+####PROPERTY PAGE###########################################################PROPERTY PAGE####################################################################################################################################
+prop = scene.Root.AddProperty('CustomProperty',False,'Send To Muster')
+SceneProp=prop.AddParameter3('Scene',8,Application.ActiveProject.ActiveScene.Parameters('Filename').Value,'','',False,True)
+OverrideName = prop.AddParameter3('OverrideName',11,False,False,True,False)
+JobProp=prop.AddParameter3('JobName',8,'[Pass]')
+TypeProp= prop.AddParameter3('Passes',8,'0')
+JobPerPassProp = prop.AddParameter3('JobPerPass',11,True)
+SkipProp= prop.AddParameter3('Skip',11,True)
+OverrideFramesProp = prop.AddParameter3('OverrideFrames',11)
+StartProp= prop.AddParameter3('StartFrame',3,SceneStart)
+EndProp= prop.AddParameter3('EndFrame',2,SceneEnd)
+PaketProp = prop.AddParameter3('PaketSize',2,1,1,100)
+PriorityProp = prop.AddParameter3('Priority',2,90,0,100)
+for param in [StartProp,EndProp,JobProp]:
+	param.Enable(False)
+for param in prop.Parameters:
+	param.Animatable = False
+#######LAYOUT#################################################################LAYOUT#######################################
+Layout = prop.PPGLayout
+Layout.Language='Python'
+Layout.Clear()
+Layout.AddGroup('Names')
+SC=Layout.AddItem('Scene',)
+SC.SetAttribute(c.siUINoLabel,True)
+Layout.AddRow()
+OF=Layout.AddItem('OverrideName')
+JN=Layout.AddItem('JobName')
+OF.SetAttribute(c.siUIWidthPercentage,20)
+JN.SetAttribute(c.siUIWidthPercentage,80)
+JN.SetAttribute(c.siUINoLabel,True)
+Layout.EndRow()
+Layout.EndGroup()
+TYPE=Layout.AddEnumControl('Passes',PASSES)
+Layout.AddItem('JobPerPass')
+Layout.AddGroup('Frames')
+Layout.AddItem('Skip')
+Layout.AddItem('OverrideFrames')
+Layout.AddRow()
+Layout.AddItem('Priority')
+Layout.AddItem('PaketSize')
+Layout.EndRow()
+Layout.AddRow()
+Layout.AddItem('StartFrame')
+Layout.AddItem('EndFrame')
+Layout.EndRow()
+
+Layout.Logic = '''
+import os
+app = Application 
+o = PPG.InspectedObjects
+prop = app.ActiveSceneRoot.GetPropertyFromName2(o)
+def Passes_OnChanged():
+	if not prop.Parameters('OverrideName').Value:
+		if prop.Parameters('Passes').Value == '0':
+			if prop.Parameters('JobPerPass').Value:
+				prop.Parameters('JobName').Value = '[Pass]'
+			else:
+				prop.Parameters('JobName').Value = '[Scene]'
+		elif prop.Parameters('Passes').Value == '1':
+			prop.Parameters('JobName').Value = str(app.GetCurrentPass().Name)
+		elif prop.Parameters('Passes').Value == '2':
+			prop.Parameters('JobName').Value = '[Pass]'
+	if prop.Parameters('Passes').Value == '0' or prop.Parameters('Passes').Value == '2':
+		prop.Parameters('StartFrame').Value = app.GetValue("Passes.RenderOptions.FrameStart")
+		prop.Parameters('EndFrame').Value = app.GetValue("Passes.RenderOptions.FrameEnd")
+	elif prop.Parameters('Passes').Value == '1':
+		prop.Parameters('StartFrame').Value = app.GetCurrentPass().FrameStart.Value
+		prop.Parameters('EndFrame').Value = app.GetCurrentPass().FrameEnd.Value
+def JobPerPass_OnChanged():
+	if not prop.Parameters('OverrideName').Value:
+		if prop.Parameters('Passes').Value == '0':
+			if prop.Parameters('JobPerPass').Value :
+				prop.Parameters('JobName').Value = '[Pass]'
+			else:
+				prop.Parameters('JobName').Value = '[Scene]'
+			
+def OverrideName_OnChanged():
+	if prop.Parameters('OverrideName').Value:
+		prop.Parameters('JobName').Enable(True)
+	else:
+		prop.Parameters('JobName').Enable(False)
+		if prop.Parameters('Passes').Value == '0':
+			if prop.Parameters('JobPerPass').Value:
+				prop.Parameters('JobName').Value = '[Pass]'
+			else:
+				prop.Parameters('JobName').Value = '[Scene]'
+		elif prop.Parameters('Passes').Value == '1':
+			prop.Parameters('JobName').Value = str(app.GetCurrentPass().Name)
+		elif prop.Parameters('Passes').Value == '2':
+			prop.Parameters('JobName').Value = '[Pass]'
+def OverrideFrames_OnChanged():
+	if prop.Parameters('OverrideFrames').Value:
+		for param in [prop.Parameters('StartFrame'),prop.Parameters('EndFrame')]:
+			param.Enable(True)
+	else:
+		for param in [prop.Parameters('StartFrame'),prop.Parameters('EndFrame')]:
+			param.Enable(False)
+		if prop.Parameters('Passes').Value == '0' or prop.Parameters('Passes').Value == '2':
+			prop.Parameters('StartFrame').Value = app.GetValue("Passes.RenderOptions.FrameStart")
+			prop.Parameters('EndFrame').Value = app.GetValue("Passes.RenderOptions.FrameEnd")
+		elif prop.Parameters('Passes').Value == '1':
+			prop.Parameters('StartFrame').Value = app.GetCurrentPass().FrameStart.Value
+			prop.Parameters('EndFrame').Value = app.GetCurrentPass().FrameEnd.Value
+		
+'''
+#########################################################################################################################################
+Cancel = app.InspectObj(prop,'PC_Send Render to Muster','',4,False)
+if not Cancel:
+	Passes= []
+	PassesNames = []
+	passall= False
+	
+	##General
+	Scene =  SceneProp.Value
+	if SkipProp.Value:
+		Skip = '-skip on'
+	else:
+		Skip = ''
+	PaketSize = str(PaketProp.Value)
+	Priority = str(PriorityProp.Value)
+	
+	if TypeProp.Value == '0':
+		if JobPerPassProp.Value == True:
+			for Pass in scene.Passes:
+				Passes.append(Pass)
+				PassesNames.append(Pass.Name)
+		else:
+				PassesNames.append('all')
+				passall = True
+	elif TypeProp.Value == '1':
+		Passes.append(CurrentPass)
+		PassesNames.append(CurrentPass.Name)
+	elif TypeProp.Value == '2':
+		for Pass in SelecteddPasses:
+			Passes.append(Pass)
+			PassesNames.append(Pass.Name)
+
+	for i,PASS in enumerate(PassesNames):
+		JobName = XSIUtils.ResolveTokenString(JobProp.Value,0,False,['Pass','Scene'],[PASS,scenename])
+		if passall:
+			Pass = 'all'
+			StartFrame = str(StartProp.Value)
+			EndFrame = str(EndProp.Value)
+		else:
+			Pass = PASS
+			if not OverrideFramesProp.Value:
+				StartFrame = str(Passes[i].FrameStart.Value)
+				EndFrame = str(Passes[i].FrameEnd.Value)
+			else:
+				StartFrame = str(StartProp.Value)
+				EndFrame = str(EndProp.Value)
+
+		##CUSTOM TOKEN SETUP###
+		TOKENS =  ['JOBNAME','FILE','STARTFRAME','ENDFRAME','PAKETSIZE','PASS','SKIP','PRIORITY']
+		RESOLVE = [JobName,Scene,StartFrame,EndFrame,PaketSize,Pass,Skip,Priority]
+		###BASIC MUSTER FLAGS###
+		TOKENFILE='''
+		"C:\Program Files\Virtual Vertex\Muster\Mrtool.exe" -s storage -u admin -b -e 76 -pool arnold -n "[JOBNAME]" -f "[FILE]" -sf [STARTFRAME] -ef [ENDFRAME] -pk [PAKETSIZE] -pr [PRIORITY] -bf 1 -add  "-pass [PASS] [SKIP]" '''
+		RESOLVEDFILE = XSIUtils.ResolveTokenString( TOKENFILE, 0, False, TOKENS, RESOLVE )
+		print RESOLVEDFILE
+		##ADD SELF DELETING OP####
+		RESOLVEDFILE = RESOLVEDFILE + '''
+		del "%~f0" '''
+		##WRITE TEMPORAL .BAT###
+		FILE = os.environ['USERPROFILE']+"\Autodesk\PC_SendToMusterTemp_"+PASS+".bat"
+		NEWFILE = open(FILE,"w")
+		NEWFILE.write(RESOLVEDFILE)
+		NEWFILE.close()
+		##EXECUTE .BAT##
+		p = subprocess.Popen(FILE)
+		print FILE
+app.DeleteObj(prop)

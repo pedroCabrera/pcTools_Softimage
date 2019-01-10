@@ -1,0 +1,55 @@
+from siutils import si      # Application
+if Application.Version().split('.')[0]>= "11":
+        si = si()                   # win32com.client.Dispatch('XSI.Application')
+ 
+from siutils import log     # LogMessage
+from siutils import C       # win32com.client.constants
+from siutils import disp    # win32com.client.Dispatch
+ 
+siut = disp('XSI.Utils')
+sifact = disp('XSI.Factory')
+siuitk = disp('XSI.UIToolkit')
+sisel = si.Selection
+ 
+ 
+#
+# Pop up a browser to select a compound
+#
+def getCompound():
+    initialDir = siut.BuildPath( si.InstallationPath( C.siUserPath ), "Data", "Compounds" )
+ 
+    oFileBrowser = siuitk.FileBrowser
+    oFileBrowser.DialogTitle = "Select compound to apply"
+    oFileBrowser.InitialDirectory = initialDir
+    oFileBrowser.Filter = "All Files (*.*)|*.*||"
+    oFileBrowser.ShowOpen()
+ 
+    return oFileBrowser.FilePathName
+ 
+#
+# Apply op to 
+# - the selected objects
+# OR
+# - the members of a selected group
+#
+def getTargetObjects():
+    objects = disp( "XSI.Collection" )
+ 
+    if sisel.Count == 0:
+        log( "Please select either some objects or a group" )
+    elif sisel(0).IsClassOf( C.siGroupID ):
+        objects = sisel(0).Members
+    else:
+        objects = sisel
+ 
+    return objects
+ 
+#
+# Do it...
+#
+objects = getTargetObjects()    
+sCompound = getCompound()
+ 
+if sCompound != "" and objects.Count > 0:
+    for o in objects:
+        si.ApplyICEOp( sCompound, o.FullName )

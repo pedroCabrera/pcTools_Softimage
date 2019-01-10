@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="ShaderCompound" name="ShaderCompound" category="Shader Compounds" formatversion="1.1" compoundversion="1.0" color="6732954" editable="1">
+	<definition>
+		<nodes>
+			<node type="shader" progid="Softimage.GLSLProgram.1.0" index="0">
+				<param name="Name" type="31"><![CDATA[GLSL_Shader]]></param>
+				<param name="Enable_GLSL_Program" type="3" value="0"></param>
+				<param name="Debug" type="11" value="false"></param>
+				<param name="GLSL_Program" type="8"><![CDATA[uniform float RandID;
+uniform vec4 color0,color1,color2;
+void main(void) 
+{
+	//-----------------------
+	// output particle color 
+	//-----------------------
+	switch(RandID){
+	case 0: gl_FrontColor = color0;break;
+	case 1: gl_FrontColor = color1;break;
+	case 2: gl_FrontColor = color2;break;
+	}
+	//-----------------------
+	// transform the particle
+	//-----------------------
+	gl_Position = ftransform();
+}]]></param>
+				<param name="GLSL_ProgramF" type="8"><![CDATA[]]></param>
+				<param name="HWMapping" type="8"><![CDATA[PointPosition,position.xyz,PointNormal,normal.xyz,Vertex_Color,color0.rgba,Vertex_Color1,color1.rgb,Texture_Projection,texcoord0.xyz,Texture_Projection1,texcoord1.xyz,Texture_Projection2,texcoord2.xyz,Texture_Projection3,texcoord3.xyz,Texture_Projection4,texcoord4.xyz,Texture_Projection5,texcoord5.xyz,Texture_Projection6,texcoord6.xyz,Texture_Projection7,texcoord7.xyz]]></param>
+				<param name="PointSprites" type="11" value="false"></param>
+				<param name="Blending" type="11" value="false"></param>
+				<param name="AlphaTest" type="11" value="false"></param>
+				<param name="AlphaRef" type="4" value="0.000000"></param>
+				<param name="compile_stamp" type="3" value="9"></param>
+				<param name="GLSL_Defines" type="8"><![CDATA[]]></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-119</prop>
+					<prop name="posy">230</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.GLSLUniform.1.0" index="1">
+				<param name="Name" type="31"><![CDATA[GLSL_Uniform]]></param>
+				<param name="Variable" type="8"><![CDATA[color0]]></param>
+				<param name="UniformType" type="3" value="4"></param>
+				<param name="element0" type="4" value="1.000000"></param>
+				<param name="element1" type="4" value="0.000000"></param>
+				<param name="element2" type="4" value="0.000000"></param>
+				<param name="element3" type="4" value="0.000000"></param>
+				<param name="element4" type="4" value="0.000000"></param>
+				<param name="element5" type="4" value="0.000000"></param>
+				<param name="element6" type="4" value="0.000000"></param>
+				<param name="element7" type="4" value="0.000000"></param>
+				<param name="element8" type="4" value="0.000000"></param>
+				<param name="element9" type="4" value="0.000000"></param>
+				<param name="element10" type="4" value="0.000000"></param>
+				<param name="element11" type="4" value="0.000000"></param>
+				<param name="element12" type="4" value="0.000000"></param>
+				<param name="element13" type="4" value="0.000000"></param>
+				<param name="element14" type="4" value="0.000000"></param>
+				<param name="element15" type="4" value="0.000000"></param>
+				<param name="UniformSource" type="3" value="1"></param>
+				<param name="ICEAttribute" type="31"><![CDATA[RandID]]></param>
+				<datablob category="ui_infos">
+					<prop name="portgroupnormalstates">1,1;2,1;</prop>
+					<prop name="posx">-308</prop>
+					<prop name="posy">143</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.GLSLUniform.1.0" index="2">
+				<param name="Name" type="31"><![CDATA[GLSL_Uniform1]]></param>
+				<param name="Variable" type="8"><![CDATA[color0]]></param>
+				<param name="UniformType" type="3" value="4"></param>
+				<param name="element0" type="4" value="1.000000"></param>
+				<param name="element1" type="4" value="0.000000"></param>
+				<param name="element2" type="4" value="1.000000"></param>
+				<param name="element3" type="4" value="0.000000"></param>
+				<param name="element4" type="4" value="0.000000"></param>
+				<param name="element5" type="4" value="0.000000"></param>
+				<param name="element6" type="4" value="0.000000"></param>
+				<param name="element7" type="4" value="0.000000"></param>
+				<param name="element8" type="4" value="0.000000"></param>
+				<param name="element9" type="4" value="0.000000"></param>
+				<param name="element10" type="4" value="0.000000"></param>
+				<param name="element11" type="4" value="0.000000"></param>
+				<param name="element12" type="4" value="0.000000"></param>
+				<param name="element13" type="4" value="0.000000"></param>
+				<param name="element14" type="4" value="0.000000"></param>
+				<param name="element15" type="4" value="0.000000"></param>
+				<param name="UniformSource" type="3" value="0"></param>
+				<param name="ICEAttribute" type="31"><![CDATA[]]></param>
+				<datablob category="ui_infos">
+					<prop name="portgroupnormalstates">2,0;</prop>
+					<prop name="posx">-311</prop>
+					<prop name="posy">222</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.GLSLUniform.1.0" index="3">
+				<param name="Name" type="31"><![CDATA[GLSL_Uniform2]]></param>
+				<param name="Variable" type="8"><![CDATA[color1]]></param>
+				<param name="UniformType" type="3" value="4"></param>
+				<param name="element0" type="4" value="1.000000"></param>
+				<param name="element1" type="4" value="1.000000"></param>
+				<param name="element2" type="4" value="0.000000"></param>
+				<param name="element3" type="4" value="0.000000"></param>
+				<param name="element4" type="4" value="0.000000"></param>
+				<param name="element5" type="4" value="0.000000"></param>
+				<param name="element6" type="4" value="0.000000"></param>
+				<param name="element7" type="4" value="0.000000"></param>
+				<param name="element8" type="4" value="0.000000"></param>
+				<param name="element9" type="4" value="0.000000"></param>
+				<param name="element10" type="4" value="0.000000"></param>
+				<param name="element11" type="4" value="0.000000"></param>
+				<param name="element12" type="4" value="0.000000"></param>
+				<param name="element13" type="4" value="0.000000"></param>
+				<param name="element14" type="4" value="0.000000"></param>
+				<param name="element15" type="4" value="0.000000"></param>
+				<param name="UniformSource" type="3" value="0"></param>
+				<param name="ICEAttribute" type="31"><![CDATA[]]></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-305</prop>
+					<prop name="posy">339</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.GLSLUniform.1.0" index="4">
+				<param name="Name" type="31"><![CDATA[GLSL_Uniform3]]></param>
+				<param name="Variable" type="8"><![CDATA[color2]]></param>
+				<param name="UniformType" type="3" value="4"></param>
+				<param name="element0" type="4" value="1.000000"></param>
+				<param name="element1" type="4" value="0.000000"></param>
+				<param name="element2" type="4" value="1.000000"></param>
+				<param name="element3" type="4" value="0.000000"></param>
+				<param name="element4" type="4" value="0.000000"></param>
+				<param name="element5" type="4" value="0.000000"></param>
+				<param name="element6" type="4" value="0.000000"></param>
+				<param name="element7" type="4" value="0.000000"></param>
+				<param name="element8" type="4" value="0.000000"></param>
+				<param name="element9" type="4" value="0.000000"></param>
+				<param name="element10" type="4" value="0.000000"></param>
+				<param name="element11" type="4" value="0.000000"></param>
+				<param name="element12" type="4" value="0.000000"></param>
+				<param name="element13" type="4" value="0.000000"></param>
+				<param name="element14" type="4" value="0.000000"></param>
+				<param name="element15" type="4" value="0.000000"></param>
+				<param name="UniformSource" type="3" value="0"></param>
+				<param name="ICEAttribute" type="31"><![CDATA[]]></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-302</prop>
+					<prop name="posy">390</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_color_multi_switch.1.0" index="5">
+				<param name="Name" type="31"><![CDATA[Color_Multi-Switch]]></param>
+				<param name="default.red" type="4" value="0.000000"></param>
+				<param name="default.green" type="4" value="0.000000"></param>
+				<param name="default.blue" type="4" value="0.000000"></param>
+				<param name="default.alpha" type="4" value="0.000000"></param>
+				<param name="switch" type="3" value="0"></param>
+				<param name="value0" type="3" value="0"></param>
+				<param name="input0.red" type="4" value="0.000000"></param>
+				<param name="input0.green" type="4" value="0.000000"></param>
+				<param name="input0.blue" type="4" value="0.000000"></param>
+				<param name="input0.alpha" type="4" value="0.000000"></param>
+				<param name="value1" type="3" value="1"></param>
+				<param name="input1.red" type="4" value="0.000000"></param>
+				<param name="input1.green" type="4" value="0.000000"></param>
+				<param name="input1.blue" type="4" value="0.000000"></param>
+				<param name="input1.alpha" type="4" value="0.000000"></param>
+				<param name="value2" type="3" value="2"></param>
+				<param name="input2.red" type="4" value="0.000000"></param>
+				<param name="input2.green" type="4" value="0.000000"></param>
+				<param name="input2.blue" type="4" value="0.000000"></param>
+				<param name="input2.alpha" type="4" value="0.000000"></param>
+				<param name="value3" type="3" value="3"></param>
+				<param name="input3.red" type="4" value="0.000000"></param>
+				<param name="input3.green" type="4" value="0.000000"></param>
+				<param name="input3.blue" type="4" value="0.000000"></param>
+				<param name="input3.alpha" type="4" value="0.000000"></param>
+				<param name="value4" type="3" value="4"></param>
+				<param name="input4.red" type="4" value="0.000000"></param>
+				<param name="input4.green" type="4" value="0.000000"></param>
+				<param name="input4.blue" type="4" value="0.000000"></param>
+				<param name="input4.alpha" type="4" value="0.000000"></param>
+				<param name="value5" type="3" value="5"></param>
+				<param name="input5.red" type="4" value="0.000000"></param>
+				<param name="input5.green" type="4" value="0.000000"></param>
+				<param name="input5.blue" type="4" value="0.000000"></param>
+				<param name="input5.alpha" type="4" value="0.000000"></param>
+				<param name="value6" type="3" value="6"></param>
+				<param name="input6.red" type="4" value="0.000000"></param>
+				<param name="input6.green" type="4" value="0.000000"></param>
+				<param name="input6.blue" type="4" value="0.000000"></param>
+				<param name="input6.alpha" type="4" value="0.000000"></param>
+				<param name="value7" type="3" value="7"></param>
+				<param name="input7.red" type="4" value="0.000000"></param>
+				<param name="input7.green" type="4" value="0.000000"></param>
+				<param name="input7.blue" type="4" value="0.000000"></param>
+				<param name="input7.alpha" type="4" value="0.000000"></param>
+				<datablob category="ui_infos">
+					<prop name="posx">-153</prop>
+					<prop name="posy">-38</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="shader" progid="Softimage.sib_attribute_integer.1.0" index="6">
+				<param name="Name" type="31"><![CDATA[Integer_Attribute]]></param>
+				<param name="attribute" type="8"><![CDATA[RandID]]></param>
+				<param name="index" type="3" value="0"></param>
+				<param name="default" type="3" value="0"></param>
+				<datablob category="ui_infos">
+					<prop name="portgroupnormalstates">3,1;</prop>
+					<prop name="posx">-343</prop>
+					<prop name="posy">-122</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<connections>
+			<cnx from_node="1" from_port="out" to_node="0" to_port="previous"> </cnx>
+			<cnx from_node="2" from_port="out" to_node="0" to_port="previous1"> </cnx>
+			<cnx from_node="3" from_port="out" to_node="0" to_port="previous2"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="0" to_port="previous3"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="5" to_port="switch"> </cnx>
+		</connections>
+		<exposed_ports>
+			<port index="1" portname="ICEAttribute" username="ICEAttribute" displayname="ICEAttribute"></port>
+			<port index="6" portname="attribute" username="attribute" displayname="attribute"></port>
+			<port index="5" portname="input0" username="input0" displayname="input0"></port>
+			<port index="5" portname="input1" username="input1" displayname="input1"></port>
+			<port index="5" portname="input2" username="input2" displayname="input2"></port>
+			<port index="5" portname="out" username="out" displayname="out"></port>
+			<port index="0" portname="out" username="realtime" displayname="RealTime"></port>
+		</exposed_ports>
+		<layout>
+			<item type="input" name="ICEAttribute" min="-2147483648" max="2147483647" ppgvis="1" ppgtab="Default" portvis="0"> </item>
+			<item type="input" name="attribute" ppgvis="1" ppgtab="Default" portvis="0"> </item>
+			<item type="input" name="input0" ppgvis="1" ppgtab="Default" portvis="1"> </item>
+			<item type="input" name="input1" ppgvis="1" ppgtab="Default" portvis="1"> </item>
+			<item type="input" name="input2" ppgvis="1" ppgtab="Default" portvis="1"> </item>
+			<item type="output" name="out" ppgvis="1" portvis="1"> </item>
+			<item type="output" name="realtime" ppgvis="1" portvis="1"> </item>
+		</layout>
+		<ppglogic lang=""><![CDATA[]]></ppglogic>
+	</definition>
+</xsi_file>

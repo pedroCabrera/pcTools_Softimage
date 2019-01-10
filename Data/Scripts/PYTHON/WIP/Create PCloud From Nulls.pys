@@ -1,0 +1,87 @@
+import win32com
+from win32com.client import constants as c
+
+app = Application
+
+	
+def PC_Create_PCloud_From_OBJS()
+	OBJ = []
+	O = app.Selection
+	for o in O:
+		OBJ.append(o)
+		ALLCOLORS = []
+		GROUPS = []
+
+	##Find Diffetent Colors##
+	for o in OBJ:
+		C = o.Properties('Display')
+		R , G , B = C.Parameters('wirecolorr').Value , C.Parameters('wirecolorg').Value , C.Parameters('wirecolorb').Value
+		COLOR=[R,G,B]
+		if COLOR not in ALLCOLORS:
+			ALLCOLORS.append(COLOR)
+			
+	##Create Group for each different Color##		
+	for color in ALLCOLORS:
+		Select = []
+		CR , CG , CB = color[0] , color[1] , color[2]
+		for o in OBJ:
+			D= o.Properties('Display')
+			R , G , B = D.Parameters('wirecolorr').Value , D.Parameters('wirecolorg').Value , D.Parameters('wirecolorb').Value
+			if R == CR and G == CG and B == CB:
+				Select.append(o)
+		app.SelectObj(Select)
+		Group = app.CreateGroup()
+		GROUPS.append(Group)
+		app.DeselectAll()
+		
+	##Create PoinCloud And ICE TREE##
+	PCloud = app.GetPrim("PointCloud", "PC_Nulls To PointCloud", "", "")
+	ICETree = app.ApplyOp("ICETree", PCloud)
+	Execute = app.AddICENode("$XSI_DSPRESETS\\ICENodes\\ExecuteNode.Preset", ICETree)
+	app.ConnectICENodes(str(ICETree) +'.port1', str(Execute)+'.execute')
+	port , c = 0 , -1
+
+	Compounds = []
+	ColorCompounds = []
+	Compounds.append(Execute)
+	
+	for g in GROUPS:
+		Positions = []
+		for a in g.Members:
+			X , Y , Z = a.Parameters('posx').Value , a.Parameters('posy').Value , a.Parameters('posz').Value
+			pos = [X,Y,Z]
+			Positions.append(pos)
+		Pos = str(Positions).replace('[','').replace(']','').replace('(','').replace(')','')
+		c , port = c + 1 , port + 1
+		R,G,B = ALLCOLORS[c][0],ALLCOLORS[c][1],ALLCOLORS[c][2]
+		if port > 1:
+			Application.AddPortToICENode(str(Execute)+'.port'+str(port-1), "siNodePortDataInsertionLocationAfter")
+		##Add Compounds##
+		Addpoint = app.AddICENode("$XSI_DSPRESETS\\ICENodes\\AddPointNode.Preset", ICETree)
+		PosArray = app.AddICENode("StringToArray", ICETree)
+		SetColor = app.AddICECompoundNode("PC_Set Particle Colored Shape", ICETree)
+		##Make Conections##
+		app.ConnectICENodes(str(Execute) +'.port'+ str(port), str(Addpoint)+'.add')
+		app.ConnectICENodes(str(Addpoint)+'.positions1', str(PosArray)+'.Result')
+		app.ConnectICENodes(str(Addpoint)+'.oncreation1', str(SetColor)+'.Execute')
+		##Set Init Values##
+		app.SetValue(str(PosArray)+'.Value_string', Pos, "")
+		app.SetValue(str(SetColor)+'.Color_red', R)
+		app.SetValue(str(SetColor)+'.Color_green', G)
+		app.SetValue(str(SetColor)+'.Color_blue', B)
+		
+		Compounds.append(Addpoint)
+		Compounds.append(PosArray)
+		Compounds.append(SetColor)
+		
+		ColorCompounds.append(SetColor)
+		
+	COMPOUND = app.CreateICECompoundNode(Compounds,'Init Groups')
+	for c in ColorCompounds:
+		color = app.AddExposedParamToICECompoundNode(str(c)+'.Color', COMPOUND)
+		size = app.AddExposedParamToICECompoundNode(str(c)+'.Size', COMPOUND)
+		shape = app.AddExposedParamToICECompoundNode(str(c)+'.Shape', COMPOUND)
+		app.CreateLayoutGroupInICECompoundNode(COMPOUND, [color.Name, size.Name, shape.Name], "")
+	app.InspectObj(COMPOUND)
+	
+	return COMPOUND

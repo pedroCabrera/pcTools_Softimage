@@ -1,0 +1,24 @@
+import win32com, sys
+from win32com.client import constants as c
+for o in Application.Selection:
+	TOTALPOSITIONS = []
+	VALIDUWVS=[]
+	INVALIDUWVS=[]
+	for cl in o.ActivePrimitive.Geometry.Clusters:
+		if cl.Type == 'sample':
+			for prop in cl.Properties:
+				if prop.Type == 'uvspace':
+					POSITIONS = []
+					for p in prop.Elements:
+						POSITIONS.append(p)
+					if POSITIONS not in TOTALPOSITIONS:
+						TOTALPOSITIONS.append(POSITIONS)
+						VALIDUWVS.append(prop.Name)
+					else:
+						INVALIDUWVS.append(prop.Name)
+						Application.DeleteObj(prop)
+	for M in  o.Materials:
+		for S in M.FindShaders(c.siShaderFilter):
+			if S.Name == 'Image':
+				if S.Parameters('tspace_id').Value in INVALIDUWVS:
+					Application.SetInstanceDataValue(o,S.Parameters('tspace_id'),VALIDUWVS[INVALIDUWVS.index(S.Parameters('tspace_id').Value)])

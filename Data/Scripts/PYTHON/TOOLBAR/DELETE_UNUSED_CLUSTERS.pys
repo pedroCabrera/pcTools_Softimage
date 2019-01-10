@@ -1,0 +1,10 @@
+for o in Application.Selection:
+	for cl in o.ActivePrimitive.Geometry.Clusters:
+		if cl.Type != 'sample':
+			PROPERTIES = []
+			for e in cl.LocalProperties:
+				PROPERTIES.append(e)
+			if len(PROPERTIES) == 0:
+				Application.DeleteObj(cl)
+			else:
+				cl.Name = e.Name

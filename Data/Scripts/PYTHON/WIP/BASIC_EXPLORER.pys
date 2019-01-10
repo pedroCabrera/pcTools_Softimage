@@ -1,0 +1,106 @@
+app = Application
+import win32com, sys
+from win32com.client import constants as c
+prop = app.ActiveProject.ActiveScene.Root.Addproperty('CustomProperty', False , 'Ruta')
+for i in ['Path','Folders','Files','Selected']:
+	prop.addParameter3(i,8)
+Layout = prop.PPGLayout
+
+P=Layout.addItem('Path','Path',c.siControlFolder)
+P.SetAttribute(c.siUINoLabel,True)
+
+Layout.AddGroup('Files')
+Layout.AddRow()
+Layout.AddGroup('Folders')
+FO=Layout.addItem('Folders','Folders',c.siControlListBox)
+Layout.EndGroup()
+Layout.AddGroup('Files')
+FI=Layout.addItem('Files','Files',c.siControlListBox)
+Layout.EndGroup()
+for i in [FO,FI]:
+	i.SetAttribute(c.siUICY,200)   
+	i.SetAttribute(c.siUIMultiSelectionListBox,True)
+	i.SetAttribute(c.siUINoLabel,True)  
+Layout.EndRow()
+Layout.EndGroup()
+
+Layout.AddRow()
+Layout.AddSpacer(2,0)
+Layout.AddButton('AddToList')
+Layout.AddButton('RemoveFromList')
+Layout.EndRow()
+
+Layout.AddGroup('Selected Files')
+SELECTED=Layout.addItem('Selected','',c.siControlListBox)
+SELECTED.SetAttribute(c.siUICY,100) 
+SELECTED.SetAttribute(c.siUINoLabel,True)  
+SELECTED.SetAttribute(c.siUIMultiSelectionListBox,True)
+Layout.EndGroup()
+
+Layout.Language = 'Python'
+Layout.Logic = '''
+import os
+TYPES = ['.obj','.fbx','.xsi','.emdl']
+app = Application 
+projectPath = XSIUtils.ResolveTokenString( '[Project Path]', '', False,'', '' )
+o = PPG.InspectedObjects
+prop = app.ActiveSceneRoot.GetPropertyFromName2(o)
+Layout = prop.PPGLayout
+PATH = prop.Parameters('Path')
+FOLDERS = prop.Parameters('Folders')
+FILES =  prop.Parameters('Files')
+SELECTED = prop.Parameters('Selected')
+def Path_OnChanged():
+	DIRS = ['...',os.path.dirname(PATH.Value)]
+	FILES =[]
+	for Path in PATH.Value.split(';'):
+		for dir in os.listdir(Path):
+			fileName, fileExtension = os.path.splitext(os.path.join(Path,dir))
+			if fileExtension.lower() in TYPES:
+				FILES.append(dir)
+				FILES.append(os.path.join(Path,dir))
+			elif fileExtension == '':
+				DIRS.append(dir)
+				DIRS.append(os.path.join(Path,dir))
+	Layout.Item('Folders').UIItems = DIRS
+	Layout.Item('Files').UIItems = FILES
+	PPG.Refresh()
+def Folders_OnChanged():
+	PATH.Value = FOLDERS.Value
+	DIRS = ['...',os.path.dirname(PATH.Value)]
+	FILES =[]
+	for Path in FOLDERS.Value.split(';'):
+		for dir in os.listdir(Path):
+			fileName, fileExtension = os.path.splitext(os.path.join(Path,dir))
+			if fileExtension in TYPES:
+				FILES.append(dir)
+				FILES.append(os.path.join(Path,dir))
+			elif fileExtension == '':
+				DIRS.append(dir)
+				DIRS.append(os.path.join(Path,dir))
+	Layout.Item('Folders').UIItems = DIRS
+	Layout.Item('Files').UIItems = FILES
+	FOLDERS.Value = ''
+	PPG.Refresh()
+def AddToList_OnClicked():
+	LISTA = []
+	for ui in Layout.Item('Selected').UIItems:
+		LISTA.append(ui)
+	for p in FILES.Value.split(';'):
+		if p not in LISTA:
+			LISTA.append(p)
+			LISTA.append(p)
+	Layout.Item('Selected').UIItems = LISTA
+	FILES.Value = ''
+	PPG.Refresh()
+def RemoveFromList_OnClicked():
+	LISTA = []
+	for ui in Layout.Item('Selected').UIItems:
+		LISTA.append(ui)
+	for p in SELECTED.Value.split(';'):
+		LISTA.remove(p)
+		LISTA.remove(p)
+	Layout.Item('Selected').UIItems = LISTA
+	SELECTED.Value = ''
+	PPG.Refresh()
+'''

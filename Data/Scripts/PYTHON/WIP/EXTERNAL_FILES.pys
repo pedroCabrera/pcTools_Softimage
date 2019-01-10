@@ -1,0 +1,39 @@
+from win32com.client import constants as c
+import os
+from shutil import copyfile
+app = Application
+root = app.ActiveProject.ActiveScene
+
+# ---------------------------------------------------------------------------
+# CONVENIENCE FUNCTION
+# 
+def printFileInfo( in_file ) :
+
+	orig_path = in_file.ResolvedPath
+	if in_file.FileExists() :
+		#app.LogMessage( in_file.Name + " exists" )
+		
+		if "RECURSOS" in orig_path:
+			app.LogMessage( "RESOLVED: " + orig_path )
+			newPath = XSIUtils.ResolveTokenString("[project path]\Pictures",0,False)+orig_path.split("RECURSOS")[-1]
+			app.LogMessage( "NEW: " + newPath )
+			'''
+			dirname= os.path.dirname(newPath)
+			if not os.path.exists(dirname):
+				os.makedirs(dirname)
+			try:
+				copyfile(orig_path,newPath)
+				in_file.Path  = newPath
+			except:
+				None
+			'''
+		
+	else :
+		app.LogMessage( "Specified FileReference does NOT exist" )
+
+# Enumerate all files related to this model
+oModel = root
+extFileList = oModel.ExternalFiles
+for file in extFileList :
+	printFileInfo( file )
+

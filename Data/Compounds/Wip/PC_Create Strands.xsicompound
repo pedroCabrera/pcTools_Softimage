@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Create Strands" tasks="Particles/Strands" formatversion="1.4" compoundversion="2.0" constructionmode="Current" backgroundcolor="6732954">
+	<description><![CDATA[This compound creates continuous shape segments drawn behind a particle, like a strand or trail. It does not create a new set of particles. Plug this compound's Execute output into an Execute on Emit port of an Emit compound, into a Port on the ICETree node, or into an Execute on Trigger port of a State compound, if you're using a state system. If you want the strands to follow moving particles like a tail, plug in the Strand Trails compound into the ICETree node.]]></description>
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="5">
+				<param name="reference" type="31" value="self.StrandPosition"></param>
+				<param_ext name="reference" type="31" value="self.StrandPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-472</prop>
+					<prop name="posy">198</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Calculate Strand Ratios" version="1.0" index="8">
+				<datablob category="ui_infos">
+					<prop name="posx">-1097</prop>
+					<prop name="posy">638</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="IntegerNode" index="9">
+				<param name="value" type="3" value="20"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-377</prop>
+					<prop name="posy">-4</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Get Particle Color" version="1.0" index="10">
+				<param name="Reference" type="31" value="Self.Color"></param>
+				<param_ext name="Reference" type="31" value="Self.Color"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-789</prop>
+					<prop name="posy">972</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromConstantNode" index="11">
+				<param name="size" type="3" value="0"></param>
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="size" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-483</prop>
+					<prop name="posy">246</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromConstantNode" index="12">
+				<param name="size" type="3" value="0"></param>
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<portdef name="size" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-463</prop>
+					<prop name="posy">503</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="15">
+				<param name="in" type="4" value="5.000000"></param>
+				<portdef name="in" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="passthrough">
+					<prop name="private">true</prop>
+				</datablob>
+				<datablob category="ui_infos">
+					<prop name="posx">-428</prop>
+					<prop name="posy">86</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GradientNode" index="16">
+				<param name="gradient.interp" type="3" value="1"></param>
+				<param name="gradient.color1.r" type="5" value="1.000000"></param>
+				<param name="gradient.color1.g" type="5" value="1.000000"></param>
+				<param name="gradient.color1.b" type="5" value="1.000000"></param>
+				<param name="gradient.color1.a" type="5" value="1.000000"></param>
+				<param name="gradient.pos1" type="5" value="0.000000"></param>
+				<param name="gradient.mid1" type="5" value="0.500000"></param>
+				<param name="gradient.color2.r" type="5" value="1.000000"></param>
+				<param name="gradient.color2.g" type="5" value="1.000000"></param>
+				<param name="gradient.color2.b" type="5" value="1.000000"></param>
+				<param name="gradient.color2.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos2" type="5" value="1.000000"></param>
+				<param name="gradient.mid2" type="5" value="0.500000"></param>
+				<param name="gradient.color3.r" type="5" value="1.000000"></param>
+				<param name="gradient.color3.g" type="5" value="0.019608"></param>
+				<param name="gradient.color3.b" type="5" value="0.019608"></param>
+				<param name="gradient.color3.a" type="5" value="1.000000"></param>
+				<param name="gradient.pos3" type="5" value="0.040892"></param>
+				<param name="gradient.mid3" type="5" value="0.294574"></param>
+				<param name="gradient.color4.r" type="5" value="1.000000"></param>
+				<param name="gradient.color4.g" type="5" value="1.000000"></param>
+				<param name="gradient.color4.b" type="5" value="1.000000"></param>
+				<param name="gradient.color4.a" type="5" value="0.091000"></param>
+				<param name="gradient.pos4" type="5" value="-1.000000"></param>
+				<param name="gradient.mid4" type="5" value="0.764706"></param>
+				<param name="gradient.color5.r" type="5" value="1.000000"></param>
+				<param name="gradient.color5.g" type="5" value="0.091000"></param>
+				<param name="gradient.color5.b" type="5" value="0.661000"></param>
+				<param name="gradient.color5.a" type="5" value="1.000000"></param>
+				<param name="gradient.pos5" type="5" value="-1.000000"></param>
+				<param name="gradient.mid5" type="5" value="0.500000"></param>
+				<param name="gradient.color6.r" type="5" value="0.000000"></param>
+				<param name="gradient.color6.g" type="5" value="0.000000"></param>
+				<param name="gradient.color6.b" type="5" value="0.000000"></param>
+				<param name="gradient.color6.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos6" type="5" value="-1.000000"></param>
+				<param name="gradient.mid6" type="5" value="0.500000"></param>
+				<param name="gradient.color7.r" type="5" value="0.000000"></param>
+				<param name="gradient.color7.g" type="5" value="0.000000"></param>
+				<param name="gradient.color7.b" type="5" value="0.000000"></param>
+				<param name="gradient.color7.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos7" type="5" value="-1.000000"></param>
+				<param name="gradient.mid7" type="5" value="0.500000"></param>
+				<param name="gradient.color8.r" type="5" value="0.000000"></param>
+				<param name="gradient.color8.g" type="5" value="0.000000"></param>
+				<param name="gradient.color8.b" type="5" value="0.000000"></param>
+				<param name="gradient.color8.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos8" type="5" value="-1.000000"></param>
+				<param name="gradient.mid8" type="5" value="0.500000"></param>
+				<param name="gradient.color9.r" type="5" value="0.000000"></param>
+				<param name="gradient.color9.g" type="5" value="0.000000"></param>
+				<param name="gradient.color9.b" type="5" value="0.000000"></param>
+				<param name="gradient.color9.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos9" type="5" value="-1.000000"></param>
+				<param name="gradient.mid9" type="5" value="0.500000"></param>
+				<param name="gradient.color10.r" type="5" value="0.000000"></param>
+				<param name="gradient.color10.g" type="5" value="0.000000"></param>
+				<param name="gradient.color10.b" type="5" value="0.000000"></param>
+				<param name="gradient.color10.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos10" type="5" value="-1.000000"></param>
+				<param name="gradient.mid10" type="5" value="0.500000"></param>
+				<param name="gradient.color11.r" type="5" value="0.000000"></param>
+				<param name="gradient.color11.g" type="5" value="0.000000"></param>
+				<param name="gradient.color11.b" type="5" value="0.000000"></param>
+				<param name="gradient.color11.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos11" type="5" value="-1.000000"></param>
+				<param name="gradient.mid11" type="5" value="0.500000"></param>
+				<param name="gradient.color12.r" type="5" value="0.000000"></param>
+				<param name="gradient.color12.g" type="5" value="0.000000"></param>
+				<param name="gradient.color12.b" type="5" value="0.000000"></param>
+				<param name="gradient.color12.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos12" type="5" value="-1.000000"></param>
+				<param name="gradient.mid12" type="5" value="0.500000"></param>
+				<param name="gradient.color13.r" type="5" value="0.000000"></param>
+				<param name="gradient.color13.g" type="5" value="0.000000"></param>
+				<param name="gradient.color13.b" type="5" value="0.000000"></param>
+				<param name="gradient.color13.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos13" type="5" value="-1.000000"></param>
+				<param name="gradient.mid13" type="5" value="0.500000"></param>
+				<param name="gradient.color14.r" type="5" value="0.000000"></param>
+				<param name="gradient.color14.g" type="5" value="0.000000"></param>
+				<param name="gradient.color14.b" type="5" value="0.000000"></param>
+				<param name="gradient.color14.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos14" type="5" value="-1.000000"></param>
+				<param name="gradient.mid14" type="5" value="0.500000"></param>
+				<param name="gradient.color15.r" type="5" value="0.000000"></param>
+				<param name="gradient.color15.g" type="5" value="0.000000"></param>
+				<param name="gradient.color15.b" type="5" value="0.000000"></param>
+				<param name="gradient.color15.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos15" type="5" value="-1.000000"></param>
+				<param name="gradient.mid15" type="5" value="0.500000"></param>
+				<param name="gradient.color16.r" type="5" value="0.000000"></param>
+				<param name="gradient.color16.g" type="5" value="0.000000"></param>
+				<param name="gradient.color16.b" type="5" value="0.000000"></param>
+				<param name="gradient.color16.a" type="5" value="0.000000"></param>
+				<param name="gradient.pos16" type="5" value="-1.000000"></param>
+				<param name="gradient.mid16" type="5" value="0.500000"></param>
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-777</prop>
+					<prop name="posy">799</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="17">
+				<param name="reference" type="31" value="self.StrandCount"></param>
+				<param_ext name="reference" type="31" value="self.StrandCount"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-811</prop>
+					<prop name="posy">232</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="18">
+				<param name="reference" type="31" value="Self.PointVelocity"></param>
+				<param_ext name="reference" type="31" value="Self.PointVelocity"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-801</prop>
+					<prop name="posy">314</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="Get Particle Size" version="1.0" index="19">
+				<param name="Reference" type="31" value="Self.Size"></param>
+				<param_ext name="Reference" type="31" value="Self.Size"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-535</prop>
+					<prop name="posy">721</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyNode" index="20">
+				<param name="value1" type="4" value="1.000000"></param>
+				<param name="value2" type="4" value="1.000000"></param>
+				<portdef name="value1" type="4" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="value2" type="4" structure="1" group="0" instance="1" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-361</prop>
+					<prop name="posy">638</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Get Particle Orientation" version="1.0" index="21">
+				<param name="Reference" type="31" value="Self.Orientation"></param>
+				<param_ext name="Reference" type="31" value="Self.Orientation"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-764</prop>
+					<prop name="posy">411</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="BuildArrayFromConstantNode" index="22">
+				<param name="size" type="3" value="0"></param>
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="1.000000"></param>
+				<param name="value.value_angle" type="4" value="0.000000"></param>
+				<portdef name="size" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="value" type="16384" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-477</prop>
+					<prop name="posy">380</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="SelectCaseNode" index="23">
+				<param name="condition" type="3" value="0"></param>
+				<param name="case0.case0_red" type="4" value="0.000000"></param>
+				<param name="case0.case0_green" type="4" value="0.000000"></param>
+				<param name="case0.case0_blue" type="4" value="0.000000"></param>
+				<param name="case0.case0_alpha" type="4" value="1.000000"></param>
+				<param name="case1.case1_red" type="4" value="0.000000"></param>
+				<param name="case1.case1_green" type="4" value="0.000000"></param>
+				<param name="case1.case1_blue" type="4" value="0.000000"></param>
+				<param name="case1.case1_alpha" type="4" value="1.000000"></param>
+				<param name="case2.case2_red" type="4" value="0.000000"></param>
+				<param name="case2.case2_green" type="4" value="0.000000"></param>
+				<param name="case2.case2_blue" type="4" value="0.000000"></param>
+				<param name="case2.case2_alpha" type="4" value="1.000000"></param>
+				<param name="case3.case3_red" type="4" value="0.000000"></param>
+				<param name="case3.case3_green" type="4" value="0.000000"></param>
+				<param name="case3.case3_blue" type="4" value="0.000000"></param>
+				<param name="case3.case3_alpha" type="4" value="1.000000"></param>
+				<param name="case4.case4_red" type="4" value="0.000000"></param>
+				<param name="case4.case4_green" type="4" value="0.000000"></param>
+				<param name="case4.case4_blue" type="4" value="0.000000"></param>
+				<param name="case4.case4_alpha" type="4" value="1.000000"></param>
+				<param name="default.default_red" type="4" value="0.000000"></param>
+				<param name="default.default_green" type="4" value="0.000000"></param>
+				<param name="default.default_blue" type="4" value="0.000000"></param>
+				<param name="default.default_alpha" type="4" value="1.000000"></param>
+				<portdef name="condition" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="case0" type="512" structure="2" group="1" instance="0" port="0"></portdef>
+				<portdef name="case1" type="512" structure="2" group="1" instance="1" port="0"></portdef>
+				<portdef name="case2" type="512" structure="2" group="1" instance="2" port="0"></portdef>
+				<portdef name="case3" type="512" structure="2" group="1" instance="3" port="0"></portdef>
+				<portdef name="case4" type="512" structure="1" group="1" instance="4" port="0"></portdef>
+				<portdef name="default" type="512" structure="1" group="2" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-207</prop>
+					<prop name="posy">869</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="HLSAToColorNode" index="24">
+				<param name="hue" type="4" value="0.000000"></param>
+				<param name="lightness" type="4" value="0.000000"></param>
+				<param name="saturation" type="4" value="0.000000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<portdef name="hue" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="lightness" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="saturation" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="alpha" type="4" structure="2" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-406</prop>
+					<prop name="posy">1047</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ColorToHLSANode" index="25">
+				<param name="color.color_red" type="4" value="0.000000"></param>
+				<param name="color.color_green" type="4" value="0.000000"></param>
+				<param name="color.color_blue" type="4" value="0.000000"></param>
+				<param name="color.color_alpha" type="4" value="1.000000"></param>
+				<portdef name="color" type="512" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-602</prop>
+					<prop name="posy">822</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="HLSAToColorNode" index="26">
+				<param name="hue" type="4" value="0.000000"></param>
+				<param name="lightness" type="4" value="0.000000"></param>
+				<param name="saturation" type="4" value="0.000000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<portdef name="hue" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="lightness" type="4" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="saturation" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="alpha" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-409</prop>
+					<prop name="posy">820</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="FCurveNode" index="27">
+				<param name="profile" type="buffer">2 20 1 0.107842 -1.79769E+308 1.79769E+308 3 0
+0 0.000000 1.000000 0.337371 0.000000 -0.306970 0.096818 8197 3
+0 0.998270 0.000000 0.337370 0.000000 -0.332757 0.000000 8197 3
+</param>
+				<param name="in" type="4" value="0.000000"></param>
+				<portdef name="in" type="4" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-500</prop>
+					<prop name="posy">613</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="32">
+				<param name="Reference5" type="31" value="self.StrandVelocity"></param>
+				<param name="Reference6" type="31" value="self.StrandOrientation"></param>
+				<param name="Reference7" type="31" value="self.PointUpVector"></param>
+				<param name="Reference8" type="31" value="self.StrandUpVector"></param>
+				<param name="Reference9" type="31" value="Self.StrandSize"></param>
+				<param name="Reference10" type="31" value="Self.ColorAlongStrands"></param>
+				<param name="Reference" type="31" value="self.StrandCount"></param>
+				<param name="Reference1" type="31" value="self.StrandLength"></param>
+				<param name="Reference2" type="31" value="self.StrandDeform"></param>
+				<param name="Reference3" type="31" value="self.StrandPosition"></param>
+				<param name="Reference4" type="31" value="self.StrandCenter"></param>
+				<param name="Value" type="3" value="0"></param>
+				<param name="Value1" type="4" value="0.000000"></param>
+				<param name="Value2" type="11" value="true"></param>
+				<param name="Value3.Value3_x" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_y" type="4" value="0.000000"></param>
+				<param name="Value3.Value3_z" type="4" value="0.000000"></param>
+				<param name="Value4.Value4_x" type="4" value="0.000000"></param>
+				<param name="Value4.Value4_y" type="4" value="0.000000"></param>
+				<param name="Value4.Value4_z" type="4" value="0.000000"></param>
+				<param name="Value5.Value5_x" type="4" value="0.000000"></param>
+				<param name="Value5.Value5_y" type="4" value="0.000000"></param>
+				<param name="Value5.Value5_z" type="4" value="0.000000"></param>
+				<param name="Value6.Value6_x" type="4" value="1.000000"></param>
+				<param name="Value6.Value6_y" type="4" value="0.000000"></param>
+				<param name="Value6.Value6_z" type="4" value="0.000000"></param>
+				<param name="Value6.Value6_angle" type="4" value="0.000000"></param>
+				<param name="Value7.Value7_x" type="4" value="0.000000"></param>
+				<param name="Value7.Value7_y" type="4" value="0.000000"></param>
+				<param name="Value7.Value7_z" type="4" value="0.000000"></param>
+				<param name="Value8.Value8_x" type="4" value="0.000000"></param>
+				<param name="Value8.Value8_y" type="4" value="0.000000"></param>
+				<param name="Value8.Value8_z" type="4" value="0.000000"></param>
+				<param name="Value9" type="4" value="0.000000"></param>
+				<param name="Value10.Value10_red" type="4" value="0.000000"></param>
+				<param name="Value10.Value10_green" type="4" value="0.000000"></param>
+				<param name="Value10.Value10_blue" type="4" value="0.000000"></param>
+				<param name="Value10.Value10_alpha" type="4" value="1.000000"></param>
+				<param_ext name="Reference5" type="31" value="self.StrandVelocity"></param_ext>
+				<param_ext name="Reference6" type="31" value="self.StrandOrientation"></param_ext>
+				<param_ext name="Reference7" type="31" value="self.PointUpVector"></param_ext>
+				<param_ext name="Reference8" type="31" value="self.StrandUpVector"></param_ext>
+				<param_ext name="Reference9" type="31" value="Self.StrandSize"></param_ext>
+				<param_ext name="Reference10" type="31" value="Self.ColorAlongStrands"></param_ext>
+				<param_ext name="Reference" type="31" value="self.StrandCount"></param_ext>
+				<param_ext name="Reference1" type="31" value="self.StrandLength"></param_ext>
+				<param_ext name="Reference2" type="31" value="self.StrandDeform"></param_ext>
+				<param_ext name="Reference3" type="31" value="self.StrandPosition"></param_ext>
+				<param_ext name="Reference4" type="31" value="self.StrandCenter"></param_ext>
+				<portdef name="Value5" type="16" structure="2" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="Value6" type="16384" structure="2" group="2" instance="1" port="0" groupname="Value"></portdef>
+				<portdef name="Value7" type="16" structure="1" group="2" instance="2" port="0" groupname="Value"></portdef>
+				<portdef name="Value8" type="16" structure="2" group="2" instance="3" port="0" groupname="Value"></portdef>
+				<portdef name="Value9" type="4" structure="2" group="2" instance="4" port="0" groupname="Value"></portdef>
+				<portdef name="Value10" type="512" structure="2" group="2" instance="5" port="0" groupname="Value"></portdef>
+				<portdef name="Value" type="2" structure="1" group="2" instance="6" port="0" groupname="Value"></portdef>
+				<portdef name="Value1" type="4" structure="1" group="2" instance="7" port="0" groupname="Value"></portdef>
+				<portdef name="Value2" type="1" structure="1" group="2" instance="8" port="0" groupname="Value"></portdef>
+				<portdef name="Value3" type="16" structure="1" group="2" instance="9" port="0" groupname="Value"></portdef>
+				<portdef name="Value4" type="16" structure="2" group="2" instance="10" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">217</prop>
+					<prop name="posy">-65</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="HLSAToColorNode" index="33">
+				<param name="hue" type="4" value="0.000000"></param>
+				<param name="lightness" type="4" value="0.000000"></param>
+				<param name="saturation" type="4" value="0.000000"></param>
+				<param name="alpha" type="4" value="1.000000"></param>
+				<portdef name="hue" type="4" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="lightness" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="saturation" type="4" structure="2" group="0" instance="0" port="2"></portdef>
+				<portdef name="alpha" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-405</prop>
+					<prop name="posy">933</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="ColorToHLSANode" index="34">
+				<param name="color.color_red" type="4" value="0.000000"></param>
+				<param name="color.color_green" type="4" value="0.000000"></param>
+				<param name="color.color_blue" type="4" value="0.000000"></param>
+				<param name="color.color_alpha" type="4" value="1.000000"></param>
+				<portdef name="color" type="512" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-610</prop>
+					<prop name="posy">942</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="RotateVectorNode" index="36">
+				<param name="vector.vector_x" type="4" value="1.000000"></param>
+				<param name="vector.vector_y" type="4" value="0.000000"></param>
+				<param name="vector.vector_z" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_x" type="4" value="1.000000"></param>
+				<param name="rotation.rotation_y" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_z" type="4" value="0.000000"></param>
+				<param name="rotation.rotation_angle" type="4" value="0.000000"></param>
+				<portdef name="vector" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="rotation" type="16384" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-703</prop>
+					<prop name="posy">502</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Get Particle Orientation" version="1.0" index="37">
+				<param name="Reference" type="31" value="Self.Orientation"></param>
+				<param_ext name="Reference" type="31" value="Self.Orientation"></param_ext>
+				<datablob category="ui_infos">
+					<prop name="posx">-932</prop>
+					<prop name="posy">535</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="9" portname="value" username="SStrand_Count" basename="SStrand Count" portlabel="SStrand Count" exposetype="single">
+				<description><![CDATA[The number of segments in each strand.]]></description>
+			</port>
+			<port index="15" portname="in" username="Strand_Length" basename="Strand Length" portlabel="Strand Length" exposetype="single">
+				<description><![CDATA[The length of each strand segment in Softimage units.]]></description>
+			</port>
+			<port index="16" portname="gradient" username="Strand_Color_Gradient" basename="Strand Color Gradient" portlabel="Strand Color Gradient" exposetype="single">
+				<description><![CDATA[Sets the color of the strand using a gradient scale that represents the strand. Note that the color gradient is displayed in the render region only if you have an appropriate color gradient shader set up for the particles in the render tree. You can set the color in each box below the gradient by selecting it and then using the color sliders. You can add more boxes by clicking anywhere beneath the gradient, or remove boxes by selecting them and pressing Delete. Set the position of each box by dragging it, or enter a value between 0 and 1 in the Pos text box below. Drag the small circles above the gradient to set the range of each color defined in a box.]]></description>
+			</port>
+			<port index="23" portname="condition" username="Select_Strand_Color_Method" basename="Select Strand Color Method" portlabel="Select Strand Color Method" exposetype="single">
+				<description><![CDATA[The color channels you can choose from to use for the strand color gradient: Set New Color, Lightness, Hue, or Alpha.]]></description>
+			</port>
+			<port index="27" portname="profile" username="Strand_Size_Profile" basename="Strand Size Profile" portlabel="Strand Size Profile" exposetype="single">
+				<description><![CDATA[This curve defines the size and shape of the strand, starting from the strand's base (key on the left) to the tip (key on the right). By default, the strand's size is the same as its particle's at the base, then tapers off toward the tip.]]></description>
+			</port>
+			<port index="32" portname="Execute" username="Execute_on_Emit" basename="Execute on Emit" portlabel="Execute on Emit" exposetype="single"> </port>
+			<port index="32" portname="Value3" username="Strand_Possition" basename="Strand Possition" portlabel="Strand Possition" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="9" from_port="result" to_node="32" to_port="Value"> </cnx>
+			<cnx from_node="11" from_port="array" to_node="32" to_port="Value5"> </cnx>
+			<cnx from_node="12" from_port="array" to_node="32" to_port="Value8"> </cnx>
+			<cnx from_node="27" from_port="out" to_node="20" to_port="value1"> </cnx>
+			<cnx from_node="34" from_port="hue" to_node="26" to_port="hue"> </cnx>
+			<cnx from_node="34" from_port="hue" to_node="24" to_port="hue"> </cnx>
+			<cnx from_node="34" from_port="lightness" to_node="24" to_port="lightness"> </cnx>
+			<cnx from_node="34" from_port="lightness" to_node="33" to_port="lightness"> </cnx>
+			<cnx from_node="34" from_port="saturation" to_node="26" to_port="saturation"> </cnx>
+			<cnx from_node="34" from_port="saturation" to_node="24" to_port="saturation"> </cnx>
+			<cnx from_node="34" from_port="alpha" to_node="26" to_port="alpha"> </cnx>
+			<cnx from_node="34" from_port="alpha" to_node="33" to_port="alpha"> </cnx>
+			<cnx from_node="16" from_port="out" to_node="25" to_port="color"> </cnx>
+			<cnx from_node="16" from_port="out" to_node="23" to_port="case0"> </cnx>
+			<cnx from_node="5" from_port="value" to_node="32" to_port="Value4"> </cnx>
+			<cnx from_node="25" from_port="hue" to_node="33" to_port="hue"> </cnx>
+			<cnx from_node="25" from_port="lightness" to_node="26" to_port="lightness"> </cnx>
+			<cnx from_node="25" from_port="saturation" to_node="33" to_port="saturation"> </cnx>
+			<cnx from_node="25" from_port="alpha" to_node="24" to_port="alpha"> </cnx>
+			<cnx from_node="18" from_port="value" to_node="11" to_port="value"> </cnx>
+			<cnx from_node="23" from_port="result" to_node="32" to_port="Value10"> </cnx>
+			<cnx from_node="36" from_port="result" to_node="12" to_port="value"> </cnx>
+			<cnx from_node="36" from_port="result" to_node="32" to_port="Value7"> </cnx>
+			<cnx from_node="26" from_port="color" to_node="23" to_port="case1"> </cnx>
+			<cnx from_node="33" from_port="color" to_node="23" to_port="case2"> </cnx>
+			<cnx from_node="24" from_port="color" to_node="23" to_port="case3"> </cnx>
+			<cnx from_node="20" from_port="result" to_node="32" to_port="Value9"> </cnx>
+			<cnx from_node="8" from_port="result" to_node="27" to_port="in"> </cnx>
+			<cnx from_node="8" from_port="result" to_node="16" to_port="in"> </cnx>
+			<cnx from_node="21" from_port="Orientation" to_node="22" to_port="value"> </cnx>
+			<cnx from_node="19" from_port="Value" to_node="20" to_port="value2"> </cnx>
+			<cnx from_node="10" from_port="Color" to_node="34" to_port="color"> </cnx>
+			<cnx from_node="37" from_port="Orientation" to_node="36" to_port="rotation"> </cnx>
+			<cnx from_node="17" from_port="value" to_node="11" to_port="size"> </cnx>
+			<cnx from_node="17" from_port="value" to_node="12" to_port="size"> </cnx>
+			<cnx from_node="17" from_port="value" to_node="22" to_port="size"> </cnx>
+			<cnx from_node="15" from_port="out" to_node="32" to_port="Value1"> </cnx>
+			<cnx from_node="22" from_port="array" to_node="32" to_port="Value6"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Strand_Possition"> </item>
+			<item type="input" name="SStrand_Count"> </item>
+			<item type="input" name="Strand_Length"> </item>
+			<item type="input" name="Strand_Size_Profile"> </item>
+			<item type="input" name="Strand_Color_Gradient"> </item>
+			<item type="input" name="Select_Strand_Color_Method">
+				<enum value="0"><![CDATA[Set New Color]]></enum>
+				<enum value="1"><![CDATA[Set Lightness]]></enum>
+				<enum value="2"><![CDATA[Set Hue]]></enum>
+				<enum value="3"><![CDATA[Set Alpha]]></enum>
+			</item>
+			<item type="output" name="Execute_on_Emit"> </item>
+		</layout>
+	</definition>
+</xsi_file>

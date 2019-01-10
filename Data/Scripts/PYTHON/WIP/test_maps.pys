@@ -1,0 +1,7 @@
+app = Application
+#app.SetValue("PlayControl.Current", 119)
+for i in range(119,162):
+	app.SetValue("PlayControl.Current", i)
+	app.SetValue("MAN_90_FRACTURED.MAN_90.RenderMap.imagefilepath", "Z:\\CINEMA_DEPARTMENT\\QUANTUM_BREAK_MICROSOFT\\3D\\QUANTUM_XSI\\Pictures\\RenderMaps\\Shot_103_SF_100\\NEGRO.%s.tif"%i, "")
+	app.RegenerateMaps("MAN_90_FRACTURED.MAN_90.RenderMap", "")
+	

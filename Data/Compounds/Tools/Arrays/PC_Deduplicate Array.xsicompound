@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Deduplicate Array" category="PC_Tools/Arrays" tasks="PC_Tools/Arrays" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="1686324">
+	<definition>
+		<nodes>
+			<node type="PC_Find_ArrayinArray" index="0">
+				<param name="Find Array.Find Array_x" type="4" value="0.000000"></param>
+				<param name="Find Array.Find Array_y" type="4" value="0.000000"></param>
+				<param name="Find Array.Find Array_z" type="4" value="0.000000"></param>
+				<param name="Array.Array_x" type="4" value="0.000000"></param>
+				<param name="Array.Array_y" type="4" value="0.000000"></param>
+				<param name="Array.Array_z" type="4" value="0.000000"></param>
+				<param name="Epsilon" type="4" value="0.000000"></param>
+				<portdef name="Find Array" type="16" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="Array" type="16" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="Epsilon" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">895</prop>
+					<prop name="posy">2733</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="false" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="-31" offsety="-63" sizex="228" sizey="45"><![CDATA[This Search each element in FindArray into
+ Array and returns the first index matching, 
+so only the first dupled value will be returned]]></comment>
+			</node>
+			<node type="IfNode" index="1">
+				<param name="condition" type="11" value="false"></param>
+				<param name="iftrue" type="3" value="0"></param>
+				<param name="iffalse" type="3" value="-1"></param>
+				<portdef name="condition" type="1" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1208</prop>
+					<prop name="posy">2636</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="2">
+				<param name="index" type="3" value="0"></param>
+				<param name="array.array_x" type="4" value="0.000000"></param>
+				<param name="array.array_y" type="4" value="0.000000"></param>
+				<param name="array.array_z" type="4" value="0.000000"></param>
+				<portdef name="index" type="2" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="16" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1314</prop>
+					<prop name="posy">2545</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="CompareNode" index="3">
+				<param name="type" type="3" value="0"></param>
+				<param name="epsilon" type="5" value="0.001000"></param>
+				<param name="first" type="3" value="0"></param>
+				<param name="second" type="3" value="0"></param>
+				<portdef name="first" type="2" structure="2" group="0" instance="0" port="0"></portdef>
+				<portdef name="second" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1113</prop>
+					<prop name="posy">2671</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="4">
+				<param name="in.in_x" type="4" value="0.000000"></param>
+				<param name="in.in_y" type="4" value="0.000000"></param>
+				<param name="in.in_z" type="4" value="0.000000"></param>
+				<portdef name="in" type="16" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">715</prop>
+					<prop name="posy">2578</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="GetArraySubIndicesNode" index="5">
+				<param name="array.array_x" type="4" value="0.000000"></param>
+				<param name="array.array_y" type="4" value="0.000000"></param>
+				<param name="array.array_z" type="4" value="0.000000"></param>
+				<portdef name="array" type="16" structure="2" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">900</prop>
+					<prop name="posy">2637</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Epsilon" username="Epsilon" basename="Epsilon" portlabel="Epsilon" exposetype="single"> </port>
+			<port index="2" portname="value" username="dedupArray" basename="dedupArray" portlabel="dedupArray" exposetype="single"> </port>
+			<port index="4" portname="in" username="inArray" basename="inArray" portlabel="inArray" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="3" from_port="result" to_node="1" to_port="condition"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="5" to_port="array"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="0" to_port="Find Array"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="0" to_port="Array"> </cnx>
+			<cnx from_node="4" from_port="out" to_node="2" to_port="array"> </cnx>
+			<cnx from_node="5" from_port="indices" to_node="3" to_port="first"> </cnx>
+			<cnx from_node="5" from_port="indices" to_node="1" to_port="iftrue"> </cnx>
+			<cnx from_node="0" from_port="Index" to_node="3" to_port="second"> </cnx>
+			<cnx from_node="1" from_port="result" to_node="2" to_port="index"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="inArray"> </item>
+			<item type="input" name="Epsilon"> </item>
+			<item type="output" name="dedupArray"> </item>
+		</layout>
+	</definition>
+</xsi_file>

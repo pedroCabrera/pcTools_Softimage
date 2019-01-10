@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Find In Array" category="PC_Tools/Arrays" tasks="PC_Tools/Arrays" formatversion="1.4" compoundversion="0.0" constructionmode="Current" backgroundcolor="1686324">
+	<description><![CDATA[Output is Per Generated Element,
+thismeans per each element in the input,
+after operating with the results
+Build an array from the Set]]></description>
+	<definition>
+		<nodes>
+			<node type="GenerateSampleSetNode" index="0">
+				<param name="reference" type="31" value=""></param>
+				<param name="emissiontype" type="3" value="1"></param>
+				<param name="invertfilter" type="11" value="false"></param>
+				<param name="ratetype" type="3" value="2"></param>
+				<param name="pointratetype" type="3" value="0"></param>
+				<param name="enablemaxnumber" type="11" value="true"></param>
+				<param name="maxnumber" type="3" value="100000"></param>
+				<param name="ratecontrol" type="3" value="1"></param>
+				<param name="seed" type="3" value="12345"></param>
+				<param name="timevarying" type="11" value="false"></param>
+				<param name="rate" type="4" value="100.000000"></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="geometry" type="1024" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<portdef name="seed" type="2" structure="1" group="4" instance="0" port="0"></portdef>
+				<portdef name="timevarying" type="1" structure="1" group="5" instance="0" port="0"></portdef>
+				<portdef name="rate" type="4" structure="1" group="6" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">871</prop>
+					<prop name="posy">643</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetElementIndicesNode" index="1">
+				<portdef name="value" type="2048" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1066</prop>
+					<prop name="posy">643</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="FindInArrayNode" index="2">
+				<param name="value" type="3" value="0"></param>
+				<param name="array" type="3" value="0"></param>
+				<param name="epsilon" type="4" value="0.000000"></param>
+				<portdef name="value" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="epsilon" type="4" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1455</prop>
+					<prop name="posy">392</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0" offsetx="155" offsety="-76" sizex="207" sizey="58"><![CDATA[Output is Per Generated Element,
+thismeans per each element in the input,
+after operating with the results
+Build an array from the Set]]></comment>
+			</node>
+			<node type="IntegerToScalarNode" index="3">
+				<param name="integer" type="3" value="0"></param>
+				<portdef name="integer" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">680</prop>
+					<prop name="posy">643</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetArraySizeNode" index="4">
+				<param name="array" type="3" value="0"></param>
+				<portdef name="array" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">684</prop>
+					<prop name="posy">606</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="SelectInArrayNode" index="5">
+				<param name="index" type="3" value="0"></param>
+				<param name="array" type="3" value="0"></param>
+				<portdef name="index" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="array" type="2" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1275</prop>
+					<prop name="posy">538</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="PassThroughNode" index="6">
+				<param name="in" type="3" value="0"></param>
+				<portdef name="in" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">510</prop>
+					<prop name="posy">585</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="2" portname="indexarray" username="indexarray" basename="indexarray" portlabel="indexarray" exposetype="single"> </port>
+			<port index="2" portname="array" username="Array" basename="Array" portlabel="Array" exposetype="single"> </port>
+			<port index="2" portname="found" username="found" basename="found" portlabel="found" exposetype="single"> </port>
+			<port index="2" portname="index" username="index" basename="index" portlabel="index" exposetype="single"> </port>
+			<port index="2" portname="epsilon" username="epsilon" basename="epsilon" portlabel="epsilon" exposetype="single"> </port>
+			<port index="6" portname="in" username="Find_Array" basename="Find Array" portlabel="Find Array" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="5" from_port="value" to_node="2" to_port="value"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="4" to_port="array"> </cnx>
+			<cnx from_node="6" from_port="out" to_node="5" to_port="array"> </cnx>
+			<cnx from_node="0" from_port="samples" to_node="1" to_port="value"> </cnx>
+			<cnx from_node="4" from_port="size" to_node="3" to_port="integer"> </cnx>
+			<cnx from_node="1" from_port="indices" to_node="5" to_port="index"> </cnx>
+			<cnx from_node="3" from_port="scalar" to_node="0" to_port="rate"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Array"> </item>
+			<item type="input" name="Find_Array"> </item>
+			<item type="input" name="epsilon"> </item>
+			<item type="output" name="found"> </item>
+			<item type="output" name="index"> </item>
+			<item type="output" name="indexarray"> </item>
+		</layout>
+	</definition>
+</xsi_file>

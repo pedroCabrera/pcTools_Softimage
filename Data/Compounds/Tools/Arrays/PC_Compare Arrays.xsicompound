@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Compare Arrays" category="PC_Tools/Arrays" tasks="PC_Tools/Arrays" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="1686324">
+	<definition>
+		<nodes>
+			<node type="PC_CompareArrays" index="0">
+				<param name="Type" type="3" value="0"></param>
+				<param name="Epsilon" type="4" value="0.000000"></param>
+				<portdef name="Type" type="2" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="main Array" type="247807" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="Array" type="247807" structure="1" group="0" instance="0" port="2"></portdef>
+				<portdef name="Epsilon" type="4" structure="1" group="0" instance="0" port="3"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">1227</prop>
+					<prop name="posy">2756</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+				<comment type="node" state="maximized" wordwrap="true" autoresize="true" background="0" background_alpha="0.000000" title="14876671" title_text="0"><![CDATA[This Compares each element in mainArray into
+ Array and returns the first index matching the condition]]></comment>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="Type" username="Type" basename="Type" portlabel="Type" exposetype="single"> </port>
+			<port index="0" portname="main Array" username="mainArray" basename="mainArray" portlabel="mainArray" exposetype="single"> </port>
+			<port index="0" portname="Array" username="Array" basename="Array" portlabel="Array" exposetype="single"> </port>
+			<port index="0" portname="Epsilon" username="Epsilon" basename="Epsilon" portlabel="Epsilon" exposetype="single"> </port>
+			<port index="0" portname="Index" username="Index" basename="Index" portlabel="Index" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+		</connections>
+		<layout>
+			<item type="input" name="Type" min="0" max="0">
+				<enum value="0"><![CDATA[Less Than]]></enum>
+				<enum value="1"><![CDATA[Less Than or Equal To]]></enum>
+				<enum value="2"><![CDATA[Greater Than]]></enum>
+				<enum value="3"><![CDATA[Greater Than or Equal To]]></enum>
+			</item>
+			<item type="input" name="mainArray"> </item>
+			<item type="input" name="Array"> </item>
+			<item type="input" name="Epsilon"> </item>
+			<item type="output" name="Index"> </item>
+		</layout>
+	</definition>
+</xsi_file>

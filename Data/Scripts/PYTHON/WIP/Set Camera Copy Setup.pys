@@ -1,0 +1,39 @@
+app = Application
+ParamList = []
+
+cam = Application.GetPrimCamera("", "PC_Sequencer_Camera", "", "", "", "")
+Application.Translate(cam, 0, 0, 0, "siAbsolute", "siView", "siObj", "siXYZ", True, "", "", "", "", "", "", "", "", 0, "")
+Application.DeleteObj(cam.Children(1))
+Application.Rotate(cam.Children(0), 0, 0, 0, "siAbsolute", "siPivot", "siObj", "siX", "", "", "", "", "", "", "", 0, "")
+
+Camera = cam.Children(0)
+
+for param in app.EnumElements(Camera.ActivePrimitive):
+	if param.ValueType != 0:
+		if param.name == 'Format':
+			for p in app.EnumElements(param):
+				ParamList.append(p)
+		else:
+			ParamList.append(param)
+			
+PROP = Camera.AddCustomProperty('Camera Parameters',False)
+for param in ParamList:
+	Param = PROP.AddParameter3(param.name,param.Valuetype,param.value,0,param.value+50,True,False)
+	app.CopyPaste(Param, "", param, 1)
+
+ICE = app.ApplyOp("ICETree", Camera, "siNode", "", "", 1)
+COPY = app.AddICECompoundNode("PC_Copy Camera", ICE)
+
+GetPROP=app.AddICENode("GetDataNode", ICE)
+app.SetValue(str(GetPROP)+'.reference', str(PROP), "")
+
+GetCAM=app.AddICENode("GetDataNode", ICE)
+app.SetValue(str(GetCAM)+'.reference', 'Camera', "")
+
+GetSELF=app.AddICENode("GetDataNode", ICE)
+app.SetValue(str(GetSELF)+'.reference', 'This_Parent', "")
+
+app.ConnectICENodes(str(COPY)+'.Parameter_Collector', str(GetPROP)+'.outname')
+app.ConnectICENodes(str(COPY)+'.Camera_to_Copy', str(GetCAM)+'.outname')
+app.ConnectICENodes(str(COPY)+'.Transforms', str(GetSELF)+'.outname')
+app.ConnectICENodes(str(ICE)+'.port1', str(COPY)+'.Execute')

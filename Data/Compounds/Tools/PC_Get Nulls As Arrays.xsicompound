@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Get Nulls As Arrays" category="PC_Tools" tasks="PC_Tools/Tools" formatversion="1.4" compoundversion="1.0" constructionmode="Current" backgroundcolor="11636100">
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="kine.global.pos"></param>
+				<param_ext name="reference" type="31" value="kine.global.pos"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1418</prop>
+					<prop name="posy">-593</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="1">
+				<param name="reference" type="31" value="kine.global.linvel"></param>
+				<param_ext name="reference" type="31" value="kine.global.linvel"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1416</prop>
+					<prop name="posy">-453</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="2">
+				<param name="reference" type="31" value=""></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1582</prop>
+					<prop name="posy">-482</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="3">
+				<param name="value" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1243</prop>
+					<prop name="posy">-503</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="4">
+				<param name="reference" type="31" value="kine.global.scl"></param>
+				<param_ext name="reference" type="31" value="kine.global.scl"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1416</prop>
+					<prop name="posy">-480</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="5">
+				<param name="reference" type="31" value=".null.size"></param>
+				<param_ext name="reference" type="31" value=".null.size"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1415</prop>
+					<prop name="posy">-561</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="6">
+				<param name="reference" type="31" value="kine.global.ori"></param>
+				<param_ext name="reference" type="31" value="kine.global.ori"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1419</prop>
+					<prop name="posy">-398</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="7">
+				<param name="reference" type="31" value="kine.global.angvel"></param>
+				<param_ext name="reference" type="31" value="kine.global.angvel"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1417</prop>
+					<prop name="posy">-424</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="8">
+				<param name="reference" type="31" value="display.wirecolor"></param>
+				<param_ext name="reference" type="31" value="display.wirecolor"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1418</prop>
+					<prop name="posy">-373</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="MultiplyByScalarNode" index="12">
+				<param name="value.value_x" type="4" value="0.000000"></param>
+				<param name="value.value_y" type="4" value="0.000000"></param>
+				<param name="value.value_z" type="4" value="0.000000"></param>
+				<param name="factor" type="4" value="1.000000"></param>
+				<portdef name="value" type="16" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="factor" type="4" structure="1" group="0" instance="0" port="1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">-1064</prop>
+					<prop name="posy">-479</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="0" portname="value" username="Positions" basename="Positions" portlabel="Positions" exposetype="single"> </port>
+			<port index="1" portname="value" username="LinVelocity" basename="LinVelocity" portlabel="LinVelocity" exposetype="single"> </port>
+			<port index="2" portname="inname" username="In_Name" basename="In Name" portlabel="In Name" exposetype="single"> </port>
+			<port index="3" portname="factor" username="Size_Factor" basename="Size Factor" portlabel="Size Factor" exposetype="single"> </port>
+			<port index="3" portname="result" username="Size" basename="Size" portlabel="Size" exposetype="single"> </port>
+			<port index="6" portname="value" username="Orientation" basename="Orientation" portlabel="Orientation" exposetype="single"> </port>
+			<port index="7" portname="value" username="AngVelocity" basename="AngVelocity" portlabel="AngVelocity" exposetype="single"> </port>
+			<port index="8" portname="value" username="WireColor" basename="WireColor" portlabel="WireColor" exposetype="single"> </port>
+			<port index="12" portname="result" username="Scale" basename="Scale" portlabel="Scale" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="3" from_port="result" to_node="12" to_port="factor"> </cnx>
+			<cnx from_node="2" from_port="outname" to_node="5" to_port="inname"> </cnx>
+			<cnx from_node="2" from_port="outname" to_node="4" to_port="inname"> </cnx>
+			<cnx from_node="2" from_port="outname" to_node="0" to_port="inname"> </cnx>
+			<cnx from_node="2" from_port="outname" to_node="6" to_port="inname"> </cnx>
+			<cnx from_node="2" from_port="outname" to_node="8" to_port="inname"> </cnx>
+			<cnx from_node="2" from_port="outname" to_node="1" to_port="inname"> </cnx>
+			<cnx from_node="2" from_port="outname" to_node="7" to_port="inname"> </cnx>
+			<cnx from_node="4" from_port="value" to_node="12" to_port="value"> </cnx>
+			<cnx from_node="5" from_port="value" to_node="3" to_port="value"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="In_Name"> </item>
+			<item type="input" name="Size_Factor"> </item>
+			<item type="output" name="Positions"> </item>
+			<item type="output" name="Size"> </item>
+			<item type="output" name="Scale"> </item>
+			<item type="output" name="LinVelocity"> </item>
+			<item type="output" name="AngVelocity"> </item>
+			<item type="output" name="Orientation"> </item>
+			<item type="output" name="WireColor"> </item>
+		</layout>
+	</definition>
+</xsi_file>

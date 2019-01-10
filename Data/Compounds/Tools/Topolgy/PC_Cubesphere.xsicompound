@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi_file type="CompoundNode" name="PC_Cubesphere" category="PC_Tools/Primitives" tasks="PC_Tools/Primitives" author="" url="" formatversion="1.4" compoundversion="0.0" versiontag="" constructionmode="Current" backgroundcolor="9195398">
+	<description><![CDATA[]]></description>
+	<definition>
+		<nodes>
+			<node type="GetDataNode" index="0">
+				<param name="reference" type="31" value="self.Topology"></param>
+				<param_ext name="reference" type="31" value="self.Topology"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">327</prop>
+					<prop name="posy">49</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Build Index Array" version="1.0" index="1">
+				<param name="Size" type="3" value="6"></param>
+				<portdef name="Size" type="2" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">62</prop>
+					<prop name="posy">142</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Resize Vector" version="1.0" index="2">
+				<param name="Vector.Vector_x" type="4" value="1.000000"></param>
+				<param name="Vector.Vector_y" type="4" value="0.000000"></param>
+				<param name="Vector.Vector_z" type="4" value="0.000000"></param>
+				<param name="New_Length" type="4" value="2.893000"></param>
+				<portdef name="New_Length" type="4" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="Vector" type="16" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">288</prop>
+					<prop name="posy">189</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="3">
+				<param name="reference" type="31" value="self.Topology"></param>
+				<param_ext name="reference" type="31" value="self.Topology"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">316</prop>
+					<prop name="posy">328</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="4">
+				<param name="reference" type="31" value=""></param>
+				<param_ext name="reference" type="31" value=""></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">552</prop>
+					<prop name="posy">436</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="5">
+				<param name="reference" type="31" value="self.initTopo"></param>
+				<param_ext name="reference" type="31" value="self.initTopo"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">243</prop>
+					<prop name="posy">372</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="6">
+				<param name="Reference" type="31" value=""></param>
+				<param_ext name="Reference" type="31" value=""></param_ext>
+				<portdef name="Value" type="524288" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">507</prop>
+					<prop name="posy">295</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="7">
+				<param name="Reference" type="31" value="self.Topology"></param>
+				<param_ext name="Reference" type="31" value="self.Topology"></param_ext>
+				<portdef name="Value" type="524288" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">513</prop>
+					<prop name="posy">256</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="IfNode" index="8">
+				<param name="condition" type="11" value="true"></param>
+				<portdef name="condition" type="1" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="iftrue" type="4096" structure="1" group="0" instance="0" port="1"></portdef>
+				<portdef name="iffalse" type="4096" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">556</prop>
+					<prop name="posy">346</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Topology" version="1.0" index="9">
+				<param name="Reference" type="31" value="Self"></param>
+				<param_ext name="Reference" type="31" value="Self"></param_ext>
+				<portdef name="Topology" type="524288" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">484</prop>
+					<prop name="posy">113</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="10">
+				<param name="reference" type="31" value="self.PointPosition"></param>
+				<param_ext name="reference" type="31" value="self.PointPosition"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">65</prop>
+					<prop name="posy">235</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="PrimitiveMeshNode" index="11">
+				<param name="primitivetype" type="3" value="1"></param>
+				<param name="subdivu" type="3" value="1"></param>
+				<param name="subdivv" type="3" value="1"></param>
+				<param name="subdivbase" type="3" value="1"></param>
+				<param name="length" type="4" value="2.000000"></param>
+				<portdef name="length" type="4" structure="1" group="0" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">74</prop>
+					<prop name="posy">51</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="ExecuteNode" index="12">
+				<portdef name="port1" type="4096" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="port2" type="4096" structure="1" group="0" instance="1" port="0"></portdef>
+				<portdef name="port3" type="4096" structure="1" group="0" instance="2" port="0"></portdef>
+				<portdef name="port4" type="4096" structure="1" group="0" instance="3" port="0"></portdef>
+				<portdef name="port5" type="4096" structure="1" group="0" instance="4" port="0"></portdef>
+				<portdef name="port6" type="4096" structure="1" group="0" instance="5" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">698</prop>
+					<prop name="posy">138</prop>
+					<prop name="state">Normal</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="13">
+				<param name="Reference" type="31" value="self.initTopo"></param>
+				<param_ext name="Reference" type="31" value="self.initTopo"></param_ext>
+				<portdef name="Value" type="524288" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">516</prop>
+					<prop name="posy">50</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="14">
+				<param name="Reference" type="31" value="self.Topology"></param>
+				<param_ext name="Reference" type="31" value="self.Topology"></param_ext>
+				<portdef name="Value" type="524288" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">424</prop>
+					<prop name="posy">372</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="Set Data" version="1.0" index="15">
+				<param name="Reference" type="31" value="self.PointPosition"></param>
+				<param name="Value.Value_x" type="4" value="0.000000"></param>
+				<param name="Value.Value_y" type="4" value="0.000000"></param>
+				<param name="Value.Value_z" type="4" value="0.000000"></param>
+				<param_ext name="Reference" type="31" value="self.PointPosition"></param_ext>
+				<portdef name="Value" type="16" structure="1" group="2" instance="0" port="0" groupname="Value"></portdef>
+				<portdef name="In_Name" type="8192" structure="1" group="-1" instance="-1" port="-1"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">485</prop>
+					<prop name="posy">174</prop>
+					<prop name="state">ConnectedOnly</prop>
+				</datablob>
+			</node>
+			<node type="SubdivideLocallyNode" index="16">
+				<param name="subdivisionrule" type="3" value="0"></param>
+				<param name="polygonindex" type="3" value="0"></param>
+				<param name="depth" type="3" value="3"></param>
+				<portdef name="topo" type="524288" structure="1" group="0" instance="0" port="0"></portdef>
+				<portdef name="polygonindex" type="2" structure="2" group="0" instance="0" port="1"></portdef>
+				<portdef name="depth" type="2" structure="1" group="0" instance="0" port="2"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">245</prop>
+					<prop name="posy">113</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+			<node type="GetDataNode" index="17">
+				<param name="reference" type="31" value="self.Cubesphere"></param>
+				<param_ext name="reference" type="31" value="self.Cubesphere"></param_ext>
+				<portdef name="source" type="2048" structure="1" group="1" instance="0" port="0"></portdef>
+				<portdef name="inname" type="8192" structure="1" group="3" instance="0" port="0"></portdef>
+				<datablob category="ui_infos">
+					<prop name="posx">260</prop>
+					<prop name="posy">294</prop>
+					<prop name="state">Collapsed</prop>
+				</datablob>
+			</node>
+		</nodes>
+		<exposed_ports>
+			<port index="2" portname="New_Length" username="Radius" basename="Radius" portlabel="Radius" exposetype="single"> </port>
+			<port index="4" portname="value" username="Cubesphere" basename="Cubesphere" portlabel="Cubesphere" exposetype="single"> </port>
+			<port index="8" portname="condition" username="Set_Topo" basename="Set Topo" portlabel="Set Topo" exposetype="single"> </port>
+			<port index="12" portname="execute" username="Execute" basename="Execute" portlabel="Execute" exposetype="single"> </port>
+			<port index="16" portname="depth" username="Depth" basename="Depth" portlabel="Depth" exposetype="single"> </port>
+			<port index="17" portname="reference" username="Reference1" basename="Reference1" portlabel="Reference1" exposetype="single"> </port>
+		</exposed_ports>
+		<connections>
+			<cnx from_node="6" from_port="Execute" to_node="12" to_port="port5"> </cnx>
+			<cnx from_node="15" from_port="Execute" to_node="12" to_port="port3"> </cnx>
+			<cnx from_node="2" from_port="Result" to_node="15" to_port="Value"> </cnx>
+			<cnx from_node="9" from_port="Execute" to_node="12" to_port="port2"> </cnx>
+			<cnx from_node="14" from_port="Execute" to_node="8" to_port="iffalse"> </cnx>
+			<cnx from_node="1" from_port="Indices" to_node="16" to_port="polygonindex"> </cnx>
+			<cnx from_node="7" from_port="Execute" to_node="12" to_port="port4"> </cnx>
+			<cnx from_node="13" from_port="Execute" to_node="12" to_port="port1"> </cnx>
+			<cnx from_node="10" from_port="value" to_node="2" to_port="Vector"> </cnx>
+			<cnx from_node="17" from_port="outname" to_node="6" to_port="In_Name"> </cnx>
+			<cnx from_node="17" from_port="outname" to_node="4" to_port="inname"> </cnx>
+			<cnx from_node="8" from_port="result" to_node="12" to_port="port6"> </cnx>
+			<cnx from_node="5" from_port="value" to_node="14" to_port="Value"> </cnx>
+			<cnx from_node="3" from_port="value" to_node="6" to_port="Value"> </cnx>
+			<cnx from_node="0" from_port="value" to_node="13" to_port="Value"> </cnx>
+			<cnx from_node="11" from_port="result" to_node="16" to_port="topo"> </cnx>
+			<cnx from_node="16" from_port="result" to_node="9" to_port="Topology"> </cnx>
+		</connections>
+		<layout>
+			<item type="input" name="Set_Topo"> </item>
+			<item type="input" name="Depth"> </item>
+			<item type="input" name="Radius"> </item>
+			<item type="input" name="Reference1"> </item>
+			<item type="output" name="Execute"> </item>
+			<item type="output" name="Cubesphere"> </item>
+		</layout>
+		<ppglogic lang=""><![CDATA[]]></ppglogic>
+	</definition>
+</xsi_file>
