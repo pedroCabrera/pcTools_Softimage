@@ -3,6 +3,7 @@ from win32com.client import constants as c
 from Tools import *
 
 XSIToolkit = win32com.client.Dispatch( 'XSI.UIToolkit' )
+import Tools
 reload ( Tools )
 app = Application
 

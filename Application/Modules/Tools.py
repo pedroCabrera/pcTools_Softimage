@@ -1214,7 +1214,6 @@ def CustomProgID_OnChanged():
 Curve_By_Nulls_LOGIC = '''
 from win32com.client import constants as c
 from Tools import *
-reload ( Tools )
 def Pick_OnClicked():
 	PickNull = XSIUIToolkit.MsgBox( 'Pick the new Point', 1, 'Pick the New Point' )
 	if PickNull == 1:
