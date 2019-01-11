@@ -4,9 +4,9 @@ Collection of Tools developed during the last 5 Years for XSI Softimage
 ## Content:
 	-Lots of undocumented ICE Compounds
 	-Some useful scripts
-	-Some undocumented Python Plugins
-	-A small amount of undocumented Custom c++ nodes
-	-A "NOT STABLE/MEMORY CRAZY" imageIo framework for ICE
+	-Some Python Plugins
+	-Some Custom c++ nodes
+	-A "NOT STABLE/MEMORY CRAZY" imageIo framework for ICE (maybe to be fixed in a future, if someone is interested, contact me and will share sources )
   
 ## Resume:
   **As Autodesk discontinues softimage XSI in 2015 this collection is a bit abandoned**.
