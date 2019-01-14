@@ -1,5 +1,5 @@
 # pcTools_Softimage
-Collection of Tools developed during the last 5 Years for XSI Softimage
+Collection of Tools developed during the last 5 Years for XSI Softimage. Last compatible version XSI 2015, some of them should work on previous versions, but are not officialy supported!
 
 ## Content:
 	-Lots of undocumented ICE Compounds
