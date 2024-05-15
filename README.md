@@ -1,5 +1,5 @@
 # pcTools_Softimage
-Collection of Tools developed during the last 5 Years for XSI Softimage.
+Collection of Tools for XSI Softimage.
 Last compatible version: XSI 2015. Some of the tools will work on previous versions, but are not officialy supported!
 
 ## Content:
